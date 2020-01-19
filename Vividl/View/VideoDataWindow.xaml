@@ -1,0 +1,112 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.VideoDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Vividl.Helpers"
+        xmlns:p="clr-namespace:Vividl.Properties"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        Title="{Binding Entry.Title}" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <Window.Resources>
+        <ContextMenu x:Key="contxtVideo">
+            <MenuItem Header="{x:Static p:Resources.VideoEntry_CopyUrl}"
+                      Command="{Binding CopyClipboardCommand}"/>
+            <MenuItem Header="{x:Static p:Resources.VideoEntry_OpenInBrowser}"
+                      Command="{Binding OpenInBrowserCommand}"/>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel Margin="2" DockPanel.Dock="Top" Height="72"
+                   ContextMenu="{StaticResource contxtVideo}" Background="Transparent">
+            <Image DockPanel.Dock="Left" Height="64" Source="{Binding Entry.Metadata.Thumbnail}"
+                   Margin="4" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBox Margin="4" Text="{Binding Entry.Title, Mode=OneWay}"
+                     FontSize="16" VerticalAlignment="Center"
+                     Style="{StaticResource labelBox}"/>
+        </DockPanel>
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+            <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
+                      Margin="4" VerticalContentAlignment="Center"
+                      IsEnabled="{Binding ElementName=butDownload, Path=IsEnabled}"/>
+            <Button Content="{x:Static p:Resources.Cancel}" DockPanel.Dock="Right"
+                    MinWidth="80" IsCancel="True"/>
+            <Button DockPanel.Dock="Right" MinWidth="100" Command="{Binding DownloadCommand}"
+                    x:Name="butDownload" IsDefault="True" local:ButtonEx.CloseWindow="True">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{x:Static p:Resources.VideoEntry_Download}"/>
+                    <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+        <Border BorderThickness="0,1" BorderBrush="#FFB4B4B4"
+                ContextMenu="{StaticResource contxtVideo}">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="GroupBox" BasedOn="{StaticResource {x:Type GroupBox}}">
+                            <Setter Property="Margin" Value="4,6"/>
+                            <Setter Property="Padding" Value="4"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Details}">
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="Margin" Value="4"/>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock>
+                            <Run Text="{x:Static p:Resources.MetadataWindow_Duration}"/>
+                            <Run/>
+                            <Run Text="{Binding Duration, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Column="1">
+                            <Run Text="{x:Static p:Resources.MetadataWindow_Creator}"/>
+                            <Run/>
+                            <Run Text="{Binding Entry.Metadata.Creator, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="1">
+                            <Run Text="{x:Static p:Resources.MetadataWindow_UploadDate}"/>
+                            <Run/>
+                            <Run Text="{Binding Entry.Metadata.UploadDate, Mode=OneWay, StringFormat='{}{0:yyyy-MM-dd}'}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="1">
+                            <Run Text="{x:Static p:Resources.MetadataWindow_Uploader}"/>
+                            <Run/>
+                            <Run Text="{Binding Entry.Metadata.Uploader, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="2">
+                            <Run Text="{x:Static p:Resources.MetadataWindow_Views}"/>
+                            <Run/>
+                            <Run Text="{Binding Entry.Metadata.ViewCount, Mode=OneWay}"/>
+                            </TextBlock>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Description}">
+                        <TextBox Text="{Binding Entry.Metadata.Description, Mode=OneWay}"
+                                 Style="{StaticResource labelBox}"/>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Link}">
+                        <Hyperlink NavigateUri="{Binding Entry.Url, Mode=OneTime}"
+                                   RequestNavigate="Hyperlink_RequestNavigate">
+                            <Run Text="{Binding Entry.Url, Mode=OneTime}"/>
+                        </Hyperlink>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </DockPanel>
+</adonisControls:AdonisWindow>

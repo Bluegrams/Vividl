@@ -1,0 +1,140 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Vividl.Properties"
+        xmlns:v="clr-namespace:Vividl.View"
+        xmlns:h="clr-namespace:Vividl.Helpers"
+        xmlns:model="clr-namespace:Vividl.Model"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        Title="{x:Static p:Resources.SettingsWindow_Title}" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <Window.Resources>
+        <Style TargetType="GroupBox" BasedOn="{StaticResource {x:Type GroupBox}}">
+            <Setter Property="Padding" Value="2,4"/>
+            <Setter Property="Margin" Value="0,6,0,0"/>
+        </Style>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+            <Setter Property="Margin" Value="4,6"/>
+        </Style>
+        <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="Padding" Value="4,6"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+            <Button Content="{x:Static p:Resources.Cancel}"
+                    DockPanel.Dock="Right" MinWidth="80"
+                    IsCancel="True"/>
+            <Button Content="{x:Static p:Resources.Submit}"
+                    DockPanel.Dock="Right" MinWidth="80"
+                    Click="SubmitButton_Click" IsDefault="True"/>
+        </DockPanel>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="{x:Static p:Resources.SettingsWindow_General}">
+                <StackPanel>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_Appearance}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static p:Resources.SettingsWindow_Theme}"
+                                           VerticalAlignment="Center" Margin="4,4,10,4"/>
+                            <ComboBox Margin="4" ItemsSource="{h:Enum {x:Type model:Theme}}"
+                                      DisplayMemberPath="Description"
+                                      SelectedValuePath="Value"
+                                      SelectedValue="{Binding Settings.AppTheme, Mode=TwoWay}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding SwitchAppThemeCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_DownloadFolder}">
+                        <v:PathSelectionControl FileService="{Binding FileService}"
+                                                SelectedPath="{Binding Settings.DownloadFolder, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                                IsSelectFolder="True"/>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_VideoList}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Static p:Resources.SettingsWindow_DefaultFormat}"
+                                           VerticalAlignment="Center" Margin="4,4,10,4"/>
+                                <ComboBox ItemsSource="{Binding DefaultFormats, Mode=OneWay}"
+                                          Margin="4"
+                                          SelectedIndex="{Binding Settings.DefaultFormat, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </StackPanel>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_ShowAllFormats}"
+                                      IsChecked="{Binding Settings.ShowAllFormats, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_AllowDuplicates}"
+                                      IsChecked="{Binding Settings.AllowDuplicateEntries, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.SettingsWindow_Download}">
+                <StackPanel>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_DownloadOptions}">
+                        <StackPanel>
+                            <DockPanel>
+                                <TextBlock Text="{x:Static p:Resources.SettingsWindow_MaxProcesses}"
+                                           DockPanel.Dock="Left" VerticalAlignment="Center"/>
+                                <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center"
+                                           Text="{Binding ElementName=slideProcesses, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Slider x:Name="slideProcesses" Minimum="1" Maximum="8" IsSnapToTickEnabled="True"
+                                        TickPlacement="BottomRight" TickFrequency="1" Margin="8,2"
+                                        Value="{Binding Settings.MaxProcesses, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </DockPanel>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_OverwriteFiles}"
+                                      IsChecked="{Binding Settings.OverwriteFiles, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_PreferRecoding}"
+                                      IsChecked="{Binding Settings.PreferRecoding, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_Filename}">
+                        <StackPanel>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_RestrictFilenames}"
+                                      IsChecked="{Binding Settings.RestrictFilenames, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.SettingsWindow_Binaries}">
+                <StackPanel>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_YoutubeDL}">
+                        <StackPanel>
+                            <DockPanel>
+                                <Button DockPanel.Dock="Right" Content="{x:Static p:Resources.SettingsWindow_CheckForUpdates}"
+                                        Command="{Binding Path=UpdateYoutubeDLCommand}"
+                                        IsEnabled="{Binding Path=YoutubeDLUpdateService.IsUpdating, Converter={StaticResource invBool}}"/>
+                                <Label>
+                                    <WrapPanel>
+                                        <TextBlock>
+                                            <Run Text="{x:Static p:Resources.SettingsWindow_Version}"/>
+                                            <Run Text="  "/>
+                                            <Run Text="{Binding YoutubeDLUpdateService.Version, Mode=OneWay}"/>
+                                        </TextBlock>
+                                        <TextBlock Text="{x:Static p:Resources.SettingsWindow_CheckingForUpdates}"
+                                                   Margin="8,0"
+                                                   Visibility="{Binding Path=YoutubeDLUpdateService.IsUpdating, Converter={StaticResource boolToVis}}"/>
+                                    </WrapPanel>
+                                </Label>
+                            </DockPanel>
+                            <v:PathSelectionControl FileService="{Binding FileService}"
+                                                    SelectedPath="{Binding Settings.YoutubeDLPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                                    ToolTip="{x:Static p:Resources.SettingsWindow_Path_ToolTip}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_Ffmpeg}">
+                        <v:PathSelectionControl FileService="{Binding FileService}"
+                                                SelectedPath="{Binding Settings.FfmpegPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                                ToolTip="{x:Static p:Resources.SettingsWindow_Path_ToolTip}"/>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</adonisControls:AdonisWindow>

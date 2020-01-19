@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                    xmlns:p="clr-namespace:Vividl.Properties"
+                    xmlns:local="clr-namespace:Vividl.Helpers"
+                    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+                    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI">
+    <local:InverseBoolConverter x:Key="invBool"/>
+    <BooleanToVisibilityConverter x:Key="boolToVis"/>
+    <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
+    <local:IntToVisibilityConverter x:Key="intToVis"/>
+    <local:ResTextConverter x:Key="resConv"/>
+    <!-- Control styling -->
+    <Style TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>
+    </Style>
+    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="4"/>
+    </Style>
+    <!-- Styling used for label-like text boxes -->
+    <Style x:Key="labelBox" TargetType="TextBox">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+    </Style>
+    <!-- Tool Bar style -->
+    <Style x:Key="ToolDockPanel" TargetType="DockPanel">
+        <Style.Resources>
+            <Style TargetType="Separator" BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <Style TargetType="Button" BasedOn="{StaticResource {x:Static adonisUi:Styles.ToolbarButton}}">
+                <Setter Property="Height" Value="36"/>
+                <Setter Property="Width" Value="44"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </Style.Resources>
+        <Setter Property="LastChildFill" Value="False"/>
+        <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>
+        <Setter Property="adonisExtensions:LayerExtension.Layer" Value="1"/>
+    </Style>
+    
+    <!-- Fetching -->
+    <DataTemplate x:Key="fetchTemplate">
+        <DockPanel Background="Transparent">
+            <icon:PackIconModern Kind="Warning" VerticalAlignment="Center" Margin="4,0"
+                                 Visibility="{Binding Path=Unavailable, Converter={StaticResource boolToVis}}"/>
+            <TextBlock VerticalAlignment="Center" Text="{Binding}" Margin="4"/>
+        </DockPanel>
+    </DataTemplate>
+    <!-- Pre-Download / Download -->
+    <DataTemplate x:Key="downloadTemplate">
+        <Grid Background="Transparent">
+            <Grid.Resources>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Path=Entry.Title}" Margin="4"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal"
+                        IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
+                <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
+                          Margin="4,0" Height="25"/>
+                <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
+                <Button Command="{Binding ShowMetadataCommand}" Margin="0" Height="25"
+                        ToolTip="{x:Static p:Resources.VideoEntry_ShowInformation}"
+                        Content="{icon:Modern Kind=InformationCircle}"/>
+            </StackPanel>
+            <Button Grid.Column="1" Grid.RowSpan="2" Command="{Binding DownloadCommand}"
+                    Width="80" Height="25" Margin="2"
+                    Visibility="{Binding IsDownloading, Converter={StaticResource invBoolToVis}}"
+                    ToolTip="{x:Static p:Resources.VideoEntry_Download}">
+                <icon:PackIconModern Kind="Download"/>
+            </Button>
+            <DockPanel Grid.Column="1" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
+                <Button DockPanel.Dock="Right" ToolTip="{x:Static p:Resources.Cancel}"
+                        Command="{Binding CancelCommand}">
+                    <icon:PackIconModern Height="10" Kind="Close"/>
+                </Button>
+                <TextBlock Visibility="{Binding IsPlaylist, Converter={StaticResource boolToVis}}"
+                           Text="{Binding Path=DownloadIndexString}" Margin="2,0,4,0"/>
+                <TextBlock Text="{Binding Path=ProgressString, Mode=OneWay}"
+                           Margin="2"/>
+            </DockPanel>
+            <ProgressBar Grid.Column="1" Grid.Row="1" Width="200" Height="20"
+                         Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}"
+                         Maximum="1" Value="{Binding CurrentProgress, Mode=OneWay}"/>
+        </Grid>
+    </DataTemplate>
+    <!-- Post-Download -->
+    <DataTemplate x:Key="finishedTemplate">
+        <DataTemplate.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                <Setter Property="Margin" Value="4"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </DataTemplate.Resources>
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Path=Entry.Title}"/>
+            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_Finished}"/>
+            <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Width" Value="80"/>
+                        <Setter Property="Height" Value="25"/>
+                        <Setter Property="Margin" Value="2"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Command="{Binding PlayCommand}"
+                        ToolTip="{x:Static p:Resources.VideoEntry_Play}">
+                    <icon:PackIconModern Kind="ControlPlay"/>
+                </Button>
+                <Button Command="{Binding ShowInFolderCommand}"
+                        ToolTip="{x:Static p:Resources.VideoEntry_ShowInFolder}">
+                    <icon:PackIconModern Kind="FolderOpen"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

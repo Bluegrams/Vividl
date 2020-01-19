@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Bluegrams.Application;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Ioc;
+using Vividl.Model;
+using Vividl.Properties;
+using Vividl.Services;
+
+namespace Vividl.ViewModel
+{
+    public class SettingsViewModel : ViewModelBase
+    {
+        private IDialogService dialogService;
+        private IThemeResolver themeResolver;
+
+        public IFileService FileService { get; }
+
+        public Settings Settings => Settings.Default;
+
+        public ObservableCollection<IDownloadOption> DefaultFormats { get; }
+
+        public ICommand SwitchAppThemeCommand { get; }
+
+        public ILibUpdateService YoutubeDLUpdateService { get; }
+        public ICommand UpdateYoutubeDLCommand { get; }
+
+        public SettingsViewModel(IFileService fileService, IDialogService dialogService,
+            IThemeResolver themeResolver, IDownloadOptionProvider optionProvider)
+        {
+            this.FileService = fileService;
+            this.dialogService = dialogService;
+            this.themeResolver = themeResolver;
+            DefaultFormats = new ObservableCollection<IDownloadOption>(optionProvider.CreateDownloadOptions());
+            SwitchAppThemeCommand = new RelayCommand(() => SwitchAppTheme());
+            var ydl = SimpleIoc.Default.GetInstance<YoutubeDLSharp.YoutubeDL>();
+            YoutubeDLUpdateService = new YtdlUpdateService(ydl);
+            UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
+        }
+
+        public void SwitchAppTheme()
+            => themeResolver.SetColorScheme(Settings.Default.AppTheme);
+
+        public async Task UpdateYoutubeDL()
+        {
+            var msg = await YoutubeDLUpdateService.Update();
+            dialogService.ShowMessageBox(msg, "Vividl - " + Resources.Info);
+        }
+
+        public async Task ApplySettings()
+        {
+            App.InitializeDownloadEngine();
+            var ydl = SimpleIoc.Default.GetInstance<YoutubeDLSharp.YoutubeDL>();
+            await ydl.SetMaxNumberOfProcesses(Settings.Default.MaxProcesses);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Vividl.View.PathSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:Vividl.Properties"
+             xmlns:local="clr-namespace:Vividl.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="500">
+    <UserControl.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        <Button DockPanel.Dock="Right" Content="{x:Static p:Resources.PathSelectionControl_Change}"
+                Click="Button_Click"/>
+        <TextBox IsReadOnly="True" VerticalContentAlignment="Center"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:PathSelectionControl}},
+                                Path=SelectedPath}"/>
+    </DockPanel>
+</UserControl>

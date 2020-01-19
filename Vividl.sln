@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vividl", "Vividl\Vividl.csproj", "{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B955631B-741F-4A19-A903-D2C8813F6D63}"
+	ProjectSection(SolutionItems) = preProject
+		Changelog.md = Changelog.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VividlSetup", "VividlSetup\VividlSetup.vdproj", "{55E86E66-05B3-417F-8C95-10BCAB80C1AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{3F2A1700-8D21-4481-8DB5-34A3C2B3CB92}"
+	ProjectSection(SolutionItems) = preProject
+		img\icon.png = img\icon.png
+		img\vividl_screenshot.png = img\vividl_screenshot.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "choco", "choco", "{C2BA0038-9AFE-4A5C-AE0F-90AA8D57FABF}"
+	ProjectSection(SolutionItems) = preProject
+		choco\vividl.nuspec = choco\vividl.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{A1954952-A01A-4679-AD46-FC3303323B2F}"
+	ProjectSection(SolutionItems) = preProject
+		choco\tools\chocolateyinstall.ps1 = choco\tools\chocolateyinstall.ps1
+		choco\tools\chocolateyUninstall.ps1 = choco\tools\chocolateyUninstall.ps1
+		choco\tools\VERIFICATION.txt = choco\tools\VERIFICATION.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Publish-Install|Any CPU = Publish-Install|Any CPU
+		Publish-Portable|Any CPU = Publish-Portable|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install|Any CPU.Build.0 = Release|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable|Any CPU.ActiveCfg = Portable|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable|Any CPU.Build.0 = Portable|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Debug|Any CPU.ActiveCfg = Debug
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.ActiveCfg = Release
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.Build.0 = Release
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Portable|Any CPU.ActiveCfg = Release
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F2A1700-8D21-4481-8DB5-34A3C2B3CB92} = {B955631B-741F-4A19-A903-D2C8813F6D63}
+		{C2BA0038-9AFE-4A5C-AE0F-90AA8D57FABF} = {B955631B-741F-4A19-A903-D2C8813F6D63}
+		{A1954952-A01A-4679-AD46-FC3303323B2F} = {C2BA0038-9AFE-4A5C-AE0F-90AA8D57FABF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DFAF668-4D0D-4FA7-A84F-99FF3E1CB118}
+	EndGlobalSection
+EndGlobal

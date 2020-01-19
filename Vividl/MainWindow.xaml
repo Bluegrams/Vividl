@@ -1,0 +1,227 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:notif="clr-namespace:Enterwell.Clients.Wpf.Notifications.Controls;assembly=Enterwell.Clients.Wpf.Notifications"
+        xmlns:p="clr-namespace:Vividl.Properties"
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        Title="Vividl" Height="450" Width="800" Loaded="MainWindow_Loaded" MinWidth="350">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FetchCommand}" Key="N" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding PasteCommand}" Key="V" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding ImportCommand}" Key="O" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding ExportCommand}" Key="S" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding DownloadAllCommand}" Key="A" Modifiers="Ctrl+Shift"/>
+        <KeyBinding Command="{Binding CancelAllCommand}" Key="X" Modifiers="Ctrl+Shift"/>
+        <KeyBinding Command="{Binding ClearCommand}" Key="D" Modifiers="Ctrl+Shift"/>
+        <KeyBinding Command="{Binding SettingsCommand}" Key="OemComma" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding AboutCommand}" Key="F1"/>
+    </Window.InputBindings>
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Panel.ZIndex="1">
+            <notif:NotificationMessageContainer Manager="{Binding NotificationManager}"/>
+        </Border>
+        <DockPanel Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderFile}" Padding="6,2">
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAdd}" Command="{Binding FetchCommand}"
+                          Icon="{icon:Modern Kind=Add}" InputGestureText="Ctrl+N"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuPaste}" Command="{Binding PasteCommand}"
+                          Icon="{icon:Modern Kind=ClipboardPaste}" InputGestureText="Ctrl+V"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuImport}" Command="{Binding ImportCommand}"
+                          Icon="{icon:Modern Kind=PageArrow, Flip=Horizontal}"
+                          InputGestureText="Ctrl+O"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuExport}" Command="{Binding ExportCommand}"
+                          Icon="{icon:Modern Kind=PageArrow}"
+                          InputGestureText="Ctrl+S"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuExit}" Command="{Binding ExitCommand}"
+                          InputGestureText="Alt+F4"/>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderVideos}" Padding="6,2">
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuDownloadAll}" Command="{Binding DownloadAllCommand}"
+                          Icon="{icon:Modern Kind=Download}" InputGestureText="Ctrl+Shift+A"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
+                          Icon="{icon:Modern Kind=Close}" InputGestureText="Ctrl+Shift+X"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuClearList}" Command="{Binding ClearCommand}"
+                          Icon="{icon:Modern Kind=Delete}" InputGestureText="Ctrl+Shift+D"/>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderOptions}" Padding="6,2">
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSelectFolder}"
+                          Command="{Binding SelectDownloadFolderCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
+                          Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAbout}" Command="{Binding AboutCommand}"
+                              Icon="{icon:Modern Kind=InformationCircle}" InputGestureText="F1"/>
+                </MenuItem>
+            </Menu>
+            <DockPanel Style="{StaticResource ToolDockPanel}" DockPanel.Dock="Top">
+                <Button Content="{icon:Modern Kind=Add}" Command="{Binding FetchCommand}"
+                    ToolTip="{x:Static p:Resources.MainWindow_MenuAdd}"/>
+                <Button Content="{icon:Modern Kind=ClipboardPaste}" Command="{Binding PasteCommand}"
+                    ToolTip="{x:Static p:Resources.MainWindow_MenuPaste}"/>
+                <Separator/>
+                <Button Content="{icon:Modern Kind=Download}" Command="{Binding DownloadAllCommand}"
+                    ToolTip="{x:Static p:Resources.MainWindow_MenuDownloadAll}"/>
+                <Button Content="{icon:Modern Kind=Close}" Command="{Binding CancelAllCommand}"
+                    ToolTip="{x:Static p:Resources.MainWindow_MenuCancelAll}"/>
+                <Button Content="{icon:Modern Kind=Delete}" Command="{Binding ClearCommand}"
+                    ToolTip="{x:Static p:Resources.MainWindow_MenuClearList}"/>
+            </DockPanel>
+            <StatusBar DockPanel.Dock="Bottom" Height="24">
+                <StatusBar.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="4,0"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="icon:PackIconModern">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Height" Value="12"/>
+                    </Style>
+                </StatusBar.Resources>
+                <StatusBarItem>
+                    <StatusBarItem.ToolTip>
+                        <TextBlock>
+                            <Run Text="{x:Static p:Resources.MainWindow_StatusInProcess}"/>
+                            <Run Text="{Binding InProcessCount}"/>
+                            <Run Text="{x:Static p:Resources.MainWindow_StatusSucceeded}"/>
+                            <Run Text="{Binding SuccessCount}"/>
+                            <Run Text="{x:Static p:Resources.MainWindow_StatusFailed}"/>
+                            <Run Text="{Binding FailedCount}"/>
+                        </TextBlock>
+                    </StatusBarItem.ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <icon:PackIconModern Kind="Hourglass"/>
+                        <TextBlock Text="{Binding InProcessCount}"/>
+                        <icon:PackIconModern Kind="Check"/>
+                        <TextBlock Text="{Binding SuccessCount}"/>
+                        <icon:PackIconModern Kind="Stop"/>
+                        <TextBlock Text="{Binding FailedCount}"/>
+                    </StackPanel>
+                </StatusBarItem>
+                <Separator/>
+                <StatusBarItem>
+                    <StackPanel Orientation="Horizontal">
+                        <ContentControl Focusable="False"
+                                        ContentTemplate="{DynamicResource {x:Static adonisUi:Templates.LoadingDots}}"
+                                        Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                                        Width="20" Height="12" Margin="4,0"
+                                        VerticalAlignment="Center"
+                                        Visibility="{Binding InProcessCount, Converter={StaticResource intToVis}, Mode=OneWay}"/>
+                        <TextBlock x:Name="txtStatus"/>
+                    </StackPanel>
+                </StatusBarItem>
+            </StatusBar>
+            <Grid Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="Margin" Value="2"/>
+                            <Setter Property="Padding" Value="10,6"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Source={x:Static p:Settings.Default}, Path=DownloadFolder}"
+                               ToolTip="{x:Static p:Resources.MainWindow_DownloadFolder}"
+                               VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Margin="4"/>
+                    <Button Grid.Column="1" Content="{icon:Modern Kind=FolderOpen, Height=12, Width=12}"
+                        ToolTip="{x:Static p:Resources.MainWindow_OpenFolder}"
+                        Command="{Binding OpenDownloadFolderCommand}"/>
+                    <Button Grid.Column="2" Content="{icon:Modern Kind=Edit, Height=12, Width=12}"
+                        ToolTip="{x:Static p:Resources.PathSelectionControl_Change}"
+                        Command="{Binding SelectDownloadFolderCommand}"/>
+                </Grid>
+                <ListBox Grid.Row="1" x:Name="listVideos" ItemsSource="{Binding VideoInfos}" SelectionMode="Single">
+                    <ListBox.Style>
+                        <Style TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding VideoInfos.Count}" Value="0">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.MainWindow_ListEmpty}"
+                                                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.Style>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource ListBoxItemStyle}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Style.Triggers>
+                                <!-- overrides the accent color background -->
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1HighlightBrush}}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static adonisUi:Brushes.AccentBrush}}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl x:Name="videoContent" Content="{Binding}" Height="60"
+                                    ContentTemplate="{StaticResource downloadTemplate}"
+                                    Tag="{Binding ElementName=listVideos, Path=DataContext}">
+                                <ContentControl.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_CopyUrl}"
+                                              Command="{Binding CopyClipboardCommand}"
+                                              Icon="{icon:Modern Kind=PageCopy}"/>
+                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_ShowInformation}"
+                                              Command="{Binding ShowMetadataCommand}"
+                                              Icon="{icon:Modern Kind=InformationCircle}"/>
+                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_OpenInBrowser}"
+                                                  Command="{Binding OpenInBrowserCommand}"
+                                                  Icon="{icon:Modern Kind=BrowserWire}"/>
+                                        <Separator/>
+                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_Reload}"
+                                                  Command="{Binding ReloadCommand}"
+                                                  Icon="{icon:Modern Kind=RefreshCounterclockwiseDown}"/>
+                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_Remove}"
+                                          Command="{Binding RelativeSource={RelativeSource Self}, Path=Parent.PlacementTarget.Tag.DeleteCommand}"
+                                          CommandParameter="{Binding}"
+                                          IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}, Mode=OneWay}"
+                                          Icon="{icon:Modern Kind=Delete}"/>
+                                    </ContextMenu>
+                                </ContentControl.ContextMenu>
+                            </ContentControl>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Path=State}" Value="Succeeded">
+                                    <Setter TargetName="videoContent" Property="ContentTemplate" Value="{StaticResource finishedTemplate}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=State}" Value="None">
+                                    <Setter TargetName="videoContent" Property="ContentTemplate" Value="{StaticResource fetchTemplate}"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</adonisControls:AdonisWindow>

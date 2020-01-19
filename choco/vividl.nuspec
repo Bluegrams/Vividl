@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>vividl</id>
+    <version>0.1.0</version>
+    <owners>alxnull</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Vividl</title>
+    <authors>alxnull</authors>
+    <projectUrl>https://vividl.sourceforge.io/</projectUrl>
+    <iconUrl>https://gitcdn.xyz/repo/Bluegrams/Vividl/master/img/icon.png</iconUrl>
+    <copyright>© 2020 Bluegrams</copyright>
+    <licenseUrl>https://github.com/bluegrams/Vividl/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/bluegrams/Vividl</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/bluegrams/Vividl/issues</bugTrackerUrl>
+    <tags>video download youtube youtube-dl vividl downloader mp3</tags>
+    <summary>Free video downloader for Windows</summary>
+    <description>
+      Vividl is a Windows app that lets you download videos from various websites, including YouTube.
+      It uses the popular program youtube-dl to extract videos
+      from several hundred websites. Just copy a video URL,
+      paste it in Vividl and download the video in different qualities, convert it to other formats or to an audio track.
+      You can also manage the parallel download of multiple videos and retrieve additonal meta information using the simple UI.
+    </description>
+    <releaseNotes>https://github.com/bluegrams/Vividl/blob/master/Changelog.md</releaseNotes>
+    <!-- =============================== -->      
+
+    <dependencies>
+      <dependency id="dotnetfx" version="4.6.2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
