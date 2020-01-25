@@ -164,7 +164,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Download Folder</value>
   </data>
   <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
-    <value>Failed fetching video</value>
+    <value>Failed to fetch video</value>
   </data>
   <data name="MainWindow_HeaderFile" xml:space="preserve">
     <value>_File</value>

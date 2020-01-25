@@ -25,21 +25,7 @@ namespace Vividl.Services
                 itemVms.Add(videoVm);
                 tasks.Add(videoVm, videoVm.Fetch());
             }
-            try
-            {
-                await Task.WhenAll(tasks.Values.ToArray());
-            }
-            catch (VideoEntryException)
-            {
-                var exceptions = tasks.Where(t => t.Value.Exception != null)
-                                      .Select(t => t.Value.Exception.InnerException);
-                foreach (var ex in exceptions)
-                {
-                    if (ex is VideoEntryException vidEx)
-                        dialogService.ShowError(vidEx.FirstSentence, Resources.MainWindow_FetchFailed_Title);
-                    else dialogService.ShowError(ex.Message, Resources.Error);
-                }
-            }
+            await Task.WhenAll(tasks.Values.ToArray());
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Vividl.Model
 {
     class VideoEntryException : Exception
     {
-        private static Regex rgxSent = new Regex("ERROR: (.*?)[\\.;](?:\\s|$)", RegexOptions.Compiled);
+        private static Regex rgxSent = new Regex("ERROR: (.*?)[\\.;:](?:\\s|$)", RegexOptions.Compiled);
 
         public string FirstSentence { get; }
 

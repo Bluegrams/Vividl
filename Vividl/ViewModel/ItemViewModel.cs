@@ -165,7 +165,7 @@ namespace Vividl.ViewModel
                 () => State != ItemState.None
                 );
             CancelCommand = new RelayCommand(() => Entry.CancelDownload());
-            CopyClipboardCommand = new RelayCommand(() => Clipboard.SetText(Entry.Url));
+            CopyClipboardCommand = new RelayCommand(() => Clipboard.SetText(this.url));
             OpenInBrowserCommand = new RelayCommand(() => Entry.OpenInBrowser(),
                 () => State != ItemState.None);
             ShowInFolderCommand = new RelayCommand(() => Entry.ShowInFolder(fileService),

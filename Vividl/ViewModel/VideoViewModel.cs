@@ -38,10 +38,13 @@ namespace Vividl.ViewModel
             {
                 Entry = await MediaEntry.Fetch(ToString());
             }
-            catch
+            catch (Exception ex)
             {
                 Unavailable = true;
-                throw;
+                if (ex is VideoEntryException vidEx)
+                    messageService.ShowError(vidEx.FirstSentence, Resources.MainWindow_FetchFailed_Title);
+                else messageService.ShowError(ex.Message, Resources.Error);
+                return;
             }
             Entry.DownloadStateChanged += videoDownloadStateChanged;
             State = ItemState.Fetched;

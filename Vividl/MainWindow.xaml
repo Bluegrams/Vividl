@@ -68,16 +68,16 @@
             </Menu>
             <DockPanel Style="{StaticResource ToolDockPanel}" DockPanel.Dock="Top">
                 <Button Content="{icon:Modern Kind=Add}" Command="{Binding FetchCommand}"
-                    ToolTip="{x:Static p:Resources.MainWindow_MenuAdd}"/>
+                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuAdd}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=ClipboardPaste}" Command="{Binding PasteCommand}"
-                    ToolTip="{x:Static p:Resources.MainWindow_MenuPaste}"/>
+                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuPaste}, Converter={StaticResource resConv}}"/>
                 <Separator/>
                 <Button Content="{icon:Modern Kind=Download}" Command="{Binding DownloadAllCommand}"
-                    ToolTip="{x:Static p:Resources.MainWindow_MenuDownloadAll}"/>
+                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuDownloadAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Close}" Command="{Binding CancelAllCommand}"
-                    ToolTip="{x:Static p:Resources.MainWindow_MenuCancelAll}"/>
+                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuCancelAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Delete}" Command="{Binding ClearCommand}"
-                    ToolTip="{x:Static p:Resources.MainWindow_MenuClearList}"/>
+                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuClearList}, Converter={StaticResource resConv}}"/>
             </DockPanel>
             <StatusBar DockPanel.Dock="Bottom" Height="24">
                 <StatusBar.Resources>

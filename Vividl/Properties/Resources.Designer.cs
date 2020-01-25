@@ -215,7 +215,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed fetching video.
+        ///   Looks up a localized string similar to Failed to fetch video.
         /// </summary>
         public static string MainWindow_FetchFailed_Title {
             get {
