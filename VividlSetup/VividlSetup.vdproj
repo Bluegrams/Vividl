@@ -94,6 +94,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -251,15 +259,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Vividl"
-        "ProductCode" = "8:{43907D7A-AD74-4245-A480-0A59C58218A8}"
-        "PackageCode" = "8:{6B334628-4E2C-499E-B6ED-981A2876BD67}"
+        "ProductCode" = "8:{AA57B58F-90F8-42F2-A2F6-1230B8A4F183}"
+        "PackageCode" = "8:{5FD3F650-981B-4B67-A482-EC7075014DAC}"
         "UpgradeCode" = "8:{424347EB-A135-4241-98B1-F2476CA4F959}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.1.0"
+        "ProductVersion" = "8:0.1.1"
         "Manufacturer" = "8:Bluegrams"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://sourceforge.net/projects/vividl/support"
