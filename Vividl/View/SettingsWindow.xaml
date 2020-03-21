@@ -92,6 +92,14 @@
                                       IsChecked="{Binding Settings.OverwriteFiles, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             <CheckBox Content="{x:Static p:Resources.SettingsWindow_PreferRecoding}"
                                       IsChecked="{Binding Settings.PreferRecoding, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox x:Name="chkArchive" Content="{x:Static p:Resources.SettingsWindow_ArchiveFile}"
+                                          IsChecked="{Binding Settings.UseArchive, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                          VerticalAlignment="Center" Margin="4,4,10,4"/>
+                                <TextBox Margin="4" MinWidth="150"
+                                         IsEnabled="{Binding ElementName=chkArchive, Path=IsChecked}"
+                                         Text="{Binding Settings.ArchiveFilename, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </StackPanel>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="{x:Static p:Resources.SettingsWindow_Filename}">

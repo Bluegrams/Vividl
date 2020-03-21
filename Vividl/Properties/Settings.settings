@@ -35,5 +35,11 @@
     <Setting Name="PreferRecoding" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ArchiveFilename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.archive.txt</Value>
+    </Setting>
+    <Setting Name="UseArchive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -29,7 +29,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{A1954952
 	ProjectSection(SolutionItems) = preProject
 		choco\tools\chocolateyinstall.ps1 = choco\tools\chocolateyinstall.ps1
 		choco\tools\chocolateyUninstall.ps1 = choco\tools\chocolateyUninstall.ps1
-		choco\tools\VERIFICATION.txt = choco\tools\VERIFICATION.txt
 	EndProjectSection
 EndProject
 Global

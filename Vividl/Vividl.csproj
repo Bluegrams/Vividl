@@ -125,6 +125,7 @@
     <Compile Include="Helpers\ButtonEx.cs" />
     <Compile Include="Helpers\EnumExtension.cs" />
     <Compile Include="Helpers\ValueConverters.cs" />
+    <Compile Include="Model\CustomYoutubeDL.cs" />
     <Compile Include="Model\DownloadOption.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\IDownloadEntry.cs" />

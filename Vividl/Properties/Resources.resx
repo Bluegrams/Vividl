@@ -382,4 +382,10 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="VideoEntry_Reload" xml:space="preserve">
     <value>Reload Video</value>
   </data>
+  <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+    <value>Use Download Archive</value>
+  </data>
+  <data name="MetadataWindow_Source" xml:space="preserve">
+    <value>Source:</value>
+  </data>
 </root>

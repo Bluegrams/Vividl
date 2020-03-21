@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using Bluegrams.Application;
@@ -55,12 +56,17 @@ namespace Vividl
 
         public static void InitializeDownloadEngine()
         {
-            var ytdl = SimpleIoc.Default.GetInstance<YoutubeDL>();
+            var ytdl = SimpleIoc.Default.GetInstance<CustomYoutubeDL>();
             ytdl.YoutubeDLPath = Settings.Default.YoutubeDLPath;
             ytdl.FFmpegPath = Settings.Default.FfmpegPath;
             ytdl.OutputFolder = Settings.Default.DownloadFolder;
             ytdl.RestrictFilenames = Settings.Default.RestrictFilenames;
             ytdl.OverwriteFiles = Settings.Default.OverwriteFiles;
+            if (Settings.Default.UseArchive)
+            {
+                ytdl.DownloadArchive = Path.Combine(Settings.Default.DownloadFolder, Settings.Default.ArchiveFilename);
+            }
+            else ytdl.DownloadArchive = null;
         }
 
         private void registerServices()
@@ -71,7 +77,8 @@ namespace Vividl
             SimpleIoc.Default.Register<IDialogService, NotificationDialogService>();
             SimpleIoc.Default.Register<INotificationMessageManager, NotificationMessageManager>();
             SimpleIoc.Default.Register<IThemeResolver, ThemeResolver>();
-            SimpleIoc.Default.Register(() => new YoutubeDL(Settings.Default.MaxProcesses)); 
+            SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
+            SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
         }
 
         private void registerVMs()

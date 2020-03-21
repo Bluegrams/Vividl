@@ -69,26 +69,31 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock>
+                            <Run Text="{x:Static p:Resources.MetadataWindow_Source}"/>
+                            <Run/>
+                            <Run Text="{Binding Entry.Metadata.ExtractorKey, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Column="1">
                             <Run Text="{x:Static p:Resources.MetadataWindow_Duration}"/>
                             <Run/>
                             <Run Text="{Binding Duration, Mode=OneWay}"/>
                             </TextBlock>
-                            <TextBlock Grid.Column="1">
+                            <TextBlock Grid.Row="1" Grid.Column="0">
                             <Run Text="{x:Static p:Resources.MetadataWindow_Creator}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.Creator, Mode=OneWay}"/>
                             </TextBlock>
-                            <TextBlock Grid.Row="1">
+                            <TextBlock Grid.Row="1" Grid.Column="1">
                             <Run Text="{x:Static p:Resources.MetadataWindow_UploadDate}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.UploadDate, Mode=OneWay, StringFormat='{}{0:yyyy-MM-dd}'}"/>
                             </TextBlock>
-                            <TextBlock Grid.Row="1" Grid.Column="1">
+                            <TextBlock Grid.Row="2" Grid.Column="0">
                             <Run Text="{x:Static p:Resources.MetadataWindow_Uploader}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.Uploader, Mode=OneWay}"/>
                             </TextBlock>
-                            <TextBlock Grid.Row="2">
+                            <TextBlock Grid.Row="2" Grid.Column="1">
                             <Run Text="{x:Static p:Resources.MetadataWindow_Views}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.ViewCount, Mode=OneWay}"/>

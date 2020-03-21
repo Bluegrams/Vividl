@@ -163,5 +163,29 @@ namespace Vividl.Properties {
                 this["PreferRecoding"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".archive.txt")]
+        public string ArchiveFilename {
+            get {
+                return ((string)(this["ArchiveFilename"]));
+            }
+            set {
+                this["ArchiveFilename"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseArchive {
+            get {
+                return ((bool)(this["UseArchive"]));
+            }
+            set {
+                this["UseArchive"] = value;
+            }
+        }
     }
 }

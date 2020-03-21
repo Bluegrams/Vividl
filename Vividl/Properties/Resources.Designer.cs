@@ -440,6 +440,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source:.
+        /// </summary>
+        public static string MetadataWindow_Source {
+            get {
+                return ResourceManager.GetString("MetadataWindow_Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uploaded:.
         /// </summary>
         public static string MetadataWindow_UploadDate {
@@ -508,6 +517,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_Appearance {
             get {
                 return ResourceManager.GetString("SettingsWindow_Appearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Download Archive.
+        /// </summary>
+        public static string SettingsWindow_ArchiveFile {
+            get {
+                return ResourceManager.GetString("SettingsWindow_ArchiveFile", resourceCulture);
             }
         }
         
