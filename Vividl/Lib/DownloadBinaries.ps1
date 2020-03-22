@@ -16,6 +16,8 @@ echo "Downloading youtube-dl..."
 $ytdl_url = "https://yt-dl.org/latest/youtube-dl.exe"
 $ytdl_exe = Join-Path $PSScriptRoot "youtube-dl.exe"
 Invoke-WebRequest -Uri $ytdl_url -OutFile $ytdl_exe
-echo "youtube-dl version: $(& $ytdl_exe --version)"
+$version = $(& $ytdl_exe --version)
+echo "youtube-dl version: $version"
+echo $version > (Join-Path $PSScriptRoot "youtube-dl-version.txt")
 
 echo "Downloads finished."

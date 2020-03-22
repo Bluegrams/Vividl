@@ -88,7 +88,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Convert to M4A (Audio).
+        ///   Looks up a localized string similar to Convert to M4A.
         /// </summary>
         public static string DownloadOption_M4A {
             get {
@@ -106,7 +106,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Convert to MP3 (Audio).
+        ///   Looks up a localized string similar to Convert to MP3.
         /// </summary>
         public static string DownloadOption_MP3 {
             get {
@@ -124,7 +124,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Convert to Ogg Vorbis (Audio).
+        ///   Looks up a localized string similar to Convert to Ogg Vorbis.
         /// </summary>
         public static string DownloadOption_Vorbis {
             get {
@@ -133,7 +133,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Convert to WAV (Audio).
+        ///   Looks up a localized string similar to Convert to WAV.
         /// </summary>
         public static string DownloadOption_WAV {
             get {
@@ -337,6 +337,33 @@ namespace Vividl.Properties {
         public static string MainWindow_MenuPaste {
             get {
                 return ResourceManager.GetString("MainWindow_MenuPaste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Remove.
+        /// </summary>
+        public static string MainWindow_MenuRemove {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All _Finished Downloads.
+        /// </summary>
+        public static string MainWindow_MenuRemoveFinished {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuRemoveFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All _Unavailable Downloads.
+        /// </summary>
+        public static string MainWindow_MenuRemoveUnavailable {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuRemoveUnavailable", resourceCulture);
             }
         }
         

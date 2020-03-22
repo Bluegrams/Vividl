@@ -127,22 +127,22 @@
     <value>Best Download</value>
   </data>
   <data name="DownloadOption_M4A" xml:space="preserve">
-    <value>Convert to M4A (Audio)</value>
+    <value>Convert to M4A</value>
   </data>
   <data name="DownloadOption_MKV" xml:space="preserve">
     <value>Merge to MKV</value>
   </data>
   <data name="DownloadOption_MP3" xml:space="preserve">
-    <value>Convert to MP3 (Audio)</value>
+    <value>Convert to MP3</value>
   </data>
   <data name="DownloadOption_MP4" xml:space="preserve">
     <value>Convert to MP4</value>
   </data>
   <data name="DownloadOption_Vorbis" xml:space="preserve">
-    <value>Convert to Ogg Vorbis (Audio)</value>
+    <value>Convert to Ogg Vorbis</value>
   </data>
   <data name="DownloadOption_WAV" xml:space="preserve">
-    <value>Convert to WAV (Audio)</value>
+    <value>Convert to WAV</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
@@ -387,5 +387,14 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   </data>
   <data name="MetadataWindow_Source" xml:space="preserve">
     <value>Source:</value>
+  </data>
+  <data name="MainWindow_MenuRemove" xml:space="preserve">
+    <value>_Remove</value>
+  </data>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>All _Finished Downloads</value>
+  </data>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>All _Unavailable Downloads</value>
   </data>
 </root>

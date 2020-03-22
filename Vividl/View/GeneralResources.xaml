@@ -10,6 +10,7 @@
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
     <local:IntToVisibilityConverter x:Key="intToVis"/>
     <local:ResTextConverter x:Key="resConv"/>
+    <local:DownloadOptionIconConverter x:Key="iconConv"/>
     <!-- Control styling -->
     <Style TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
         <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>
@@ -47,6 +48,10 @@
         <DockPanel Background="Transparent">
             <icon:PackIconModern Kind="Warning" VerticalAlignment="Center" Margin="4,0"
                                  Visibility="{Binding Path=Unavailable, Converter={StaticResource boolToVis}}"/>
+            <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Templates.LoadingCircle}}"
+                Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                Visibility="{Binding Path=Unavailable, Converter={StaticResource invBoolToVis}}"
+                Width="16" Height="16" Focusable="False" Margin="4,0"/>
             <TextBlock VerticalAlignment="Center" Text="{Binding}" Margin="4"/>
         </DockPanel>
     </DataTemplate>
@@ -70,7 +75,17 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal"
                         IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
                 <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
-                          Margin="4,0" Height="25"/>
+                          Margin="4,0" Height="25">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <icon:PackIconModern Kind="{Binding Path=IsAudio, Converter={StaticResource iconConv}}"
+                                                     DockPanel.Dock="Left" Margin="0,0,4,0"/>
+                                <ContentControl Content="{Binding}"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
                 <Button Command="{Binding ShowMetadataCommand}" Margin="0" Height="25"
                         ToolTip="{x:Static p:Resources.VideoEntry_ShowInformation}"

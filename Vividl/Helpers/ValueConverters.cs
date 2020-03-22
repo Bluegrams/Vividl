@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
+using MahApps.Metro.IconPacks;
 
 namespace Vividl.Helpers
 {
@@ -53,6 +54,24 @@ namespace Vividl.Helpers
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value.ToString().Replace("_", "");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class DownloadOptionIconConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool isAudio)
+            {
+                if (isAudio) return PackIconModernKind.Music;
+                else return PackIconModernKind.Video;
+            }
+            else throw new ArgumentException();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

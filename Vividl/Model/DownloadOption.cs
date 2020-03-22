@@ -18,9 +18,12 @@ namespace Vividl.Model
 
         public string Description { get; }
 
-        public DownloadOption(string description, bool needsOverwriteCheck)
+        public bool IsAudio { get; }
+
+        public DownloadOption(string description, bool isAudio, bool needsOverwriteCheck)
         {
             this.Description = description;
+            this.IsAudio = isAudio;
             this.needsOverwriteCheck = needsOverwriteCheck;
         }
 
@@ -98,7 +101,7 @@ namespace Vividl.Model
 
         public AudioConversionDownload(AudioConversionFormat format,
             string description = null, bool needsOverwriteCheck = true)
-            : base(description, needsOverwriteCheck)
+            : base(description, true, needsOverwriteCheck)
         {
             this.ConversionFormat = format;
         }
@@ -149,7 +152,7 @@ namespace Vividl.Model
         public VideoDownload(string formatSelection,
                             VideoRecodeFormat recodeFormat = VideoRecodeFormat.None,
                             string description = null, bool needsOverwriteCheck = true)
-            : base(description, needsOverwriteCheck)
+            : base(description, false, needsOverwriteCheck)
         {
             this.FormatSelection = formatSelection;
             this.RecodeFormat = recodeFormat;

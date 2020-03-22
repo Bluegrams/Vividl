@@ -20,6 +20,7 @@ namespace Vividl.ViewModel
 {
     public class MainViewModel<T> : ViewModelBase where T : IDownloadEntry
     {
+        ObservableCollection<ItemViewModel<T>> videoInfos;
         IItemProvider<T> itemProvider;
         IDialogService dialogService;
         IFileService fileService;
@@ -27,7 +28,15 @@ namespace Vividl.ViewModel
 
         public INotificationMessageManager NotificationManager { get; }
 
-        public ObservableCollection<ItemViewModel<T>> VideoInfos { get; private set; }
+        public ObservableCollection<ItemViewModel<T>> VideoInfos
+        {
+            get => videoInfos;
+            set
+            {
+                videoInfos = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public ICommand FetchCommand { get; }
 
@@ -44,6 +53,10 @@ namespace Vividl.ViewModel
         public ICommand DownloadAllCommand { get; }
 
         public ICommand CancelAllCommand { get; }
+
+        public ICommand RemoveUnavailableCommand { get; }
+
+        public ICommand RemoveFinishedCommand { get; }
 
         public ICommand DeleteCommand { get; }
 
@@ -103,6 +116,8 @@ namespace Vividl.ViewModel
             ExitCommand = new RelayCommand(() => Environment.Exit(0));
             DownloadAllCommand = new RelayCommand(async () => await DownloadAll(), () => VideoInfos.Count > 0);
             CancelAllCommand = new RelayCommand(() => CancelAllDownloads(), () => InProcessCount > 0);
+            RemoveUnavailableCommand = new RelayCommand(() => RemoveAllUnavailable());
+            RemoveFinishedCommand = new RelayCommand(() => RemoveAllFinished());
             DeleteCommand = new RelayCommand<ItemViewModel<T>>(o => VideoInfos.Remove(o));
             SettingsCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, callback: applySettingsCallback))
@@ -181,6 +196,16 @@ namespace Vividl.ViewModel
             {
                 vid.Entry?.CancelDownload();
             }
+        }
+
+        public void RemoveAllUnavailable()
+        {
+            VideoInfos = new ObservableCollection<ItemViewModel<T>>(VideoInfos.Where(v => !v.Unavailable));
+        }
+
+        public void RemoveAllFinished()
+        {
+            VideoInfos = new ObservableCollection<ItemViewModel<T>>(VideoInfos.Where(v => v.State != ItemState.Succeeded));
         }
 
         public void SetStats(int count = 1, bool finished = false, bool success = true)

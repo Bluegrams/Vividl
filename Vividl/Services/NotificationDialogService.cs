@@ -59,7 +59,7 @@ namespace Vividl.Services
                     Width = 18
                 })
                 .Dismiss().WithButton(buttonText ?? Resources.Submit, button => { })
-                .Dismiss().WithDelay(TimeSpan.FromSeconds(10)).Queue();
+                .Dismiss().WithDelay(TimeSpan.FromSeconds(7)).Queue();
         }
     }
 }

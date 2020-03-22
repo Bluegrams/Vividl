@@ -5,6 +5,7 @@
         xmlns:v="clr-namespace:Vividl.View"
         xmlns:h="clr-namespace:Vividl.Helpers"
         xmlns:model="clr-namespace:Vividl.Model"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         Title="{x:Static p:Resources.SettingsWindow_Title}" Height="400" Width="500"
@@ -65,7 +66,17 @@
                                            VerticalAlignment="Center" Margin="4,4,10,4"/>
                                 <ComboBox ItemsSource="{Binding DefaultFormats, Mode=OneWay}"
                                           Margin="4"
-                                          SelectedIndex="{Binding Settings.DefaultFormat, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                                          SelectedIndex="{Binding Settings.DefaultFormat, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <DockPanel>
+                                                <icon:PackIconModern Kind="{Binding Path=IsAudio, Converter={StaticResource iconConv}}"
+                                                     DockPanel.Dock="Left" Margin="0,0,4,0"/>
+                                                <ContentControl Content="{Binding}"/>
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
                             </StackPanel>
                             <CheckBox Content="{x:Static p:Resources.SettingsWindow_ShowAllFormats}"
                                       IsChecked="{Binding Settings.ShowAllFormats, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>

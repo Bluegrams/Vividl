@@ -53,6 +53,13 @@
                           Icon="{icon:Modern Kind=Download}" InputGestureText="Ctrl+Shift+A"/>
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
                           Icon="{icon:Modern Kind=Close}" InputGestureText="Ctrl+Shift+X"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemove}">
+                        <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemoveUnavailable}"
+                                  Command="{Binding RemoveUnavailableCommand}"/>
+                        <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemoveFinished}"
+                                  Command="{Binding RemoveFinishedCommand}"/>
+                    </MenuItem>
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuClearList}" Command="{Binding ClearCommand}"
                           Icon="{icon:Modern Kind=Delete}" InputGestureText="Ctrl+Shift+D"/>
                 </MenuItem>

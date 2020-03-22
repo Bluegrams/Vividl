@@ -32,7 +32,17 @@
         <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
             <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
                       Margin="4" VerticalContentAlignment="Center"
-                      IsEnabled="{Binding ElementName=butDownload, Path=IsEnabled}"/>
+                      IsEnabled="{Binding ElementName=butDownload, Path=IsEnabled}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <icon:PackIconModern Kind="{Binding Path=IsAudio, Converter={StaticResource iconConv}}"
+                                                     DockPanel.Dock="Left" Margin="0,0,4,0"/>
+                            <ContentControl Content="{Binding}"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <Button Content="{x:Static p:Resources.Cancel}" DockPanel.Dock="Right"
                     MinWidth="80" IsCancel="True"/>
             <Button DockPanel.Dock="Right" MinWidth="100" Command="{Binding DownloadCommand}"

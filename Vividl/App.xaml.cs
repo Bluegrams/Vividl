@@ -5,6 +5,7 @@ using System.Windows.Media;
 using Bluegrams.Application;
 using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
+using Vividl.Helpers;
 using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
@@ -31,6 +32,7 @@ namespace Vividl
 #if PORTABLE
             PortableSettingsProvider.ApplyProvider(Settings.Default);
 #endif
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; ;
             // Set a default download folder if none is specified.
             if (String.IsNullOrEmpty(Settings.Default.DownloadFolder))
                 Settings.Default.DownloadFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos) + "\\Downloads";
@@ -47,6 +49,12 @@ namespace Vividl
             SimpleIoc.Default.Register<IUpdateChecker>(
                 () => new WpfUpdateChecker(UPDATE_URL, mainWindow, UPDATE_IDENTIFIER));
             mainWindow.Show();
+        }
+
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Logger.Default.Log("An unhandled exception caused the application to terminate unexpectedly.",
+                (Exception)e.ExceptionObject);
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
