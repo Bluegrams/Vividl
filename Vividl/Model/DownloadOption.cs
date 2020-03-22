@@ -50,11 +50,11 @@ namespace Vividl.Model
         public async Task<RunResult<string>> RunDownload(YoutubeDL ydl, VideoEntry video,
             CancellationToken ct, IProgress<DownloadProgress> progress)
         {
+            bool restricted = ydl.RestrictFilenames;
+            string ext = GetExt();
+            string path = Path.Combine(ydl.OutputFolder, $"{Utils.Sanitize(video.Title, restricted)}.{ext}");
             if (!ydl.OverwriteFiles && needsOverwriteCheck)
             {
-                bool restricted = ydl.RestrictFilenames;
-                string ext = GetExt();
-                string path = Path.Combine(ydl.OutputFolder, $"{Utils.Sanitize(video.Title, restricted)}.{ext}");
                 if (File.Exists(path))
                 {
                     // Don't redownload if file exists.
@@ -62,7 +62,13 @@ namespace Vividl.Model
                     return new RunResult<string>(true, new string[0], path);
                 }
             }
-            return await RunRealDownload(ydl, video.Url, ct, progress);
+            var result = await RunRealDownload(ydl, video.Url, ct, progress);
+            // we need this workaround when the file to be downloaded is already in archive
+            if (result.Success && String.IsNullOrWhiteSpace(result.Data))
+            {
+                return new RunResult<string>(true, new string[] { }, path);
+            }
+            else return result;
         }
 
         /// <summary>

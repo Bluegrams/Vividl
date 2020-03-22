@@ -44,5 +44,5 @@ using Bluegrams.Application.Attributes;
                                               // app, or any theme specific resource dictionaries)
 )]
 
-[assembly: AssemblyVersion("0.1.1")]
-[assembly: AssemblyFileVersion("0.1.1")]
+[assembly: AssemblyVersion("0.2.0")]
+[assembly: AssemblyFileVersion("0.2.0")]

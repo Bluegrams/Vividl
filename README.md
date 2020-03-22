@@ -8,7 +8,7 @@
 
 [![](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/vividl/files/)
 
-Vividl is a Windows app that lets you download videos from various websites, including YouTube.
+Vividl is a Windows app that lets you download videos from various websites, including YouTube, Vimeo and Dailymotion.
 It uses the popular program [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) to extract videos
 from [several hundred websites](https://ytdl-org.github.io/youtube-dl/supportedsites.html). Just copy a video URL,
 paste it in Vividl and download the video in different qualities, convert it to other formats or to an audio track.
