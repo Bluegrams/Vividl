@@ -39,7 +39,9 @@ You can also manage the parallel download of multiple videos and retrieve addito
 
 #### Requirements
 
-Vividl requires Windows 7 or newer and .NET Framework v.4.6.2 or higher.
+Vividl requires Windows 7 or newer with the following components installed:
+- [.NET Framework v.4.6.2](https://www.microsoft.com/de-de/download/details.aspx?id=53345) or higher
+- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/de-de/download/details.aspx?id=8328)
 
 #### Get Vividl
 
