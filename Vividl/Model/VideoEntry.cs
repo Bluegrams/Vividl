@@ -10,6 +10,7 @@ namespace Vividl.Model
     public class VideoEntry : MediaEntry
     {
         public override int TotalItems => 1;
+        public override bool FileAvailable => !String.IsNullOrEmpty(DownloadPath);
 
         public string DownloadPath { get; private set; } = String.Empty;
 
@@ -38,13 +39,14 @@ namespace Vividl.Model
 
         public override void OpenFile()
         {
-            if (!String.IsNullOrEmpty(DownloadPath))
+            if (FileAvailable)
                 Process.Start(DownloadPath);
         }
 
         public override void ShowInFolder(IFileService fileService)
         {
-            fileService.ShowInExplorer(DownloadPath);
+            if (FileAvailable)
+                fileService.ShowInExplorer(DownloadPath);
         }
     }
 }

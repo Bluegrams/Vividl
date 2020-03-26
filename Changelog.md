@@ -1,5 +1,9 @@
 # Vividl Changelog
 
+### v.0.2.1 (2020-03)
+- **New:** Option to disable download checking.
+- **Fixed:** Download failures of some download formats.
+
 ### v.0.2.0 (2020-03)
 - **New:** Use download archive.
 - **New:** Remove all unavailable/ finished downloads.

@@ -130,7 +130,12 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding Path=Entry.Title}"/>
-            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_Finished}"/>
+            <!-- Show if file has been downloaded successfully -->
+            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_Finished}"
+                       Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource boolToVis}}"/>
+            <!-- Show if file has not been re-downloaded because in archive || no overwrites -->
+            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_AlreadyDownloaded}"
+                       Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource invBoolToVis}}"/>
             <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                 <StackPanel.Resources>
                     <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">

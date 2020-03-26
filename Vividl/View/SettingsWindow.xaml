@@ -8,6 +8,7 @@
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:app="clr-namespace:Bluegrams.Application;assembly=AppHelpers.WPF"
         Title="{x:Static p:Resources.SettingsWindow_Title}" Height="400" Width="500"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
@@ -123,6 +124,25 @@
             </TabItem>
             <TabItem Header="{x:Static p:Resources.SettingsWindow_Binaries}">
                 <StackPanel>
+                    <GroupBox Header="Vividl">
+                        <StackPanel>
+                            <DockPanel>
+                                <Button DockPanel.Dock="Right" Content="{x:Static p:Resources.SettingsWindow_CheckForUpdates}"
+                                        Command="{Binding Path=UpdateVividlCommand}"/>
+                                <Label>
+                                    <WrapPanel>
+                                        <TextBlock>
+                                            <Run Text="{x:Static p:Resources.SettingsWindow_Version}"/>
+                                            <Run Text="  "/>
+                                            <Run Text="{x:Static app:AppInfo.Version}"/>
+                                        </TextBlock>
+                                    </WrapPanel>
+                                </Label>
+                            </DockPanel>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_AutoCheckUpdates}"
+                                      IsChecked="{Binding Settings.AutoCheckUpdates, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                        </StackPanel>
+                    </GroupBox>
                     <GroupBox Header="{x:Static p:Resources.SettingsWindow_YoutubeDL}">
                         <StackPanel>
                             <DockPanel>

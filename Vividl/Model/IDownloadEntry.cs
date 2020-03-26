@@ -9,6 +9,7 @@ namespace Vividl.Model
         string Url { get; }
         string Title { get; }
         int TotalItems { get; }
+        bool FileAvailable { get; }
 
         Task<DownloadResult> DownloadVideo(IDownloadOption downloadOption);
         void CancelDownload();

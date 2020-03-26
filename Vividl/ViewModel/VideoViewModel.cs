@@ -55,7 +55,7 @@ namespace Vividl.ViewModel
                 {
                     return new VideoDownload(fm.FormatId,
                                     description: String.Format("{0} - {1}", fm.Extension, fm.Format),
-                                    needsOverwriteCheck: false);
+                                    fileExtension: fm.Extension);
                 });
                 UpdateCurrentFormats();
             }

@@ -58,8 +58,8 @@
     <Reference Include="AdonisUI.ClassicTheme, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AdonisUI.ClassicTheme.1.14.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
     </Reference>
-    <Reference Include="AppHelpers.WPF, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WPF.0.1.0-beta5\lib\net45\AppHelpers.WPF.dll</HintPath>
+    <Reference Include="AppHelpers.WPF, Version=0.1.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WPF.0.1.0-beta7\lib\net45\AppHelpers.WPF.dll</HintPath>
     </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
@@ -125,7 +125,6 @@
     <Compile Include="Helpers\ButtonEx.cs" />
     <Compile Include="Helpers\EnumExtension.cs" />
     <Compile Include="Helpers\ValueConverters.cs" />
-    <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Model\CustomYoutubeDL.cs" />
     <Compile Include="Model\DownloadOption.cs" />
     <Compile Include="Model\Enums.cs" />

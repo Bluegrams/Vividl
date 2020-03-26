@@ -4,6 +4,7 @@ using AdonisUI.Controls;
 using Bluegrams.Application;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using Vividl.Properties;
 using Vividl.View;
 using Vividl.ViewModel;
 
@@ -24,8 +25,11 @@ namespace Vividl
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
-            updateChecker.CheckForUpdates();
+            if (Settings.Default.AutoCheckUpdates)
+            {
+                var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
+                updateChecker.CheckForUpdates();
+            }
         }
 
         private void handleStatusMessage(NotificationMessage msg)

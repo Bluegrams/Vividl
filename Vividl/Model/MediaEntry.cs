@@ -21,6 +21,7 @@ namespace Vividl.Model
         public string Url => Metadata.WebpageUrl;
         public string Title => Metadata.Title;
         public abstract int TotalItems { get; }
+        public abstract bool FileAvailable { get; }
 
         public event EventHandler<ProgressEventArgs> DownloadStateChanged;
 

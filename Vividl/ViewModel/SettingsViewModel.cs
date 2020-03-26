@@ -16,6 +16,7 @@ namespace Vividl.ViewModel
     {
         private IDialogService dialogService;
         private IThemeResolver themeResolver;
+        private IUpdateChecker updateChecker;
 
         public IFileService FileService { get; }
 
@@ -26,6 +27,7 @@ namespace Vividl.ViewModel
         public ICommand SwitchAppThemeCommand { get; }
 
         public ILibUpdateService YoutubeDLUpdateService { get; }
+        public ICommand UpdateVividlCommand { get; }
         public ICommand UpdateYoutubeDLCommand { get; }
 
         public SettingsViewModel(IFileService fileService, IDialogService dialogService,
@@ -34,15 +36,19 @@ namespace Vividl.ViewModel
             this.FileService = fileService;
             this.dialogService = dialogService;
             this.themeResolver = themeResolver;
+            this.updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
             DefaultFormats = new ObservableCollection<IDownloadOption>(optionProvider.CreateDownloadOptions());
             SwitchAppThemeCommand = new RelayCommand(() => SwitchAppTheme());
             var ydl = SimpleIoc.Default.GetInstance<YoutubeDLSharp.YoutubeDL>();
             YoutubeDLUpdateService = new YtdlUpdateService(ydl);
+            UpdateVividlCommand = new RelayCommand(() => UpdateVividl());
             UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
         }
 
         public void SwitchAppTheme()
             => themeResolver.SetColorScheme(Settings.Default.AppTheme);
+
+        public void UpdateVividl() => updateChecker.CheckForUpdates(UpdateNotifyMode.Always);
 
         public async Task UpdateYoutubeDL()
         {

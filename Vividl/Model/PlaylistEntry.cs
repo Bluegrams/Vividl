@@ -10,6 +10,8 @@ namespace Vividl.Model
     public class PlaylistEntry : MediaEntry
     {
         public override int TotalItems => Metadata.Entries?.Length ?? 1;
+        public override bool FileAvailable
+            => DownloadPaths != null && DownloadPaths.Length > 0 && !String.IsNullOrEmpty(DownloadPaths[0]);
 
         public string[] DownloadPaths { get; private set; }
 
@@ -38,13 +40,14 @@ namespace Vividl.Model
 
         public override void OpenFile()
         {
-            if (DownloadPaths?.Length > 0)
+            if (FileAvailable)
                 Process.Start(DownloadPaths[0]);
         }
 
         public override void ShowInFolder(IFileService fileService)
         {
-            fileService.ShowInExplorer(DownloadPaths);
+            if (FileAvailable)
+                fileService.ShowInExplorer(DownloadPaths);
         }
     }
 }

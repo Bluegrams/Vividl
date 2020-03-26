@@ -124,7 +124,7 @@
     <value>Convert to AVI</value>
   </data>
   <data name="DownloadOption_Best" xml:space="preserve">
-    <value>Best Download</value>
+    <value>Best Direct Download</value>
   </data>
   <data name="DownloadOption_M4A" xml:space="preserve">
     <value>Convert to M4A</value>
@@ -329,7 +329,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>A_bout</value>
   </data>
   <data name="SettingsWindow_Binaries" xml:space="preserve">
-    <value>Binaries</value>
+    <value>Application</value>
   </data>
   <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
     <value>Check For Updates</value>
@@ -396,5 +396,14 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   </data>
   <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
     <value>All _Unavailable Downloads</value>
+  </data>
+  <data name="Video_DownloadFailed" xml:space="preserve">
+    <value>Failed to download "{0}".</value>
+  </data>
+  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+    <value>Automatically check for updates at startup</value>
+  </data>
+  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+    <value>Already existent. Item skipped.</value>
   </data>
 </root>

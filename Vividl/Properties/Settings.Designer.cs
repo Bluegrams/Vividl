@@ -187,5 +187,17 @@ namespace Vividl.Properties {
                 this["UseArchive"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoCheckUpdates {
+            get {
+                return ((bool)(this["AutoCheckUpdates"]));
+            }
+            set {
+                this["AutoCheckUpdates"] = value;
+            }
+        }
     }
 }

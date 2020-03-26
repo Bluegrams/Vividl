@@ -169,8 +169,9 @@ namespace Vividl.ViewModel
             OpenInBrowserCommand = new RelayCommand(() => Entry.OpenInBrowser(),
                 () => State != ItemState.None);
             ShowInFolderCommand = new RelayCommand(() => Entry.ShowInFolder(fileService),
-                () => State == ItemState.Succeeded);
-            PlayCommand = new RelayCommand(() => Entry.OpenFile(), () => State == ItemState.Succeeded);
+                () => State == ItemState.Succeeded && Entry.FileAvailable);
+            PlayCommand = new RelayCommand(() => Entry.OpenFile(),
+                () => State == ItemState.Succeeded && Entry.FileAvailable);
             ReloadCommand = new RelayCommand(async () => await Reload(),
                 () => State == ItemState.Succeeded || Unavailable);
         }
@@ -201,6 +202,8 @@ namespace Vividl.ViewModel
                 case DownloadResult.Failed:
                     State = ItemState.Fetched;
                     mainVm.SetStats(finished: true, success: false);
+                    Messenger.Default.Send(
+                        new NotificationMessage(String.Format(Resources.Video_DownloadFailed, Entry.Title)));
                     break;
             }
             // Manually update CanExecute state of commands.

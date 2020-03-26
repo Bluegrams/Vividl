@@ -5,7 +5,6 @@ using System.Windows.Media;
 using Bluegrams.Application;
 using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
-using Vividl.Helpers;
 using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;

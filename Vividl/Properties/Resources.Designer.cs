@@ -79,7 +79,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Best Download.
+        ///   Looks up a localized string similar to Best Direct Download.
         /// </summary>
         public static string DownloadOption_Best {
             get {
@@ -557,7 +557,16 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Binaries.
+        ///   Looks up a localized string similar to Automatically check for updates at startup.
+        /// </summary>
+        public static string SettingsWindow_AutoCheckUpdates {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AutoCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application.
         /// </summary>
         public static string SettingsWindow_Binaries {
             get {
@@ -764,6 +773,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to download &quot;{0}&quot;..
+        /// </summary>
+        public static string Video_DownloadFailed {
+            get {
+                return ResourceManager.GetString("Video_DownloadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finished &quot;{0}&quot;..
         /// </summary>
         public static string Video_DownloadFinished {
@@ -778,6 +796,15 @@ namespace Vividl.Properties {
         public static string Video_DownloadStarting {
             get {
                 return ResourceManager.GetString("Video_DownloadStarting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already existent. Item skipped..
+        /// </summary>
+        public static string VideoEntry_AlreadyDownloaded {
+            get {
+                return ResourceManager.GetString("VideoEntry_AlreadyDownloaded", resourceCulture);
             }
         }
         
