@@ -58,8 +58,8 @@
     <Reference Include="AdonisUI.ClassicTheme, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AdonisUI.ClassicTheme.1.14.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
     </Reference>
-    <Reference Include="AppHelpers.WPF, Version=0.1.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WPF.0.1.0-beta7\lib\net45\AppHelpers.WPF.dll</HintPath>
+    <Reference Include="AppHelpers.WPF, Version=0.1.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WPF.0.1.0-beta8\lib\net45\AppHelpers.WPF.dll</HintPath>
     </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
@@ -220,6 +220,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -287,7 +287,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clea_r Video List.
+        ///   Looks up a localized string similar to Clea_r Download List.
         /// </summary>
         public static string MainWindow_MenuClearList {
             get {
@@ -737,7 +737,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Video List.
+        ///   Looks up a localized string similar to Download List.
         /// </summary>
         public static string SettingsWindow_VideoList {
             get {
