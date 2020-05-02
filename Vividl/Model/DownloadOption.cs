@@ -133,7 +133,12 @@ namespace Vividl.Model
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress)
         {
+#if DEBUG
+            return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress,
+                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)));
+#else
             return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress);
+#endif
         }
 
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
