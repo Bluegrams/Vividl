@@ -228,6 +228,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <None Include="Lib\DownloadBinaries.ps1" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
