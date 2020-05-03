@@ -21,10 +21,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="YoutubeDLPath" Roaming="true" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Lib\\youtube-dl.exe</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="FfmpegPath" Roaming="true" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Lib\\ffmpeg.exe</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="OverwriteFiles" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

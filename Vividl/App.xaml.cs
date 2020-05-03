@@ -32,9 +32,7 @@ namespace Vividl
             PortableSettingsProvider.ApplyProvider(Settings.Default);
 #endif
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; ;
-            // Set a default download folder if none is specified.
-            if (String.IsNullOrEmpty(Settings.Default.DownloadFolder))
-                Settings.Default.DownloadFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos) + "\\Downloads";
+            initializeDefaultSettings();
             // register services and view models
             registerServices();
             InitializeDownloadEngine();
@@ -59,6 +57,24 @@ namespace Vividl
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void initializeDefaultSettings()
+        {
+            // Set a default download folder if none is specified.
+            if (String.IsNullOrEmpty(Settings.Default.DownloadFolder))
+                Settings.Default.DownloadFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos) + "\\Downloads";
+#if WITH_LIB
+            if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath))
+                Settings.Default.YoutubeDLPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "youtube-dl.exe");
+            if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
+                Settings.Default.FfmpegPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "ffmpeg.exe");
+#else
+            if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath))
+                Settings.Default.YoutubeDLPath = "youtube-dl.exe";
+            if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
+                Settings.Default.FfmpegPath = "ffmpeg.exe";
+#endif
         }
 
         public static void InitializeDownloadEngine()

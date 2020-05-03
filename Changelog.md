@@ -1,5 +1,10 @@
 # Vividl Changelog
 
+### v.0.2.2 (2020-05)
+- **New:** German and Russian translation.
+- **Fixed:** Bug preventing app start for some locales.
+- **Fixed:** FFmpeg warning messages during stream download.
+
 ### v.0.2.1 (2020-03)
 - **New:** Option to disable download checking.
 - **Fixed:** Download failures of some download formats.

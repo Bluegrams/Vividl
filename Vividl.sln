@@ -36,6 +36,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Publish-Install|Any CPU = Publish-Install|Any CPU
 		Publish-Portable|Any CPU = Publish-Portable|Any CPU
+		Publish-Portable-NoLib|Any CPU = Publish-Portable-NoLib|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -45,12 +46,15 @@ Global
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install|Any CPU.Build.0 = Release|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable|Any CPU.ActiveCfg = Portable|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable|Any CPU.Build.0 = Portable|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable-NoLib|Any CPU.ActiveCfg = Portable-NoLib|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Portable-NoLib|Any CPU.Build.0 = Portable-NoLib|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Debug|Any CPU.ActiveCfg = Debug
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.ActiveCfg = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.Build.0 = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Portable|Any CPU.ActiveCfg = Release
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Portable-NoLib|Any CPU.ActiveCfg = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
