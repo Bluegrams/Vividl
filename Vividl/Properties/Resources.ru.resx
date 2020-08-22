@@ -160,7 +160,7 @@
     <value>_Видео</value>
   </data>
   <data name="MainWindow_MenuAbout" xml:space="preserve">
-    <value>О_программе</value>
+    <value>_О программе</value>
   </data>
   <data name="MainWindow_MenuAdd" xml:space="preserve">
     <value>_Добавить новые видео</value>
@@ -241,7 +241,7 @@
     <value>Папка загрузки</value>
   </data>
   <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Все _загрузки завершены</value>
+    <value>Все _завершенные загрузки</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Изменить _папку загрузки...</value>
@@ -383,7 +383,7 @@
     <value>Общие</value>
   </data>
   <data name="SettingsWindow_Filename" xml:space="preserve">
-    <value>Имяфайла</value>
+    <value>Имя файла</value>
   </data>
   <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
     <value>Загружать лучшее качество и конвертировать</value>
