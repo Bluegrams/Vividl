@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Metadata;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
 {
@@ -14,15 +15,15 @@ namespace Vividl.Model
 
         public string DownloadPath { get; private set; } = String.Empty;
 
-        public VideoEntry(YoutubeDL ydl, VideoData metadata)
-            : base(ydl, metadata)
+        public VideoEntry(YoutubeDL ydl, VideoData metadata, OptionSet overrideOptions = null)
+            : base(ydl, metadata, overrideOptions)
         { }
 
         protected override async Task<DownloadResult> DoDownload(DownloadOption downloadOption)
         {
             try
             {
-                var run = await downloadOption.RunDownload(ydl, this, cts.Token, progress);
+                var run = await downloadOption.RunDownload(ydl, this, cts.Token, progress, overrideOptions: this.OverrideOptions);
                 DownloadPath = run.Data;
                 if (!run.Success) return DownloadResult.Failed;
             }

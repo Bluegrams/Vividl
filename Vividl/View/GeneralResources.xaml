@@ -8,6 +8,7 @@
     <local:InverseBoolConverter x:Key="invBool"/>
     <BooleanToVisibilityConverter x:Key="boolToVis"/>
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
+    <local:ArrayToStringConverter x:Key="arrayToString"/>
     <local:IntToVisibilityConverter x:Key="intToVis"/>
     <local:ResTextConverter x:Key="resConv"/>
     <local:DownloadOptionIconConverter x:Key="iconConv"/>

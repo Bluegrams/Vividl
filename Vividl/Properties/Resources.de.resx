@@ -406,4 +406,34 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
     <value>Videos URLs aus Zwischenablage oder Datei hinzufügen.</value>
   </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>Authentifizierung</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>Downloadformat</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>Wenn möglich Playlist herunterladen</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>Download direkt starten</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>Nutzername</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>Videopasswort</value>
+  </data>
 </root>

@@ -12,6 +12,7 @@ using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
 using Vividl.Properties;
 using GalaSoft.MvvmLight.Ioc;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.ViewModel
 {
@@ -176,7 +177,7 @@ namespace Vividl.ViewModel
                 () => State == ItemState.Succeeded || Unavailable);
         }
 
-        public abstract Task Fetch(bool refetch = false);
+        public abstract Task Fetch(bool refetch = false, OptionSet overrideOptions = null);
 
         public async Task DownloadVideo()
         {

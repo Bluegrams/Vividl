@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Bluegrams.Application;
 using Vividl.Model;
 using Vividl.ViewModel;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.Services
 {
@@ -14,6 +15,9 @@ namespace Vividl.Services
     public interface IItemProvider<T> where T : IDownloadEntry
     {
         ItemViewModel<T> CreateItemViewModel(string url, MainViewModel<T> mainVm);
-        Task FetchItemList(string[] itemUrls, ICollection<ItemViewModel<T>> itemVms, MainViewModel<T> mainVm, IDialogService dialogService);
+        Task<IEnumerable<ItemViewModel<T>>> FetchItemList(
+            string[] itemUrls, ICollection<ItemViewModel<T>> itemVms,
+            MainViewModel<T> mainVm, IDialogService dialogService,
+            int? selectedFormat = null, OptionSet overrideOptions = null);
     }
 }

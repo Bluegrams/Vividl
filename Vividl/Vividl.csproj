@@ -123,8 +123,8 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="YoutubeDLSharp, Version=0.2.1.20123, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.0.2.1\lib\net45\YoutubeDLSharp.dll</HintPath>
+    <Reference Include="YoutubeDLSharp, Version=0.3.0.20242, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YoutubeDLSharp.0.3.0-ci-20200829.1\lib\net45\YoutubeDLSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +153,7 @@
     <Compile Include="Services\VividlItemProvider.cs" />
     <Compile Include="Services\NotificationDialogService.cs" />
     <Compile Include="Services\ThemeResolver.cs" />
+    <Compile Include="ViewModel\FetchViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
@@ -238,7 +239,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ru.resx" />
+    <EmbeddedResource Include="Properties\Resources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="Lib\DownloadBinaries.ps1" />
     <None Include="packages.config">
       <SubType>Designer</SubType>

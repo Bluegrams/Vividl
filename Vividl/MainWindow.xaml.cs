@@ -49,10 +49,10 @@ namespace Vividl
                     dialogResult = settingsWindow.ShowDialog();
                     break;
                 case WindowType.FetchWindow:
-                    var fetchWindow = new FetchWindow();
+                    var fetchWindow = new FetchWindow(msg.Parameter as FetchViewModel);
                     fetchWindow.Owner = this;
                     dialogResult = fetchWindow.ShowDialog();
-                    returnVal = fetchWindow.VideoUrls;
+                    returnVal = msg.Parameter;
                     break;
 #if VIVIDL
                 case WindowType.VideoDataWindow:

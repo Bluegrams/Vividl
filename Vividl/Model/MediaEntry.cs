@@ -8,6 +8,7 @@ using Vividl.Properties;
 using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Metadata;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
 {
@@ -20,22 +21,25 @@ namespace Vividl.Model
         public VideoData Metadata { get; }
         public string Url => Metadata.WebpageUrl;
         public string Title => Metadata.Title;
+        public OptionSet OverrideOptions { get; }
+
         public abstract int TotalItems { get; }
         public abstract bool FileAvailable { get; }
 
         public event EventHandler<ProgressEventArgs> DownloadStateChanged;
 
-        public MediaEntry(YoutubeDL ydl, VideoData metadata)
+        public MediaEntry(YoutubeDL ydl, VideoData metadata, OptionSet overrideOptions = null)
         {
             this.ydl = ydl;
             this.Metadata = metadata;
+            this.OverrideOptions = overrideOptions;
             this.progress = new Progress<DownloadProgress>(p => RaiseDownloadStateChanged(p));
         }
 
-        public static async Task<MediaEntry> Fetch(string url)
+        public static async Task<MediaEntry> Fetch(string url, OptionSet overrideOptions = null)
         {
             var ytdl = SimpleIoc.Default.GetInstance<YoutubeDL>();
-            var run = await ytdl.RunVideoDataFetch(url);
+            var run = await ytdl.RunVideoDataFetch(url, overrideOptions: overrideOptions);
             if (!run.Success)
                 throw new VideoEntryException(run.ErrorOutput);
             var metadata = run.Data;
@@ -43,9 +47,9 @@ namespace Vividl.Model
             {
                 case MetadataType.Playlist:
                 case MetadataType.MultiVideo:
-                    return new PlaylistEntry(ytdl, metadata);
+                    return new PlaylistEntry(ytdl, metadata, overrideOptions: overrideOptions);
                 default:
-                    return new VideoEntry(ytdl, metadata);
+                    return new VideoEntry(ytdl, metadata, overrideOptions: overrideOptions);
             }
         }
 

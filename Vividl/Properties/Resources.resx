@@ -406,4 +406,34 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
     <value>Already existent. Item skipped.</value>
   </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>Download Format</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>Download playlist if available</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>Start download immediately</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>Video Password</value>
+  </data>
 </root>

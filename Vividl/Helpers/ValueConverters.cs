@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using MahApps.Metro.IconPacks;
@@ -46,6 +47,24 @@ namespace Vividl.Helpers
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+    }
+
+    class ArrayToStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string[] strArray)
+            {
+                return String.Join(Environment.NewLine, strArray);
+            }
+            else if (value == null) return String.Empty;
+            else throw new ArgumentException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((string)value).Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
         }
     }
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Metadata;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
 {
@@ -15,15 +16,15 @@ namespace Vividl.Model
 
         public string[] DownloadPaths { get; private set; }
 
-        public PlaylistEntry(YoutubeDL ydl, VideoData metadata)
-            : base(ydl, metadata)
+        public PlaylistEntry(YoutubeDL ydl, VideoData metadata, OptionSet overrideOptions = null)
+            : base(ydl, metadata, overrideOptions)
         { }
         
         protected override async Task<DownloadResult> DoDownload(DownloadOption downloadOption)
         {
             try
             {
-                var run = await downloadOption.RunDownload(ydl, this, cts.Token, progress);
+                var run = await downloadOption.RunDownload(ydl, this, cts.Token, progress, overrideOptions: this.OverrideOptions);
                 DownloadPaths = run.Data;
                 // TODO When does playlist download count as 'failed'?
                 if (!run.Success) return DownloadResult.Failed;

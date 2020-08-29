@@ -107,7 +107,10 @@ namespace Vividl.ViewModel
             VideoInfos = new ObservableCollection<ItemViewModel<T>>();
             // Init commands
             FetchCommand = new RelayCommand(
-                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.FetchWindow, callback: fetchCommandCallback))
+                () => Messenger.Default.Send(
+                    new ShowWindowMessage(WindowType.FetchWindow,
+                    parameter: new FetchViewModel(), callback: fetchCommandCallback)
+                )
             );
             ClearCommand = new RelayCommand(() => this.Clear(), () => InProcessCount < 1);
             PasteCommand = new RelayCommand(async () => await FetchVideo(Clipboard.GetText()));
@@ -147,7 +150,20 @@ namespace Vividl.ViewModel
         {
             if (dialogResult.GetValueOrDefault())
             {
-                await itemProvider.FetchItemList((string[])param, VideoInfos, this, dialogService);
+                FetchViewModel viewModel = param as FetchViewModel;
+                var fetchedVideos = await itemProvider.FetchItemList(
+                    viewModel.VideoUrls, VideoInfos, this, dialogService,
+                    selectedFormat: viewModel.SelectedDownloadOption, overrideOptions: viewModel.OverrideOptions
+                );
+                if (viewModel.ImmediateDownload)
+                {
+                    var tasks = new List<Task>();
+                    foreach (var vid in fetchedVideos)
+                    {
+                        tasks.Add(vid.DownloadVideo());
+                    }
+                    await Task.WhenAll(tasks.ToArray());
+                }
             }
         }
 

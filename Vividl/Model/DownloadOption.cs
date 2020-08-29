@@ -39,16 +39,16 @@ namespace Vividl.Model
         /// Performs the actual download of the specified URL by invoking the given YoutubeDL instance.
         /// </summary>
         protected abstract Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
-            CancellationToken ct, IProgress<DownloadProgress> progress);
+            CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null);
 
         protected abstract Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
-            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress);
+            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null);
 
         /// <summary>
         /// Performs the download of the specified video with the given YoutubeDL instance and a prior overwrite check.
         /// </summary>
         public async Task<RunResult<string>> RunDownload(YoutubeDL ydl, VideoEntry video,
-            CancellationToken ct, IProgress<DownloadProgress> progress)
+            CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             if (!ydl.OverwriteFiles && allowsOverwriteCheck)
             {
@@ -62,14 +62,14 @@ namespace Vividl.Model
                     return new RunResult<string>(true, new string[0], path);
                 }
             }
-            return await RunRealDownload(ydl, video.Url, ct, progress);
+            return await RunRealDownload(ydl, video.Url, ct, progress, overrideOptions);
         }
 
         /// <summary>
         /// Performs the download of the specified playlist with the given YoutubeDL instance and a prior overwrite check.
         /// </summary>
         public async Task<RunResult<string[]>> RunDownload(YoutubeDL ydl, PlaylistEntry playlist,
-            CancellationToken ct, IProgress<DownloadProgress> progress)
+            CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             if (!ydl.OverwriteFiles && allowsOverwriteCheck)
             {
@@ -87,9 +87,9 @@ namespace Vividl.Model
                     index++;
                 }
                 return await RunRealPlaylistDownload(ydl, playlist.Url,
-                    indices.ToArray(), ct, progress);
+                    indices.ToArray(), ct, progress, overrideOptions);
             }
-            else return await RunRealPlaylistDownload(ydl, playlist.Url, null, ct, progress);
+            else return await RunRealPlaylistDownload(ydl, playlist.Url, null, ct, progress, overrideOptions);
         }
 
         public override string ToString() => Description ?? base.ToString();
@@ -131,21 +131,21 @@ namespace Vividl.Model
         }
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
-            CancellationToken ct, IProgress<DownloadProgress> progress)
+            CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
 #if DEBUG
             return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress,
-                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)));
+                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)), overrideOptions: overrideOptions);
 #else
-            return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress);
+            return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress, overrideOptions: overrideOptions);
 #endif
         }
 
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
-            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress)
+            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             return await ydl.RunAudioPlaylistDownload(url, items: playlistItems,
-                format: ConversionFormat, ct: ct, progress: progress);
+                format: ConversionFormat, ct: ct, progress: progress, overrideOptions: overrideOptions);
         }
     }
 
@@ -193,23 +193,23 @@ namespace Vividl.Model
         }
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
-            CancellationToken ct, IProgress<DownloadProgress> progress)
+            CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
 #if DEBUG
             return await ydl.RunVideoDownload(url, FormatSelection,
                                 DownloadMergeFormat.Mkv, RecodeFormat, ct, progress,
-                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)));
+                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)), overrideOptions: overrideOptions);
 #else
             return await ydl.RunVideoDownload(url, FormatSelection,
-                                DownloadMergeFormat.Mkv, RecodeFormat, ct, progress);
+                                DownloadMergeFormat.Mkv, RecodeFormat, ct, progress, overrideOptions: overrideOptions);
 #endif
         }
 
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
-            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress)
+            int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             return await ydl.RunVideoPlaylistDownload(url, format: FormatSelection,
-                items: playlistItems, recodeFormat: RecodeFormat, ct: ct, progress: progress);
+                items: playlistItems, recodeFormat: RecodeFormat, ct: ct, progress: progress, overrideOptions: overrideOptions);
         }
     }
 }

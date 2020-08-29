@@ -19,7 +19,7 @@ namespace Vividl.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -160,11 +160,101 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Format.
+        /// </summary>
+        public static string FetchWindow_DownloadFormat {
+            get {
+                return ResourceManager.GetString("FetchWindow_DownloadFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download playlist if available.
+        /// </summary>
+        public static string FetchWindow_DownloadPlaylist {
+            get {
+                return ResourceManager.GetString("FetchWindow_DownloadPlaylist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter Video URLs in separate lines.
         /// </summary>
         public static string FetchWindow_EnterUrls {
             get {
                 return ResourceManager.GetString("FetchWindow_EnterUrls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start download immediately.
+        /// </summary>
+        public static string FetchWindow_ImmediateDownload {
+            get {
+                return ResourceManager.GetString("FetchWindow_ImmediateDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string FetchWindow_Options {
+            get {
+                return ResourceManager.GetString("FetchWindow_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string FetchWindow_Password {
+            get {
+                return ResourceManager.GetString("FetchWindow_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string FetchWindow_Settings {
+            get {
+                return ResourceManager.GetString("FetchWindow_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authentication.
+        /// </summary>
+        public static string FetchWindow_TabAuthentication {
+            get {
+                return ResourceManager.GetString("FetchWindow_TabAuthentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string FetchWindow_TabGeneral {
+            get {
+                return ResourceManager.GetString("FetchWindow_TabGeneral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string FetchWindow_Username {
+            get {
+                return ResourceManager.GetString("FetchWindow_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video Password.
+        /// </summary>
+        public static string FetchWindow_VideoPassword {
+            get {
+                return ResourceManager.GetString("FetchWindow_VideoPassword", resourceCulture);
             }
         }
         

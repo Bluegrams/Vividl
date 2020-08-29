@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Vividl.Model;
 using Vividl.Properties;
 using YoutubeDLSharp;
+using YoutubeDLSharp.Options;
 
 namespace Vividl.ViewModel
 {
@@ -32,11 +33,11 @@ namespace Vividl.ViewModel
         public VideoViewModel(string url, MainViewModel<MediaEntry> mainVm)
             : base(url, mainVm) { }
 
-        public async override Task Fetch(bool refetch = false)
+        public async override Task Fetch(bool refetch = false, OptionSet overrideOptions = null)
         {
             try
             {
-                Entry = await MediaEntry.Fetch(ToString());
+                Entry = await MediaEntry.Fetch(ToString(), overrideOptions: overrideOptions);
             }
             catch (Exception ex)
             {
