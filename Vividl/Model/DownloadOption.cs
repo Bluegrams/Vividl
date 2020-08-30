@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Options;
 
@@ -133,19 +134,21 @@ namespace Vividl.Model
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
-#if DEBUG
-            return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress,
-                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)), overrideOptions: overrideOptions);
-#else
-            return await ydl.RunAudioDownload(url, ConversionFormat, ct, progress, overrideOptions: overrideOptions);
-#endif
+            return await ydl.RunAudioDownload(
+                url, ConversionFormat, ct, progress,
+                output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                overrideOptions: overrideOptions
+            );
         }
 
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
             int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             return await ydl.RunAudioPlaylistDownload(url, items: playlistItems,
-                format: ConversionFormat, ct: ct, progress: progress, overrideOptions: overrideOptions);
+                format: ConversionFormat, ct: ct, progress: progress,
+                output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                overrideOptions: overrideOptions
+            );
         }
     }
 
@@ -195,21 +198,22 @@ namespace Vividl.Model
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
-#if DEBUG
-            return await ydl.RunVideoDownload(url, FormatSelection,
-                                DownloadMergeFormat.Mkv, RecodeFormat, ct, progress,
-                                new Progress<string>(s => System.Diagnostics.Debug.WriteLine(s)), overrideOptions: overrideOptions);
-#else
-            return await ydl.RunVideoDownload(url, FormatSelection,
-                                DownloadMergeFormat.Mkv, RecodeFormat, ct, progress, overrideOptions: overrideOptions);
-#endif
+            return await ydl.RunVideoDownload(
+                url, FormatSelection,
+                DownloadMergeFormat.Mkv, RecodeFormat, ct, progress,
+                output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                overrideOptions: overrideOptions
+            );
         }
 
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
             int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
             return await ydl.RunVideoPlaylistDownload(url, format: FormatSelection,
-                items: playlistItems, recodeFormat: RecodeFormat, ct: ct, progress: progress, overrideOptions: overrideOptions);
+                items: playlistItems, recodeFormat: RecodeFormat, ct: ct, progress: progress,
+                output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                overrideOptions: overrideOptions
+            );
         }
     }
 }

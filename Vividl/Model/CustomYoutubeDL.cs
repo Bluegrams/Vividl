@@ -11,10 +11,16 @@ namespace Vividl.Model
 
         public string DownloadArchive { get; set; }
 
+        public bool AddMetadata { get; set; }
+
+        public string Proxy { get; set; }
+
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
             options.DownloadArchive = this.DownloadArchive;
+            options.AddMetadata = this.AddMetadata;
+            options.Proxy = this.Proxy;
             return options;
         }
     }

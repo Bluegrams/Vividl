@@ -151,6 +151,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear Output.
+        /// </summary>
+        public static string DownloadOutputWindow_ClearOutput {
+            get {
+                return ResourceManager.GetString("DownloadOutputWindow_ClearOutput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Output.
+        /// </summary>
+        public static string DownloadOutputWindow_CopyOutput {
+            get {
+                return ResourceManager.GetString("DownloadOutputWindow_CopyOutput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Output.
+        /// </summary>
+        public static string DownloadOutputWindow_Title {
+            get {
+                return ResourceManager.GetString("DownloadOutputWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
@@ -422,6 +449,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Output Window.
+        /// </summary>
+        public static string MainWindow_MenuOutputWindow {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuOutputWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Paste Video Link.
         /// </summary>
         public static string MainWindow_MenuPaste {
@@ -620,6 +656,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add metadata to files.
+        /// </summary>
+        public static string SettingsWindow_AddMetadata {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AddMetadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow duplicate video entries.
         /// </summary>
         public static string SettingsWindow_AllowDuplicates {
@@ -778,6 +823,24 @@ namespace Vividl.Properties {
         public static string SettingsWindow_PreferRecoding {
             get {
                 return ResourceManager.GetString("SettingsWindow_PreferRecoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proxy.
+        /// </summary>
+        public static string SettingsWindow_Proxy {
+            get {
+                return ResourceManager.GetString("SettingsWindow_Proxy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proxy URL.
+        /// </summary>
+        public static string SettingsWindow_ProxyUrl {
+            get {
+                return ResourceManager.GetString("SettingsWindow_ProxyUrl", resourceCulture);
             }
         }
         

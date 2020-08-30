@@ -112,12 +112,24 @@
                                          IsEnabled="{Binding ElementName=chkArchive, Path=IsChecked}"
                                          Text="{Binding Settings.ArchiveFilename, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             </StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_Filename}">
-                        <StackPanel>
                             <CheckBox Content="{x:Static p:Resources.SettingsWindow_RestrictFilenames}"
                                       IsChecked="{Binding Settings.RestrictFilenames, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <CheckBox Content="{x:Static p:Resources.SettingsWindow_AddMetadata}"
+                                      IsChecked="{Binding Settings.AddMetadata, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SettingsWindow_Proxy}">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Static p:Resources.SettingsWindow_ProxyUrl}"
+                                           VerticalAlignment="Center" Margin="4"/>
+                                <TextBox Grid.Column="1" Margin="4"
+                                         Text="{Binding Settings.Proxy, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </Grid>
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>

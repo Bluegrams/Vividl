@@ -5,7 +5,7 @@ namespace Vividl.ViewModel
 {
     public enum WindowType
     {
-        VideoDataWindow, PlaylistDataWindow, SettingsWindow, FetchWindow
+        VideoDataWindow, PlaylistDataWindow, SettingsWindow, FetchWindow, DownloadOutputWindow
     }
 
 

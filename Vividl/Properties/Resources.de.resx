@@ -436,4 +436,25 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="FetchWindow_VideoPassword" xml:space="preserve">
     <value>Videopasswort</value>
   </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>Ausgabe leeren</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>Ausgabe kopieren</value>
+  </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>Ausgabefenster anzeigen</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>Metadaten zu Dateien hinzufügen</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>Proxy Adresse</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>Download Ausgabe</value>
+  </data>
 </root>

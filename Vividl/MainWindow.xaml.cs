@@ -54,6 +54,9 @@ namespace Vividl
                     dialogResult = fetchWindow.ShowDialog();
                     returnVal = msg.Parameter;
                     break;
+                case WindowType.DownloadOutputWindow:
+                    DownloadOutputWindow.ShowDownloadOutputWindow(this);
+                    break;
 #if VIVIDL
                 case WindowType.VideoDataWindow:
                     var videoDataWindow = new VideoDataWindow(msg.Parameter as VideoViewModel);

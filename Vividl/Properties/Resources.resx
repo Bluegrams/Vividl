@@ -436,4 +436,25 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="FetchWindow_VideoPassword" xml:space="preserve">
     <value>Video Password</value>
   </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>Show Output Window</value>
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>Clear Output</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>Copy Output</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>Download Output</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>Add metadata to files</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>Proxy URL</value>
+  </data>
 </root>

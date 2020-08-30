@@ -66,6 +66,8 @@ namespace Vividl.ViewModel
 
         public ICommand SelectDownloadFolderCommand { get; }
 
+        public ICommand ShowDownloadOutputWindowCommand { get; }
+
         public ICommand AboutCommand { get; }
 
         // Statistics
@@ -129,6 +131,9 @@ namespace Vividl.ViewModel
                 () => fileService.ShowInExplorer(Settings.Default.DownloadFolder, true)
             );
             SelectDownloadFolderCommand = new RelayCommand(() => SelectDownloadFolder(), true);
+            ShowDownloadOutputWindowCommand = new RelayCommand(
+                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
+            );
             AboutCommand = new RelayCommand(() => ShowAboutBox());
         }
 

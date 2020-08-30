@@ -62,11 +62,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdonisUI, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdonisUI.1.14.0\lib\net45\AdonisUI.dll</HintPath>
+    <Reference Include="AdonisUI, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdonisUI.1.16.0\lib\net45\AdonisUI.dll</HintPath>
     </Reference>
-    <Reference Include="AdonisUI.ClassicTheme, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdonisUI.ClassicTheme.1.14.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
+    <Reference Include="AdonisUI.ClassicTheme, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdonisUI.ClassicTheme.1.16.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
     </Reference>
     <Reference Include="AppHelpers.WPF, Version=0.1.0.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AppHelpers.WPF.0.1.0-beta8\lib\net45\AppHelpers.WPF.dll</HintPath>
@@ -145,6 +145,7 @@
     <Compile Include="Model\ProgressEventArgs.cs" />
     <Compile Include="Model\VideoEntryException.cs" />
     <Compile Include="Model\VideoEntry.cs" />
+    <Compile Include="Services\DownloadOutputLogger.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\IDownloadOptionProvider.cs" />
     <Compile Include="Services\IItemProvider.cs" />
@@ -159,6 +160,9 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShowWindowMessage.cs" />
     <Compile Include="Model\AccentColorScheme.cs" />
+    <Compile Include="View\DownloadOutputWindow.xaml.cs">
+      <DependentUpon>DownloadOutputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FetchWindow.xaml.cs">
       <DependentUpon>FetchWindow.xaml</DependentUpon>
     </Compile>
@@ -187,6 +191,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\DownloadOutputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FetchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

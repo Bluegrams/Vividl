@@ -17,6 +17,7 @@
         <KeyBinding Command="{Binding ClearCommand}" Key="D" Modifiers="Ctrl+Shift"/>
         <KeyBinding Command="{Binding SettingsCommand}" Key="OemComma" Modifiers="Ctrl"/>
         <KeyBinding Command="{Binding AboutCommand}" Key="F1"/>
+        <KeyBinding Command="{Binding ShowDownloadOutputWindowCommand}" Key="F12"/>
     </Window.InputBindings>
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
@@ -66,8 +67,10 @@
                 <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderOptions}" Padding="6,2">
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSelectFolder}"
                           Command="{Binding SelectDownloadFolderCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
+                              InputGestureText="F12"/>
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
-                          Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
+                              Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
                     <Separator/>
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAbout}" Command="{Binding AboutCommand}"
                               Icon="{icon:Modern Kind=InformationCircle}" InputGestureText="F1"/>
