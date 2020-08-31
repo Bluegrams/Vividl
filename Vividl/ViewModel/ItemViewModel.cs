@@ -23,7 +23,7 @@ namespace Vividl.ViewModel
         ObservableCollection<IDownloadOption> currentFormats;
         int currentFormatSelection;
         float currentProgress;
-        string progressString;
+        string progressString, totalDownloadSize, downloadSpeed, downloadTimeRemaining;
         // downloadIndex indicates the number of the _next_ item to be downloaded
         int downloadIndex = 1;
         ItemState state;
@@ -65,6 +65,8 @@ namespace Vividl.ViewModel
         public ICommand PlayCommand { get; }
 
         public ICommand ReloadCommand { get; }
+
+        public ICommand DeleteCommand { get; }
 
         // TODO Rename: IsPlaylist -> IsCollection
         public abstract bool IsPlaylist { get; }
@@ -110,6 +112,36 @@ namespace Vividl.ViewModel
             protected set
             {
                 progressString = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string TotalDownloadSize
+        {
+            get => totalDownloadSize;
+            protected set
+            {
+                totalDownloadSize = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string DownloadSpeed
+        {
+            get => downloadSpeed;
+            protected set
+            {
+                downloadSpeed = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string DownloadTimeRemaining
+        {
+            get => downloadTimeRemaining;
+            protected set
+            {
+                downloadTimeRemaining = value;
                 RaisePropertyChanged();
             }
         }
@@ -175,6 +207,7 @@ namespace Vividl.ViewModel
                 () => State == ItemState.Succeeded && Entry.FileAvailable);
             ReloadCommand = new RelayCommand(async () => await Reload(),
                 () => State == ItemState.Succeeded || Unavailable);
+            DeleteCommand = new RelayCommand(() => mainVm.Delete(this));
         }
 
         public abstract Task Fetch(bool refetch = false, OptionSet overrideOptions = null);

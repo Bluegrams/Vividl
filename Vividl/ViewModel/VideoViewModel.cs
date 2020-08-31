@@ -72,6 +72,9 @@ namespace Vividl.ViewModel
                     break;
                 case DownloadState.Downloading:
                     ProgressString = Resources.VideoEntry_Downloading;
+                    TotalDownloadSize = e.Info.TotalDownloadSize;
+                    DownloadSpeed = e.Info.DownloadSpeed;
+                    DownloadTimeRemaining = e.Info.ETA;
                     if (State == ItemState.Downloading) // Prevent msg being sent after cancelled msg.
                     {
                         Messenger.Default.Send(

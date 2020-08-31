@@ -123,7 +123,7 @@ namespace Vividl.ViewModel
             CancelAllCommand = new RelayCommand(() => CancelAllDownloads(), () => InProcessCount > 0);
             RemoveUnavailableCommand = new RelayCommand(() => RemoveAllUnavailable());
             RemoveFinishedCommand = new RelayCommand(() => RemoveAllFinished());
-            DeleteCommand = new RelayCommand<ItemViewModel<T>>(o => VideoInfos.Remove(o));
+            DeleteCommand = new RelayCommand<ItemViewModel<T>>(o => Delete(o));
             SettingsCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, callback: applySettingsCallback))
             );
@@ -241,6 +241,11 @@ namespace Vividl.ViewModel
                 if (success) SuccessCount += count;
                 else FailedCount += count;
             }
+        }
+
+        public void Delete(ItemViewModel<T> item)
+        {
+            VideoInfos.Remove(item);
         }
 
         public void Clear()

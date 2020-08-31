@@ -457,4 +457,16 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
     <value>Proxy URL</value>
   </data>
+  <data name="VideoEntry_CurrentProgress" xml:space="preserve">
+    <value>Download progress of current file</value>
+  </data>
+  <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+    <value>Current download rate</value>
+  </data>
+  <data name="VideoEntry_RemainingTime" xml:space="preserve">
+    <value>Expected remaining time for current file</value>
+  </data>
+  <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+    <value>Total download size of current file</value>
+  </data>
 </root>

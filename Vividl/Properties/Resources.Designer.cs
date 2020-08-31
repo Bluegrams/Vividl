@@ -980,6 +980,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download progress of current file.
+        /// </summary>
+        public static string VideoEntry_CurrentProgress {
+            get {
+                return ResourceManager.GetString("VideoEntry_CurrentProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download.
         /// </summary>
         public static string VideoEntry_Download {
@@ -994,6 +1003,15 @@ namespace Vividl.Properties {
         public static string VideoEntry_Downloading {
             get {
                 return ResourceManager.GetString("VideoEntry_Downloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current download rate.
+        /// </summary>
+        public static string VideoEntry_DownloadSpeed {
+            get {
+                return ResourceManager.GetString("VideoEntry_DownloadSpeed", resourceCulture);
             }
         }
         
@@ -1052,6 +1070,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expected remaining time for current file.
+        /// </summary>
+        public static string VideoEntry_RemainingTime {
+            get {
+                return ResourceManager.GetString("VideoEntry_RemainingTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove Video.
         /// </summary>
         public static string VideoEntry_Remove {
@@ -1075,6 +1102,15 @@ namespace Vividl.Properties {
         public static string VideoEntry_ShowInformation {
             get {
                 return ResourceManager.GetString("VideoEntry_ShowInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total download size of current file.
+        /// </summary>
+        public static string VideoEntry_TotalDownloadSize {
+            get {
+                return ResourceManager.GetString("VideoEntry_TotalDownloadSize", resourceCulture);
             }
         }
     }

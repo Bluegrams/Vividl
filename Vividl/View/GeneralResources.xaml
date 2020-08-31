@@ -8,6 +8,8 @@
     <local:InverseBoolConverter x:Key="invBool"/>
     <BooleanToVisibilityConverter x:Key="boolToVis"/>
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
+    <local:StringToVisibilityConverter x:Key="stringToVis"/>
+    <local:FloatToPercentConverter x:Key="floatToPercent"/>
     <local:ArrayToStringConverter x:Key="arrayToString"/>
     <local:IntToVisibilityConverter x:Key="intToVis"/>
     <local:ResTextConverter x:Key="resConv"/>
@@ -71,6 +73,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding Path=Entry.Title}" Margin="4"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal"
@@ -92,13 +95,62 @@
                         ToolTip="{x:Static p:Resources.VideoEntry_ShowInformation}"
                         Content="{icon:Modern Kind=InformationCircle}"/>
             </StackPanel>
-            <Button Grid.Column="1" Grid.RowSpan="2" Command="{Binding DownloadCommand}"
-                    Width="80" Height="25" Margin="2"
-                    Visibility="{Binding IsDownloading, Converter={StaticResource invBoolToVis}}"
-                    ToolTip="{x:Static p:Resources.VideoEntry_Download}">
-                <icon:PackIconModern Kind="Download"/>
-            </Button>
-            <DockPanel Grid.Column="1" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
+            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="16,4"
+                  Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
+                <Grid.Resources>
+                    <Style TargetType="icon:PackIconModern">
+                        <Setter Property="Margin" Value="16,0,8,0"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+                <icon:PackIconModern Grid.Row="0" Kind="Box"
+                                     ToolTip="{x:Static p:Resources.VideoEntry_TotalDownloadSize}"
+                                     Visibility="{Binding TotalDownloadSize, Converter={StaticResource stringToVis}}"/>
+                <icon:PackIconModern Grid.Row="1" Kind="Timer"
+                                     ToolTip="{x:Static p:Resources.VideoEntry_DownloadSpeed}"
+                                     Visibility="{Binding DownloadSpeed, Converter={StaticResource stringToVis}}"/>
+                <icon:PackIconModern Grid.Row="0" Grid.Column="2" Kind="Hourglass"
+                                     ToolTip="{x:Static p:Resources.VideoEntry_RemainingTime}"
+                                     Visibility="{Binding DownloadTimeRemaining, Converter={StaticResource stringToVis}}"/>
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="{Binding Path=TotalDownloadSize, Mode=OneWay}"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                           ToolTip="{x:Static p:Resources.VideoEntry_TotalDownloadSize}"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                           Text="{Binding Path=DownloadSpeed, Mode=OneWay}"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                           ToolTip="{x:Static p:Resources.VideoEntry_DownloadSpeed}"/>
+                <TextBlock Grid.Column="3" Grid.Row="0"
+                           Text="{Binding Path=DownloadTimeRemaining, Mode=OneWay}"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                           ToolTip="{x:Static p:Resources.VideoEntry_RemainingTime}"/>
+                <TextBlock Grid.Column="3" Grid.Row="1"
+                           Text="{Binding Path=CurrentProgress, Mode=OneWay, Converter={StaticResource floatToPercent}}"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                           ToolTip="{x:Static p:Resources.VideoEntry_CurrentProgress}"/>
+            </Grid>
+            <StackPanel Grid.Column="2" Grid.RowSpan="2" Orientation="Horizontal"
+                        Visibility="{Binding IsDownloading, Converter={StaticResource invBoolToVis}}">
+                <Button Command="{Binding DownloadCommand}" Width="80" Height="25" Margin="4"
+                        ToolTip="{x:Static p:Resources.VideoEntry_Download}">
+                    <icon:PackIconModern Kind="Download"/>
+                </Button>
+                <Button Command="{Binding DeleteCommand}" Height="25" Margin="4"
+                        ToolTip="{x:Static p:Resources.VideoEntry_Remove}">
+                    <icon:PackIconModern Kind="Delete"/>
+                </Button>
+            </StackPanel>
+            <DockPanel Grid.Column="2" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
                 <Button DockPanel.Dock="Right" ToolTip="{x:Static p:Resources.Cancel}"
                         Command="{Binding CancelCommand}">
                     <icon:PackIconModern Height="10" Kind="Close"/>
@@ -108,7 +160,7 @@
                 <TextBlock Text="{Binding Path=ProgressString, Mode=OneWay}"
                            Margin="2"/>
             </DockPanel>
-            <ProgressBar Grid.Column="1" Grid.Row="1" Width="200" Height="20"
+            <ProgressBar Grid.Column="2" Grid.Row="1" Width="200" Height="20"
                          Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}"
                          Maximum="1" Value="{Binding CurrentProgress, Mode=OneWay}"/>
         </Grid>
