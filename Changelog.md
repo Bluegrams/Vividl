@@ -1,5 +1,13 @@
 # Vividl Changelog
 
+### v.0.3.0 (2020-10)
+- **New:** Extended window for adding video links.
+- **New:** Basic authentication support.
+- **New:** Added window showing youtube-dl download output.
+- **New:** Download progress information in main UI.
+- **New:** Minor improvements in UI and settings (e.g. proxy).
+- **New:** Spanish translation
+
 ### v.0.2.2 (2020-05)
 - **New:** German and Russian translation.
 - **Fixed:** Bug preventing app start for some locales.

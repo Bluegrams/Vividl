@@ -28,7 +28,7 @@ namespace Vividl
             if (Settings.Default.AutoCheckUpdates)
             {
                 var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
-                updateChecker.CheckForUpdates();
+                updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
             }
         }
 

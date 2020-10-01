@@ -49,7 +49,10 @@ Vividl requires Windows 7 or newer with the following components installed:
 
 or
 
-- Install from [Chocolatey](https://chocolatey.org): `choco install vividl`
+- Install from [Chocolatey](https://chocolatey.org):
+```
+choco install vividl
+```
 
 ## Version History
 
@@ -83,3 +86,4 @@ This software is published under the [BSD-3-clause license](LICENSE.txt) by Blue
 - [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) is licensed under MIT license
 - [Wpf.Notifications](https://github.com/Enterwell/Wpf.Notifications) is licensed under MIT license
 - [YoutubeDLSharp](https://github.com/bluegrams/YoutubeDLSharp) is licensed under BSD-3-clause license
+- Icons by @templarian, [ModernUIIcons.com](http://modernuiicons.com/), licensed under CC BY-ND 3.0

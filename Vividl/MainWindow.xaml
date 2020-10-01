@@ -72,6 +72,8 @@
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
                               Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
                     <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.SettingsWindow_CheckForUpdates}"
+                              Command="{Binding CheckForUpdatesCommand}"/>
                     <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAbout}" Command="{Binding AboutCommand}"
                               Icon="{icon:Modern Kind=InformationCircle}" InputGestureText="F1"/>
                 </MenuItem>

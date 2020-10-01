@@ -68,6 +68,8 @@ namespace Vividl.ViewModel
 
         public ICommand ShowDownloadOutputWindowCommand { get; }
 
+        public ICommand CheckForUpdatesCommand { get; }
+
         public ICommand AboutCommand { get; }
 
         // Statistics
@@ -134,6 +136,7 @@ namespace Vividl.ViewModel
             ShowDownloadOutputWindowCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
             );
+            CheckForUpdatesCommand = new RelayCommand(() => CheckForUpdates());
             AboutCommand = new RelayCommand(() => ShowAboutBox());
         }
 
@@ -266,6 +269,12 @@ namespace Vividl.ViewModel
                 Settings.Default.DownloadFolder = dir;
                 App.InitializeDownloadEngine();
             }
+        }
+
+        public void CheckForUpdates()
+        {
+            var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
+            updateChecker.CheckForUpdates(UpdateNotifyMode.Always);
         }
 
         public void ShowAboutBox()

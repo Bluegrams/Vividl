@@ -14,7 +14,7 @@ using Bluegrams.Application.Attributes;
 
 [assembly: ProductWebsite("https://vividl.sourceforge.io")]
 [assembly: ProductLicense("LICENSE.txt", "BSD-3-clause License")]
-[assembly: CompanyWebsite("http://bluegrams.com", "Bluegrams")]
+[assembly: CompanyWebsite("http://bluegrams.com", "http://bluegrams.com")]
 
 #if PORTABLE
 [assembly: AppPortable(true)]
@@ -44,5 +44,5 @@ using Bluegrams.Application.Attributes;
                                               // app, or any theme specific resource dictionaries)
 )]
 
-[assembly: AssemblyVersion("0.2.2")]
-[assembly: AssemblyFileVersion("0.2.2")]
+[assembly: AssemblyVersion("0.3.0.0")]
+[assembly: AssemblyFileVersion("0.3.0.0")]
