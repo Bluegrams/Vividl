@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DownloadOption_AVI" xml:space="preserve">
+    <value>Converter para AVI</value>
+  </data>
+  <data name="DownloadOption_Best" xml:space="preserve">
+    <value>Melhor transferencia directa</value>
+  </data>
+  <data name="DownloadOption_M4A" xml:space="preserve">
+    <value>Converter para M4A</value>
+  </data>
+  <data name="DownloadOption_MKV" xml:space="preserve">
+    <value>Fundir para MKV</value>
+  </data>
+  <data name="DownloadOption_MP3" xml:space="preserve">
+    <value>Converter para MP3</value>
+  </data>
+  <data name="DownloadOption_MP4" xml:space="preserve">
+    <value>Converter para MP4</value>
+  </data>
+  <data name="DownloadOption_Vorbis" xml:space="preserve">
+    <value>Converter para Ogg Vorbis</value>
+  </data>
+  <data name="DownloadOption_WAV" xml:space="preserve">
+    <value>Converter para WAV</value>
+  </data>
+  <data name="DownloadOption_Webm" xml:space="preserve">
+    <value>Converter para WebM</value>
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>Limpar resultado</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>Copiar resultado</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>Transferir resultado</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>Formato da transferencia</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>Transferir lista de reprodução. se disponivel</value>
+  </data>
+  <data name="FetchWindow_EnterUrls" xml:space="preserve">
+    <value>Insira o URL dos videos em linhas separadas</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>Começar transferência imediatamente</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>Autenticação</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>Nome do usuário</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>Senha do video</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informação</value>
+  </data>
+  <data name="MainWindow_AlreadyFetched" xml:space="preserve">
+    <value>Este vídeo já foi adicionado a lista de transferencias.
+Para permitir duplicados, vá a Opções -&gt; Configurações.</value>
+  </data>
+  <data name="SelectDirectory_Description" xml:space="preserve">
+    <value>Selecione a pasta onde os videos transferidos serão guardados: </value>
+  </data>
+  <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+    <value>Escrever por cima dos ficheiros existentes</value>
+  </data>
+  <data name="VideoEntry_PreProcessing" xml:space="preserve">
+    <value>A preparar...</value>
+  </data>
+  <data name="MainWindow_ListEmpty" xml:space="preserve">
+    <value>Adiciona novos videos ao copiar ou importar URLs.</value>
+  </data>
+  <data name="VideoEntry_CopyUrl" xml:space="preserve">
+    <value>Copiar URL do video</value>
+  </data>
+  <data name="VideoEntry_Reload" xml:space="preserve">
+    <value>Recargar video</value>
+  </data>
+  <data name="MainWindow_MenuImport" xml:space="preserve">
+    <value>_Importar Video Links</value>
+  </data>
+  <data name="MainWindow_MenuExport" xml:space="preserve">
+    <value>_Exportar Video Links</value>
+  </data>
+  <data name="MainWindow_MenuPaste" xml:space="preserve">
+    <value>_Copiar Video Link</value>
+  </data>
+  <data name="VideoEntry_Remove" xml:space="preserve">
+    <value>Remover video</value>
+  </data>
+  <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
+    <value>Pasta dos videos transferidos</value>
+  </data>
+  <data name="SettingsWindow_Version" xml:space="preserve">
+    <value>Versão:</value>
+  </data>
+  <data name="MainWindow_MenuAbout" xml:space="preserve">
+    <value>_Sobre</value>
+  </data>
+  <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Procurando novas atualizações...</value>
+  </data>
+  <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+    <value>youtube-dl</value>
+  </data>
+  <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+    <value>Formato da transferencia por defeito:</value>
+  </data>
+  <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
+    <value>Localização do executável no seu PC</value>
+  </data>
+  <data name="MetadataWindow_Source" xml:space="preserve">
+    <value>Origem:</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>Proxy URL</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+    <value>Copiar URL da lista de reprodução</value>
+  </data>
+  <data name="VideoEntry_Playlist" xml:space="preserve">
+    <value>Lista de reprodução - {0} Videos</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="MainWindow_OpenFolder" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="MainWindow_MenuAdd" xml:space="preserve">
+    <value>_Adicionar Novos Videos</value>
+  </data>
+  <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+    <value>Procurar atualizações</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>Adicionar metadata aos ficheiros</value>
+  </data>
+  <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+    <value>Quantidade máxima de transferências em paralelo</value>
+  </data>
+  <data name="MetadataWindow_Link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="VideoEntry_Downloading" xml:space="preserve">
+    <value>Transferindo...</value>
+  </data>
+  <data name="Video_DownloadStarting" xml:space="preserve">
+    <value>Transferindo "{0}"...</value>
+  </data>
+  <data name="VideoEntry_Converting" xml:space="preserve">
+    <value>Convertindo...</value>
+  </data>
+  <data name="VideoEntry_ShowInformation" xml:space="preserve">
+    <value>Mostrar informação</value>
+  </data>
+  <data name="VideoEntry_ShowInFolder" xml:space="preserve">
+    <value>Mostrar na pasta</value>
+  </data>
+  <data name="MainWindow_StatusInProcess" xml:space="preserve">
+    <value>Em Processo:</value>
+  </data>
+  <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+    <value>Abrir no navegador</value>
+  </data>
+  <data name="MetadataWindow_UploadDate" xml:space="preserve">
+    <value>Carregado:</value>
+  </data>
+  <data name="MetadataWindow_Uploader" xml:space="preserve">
+    <value>Carregador:</value>
+  </data>
+  <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+    <value>Tamanho total do actual ficheiro transferido</value>
+  </data>
+  <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+    <value>ffmpeg</value>
+  </data>
+  <data name="MainWindow_StatusFailed" xml:space="preserve">
+    <value>Falhado:</value>
+  </data>
+  <data name="SettingsWindow_Theme" xml:space="preserve">
+    <value>Tema da aplicação:</value>
+  </data>
+  <data name="VideoEntry_RemainingTime" xml:space="preserve">
+    <value>Tempo restante esperado para o ficheiro actual</value>
+  </data>
+  <data name="MetadataWindow_Creator" xml:space="preserve">
+    <value>Criador:</value>
+  </data>
+  <data name="MainWindow_StatusSucceeded" xml:space="preserve">
+    <value>Sucesso:</value>
+  </data>
+  <data name="MainWindow_MenuRemove" xml:space="preserve">
+    <value>_Remover</value>
+  </data>
+  <data name="SettingsWindow_Title" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
+    <value>Mudar transferências_Pasta...</value>
+  </data>
+  <data name="MainWindow_DownloadFolder" xml:space="preserve">
+    <value>Transferir Pasta</value>
+  </data>
+  <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
+    <value>Transferir opções</value>
+  </data>
+  <data name="MainWindow_MenuClearList" xml:space="preserve">
+    <value>Limpar lista de transferências </value>
+  </data>
+  <data name="SettingsWindow_VideoList" xml:space="preserve">
+    <value>Lista de transferências</value>
+  </data>
+  <data name="VideoEntry_CurrentProgress" xml:space="preserve">
+    <value>Transferir progresso do ficheiro actual</value>
+  </data>
+  <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+    <value>Usar arquivo de transferências</value>
+  </data>
+  <data name="Video_DownloadFailed" xml:space="preserve">
+    <value>Falhou para transferir "{0}".</value>
+  </data>
+  <data name="VideoEntry_Download" xml:space="preserve">
+    <value>Transferência</value>
+  </data>
+  <data name="SettingsWindow_Download" xml:space="preserve">
+    <value>Transferência</value>
+  </data>
+  <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
+    <value>Permitir entradas de video duplicadas</value>
+  </data>
+  <data name="MetadataWindow_Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="MetadataWindow_Duration" xml:space="preserve">
+    <value>Duração:</value>
+  </data>
+  <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+    <value>Restringir o nome do arquivo a caracteres ASCII</value>
+  </data>
+  <data name="SettingsWindow_Filename" xml:space="preserve">
+    <value>Nome do ficheiro</value>
+  </data>
+  <data name="MainWindow_FetchFailed_General" xml:space="preserve">
+    <value>Verifique se o URL fornecido é válido.</value>
+  </data>
+  <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
+    <value>Transferir com melhor qualidade e converter</value>
+  </data>
+  <data name="MetadataWindow_Description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+    <value>Já existente. Item pulado.</value>
+  </data>
+  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+    <value>Verificar automaticamente se há atualizações durante a inicialização</value>
+  </data>
+  <data name="VideoEntry_Finished" xml:space="preserve">
+    <value>Finalizado.</value>
+  </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>Mostrar janela do resultado</value>
+  </data>
+  <data name="SettingsWindow_Binaries" xml:space="preserve">
+    <value>Aplicação</value>
+  </data>
+  <data name="MetadataWindow_Views" xml:space="preserve">
+    <value>Visualizações</value>
+  </data>
+  <data name="SettingsWindow_Appearance" xml:space="preserve">
+    <value>Aparencia</value>
+  </data>
+  <data name="PathSelectionControl_Change" xml:space="preserve">
+    <value>Mudar</value>
+  </data>
+  <data name="SettingsWindow_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+    <value>Mostrar todos os formatos disponíveis</value>
+  </data>
+  <data name="MainWindow_MenuCancelAll" xml:space="preserve">
+    <value>_Cancelar todas as transferências</value>
+  </data>
+  <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
+    <value>_Transferir todos os videos</value>
+  </data>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>Todas as transferências não concluídas</value>
+  </data>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>Todas as transferências concluídas</value>
+  </data>
+  <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+    <value>Taxa de download atual</value>
+  </data>
+  <data name="VideoEntry_Play" xml:space="preserve">
+    <value>Reproduzir</value>
+  </data>
+  <data name="MainWindow_CountFailedFetches" xml:space="preserve">
+    <value>Procurando {0} videos falhados:</value>
+  </data>
+  <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+    <value>Falhou ao procurar o video</value>
+  </data>
+  <data name="MainWindow_HeaderVideos" xml:space="preserve">
+    <value>_Videos</value>
+  </data>
+  <data name="MainWindow_HeaderOptions" xml:space="preserve">
+    <value>_Opções</value>
+  </data>
+  <data name="MainWindow_MenuSettings" xml:space="preserve">
+    <value>_Configurações</value>
+  </data>
+  <data name="MainWindow_HeaderFile" xml:space="preserve">
+    <value>_Ficheiro</value>
+  </data>
+  <data name="MainWindow_MenuExit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Video_DownloadFinished" xml:space="preserve">
+    <value>Concluido "{0}"</value>
+  </data>
+  <data name="Video_DownloadCancelled" xml:space="preserve">
+    <value>Cancelado "{0}"</value>
+  </data>
+</root>
