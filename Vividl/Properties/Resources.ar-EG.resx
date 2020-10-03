@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="DownloadOption_AVI" xml:space="preserve">
+    <value>تحويل إلى AVI</value>
+  </data>
+  <data name="DownloadOption_Best" xml:space="preserve">
+    <value>أفضل تحميل مباشر</value>
+  </data>
+  <data name="DownloadOption_M4A" xml:space="preserve">
+    <value>تحويل إلى M4A</value>
+  </data>
+  <data name="DownloadOption_MP3" xml:space="preserve">
+    <value>تحويل إلى MP3</value>
+  </data>
+  <data name="DownloadOption_MP4" xml:space="preserve">
+    <value>تحويل إلى MP4</value>
+  </data>
+  <data name="DownloadOption_Vorbis" xml:space="preserve">
+    <value>تحويل إلى Ogg Vorbis</value>
+  </data>
+  <data name="DownloadOption_WAV" xml:space="preserve">
+    <value>تحويل إلى WAV</value>
+  </data>
+  <data name="DownloadOption_Webm" xml:space="preserve">
+    <value>تحويل إلى WebM</value>
+  </data>
+  <data name="DownloadOption_MKV" xml:space="preserve">
+    <value>دمج إلى MKV</value>
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>مسح الناتج</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>نسخ الناتج</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>تحميل الناتج</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>تحميل التصميم</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>تحميل قائمة التشغيل إن وجدت</value>
+  </data>
+  <data name="FetchWindow_EnterUrls" xml:space="preserve">
+    <value>أدخل رابط الفيديو فن سطور منفصلة</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>إبدأ التحميل فوراً</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>الخيارات</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>إثبات الدخول</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>إسم المستخدم</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>كلمة سر الفيديو</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="MainWindow_AlreadyFetched" xml:space="preserve">
+    <value>تم إضافة هذا الفيديو إلى قائمة التحميل من قبل.
+للسماح بالتكرارات، إذهب إلى الخيارات -&gt; الاعدادات.</value>
+  </data>
+  <data name="MainWindow_CountFailedFetches" xml:space="preserve">
+    <value>لم تنجح محاولة إضافة الفيديو {0} إلى قائمة التحميل.</value>
+  </data>
+  <data name="MainWindow_DownloadFolder" xml:space="preserve">
+    <value>تحميل المجلد</value>
+  </data>
+  <data name="MainWindow_FetchFailed_General" xml:space="preserve">
+    <value>برجاء التأكد أن الرابط صالح</value>
+  </data>
+  <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+    <value>لم تنجح محاولة تحميل الفيديو</value>
+  </data>
+  <data name="MainWindow_HeaderFile" xml:space="preserve">
+    <value>_ملف</value>
+  </data>
+  <data name="MainWindow_HeaderOptions" xml:space="preserve">
+    <value>_خيارات</value>
+  </data>
+  <data name="MainWindow_HeaderVideos" xml:space="preserve">
+    <value>_فيديوهات</value>
+  </data>
+  <data name="MainWindow_ListEmpty" xml:space="preserve">
+    <value>أضف فيديوهات جديدة عن طريق لصق الروابط.</value>
+  </data>
+  <data name="MainWindow_MenuAbout" xml:space="preserve">
+    <value>ع_ن</value>
+  </data>
+  <data name="MainWindow_MenuAdd" xml:space="preserve">
+    <value>_إضافة فيديوهات جديدة</value>
+  </data>
+  <data name="MainWindow_MenuCancelAll" xml:space="preserve">
+    <value>_إلغاء كل التحميلات</value>
+  </data>
+  <data name="MainWindow_MenuClearList" xml:space="preserve">
+    <value>م_سح قائمة التحميل</value>
+  </data>
+  <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
+    <value>_تحميل كل الفيديوهات</value>
+  </data>
+  <data name="MainWindow_MenuExit" xml:space="preserve">
+    <value>خ_روج</value>
+  </data>
+  <data name="MainWindow_MenuExport" xml:space="preserve">
+    <value>_إصدار روابط الفيديوهات</value>
+  </data>
+  <data name="MainWindow_MenuImport" xml:space="preserve">
+    <value>_توريد روابط الفيديوهات</value>
+  </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>إظهار شاشة الناتج</value>
+  </data>
+  <data name="MainWindow_MenuPaste" xml:space="preserve">
+    <value>_لصق رابط الفيديو</value>
+  </data>
+  <data name="MainWindow_MenuRemove" xml:space="preserve">
+    <value>_إزالة</value>
+  </data>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>كل التحميلات _المنتهية</value>
+  </data>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>كل التحميلات _الغير متوفرة</value>
+  </data>
+  <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
+    <value>تغيير _مجلد التحميل...</value>
+  </data>
+  <data name="MainWindow_MenuSettings" xml:space="preserve">
+    <value>_الإعدادات</value>
+  </data>
+  <data name="MainWindow_OpenFolder" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="MainWindow_StatusFailed" xml:space="preserve">
+    <value>فشل:</value>
+  </data>
+  <data name="MainWindow_StatusInProcess" xml:space="preserve">
+    <value>جاري:</value>
+  </data>
+  <data name="MainWindow_StatusSucceeded" xml:space="preserve">
+    <value>ناجح:</value>
+  </data>
+  <data name="MetadataWindow_Creator" xml:space="preserve">
+    <value>المنشئ:</value>
+  </data>
+  <data name="MetadataWindow_Description" xml:space="preserve">
+    <value>وصف:</value>
+  </data>
+  <data name="MetadataWindow_Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="MetadataWindow_Duration" xml:space="preserve">
+    <value>المدة:</value>
+  </data>
+  <data name="MetadataWindow_Link" xml:space="preserve">
+    <value>الرابط</value>
+  </data>
+  <data name="MetadataWindow_Source" xml:space="preserve">
+    <value>مصدر:</value>
+  </data>
+  <data name="MetadataWindow_UploadDate" xml:space="preserve">
+    <value>المرفوع:</value>
+  </data>
+  <data name="MetadataWindow_Uploader" xml:space="preserve">
+    <value>الرافع:</value>
+  </data>
+  <data name="MetadataWindow_Views" xml:space="preserve">
+    <value>المشاهدات:</value>
+  </data>
+  <data name="PathSelectionControl_Change" xml:space="preserve">
+    <value>تغيير</value>
+  </data>
+  <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+    <value>نسخ رابط قائمة التشغيل</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>أضف المعلومات الوصفية إلى الملف</value>
+  </data>
+  <data name="SelectDirectory_Description" xml:space="preserve">
+    <value>إختر المجلد الذي سوف يتم تحميل الفيديوهات إليه</value>
+  </data>
+  <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
+    <value>السماح بتكرار الفيديوهات</value>
+  </data>
+  <data name="SettingsWindow_Appearance" xml:space="preserve">
+    <value>المظهر</value>
+  </data>
+  <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+    <value>إستخدم أرشيف التحميل</value>
+  </data>
+  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+    <value>إبحث عن تحديثات عند بدء البرنامج</value>
+  </data>
+  <data name="SettingsWindow_Binaries" xml:space="preserve">
+    <value>التطبيق</value>
+  </data>
+  <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+    <value>إبحث عن تحديثات </value>
+  </data>
+  <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+    <value>جاري البحث عن تحديثات </value>
+  </data>
+  <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+    <value>تصميم التحميل الأساسي:</value>
+  </data>
+  <data name="SettingsWindow_Download" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
+    <value>مجلد تحميل الفيديوهات</value>
+  </data>
+  <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
+    <value>خيارات التحميل</value>
+  </data>
+  <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+    <value>ffmpeg</value>
+  </data>
+  <data name="SettingsWindow_Filename" xml:space="preserve">
+    <value>إسم الملف</value>
+  </data>
+  <data name="SettingsWindow_General" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+    <value>أقصى عدة للتحميلات المتوازية</value>
+  </data>
+  <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+    <value>الكتابة فوق الملفات الموجودة</value>
+  </data>
+  <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
+    <value>مكان البرنامج على الحاسب</value>
+  </data>
+  <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
+    <value>تحميل أفضل جودة وتحويل</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>بروكسي</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>رابط بروكسي</value>
+  </data>
+  <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+    <value>السماح بحروف الASCII فقط</value>
+  </data>
+  <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+    <value>إظهار جميع التصميم المتوفرة</value>
+  </data>
+  <data name="SettingsWindow_Theme" xml:space="preserve">
+    <value>شكل التطبيق:</value>
+  </data>
+  <data name="SettingsWindow_Title" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="SettingsWindow_Version" xml:space="preserve">
+    <value>الإصدار:</value>
+  </data>
+  <data name="SettingsWindow_VideoList" xml:space="preserve">
+    <value>قائمة التحميل</value>
+  </data>
+  <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+    <value>youtube-dl</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Video_DownloadCancelled" xml:space="preserve">
+    <value>ملغي "{0}"</value>
+  </data>
+  <data name="Video_DownloadFailed" xml:space="preserve">
+    <value>لم تنجح محاولة تحميل "{0}".</value>
+  </data>
+  <data name="Video_DownloadFinished" xml:space="preserve">
+    <value>تم الانتهاء "{0}".</value>
+  </data>
+  <data name="Video_DownloadStarting" xml:space="preserve">
+    <value>تحميل "{0}"...</value>
+  </data>
+  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+    <value>الملف موجود. تم تخطيه.</value>
+  </data>
+  <data name="VideoEntry_Converting" xml:space="preserve">
+    <value>تحويل...</value>
+  </data>
+  <data name="VideoEntry_CopyUrl" xml:space="preserve">
+    <value>نسخ رابط الفيديو</value>
+  </data>
+  <data name="VideoEntry_CurrentProgress" xml:space="preserve">
+    <value>حالة تحميل الملف الحالي</value>
+  </data>
+  <data name="VideoEntry_Download" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="VideoEntry_Downloading" xml:space="preserve">
+    <value>غاري التحميل...</value>
+  </data>
+  <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+    <value>معدل التحميل الحالي</value>
+  </data>
+  <data name="VideoEntry_Finished" xml:space="preserve">
+    <value>تم الإنتهاء.</value>
+  </data>
+  <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+    <value>إفتح في المتصفح</value>
+  </data>
+  <data name="VideoEntry_Play" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="VideoEntry_Playlist" xml:space="preserve">
+    <value>قائمة التشغيل - {0} فيديوهات</value>
+  </data>
+  <data name="VideoEntry_PreProcessing" xml:space="preserve">
+    <value>جاري التحضير...</value>
+  </data>
+  <data name="VideoEntry_Reload" xml:space="preserve">
+    <value>إعادة تحميل الفيديو</value>
+  </data>
+  <data name="VideoEntry_RemainingTime" xml:space="preserve">
+    <value>الوقت المتوقع للإنتهاء من الملف الحالي</value>
+  </data>
+  <data name="VideoEntry_Remove" xml:space="preserve">
+    <value>إزالة الفيديو</value>
+  </data>
+  <data name="VideoEntry_ShowInFolder" xml:space="preserve">
+    <value>إظهار في المجلد</value>
+  </data>
+  <data name="VideoEntry_ShowInformation" xml:space="preserve">
+    <value>إظهار المعلومات</value>
+  </data>
+  <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+    <value>حجم تحميل الملف الحالي</value>
+  </data>
+</root>

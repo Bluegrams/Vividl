@@ -251,6 +251,7 @@
     <EmbeddedResource Include="Properties\Resources.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ar-eg.resx" />
     <None Include="Lib\DownloadBinaries.ps1" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
