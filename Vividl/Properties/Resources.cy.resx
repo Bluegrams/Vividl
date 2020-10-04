@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,79 +26,79 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -118,355 +118,471 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Canslo</value>
+    <comment/>
   </data>
   <data name="DownloadOption_AVI" xml:space="preserve">
-    <value>Convert to AVI</value>
+    <value>Trosi I AVI</value>
+    <comment/>
   </data>
   <data name="DownloadOption_Best" xml:space="preserve">
-    <value>Best Direct Download</value>
+    <value>Dadlwythiad Uniongyrchol Gorau</value>
+    <comment/>
   </data>
   <data name="DownloadOption_M4A" xml:space="preserve">
-    <value>Convert to M4A</value>
+    <value>Trosi I M4A</value>
+    <comment/>
   </data>
   <data name="DownloadOption_MKV" xml:space="preserve">
-    <value>Merge to MKV</value>
+    <value>Uni I MKV</value>
+    <comment/>
   </data>
   <data name="DownloadOption_MP3" xml:space="preserve">
-    <value>Convert to MP3</value>
+    <value>Trosi I MP3</value>
+    <comment/>
   </data>
   <data name="DownloadOption_MP4" xml:space="preserve">
-    <value>Convert to MP4</value>
+    <value>Trosi I MP4</value>
+    <comment/>
   </data>
   <data name="DownloadOption_Vorbis" xml:space="preserve">
-    <value>Convert to Ogg Vorbis</value>
+    <value>Trosi I Ogg Vorbis</value>
+    <comment/>
   </data>
   <data name="DownloadOption_WAV" xml:space="preserve">
-    <value>Convert to WAV</value>
+    <value>Trosi I WAV</value>
+    <comment/>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Gwall</value>
+    <comment/>
   </data>
   <data name="FetchWindow_EnterUrls" xml:space="preserve">
-    <value>Enter Video URLs in separate lines</value>
+    <value>Rhowch URLau Fideo mewn llinellau ar wahân</value>
+    <comment/>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Info</value>
+    <value>Gwybodaeth</value>
+    <comment/>
   </data>
   <data name="MainWindow_AlreadyFetched" xml:space="preserve">
-    <value>This video has already been fetched to the download list.
-To allow duplicates, go to Options -&gt; Settings.</value>
+    <value>Mae'r fideo hon eisoes wedi'i chyrchu i'r rhestr lawrlwytho. I ganiatáu dyblygu, ewch i Dewisiadau -&gt; Gosodiadau.</value>
+    <comment/>
   </data>
   <data name="MainWindow_CountFailedFetches" xml:space="preserve">
-    <value>Fetching {0} videos failed:</value>
+    <value>Methodd ffeilio {0} fideo:</value>
+    <comment/>
   </data>
   <data name="MainWindow_DownloadFolder" xml:space="preserve">
-    <value>Download Folder</value>
+    <value>Lawrlwytho Ffolder</value>
+    <comment/>
   </data>
   <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
-    <value>Failed to fetch video</value>
+    <value>Wedi methu nôl fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_HeaderFile" xml:space="preserve">
-    <value>_File</value>
+    <value>_Ffeil</value>
+    <comment/>
   </data>
   <data name="MainWindow_HeaderOptions" xml:space="preserve">
-    <value>_Options</value>
+    <value>_Opsiynau</value>
+    <comment/>
   </data>
   <data name="MainWindow_HeaderVideos" xml:space="preserve">
-    <value>_Videos</value>
+    <value>_Fideos</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuAdd" xml:space="preserve">
-    <value>_Add New Videos</value>
+    <value>_Ychwanegu Fideos Newydd</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuCancelAll" xml:space="preserve">
-    <value>_Cancel All Downloads</value>
+    <value>_Canslo Pob Dadlwythiad</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>_Clear Download List</value>
+    <value>Rhestr Lawrlwytho Clir</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
-    <value>_Download All Videos</value>
+    <value>_Dadlwythwch Pob Fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuExit" xml:space="preserve">
-    <value>_Exit</value>
+    <value>Allanfa</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuExport" xml:space="preserve">
-    <value>_Export Video Links</value>
+    <value>_Allforio Dolenni Fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuImport" xml:space="preserve">
-    <value>_Import Video Links</value>
+    <value>_Mewngludo Cysylltiadau Fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
-    <value>_Paste Video Link</value>
+    <value>_Gludo Cyswllt Fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
-    <value>Change Download _Folder...</value>
+    <value>Newid Ffolder _Lawrlwytho.</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuSettings" xml:space="preserve">
-    <value>_Settings</value>
+    <value>_Gosodiadau</value>
+    <comment/>
   </data>
   <data name="MainWindow_OpenFolder" xml:space="preserve">
-    <value>Open</value>
+    <value>Ar agor</value>
+    <comment/>
   </data>
   <data name="MainWindow_StatusFailed" xml:space="preserve">
-    <value>Failed:</value>
+    <value>Wedi methu:</value>
+    <comment/>
   </data>
   <data name="MainWindow_StatusInProcess" xml:space="preserve">
-    <value>In Process:</value>
+    <value>Yn y Broses</value>
+    <comment/>
   </data>
   <data name="MainWindow_StatusSucceeded" xml:space="preserve">
-    <value>Successful:</value>
+    <value>Llwyddiannus:</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Creator" xml:space="preserve">
-    <value>Creator:</value>
+    <value>Creawdwr:</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Disgrifiad</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Duration" xml:space="preserve">
-    <value>Duration:</value>
+    <value>Hyd:</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Link" xml:space="preserve">
-    <value>Link</value>
+    <value>Dolen</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_UploadDate" xml:space="preserve">
-    <value>Uploaded:</value>
+    <value>Llwythwyd i fyny:</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Uploader" xml:space="preserve">
-    <value>Uploader:</value>
+    <value>Uwchlwythwr:</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Views" xml:space="preserve">
-    <value>Views:</value>
+    <value>Golygfeydd:</value>
+    <comment/>
   </data>
   <data name="SelectDirectory_Description" xml:space="preserve">
-    <value>Select the directory where the downloaded videos will be saved:</value>
+    <value>  Dewiswch y cyfeiriadur lle bydd y fideos sydd wedi'u lawrlwytho yn cael eu cadw:</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
-    <value>Allow duplicate video entries</value>
+    <value>Caniatáu cofnodion fideo dyblyg</value>
+    <comment/>
   </data>
   <data name="PathSelectionControl_Change" xml:space="preserve">
-    <value>Change</value>
+    <value>Newid</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
-    <value>Default download format:</value>
+    <value>Fformat lawrlwytho rhagosodedig:</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Dadlwythwch</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
-    <value>Video Download Folder</value>
+    <value>Ffolder Lawrlwytho Fideo</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
-    <value>Download Options</value>
+    <value>Lawrlwytho Opsiynau</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Filename" xml:space="preserve">
-    <value>Filename</value>
+    <value>Enw ffeil</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>Cyffredinol</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
-    <value>Maximum concurrent downloads</value>
+    <value>Uchafswm o lawrlwythiadau cydamserol</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
-    <value>Overwrite existing files</value>
+    <value>Ysgrifennwch y ffeiliau presennol</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
-    <value>Restrict filename to ASCII characters</value>
+    <value>Cyfyngu enw ffeil i nodau ASCII</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
-    <value>Show all available formats</value>
+    <value>Dangoswch yr holl fformatau sydd ar gael</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Title" xml:space="preserve">
-    <value>Settings</value>
+    <value>Gosodiadau</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_VideoList" xml:space="preserve">
-    <value>Download List</value>
+    <value>Rhestr Lawrlwytho</value>
+    <comment/>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>OK</value>
+    <value>Iawn</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Converting" xml:space="preserve">
-    <value>Converting...</value>
+    <value>Trosi...</value>
+    <comment/>
   </data>
   <data name="VideoEntry_CopyUrl" xml:space="preserve">
-    <value>Copy Video URL</value>
+    <value>Copi URL Fideo</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Dadlwythwch</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Downloading" xml:space="preserve">
-    <value>Downloading...</value>
+    <value>Llwytho i lawr...</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Finished" xml:space="preserve">
-    <value>Finished.</value>
+    <value>Gorffennwyd.</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Play" xml:space="preserve">
-    <value>Play</value>
+    <value>Chwarae</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Playlist" xml:space="preserve">
-    <value>Playlist - {0} Videos</value>
+    <value>Rhestr Chwarae - {0} Fideos</value>
+    <comment/>
   </data>
   <data name="VideoEntry_PreProcessing" xml:space="preserve">
-    <value>Preparing...</value>
+    <value>Paratoi...</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Remove" xml:space="preserve">
-    <value>Remove Video</value>
+    <value>Dileu Fideo</value>
+    <comment/>
   </data>
   <data name="VideoEntry_ShowInFolder" xml:space="preserve">
-    <value>Show In Folder</value>
+    <value>Dangos Mewn Ffolder</value>
+    <comment/>
   </data>
   <data name="VideoEntry_ShowInformation" xml:space="preserve">
-    <value>Show Information</value>
+    <value>Dangos Gwybodaeth</value>
+    <comment/>
   </data>
   <data name="Video_DownloadCancelled" xml:space="preserve">
-    <value>Cancelled "{0}".</value>
+    <value>Wedi'i ganslo "{0}".</value>
+    <comment/>
   </data>
   <data name="Video_DownloadFinished" xml:space="preserve">
-    <value>Finished "{0}".</value>
+    <value>Gorffennwyd "{0}".</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuAbout" xml:space="preserve">
-    <value>_About</value>
+    <value>Am</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Binaries" xml:space="preserve">
-    <value>Application</value>
+    <value>Cais</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
-    <value>Check For Updates</value>
+    <value>Gwiriwch am Ddiweddariadau</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
     <value>ffmpeg</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
-    <value>Location of the executable on your PC</value>
+    <value>Lleoliad y gweithredadwy ar eich cyfrifiadur</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Version" xml:space="preserve">
-    <value>Version:</value>
+    <value>Fersiwn:</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
     <value>youtube-dl</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
-    <value>Checking for updates...</value>
+    <value>Gwirio am ddiweddariadau ...</value>
+    <comment/>
   </data>
   <data name="MainWindow_FetchFailed_General" xml:space="preserve">
-    <value>Please make sure the given URL is valid.</value>
+    <value>Gwnewch yn siŵr bod yr URL a roddir yn ddilys.</value>
+    <comment/>
   </data>
   <data name="Video_DownloadStarting" xml:space="preserve">
-    <value>Downloading "{0}"...</value>
+    <value>Llwytho i lawr "{0}" ...</value>
+    <comment/>
   </data>
   <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
-    <value>Open In Browser</value>
+    <value>Agor Mewn Porwr</value>
+    <comment/>
   </data>
   <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
-    <value>Copy Playlist URL</value>
+    <value>Copi URL Rhestr Chwarae</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Details" xml:space="preserve">
-    <value>Details</value>
+    <value>Manylion</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Ymddangosiad</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Theme" xml:space="preserve">
-    <value>Application Theme:</value>
+    <value>Thema'r Cais:</value>
+    <comment/>
   </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
-    <value>Add new videos by pasting or importing URLs.</value>
+    <value>Ychwanegwch fideos newydd trwy gludo neu fewnforio URLs.</value>
+    <comment/>
   </data>
   <data name="DownloadOption_Webm" xml:space="preserve">
-    <value>Convert to WebM</value>
+    <value>Trosi i WebM</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
-    <value>Download best quality and convert</value>
+    <value>Dadlwythwch yr ansawdd gorau a'i drosi</value>
+    <comment/>
   </data>
   <data name="VideoEntry_Reload" xml:space="preserve">
-    <value>Reload Video</value>
+    <value>Fideo Ail-lwytho</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
-    <value>Use Download Archive</value>
+    <value>Defnyddiwch Download Archif</value>
+    <comment/>
   </data>
   <data name="MetadataWindow_Source" xml:space="preserve">
-    <value>Source:</value>
+    <value>Ffynhonnell:</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Remove</value>
+    <value>_Tynnu</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>All _Finished Downloads</value>
+    <value>Pob Dadlwythiad Gorffenedig</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>All _Unavailable Downloads</value>
+    <value>Pob Dadlwythiad Heb fod ar Gael</value>
+    <comment/>
   </data>
   <data name="Video_DownloadFailed" xml:space="preserve">
-    <value>Failed to download "{0}".</value>
+    <value>Wedi methu lawrlwytho "{0}".</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
-    <value>Automatically check for updates at startup</value>
+    <value>Gwiriwch yn awtomatig am ddiweddariadau wrth gychwyn</value>
+    <comment/>
   </data>
   <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
-    <value>Already existent. Item skipped.</value>
+    <value>Eisoes yn bodoli. Eitem wedi'i hepgor.</value>
+    <comment/>
   </data>
   <data name="FetchWindow_Options" xml:space="preserve">
-    <value>Options</value>
+    <value>Opsiynau</value>
+    <comment/>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Download Format</value>
+    <value>Lawrlwytho Fformat</value>
+    <comment/>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
-    <value>Download playlist if available</value>
+    <value>Dadlwythwch restr chwarae os yw ar gael</value>
+    <comment/>
   </data>
   <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
-    <value>Start download immediately</value>
+    <value>Dechreuwch lawrlwytho ar unwaith</value>
+    <comment/>
   </data>
   <data name="FetchWindow_Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Cyfrinair</value>
+    <comment/>
   </data>
   <data name="FetchWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Gosodiadau</value>
+    <comment/>
   </data>
   <data name="FetchWindow_TabAuthentication" xml:space="preserve">
-    <value>Authentication</value>
+    <value>Dilysu</value>
+    <comment/>
   </data>
   <data name="FetchWindow_TabGeneral" xml:space="preserve">
-    <value>General</value>
+    <value>Cyffredinol</value>
+    <comment/>
   </data>
   <data name="FetchWindow_Username" xml:space="preserve">
-    <value>Username</value>
+    <value>Enw defnyddiwr</value>
+    <comment/>
   </data>
   <data name="FetchWindow_VideoPassword" xml:space="preserve">
-    <value>Video Password</value>
+    <value>Cyfrinair Fideo</value>
+    <comment/>
   </data>
   <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
-    <value>Show Output Window</value>
+    <value>Dangos Ffenestr Allbwn</value>
+    <comment/>
   </data>
   <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
-    <value>Clear Output</value>
+    <value>Allbwn Clir</value>
+    <comment/>
   </data>
   <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
-    <value>Copy Output</value>
+    <value>Copi Allbwn</value>
+    <comment/>
   </data>
   <data name="DownloadOutputWindow_Title" xml:space="preserve">
-    <value>Download Output</value>
+    <value>Dadlwythwch Allbwn</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_AddMetadata" xml:space="preserve">
-    <value>Add metadata to files</value>
+    <value>Ychwanegu metadata at ffeiliau</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_Proxy" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Dirprwy</value>
+    <comment/>
   </data>
   <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
-    <value>Proxy URL</value>
+    <value>URL dirprwy</value>
+    <comment/>
   </data>
   <data name="VideoEntry_CurrentProgress" xml:space="preserve">
-    <value>Download progress of current file</value>
+    <value>Dadlwythwch gynnydd y ffeil gyfredol</value>
+    <comment/>
   </data>
   <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
-    <value>Current download rate</value>
+    <value>Cyfradd lawrlwytho gyfredol</value>
+    <comment/>
   </data>
   <data name="VideoEntry_RemainingTime" xml:space="preserve">
-    <value>Expected remaining time for current file</value>
+    <value>Disgwylir yr amser sy'n weddill ar gyfer y ffeil gyfredol</value>
+    <comment/>
   </data>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
-    <value>Total download size of current file</value>
+    <value>Cyfanswm maint lawrlwytho'r ffeil gyfredol</value>
+    <comment/>
   </data>
 </root>
