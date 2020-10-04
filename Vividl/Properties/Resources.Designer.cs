@@ -377,7 +377,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A_bout.
+        ///   Looks up a localized string similar to _About.
         /// </summary>
         public static string MainWindow_MenuAbout {
             get {
@@ -404,7 +404,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clea_r Download List.
+        ///   Looks up a localized string similar to _Clear Download List.
         /// </summary>
         public static string MainWindow_MenuClearList {
             get {
@@ -422,7 +422,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E_xit.
+        ///   Looks up a localized string similar to _Exit.
         /// </summary>
         public static string MainWindow_MenuExit {
             get {
