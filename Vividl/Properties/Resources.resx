@@ -182,13 +182,13 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>_Cancel All Downloads</value>
   </data>
   <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>Clea_r Download List</value>
+    <value>_Clear Download List</value>
   </data>
   <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
     <value>_Download All Videos</value>
   </data>
   <data name="MainWindow_MenuExit" xml:space="preserve">
-    <value>E_xit</value>
+    <value>_Exit</value>
   </data>
   <data name="MainWindow_MenuExport" xml:space="preserve">
     <value>_Export Video Links</value>
@@ -326,7 +326,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Finished "{0}".</value>
   </data>
   <data name="MainWindow_MenuAbout" xml:space="preserve">
-    <value>A_bout</value>
+    <value>_About</value>
   </data>
   <data name="SettingsWindow_Binaries" xml:space="preserve">
     <value>Application</value>
