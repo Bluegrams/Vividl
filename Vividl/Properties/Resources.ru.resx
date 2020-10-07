@@ -148,7 +148,7 @@
     <value>Ошибка</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>инфо</value>
+    <value>Информация</value>
   </data>
   <data name="MainWindow_HeaderFile" xml:space="preserve">
     <value>_Файл</value>
@@ -316,7 +316,7 @@
     <value>Лучшая прямая загрузка</value>
   </data>
   <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>Очистит_ь список загрузок</value>
+    <value>_Очистить список загрузок</value>
   </data>
   <data name="SettingsWindow_VideoList" xml:space="preserve">
     <value>Список загрузок</value>
@@ -405,5 +405,68 @@
   </data>
   <data name="SelectDirectory_Description" xml:space="preserve">
     <value>Выберите каталог, в котором будут сохранены загруженные видео:</value>
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>Очистить вывод</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>Копировать вывод</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>Загрузить вывод</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>Формат скачивания</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>Загрузить плейлист, если доступен</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>Начать загрузку немедленно</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>Общее</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>Видео пароль</value>
+  </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>Показать окно вывода</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>Добавить метаданные к файлам</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>Прокси URL</value>
+  </data>
+  <data name="VideoEntry_CurrentProgress" xml:space="preserve">
+    <value>Загрузить прогресс выбранного файла</value>
+  </data>
+  <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+    <value>Текущая скорость загрузки</value>
+  </data>
+  <data name="VideoEntry_RemainingTime" xml:space="preserve">
+    <value>Оставшееся время для текущего файла</value>
+  </data>
+  <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+    <value>Общий размер загружаемого файла</value>
   </data>
 </root>
