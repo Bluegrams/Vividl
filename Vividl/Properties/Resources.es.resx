@@ -326,7 +326,7 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
     <value>Finalizada la descarga de "{0}".</value>
   </data>
   <data name="MainWindow_MenuAbout" xml:space="preserve">
-    <value>_Acerca de…</value>
+    <value>_Acerca de</value>
   </data>
   <data name="SettingsWindow_Binaries" xml:space="preserve">
     <value>Aplicación</value>
@@ -368,7 +368,7 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
     <value>Apariencia</value>
   </data>
   <data name="SettingsWindow_Theme" xml:space="preserve">
-    <value>Tema de la aplicación</value>
+    <value>Tema de la aplicación:</value>
   </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
     <value>Añade nuevos vídeos pegando o importando URLs.</value>
