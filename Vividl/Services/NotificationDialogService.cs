@@ -9,6 +9,7 @@ using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
 using MahApps.Metro.IconPacks;
 using Vividl.Properties;
+using WPFLocalizeExtension.Engine;
 
 using Brushes = AdonisUI.Brushes;
 using Colors = AdonisUI.Colors;
@@ -31,6 +32,11 @@ namespace Vividl.Services
             AboutBox aboutBox = new AboutBox(new BitmapImage(iconUri));
             aboutBox.UpdateChecker = updateChecker;
             aboutBox.AccentColor = AccentColor;
+            aboutBox.CultureChanging += (o, args) =>
+            {
+                LocalizeDictionary.Instance.Culture = args.NewCulture;
+                args.Success = true;
+            };
             aboutBox.Owner = Application.Current.Windows
                                 .OfType<Window>().SingleOrDefault(x => x.IsActive);
             aboutBox.ShowDialog();

@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Vividl.Properties;
 using Vividl.View;
 using Vividl.ViewModel;
+using WPFLocalizeExtension.Engine;
 
 namespace Vividl
 {
@@ -21,6 +22,7 @@ namespace Vividl
             Messenger.Default.Register<NotificationMessage>(this, handleStatusMessage);
             Messenger.Default.Register<ShowWindowMessage>(this, handleOpenWindow);
             this.Closing += MainWindow_Closing;
+            LocalizeDictionary.Instance.Culture = System.Globalization.CultureInfo.CurrentUICulture;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

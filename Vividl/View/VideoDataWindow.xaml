@@ -5,6 +5,10 @@
         xmlns:p="clr-namespace:Vividl.Properties"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         Title="{Binding Entry.Title}" Height="400" Width="500"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
@@ -12,9 +16,9 @@
     </Window.Style>
     <Window.Resources>
         <ContextMenu x:Key="contxtVideo">
-            <MenuItem Header="{x:Static p:Resources.VideoEntry_CopyUrl}"
+            <MenuItem Header="{lex:Loc VideoEntry_CopyUrl}"
                       Command="{Binding CopyClipboardCommand}"/>
-            <MenuItem Header="{x:Static p:Resources.VideoEntry_OpenInBrowser}"
+            <MenuItem Header="{lex:Loc VideoEntry_OpenInBrowser}"
                       Command="{Binding OpenInBrowserCommand}"/>
         </ContextMenu>
     </Window.Resources>
@@ -41,12 +45,12 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Content="{x:Static p:Resources.Cancel}" DockPanel.Dock="Right"
+            <Button Content="{lex:Loc Cancel}" DockPanel.Dock="Right"
                     MinWidth="80" IsCancel="True"/>
             <Button DockPanel.Dock="Right" MinWidth="100" Command="{Binding DownloadCommand}"
                     x:Name="butDownload" IsDefault="True" local:ButtonEx.CloseWindow="True">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{x:Static p:Resources.VideoEntry_Download}"/>
+                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
                     <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
                 </StackPanel>
             </Button>
@@ -61,7 +65,7 @@
                             <Setter Property="Padding" Value="4"/>
                         </Style>
                     </StackPanel.Resources>
-                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Details}">
+                    <GroupBox Header="{lex:Loc MetadataWindow_Details}">
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
@@ -79,42 +83,42 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock>
-                            <Run Text="{x:Static p:Resources.MetadataWindow_Source}"/>
+                            <Run Text="{lex:Loc MetadataWindow_Source}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.ExtractorKey, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Column="1">
-                            <Run Text="{x:Static p:Resources.MetadataWindow_Duration}"/>
+                            <Run Text="{lex:Loc MetadataWindow_Duration}"/>
                             <Run/>
                             <Run Text="{Binding Duration, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="1" Grid.Column="0">
-                            <Run Text="{x:Static p:Resources.MetadataWindow_Creator}"/>
+                            <Run Text="{lex:Loc MetadataWindow_Creator}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.Creator, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="1" Grid.Column="1">
-                            <Run Text="{x:Static p:Resources.MetadataWindow_UploadDate}"/>
+                            <Run Text="{lex:Loc MetadataWindow_UploadDate}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.UploadDate, Mode=OneWay, StringFormat='{}{0:yyyy-MM-dd}'}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="0">
-                            <Run Text="{x:Static p:Resources.MetadataWindow_Uploader}"/>
+                            <Run Text="{lex:Loc MetadataWindow_Uploader}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.Uploader, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1">
-                            <Run Text="{x:Static p:Resources.MetadataWindow_Views}"/>
+                            <Run Text="{lex:Loc MetadataWindow_Views}"/>
                             <Run/>
                             <Run Text="{Binding Entry.Metadata.ViewCount, Mode=OneWay}"/>
                             </TextBlock>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Description}">
+                    <GroupBox Header="{lex:Loc MetadataWindow_Description}">
                         <TextBox Text="{Binding Entry.Metadata.Description, Mode=OneWay}"
                                  Style="{StaticResource labelBox}"/>
                     </GroupBox>
-                    <GroupBox Header="{x:Static p:Resources.MetadataWindow_Link}">
+                    <GroupBox Header="{lex:Loc MetadataWindow_Link}">
                         <Hyperlink NavigateUri="{Binding Entry.Url, Mode=OneTime}"
                                    RequestNavigate="Hyperlink_RequestNavigate">
                             <Run Text="{Binding Entry.Url, Mode=OneTime}"/>

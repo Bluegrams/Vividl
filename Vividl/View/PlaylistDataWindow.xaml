@@ -5,6 +5,10 @@
         xmlns:p="clr-namespace:Vividl.Properties"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         Title="{Binding Entry.Title}" Height="400" Width="500"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
@@ -14,9 +18,9 @@
         <Grid Margin="2" DockPanel.Dock="Top" Height="72" Background="Transparent">
             <Grid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="{x:Static p:Resources.PlaylistEntry_CopyUrl}"
+                    <MenuItem Header="{lex:Loc PlaylistEntry_CopyUrl}"
                       Command="{Binding CopyClipboardCommand}"/>
-                    <MenuItem Header="{x:Static p:Resources.VideoEntry_OpenInBrowser}"
+                    <MenuItem Header="{lex:Loc VideoEntry_OpenInBrowser}"
                       Command="{Binding OpenInBrowserCommand}"/>
                 </ContextMenu>
             </Grid.ContextMenu>
@@ -43,12 +47,12 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Content="{x:Static p:Resources.Cancel}" DockPanel.Dock="Right"
+            <Button Content="{lex:Loc Cancel}" DockPanel.Dock="Right"
                     MinWidth="80" IsCancel="True"/>
             <Button DockPanel.Dock="Right" MinWidth="100" Command="{Binding DownloadCommand}"
                     x:Name="butDownload" IsDefault="True" local:ButtonEx.CloseWindow="True">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{x:Static p:Resources.VideoEntry_Download}"/>
+                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
                     <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
                 </StackPanel>
             </Button>

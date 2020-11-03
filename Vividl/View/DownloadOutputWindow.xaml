@@ -5,7 +5,11 @@
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
         xmlns:p="clr-namespace:Vividl.Properties"
-        Title="{x:Static p:Resources.DownloadOutputWindow_Title}" Height="450" Width="450"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        Title="{lex:Loc DownloadOutputWindow_Title}" Height="450" Width="450"
         ShowInTaskbar="False" Closed="Window_Closed">
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
@@ -29,9 +33,9 @@
         </TextBox.Style>
         <TextBox.ContextMenu>
             <ContextMenu>
-                <MenuItem Header="{x:Static p:Resources.DownloadOutputWindow_CopyOutput}"
+                <MenuItem Header="{lex:Loc DownloadOutputWindow_CopyOutput}"
                           Click="CopyOutputMenuItem_Click"/>
-                <MenuItem Header="{x:Static p:Resources.DownloadOutputWindow_ClearOutput}"
+                <MenuItem Header="{lex:Loc DownloadOutputWindow_ClearOutput}"
                           Click="ClearOutputMenuItem_Click"/>
             </ContextMenu>
         </TextBox.ContextMenu>

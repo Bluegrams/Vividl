@@ -5,6 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:Vividl.Properties"
              xmlns:local="clr-namespace:Vividl.View"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+             lex:ResxLocalizationProvider.DefaultDictionary="Resources"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="500">
     <UserControl.Resources>
@@ -13,7 +17,7 @@
         </Style>
     </UserControl.Resources>
     <DockPanel>
-        <Button DockPanel.Dock="Right" Content="{x:Static p:Resources.PathSelectionControl_Change}"
+        <Button DockPanel.Dock="Right" Content="{lex:Loc PathSelectionControl_Change}"
                 Click="Button_Click"/>
         <TextBox IsReadOnly="True" VerticalContentAlignment="Center"
                  Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:PathSelectionControl}},

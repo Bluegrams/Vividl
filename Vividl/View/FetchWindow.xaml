@@ -5,22 +5,26 @@
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Title="{Binding Source={x:Static p:Resources.MainWindow_MenuAdd}, Converter={StaticResource resConv}}" Width="350" SizeToContent="Height"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        Title="{Binding Source={lex:Loc MainWindow_MenuAdd}, Converter={StaticResource resConv}}" Width="350" SizeToContent="Height"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
     </Window.Style>
     <DockPanel>
         <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
-            <Button Content="{x:Static p:Resources.Cancel}"
+            <Button Content="{lex:Loc Cancel}"
                     DockPanel.Dock="Right" MinWidth="80"
                     IsCancel="True"/>
-            <Button Content="{x:Static p:Resources.Submit}"
+            <Button Content="{lex:Loc Submit}"
                     DockPanel.Dock="Right" MinWidth="80"
                     Click="Submit_Click"/>
         </DockPanel>
         <StackPanel>
-            <TextBlock Text="{x:Static p:Resources.FetchWindow_EnterUrls}"
+            <TextBlock Text="{lex:Loc FetchWindow_EnterUrls}"
                        Margin="8"/>
             <Grid>
                 <TextBox x:Name="txtUrl" AcceptsReturn="True" Height="90"
@@ -28,7 +32,7 @@
                          VerticalScrollBarVisibility="Auto"
                          adonisExtensions:CursorSpotlightExtension.RelativeSpotlightSize="0"/>
             </Grid>
-            <Expander Header="{x:Static p:Resources.FetchWindow_Options}" Margin="0,2">
+            <Expander Header="{lex:Loc FetchWindow_Options}" Margin="0,2">
                 <TabControl Margin="0,2,0,0" Height="170">
                     <TabControl.Resources>
                         <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
@@ -45,10 +49,10 @@
                             <Setter Property="Margin" Value="0,7,16,7"/>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem Header="{x:Static p:Resources.FetchWindow_TabGeneral}">
+                    <TabItem Header="{lex:Loc FetchWindow_TabGeneral}">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Static p:Resources.FetchWindow_DownloadFormat}"/>
+                                <TextBlock Text="{lex:Loc FetchWindow_DownloadFormat}"/>
                                 <ComboBox ItemsSource="{Binding DownloadOptions, Mode=OneWay}"
                                           Margin="4" Padding="6,0"
                                           SelectedIndex="{Binding SelectedDownloadOption}">
@@ -63,21 +67,21 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </StackPanel>
-                            <CheckBox Content="{x:Static p:Resources.FetchWindow_DownloadPlaylist}"
+                            <CheckBox Content="{lex:Loc FetchWindow_DownloadPlaylist}"
                                       IsChecked="{Binding OverrideOptions.YesPlaylist}"/>
-                            <CheckBox Content="{x:Static p:Resources.FetchWindow_ImmediateDownload}"
+                            <CheckBox Content="{lex:Loc FetchWindow_ImmediateDownload}"
                                       IsChecked="{Binding ImmediateDownload}"/>
                             <StackPanel Orientation="Horizontal">
                                 <Button Padding="4,2" Command="{Binding SettingsCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <icon:PackIconModern Kind="Cog" Margin="0,0,4,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="{x:Static p:Resources.FetchWindow_Settings}" Margin="4,2"/>
+                                        <TextBlock Text="{lex:Loc FetchWindow_Settings}" Margin="4,2"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.FetchWindow_TabAuthentication}">
+                    <TabItem Header="{lex:Loc FetchWindow_TabAuthentication}">
                         <Grid Margin="0,2">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -88,11 +92,11 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{x:Static p:Resources.FetchWindow_Username}"/>
+                            <TextBlock Text="{lex:Loc FetchWindow_Username}"/>
                             <TextBox Grid.Column="1" Text="{Binding OverrideOptions.Username}"/>
-                            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.FetchWindow_Password}"/>
+                            <TextBlock Grid.Row="1" Text="{lex:Loc FetchWindow_Password}"/>
                             <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="txtPassword"/>
-                            <TextBlock Grid.Row="2" Text="{x:Static p:Resources.FetchWindow_VideoPassword}"/>
+                            <TextBlock Grid.Row="2" Text="{lex:Loc FetchWindow_VideoPassword}"/>
                             <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="txtVideoPassword"/>
                         </Grid>
                     </TabItem>

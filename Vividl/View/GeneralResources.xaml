@@ -4,7 +4,8 @@
                     xmlns:p="clr-namespace:Vividl.Properties"
                     xmlns:local="clr-namespace:Vividl.Helpers"
                     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
-                    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI">
+                    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+                    xmlns:lex="http://wpflocalizeextension.codeplex.com">
     <local:InverseBoolConverter x:Key="invBool"/>
     <BooleanToVisibilityConverter x:Key="boolToVis"/>
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
@@ -92,7 +93,7 @@
                 </ComboBox>
                 <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
                 <Button Command="{Binding ShowMetadataCommand}" Margin="0" Height="25"
-                        ToolTip="{x:Static p:Resources.VideoEntry_ShowInformation}"
+                        ToolTip="{lex:Loc VideoEntry_ShowInformation}"
                         Content="{icon:Modern Kind=InformationCircle}"/>
             </StackPanel>
             <Grid Grid.Column="1" Grid.RowSpan="2" Margin="16,4"
@@ -114,44 +115,44 @@
                     <ColumnDefinition Width="70"/>
                 </Grid.ColumnDefinitions>
                 <icon:PackIconModern Grid.Row="0" Kind="Box"
-                                     ToolTip="{x:Static p:Resources.VideoEntry_TotalDownloadSize}"
+                                     ToolTip="{lex:Loc VideoEntry_TotalDownloadSize}"
                                      Visibility="{Binding TotalDownloadSize, Converter={StaticResource stringToVis}}"/>
                 <icon:PackIconModern Grid.Row="1" Kind="Timer"
-                                     ToolTip="{x:Static p:Resources.VideoEntry_DownloadSpeed}"
+                                     ToolTip="{lex:Loc VideoEntry_DownloadSpeed}"
                                      Visibility="{Binding DownloadSpeed, Converter={StaticResource stringToVis}}"/>
                 <icon:PackIconModern Grid.Row="0" Grid.Column="2" Kind="Hourglass"
-                                     ToolTip="{x:Static p:Resources.VideoEntry_RemainingTime}"
+                                     ToolTip="{lex:Loc VideoEntry_RemainingTime}"
                                      Visibility="{Binding DownloadTimeRemaining, Converter={StaticResource stringToVis}}"/>
                 <TextBlock Grid.Column="1" Grid.Row="0"
                            Text="{Binding Path=TotalDownloadSize, Mode=OneWay}"
                            HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                           ToolTip="{x:Static p:Resources.VideoEntry_TotalDownloadSize}"/>
+                           ToolTip="{lex:Loc VideoEntry_TotalDownloadSize}"/>
                 <TextBlock Grid.Column="1" Grid.Row="1"
                            Text="{Binding Path=DownloadSpeed, Mode=OneWay}"
                            HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                           ToolTip="{x:Static p:Resources.VideoEntry_DownloadSpeed}"/>
+                           ToolTip="{lex:Loc VideoEntry_DownloadSpeed}"/>
                 <TextBlock Grid.Column="3" Grid.Row="0"
                            Text="{Binding Path=DownloadTimeRemaining, Mode=OneWay}"
                            HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                           ToolTip="{x:Static p:Resources.VideoEntry_RemainingTime}"/>
+                           ToolTip="{lex:Loc VideoEntry_RemainingTime}"/>
                 <TextBlock Grid.Column="3" Grid.Row="1"
                            Text="{Binding Path=CurrentProgress, Mode=OneWay, Converter={StaticResource floatToPercent}}"
                            HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                           ToolTip="{x:Static p:Resources.VideoEntry_CurrentProgress}"/>
+                           ToolTip="{lex:Loc VideoEntry_CurrentProgress}"/>
             </Grid>
             <StackPanel Grid.Column="2" Grid.RowSpan="2" Orientation="Horizontal"
                         Visibility="{Binding IsDownloading, Converter={StaticResource invBoolToVis}}">
                 <Button Command="{Binding DownloadCommand}" Width="80" Height="25" Margin="4"
-                        ToolTip="{x:Static p:Resources.VideoEntry_Download}">
+                        ToolTip="{lex:Loc VideoEntry_Download}">
                     <icon:PackIconModern Kind="Download"/>
                 </Button>
                 <Button Command="{Binding DeleteCommand}" Height="25" Margin="4"
-                        ToolTip="{x:Static p:Resources.VideoEntry_Remove}">
+                        ToolTip="{lex:Loc VideoEntry_Remove}">
                     <icon:PackIconModern Kind="Delete"/>
                 </Button>
             </StackPanel>
             <DockPanel Grid.Column="2" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
-                <Button DockPanel.Dock="Right" ToolTip="{x:Static p:Resources.Cancel}"
+                <Button DockPanel.Dock="Right" ToolTip="{lex:Loc Cancel}"
                         Command="{Binding CancelCommand}">
                     <icon:PackIconModern Height="10" Kind="Close"/>
                 </Button>
@@ -184,10 +185,10 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding Path=Entry.Title}"/>
             <!-- Show if file has been downloaded successfully -->
-            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_Finished}"
+            <TextBlock Grid.Row="1" Text="{lex:Loc VideoEntry_Finished}"
                        Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource boolToVis}}"/>
             <!-- Show if file has not been re-downloaded because in archive || no overwrites -->
-            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.VideoEntry_AlreadyDownloaded}"
+            <TextBlock Grid.Row="1" Text="{lex:Loc VideoEntry_AlreadyDownloaded}"
                        Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource invBoolToVis}}"/>
             <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                 <StackPanel.Resources>
@@ -198,11 +199,11 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button Command="{Binding PlayCommand}"
-                        ToolTip="{x:Static p:Resources.VideoEntry_Play}">
+                        ToolTip="{lex:Loc VideoEntry_Play}">
                     <icon:PackIconModern Kind="ControlPlay"/>
                 </Button>
                 <Button Command="{Binding ShowInFolderCommand}"
-                        ToolTip="{x:Static p:Resources.VideoEntry_ShowInFolder}">
+                        ToolTip="{lex:Loc VideoEntry_ShowInFolder}">
                     <icon:PackIconModern Kind="FolderOpen"/>
                 </Button>
             </StackPanel>

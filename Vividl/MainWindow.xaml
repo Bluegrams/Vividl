@@ -6,6 +6,10 @@
         xmlns:p="clr-namespace:Vividl.Properties"
         xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         Title="Vividl" Height="450" Width="800" Loaded="MainWindow_Loaded" MinWidth="350">
     <Window.InputBindings>
         <KeyBinding Command="{Binding FetchCommand}" Key="N" Modifiers="Ctrl"/>
@@ -33,63 +37,63 @@
         </Border>
         <DockPanel Grid.ColumnSpan="3">
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderFile}" Padding="6,2">
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAdd}" Command="{Binding FetchCommand}"
+                <MenuItem Header="{lex:Loc MainWindow_HeaderFile}" Padding="6,2">
+                    <MenuItem Header="{lex:Loc MainWindow_MenuAdd}" Command="{Binding FetchCommand}"
                           Icon="{icon:Modern Kind=Add}" InputGestureText="Ctrl+N"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuPaste}" Command="{Binding PasteCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuPaste}" Command="{Binding PasteCommand}"
                           Icon="{icon:Modern Kind=ClipboardPaste}" InputGestureText="Ctrl+V"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuImport}" Command="{Binding ImportCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuImport}" Command="{Binding ImportCommand}"
                           Icon="{icon:Modern Kind=PageArrow, Flip=Horizontal}"
                           InputGestureText="Ctrl+O"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuExport}" Command="{Binding ExportCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuExport}" Command="{Binding ExportCommand}"
                           Icon="{icon:Modern Kind=PageArrow}"
                           InputGestureText="Ctrl+S"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuExit}" Command="{Binding ExitCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuExit}" Command="{Binding ExitCommand}"
                           InputGestureText="Alt+F4"/>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderVideos}" Padding="6,2">
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuDownloadAll}" Command="{Binding DownloadAllCommand}"
+                <MenuItem Header="{lex:Loc MainWindow_HeaderVideos}" Padding="6,2">
+                    <MenuItem Header="{lex:Loc MainWindow_MenuDownloadAll}" Command="{Binding DownloadAllCommand}"
                           Icon="{icon:Modern Kind=Download}" InputGestureText="Ctrl+Shift+A"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
                           Icon="{icon:Modern Kind=Close}" InputGestureText="Ctrl+Shift+X"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemove}">
-                        <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemoveUnavailable}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuRemove}">
+                        <MenuItem Header="{lex:Loc MainWindow_MenuRemoveUnavailable}"
                                   Command="{Binding RemoveUnavailableCommand}"/>
-                        <MenuItem Header="{x:Static p:Resources.MainWindow_MenuRemoveFinished}"
+                        <MenuItem Header="{lex:Loc MainWindow_MenuRemoveFinished}"
                                   Command="{Binding RemoveFinishedCommand}"/>
                     </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuClearList}" Command="{Binding ClearCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuClearList}" Command="{Binding ClearCommand}"
                           Icon="{icon:Modern Kind=Delete}" InputGestureText="Ctrl+Shift+D"/>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.MainWindow_HeaderOptions}" Padding="6,2">
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSelectFolder}"
+                <MenuItem Header="{lex:Loc MainWindow_HeaderOptions}" Padding="6,2">
+                    <MenuItem Header="{lex:Loc MainWindow_MenuSelectFolder}"
                           Command="{Binding SelectDownloadFolderCommand}"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
                               InputGestureText="F12"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
                               Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
                     <Separator/>
-                    <MenuItem Header="{x:Static p:Resources.SettingsWindow_CheckForUpdates}"
+                    <MenuItem Header="{lex:Loc SettingsWindow_CheckForUpdates}"
                               Command="{Binding CheckForUpdatesCommand}"/>
-                    <MenuItem Header="{x:Static p:Resources.MainWindow_MenuAbout}" Command="{Binding AboutCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuAbout}" Command="{Binding AboutCommand}"
                               Icon="{icon:Modern Kind=InformationCircle}" InputGestureText="F1"/>
                 </MenuItem>
             </Menu>
             <DockPanel Style="{StaticResource ToolDockPanel}" DockPanel.Dock="Top">
                 <Button Content="{icon:Modern Kind=Add}" Command="{Binding FetchCommand}"
-                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuAdd}, Converter={StaticResource resConv}}"/>
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuAdd}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=ClipboardPaste}" Command="{Binding PasteCommand}"
-                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuPaste}, Converter={StaticResource resConv}}"/>
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuPaste}, Converter={StaticResource resConv}}"/>
                 <Separator/>
                 <Button Content="{icon:Modern Kind=Download}" Command="{Binding DownloadAllCommand}"
-                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuDownloadAll}, Converter={StaticResource resConv}}"/>
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuDownloadAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Close}" Command="{Binding CancelAllCommand}"
-                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuCancelAll}, Converter={StaticResource resConv}}"/>
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuCancelAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Delete}" Command="{Binding ClearCommand}"
-                    ToolTip="{Binding Source={x:Static p:Resources.MainWindow_MenuClearList}, Converter={StaticResource resConv}}"/>
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuClearList}, Converter={StaticResource resConv}}"/>
             </DockPanel>
             <StatusBar DockPanel.Dock="Bottom" Height="24">
                 <StatusBar.Resources>
@@ -105,11 +109,11 @@
                 <StatusBarItem>
                     <StatusBarItem.ToolTip>
                         <TextBlock>
-                            <Run Text="{x:Static p:Resources.MainWindow_StatusInProcess}"/>
+                            <Run Text="{lex:Loc MainWindow_StatusInProcess}"/>
                             <Run Text="{Binding InProcessCount}"/>
-                            <Run Text="{x:Static p:Resources.MainWindow_StatusSucceeded}"/>
+                            <Run Text="{lex:Loc MainWindow_StatusSucceeded}"/>
                             <Run Text="{Binding SuccessCount}"/>
-                            <Run Text="{x:Static p:Resources.MainWindow_StatusFailed}"/>
+                            <Run Text="{lex:Loc MainWindow_StatusFailed}"/>
                             <Run Text="{Binding FailedCount}"/>
                         </TextBlock>
                     </StatusBarItem.ToolTip>
@@ -153,14 +157,14 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="{Binding Source={x:Static p:Settings.Default}, Path=DownloadFolder}"
-                               ToolTip="{x:Static p:Resources.MainWindow_DownloadFolder}"
+                               ToolTip="{lex:Loc MainWindow_DownloadFolder}"
                                VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="4"/>
                     <Button Grid.Column="1" Content="{icon:Modern Kind=FolderOpen, Height=12, Width=12}"
-                        ToolTip="{x:Static p:Resources.MainWindow_OpenFolder}"
+                        ToolTip="{lex:Loc MainWindow_OpenFolder}"
                         Command="{Binding OpenDownloadFolderCommand}"/>
                     <Button Grid.Column="2" Content="{icon:Modern Kind=Edit, Height=12, Width=12}"
-                        ToolTip="{x:Static p:Resources.PathSelectionControl_Change}"
+                        ToolTip="{lex:Loc PathSelectionControl_Change}"
                         Command="{Binding SelectDownloadFolderCommand}"/>
                 </Grid>
                 <ListBox Grid.Row="1" x:Name="listVideos" ItemsSource="{Binding VideoInfos}" SelectionMode="Single">
@@ -171,7 +175,7 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate>
-                                                <TextBlock Text="{x:Static p:Resources.MainWindow_ListEmpty}"
+                                                <TextBlock Text="{lex:Loc MainWindow_ListEmpty}"
                                                            VerticalAlignment="Center" HorizontalAlignment="Center"
                                                            Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
                                             </ControlTemplate>
@@ -201,20 +205,20 @@
                                     Tag="{Binding ElementName=listVideos, Path=DataContext}">
                                 <ContentControl.ContextMenu>
                                     <ContextMenu>
-                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_CopyUrl}"
+                                        <MenuItem Header="{lex:Loc VideoEntry_CopyUrl}"
                                               Command="{Binding CopyClipboardCommand}"
                                               Icon="{icon:Modern Kind=PageCopy}"/>
-                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_ShowInformation}"
+                                        <MenuItem Header="{lex:Loc VideoEntry_ShowInformation}"
                                               Command="{Binding ShowMetadataCommand}"
                                               Icon="{icon:Modern Kind=InformationCircle}"/>
-                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_OpenInBrowser}"
+                                        <MenuItem Header="{lex:Loc VideoEntry_OpenInBrowser}"
                                                   Command="{Binding OpenInBrowserCommand}"
                                                   Icon="{icon:Modern Kind=BrowserWire}"/>
                                         <Separator/>
-                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_Reload}"
+                                        <MenuItem Header="{lex:Loc VideoEntry_Reload}"
                                                   Command="{Binding ReloadCommand}"
                                                   Icon="{icon:Modern Kind=RefreshCounterclockwiseDown}"/>
-                                        <MenuItem Header="{x:Static p:Resources.VideoEntry_Remove}"
+                                        <MenuItem Header="{lex:Loc VideoEntry_Remove}"
                                           Command="{Binding RelativeSource={RelativeSource Self}, Path=Parent.PlacementTarget.Tag.DeleteCommand}"
                                           CommandParameter="{Binding}"
                                           IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}, Mode=OneWay}"
