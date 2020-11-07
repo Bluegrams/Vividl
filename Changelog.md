@@ -1,5 +1,9 @@
 # Vividl Changelog
 
+### v.0.4.0 (2020-11)
+- **New:** Italian, Hebrew, Polish, Welsh, Portuguese, Arabic, French, Dutch and Swedish translation
+- **Updated:** Russion and Spanish translation
+
 ### v.0.3.0 (2020-10)
 - **New:** Extended window for adding video links.
 - **New:** Basic authentication support.

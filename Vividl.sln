@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vividl", "Vividl\Vividl.csproj", "{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B955631B-741F-4A19-A903-D2C8813F6D63}"
 	ProjectSection(SolutionItems) = preProject
 		Changelog.md = Changelog.md
+		CONTRIBUTORS.md = CONTRIBUTORS.md
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection

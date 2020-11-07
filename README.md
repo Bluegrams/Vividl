@@ -73,6 +73,9 @@ Places to get help:
 You are very welcome to contribute fixes and new features by opening a
 [pull request on GitHub](https://github.com/bluegrams/vividl/pulls).
 
+See all the great people that have contributed in the [list of contributors](https://github.com/bluegrams/vividl/blob/master/CONTRIBUTORS.md).
+Make sure to add yourself in your pull request!
+
 ## License
 
 This software is published under the [BSD-3-clause license](LICENSE.txt) by Bluegrams.
