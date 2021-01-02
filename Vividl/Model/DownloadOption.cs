@@ -163,8 +163,8 @@ namespace Vividl.Model
 
         public VideoDownload(string formatSelection,
                             VideoRecodeFormat recodeFormat = VideoRecodeFormat.None,
-                            string description = null, string fileExtension = "")
-            : base(description, false, !String.IsNullOrEmpty(fileExtension) || recodeFormat != VideoRecodeFormat.None)
+                            string description = null, string fileExtension = "", bool isAudio = false)
+            : base(description, isAudio, !String.IsNullOrEmpty(fileExtension) || recodeFormat != VideoRecodeFormat.None)
         {
             this.FormatSelection = formatSelection;
             this.RecodeFormat = recodeFormat;

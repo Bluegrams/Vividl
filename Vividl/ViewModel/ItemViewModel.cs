@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Linq;
 using Bluegrams.Application;
 using GalaSoft.MvvmLight;
 using System.Threading.Tasks;
@@ -20,25 +20,18 @@ namespace Vividl.ViewModel
     {
         readonly string url;
         T entry;
-        ObservableCollection<IDownloadOption> currentFormats;
-        int currentFormatSelection;
         float currentProgress;
         string progressString, totalDownloadSize, downloadSpeed, downloadTimeRemaining;
         // downloadIndex indicates the number of the _next_ item to be downloaded
         int downloadIndex = 1;
         ItemState state;
         bool unavailable = false;
-        
-        /// <summary>
-        /// A list holding all download formats provided by the download website.
-        /// </summary>
-        protected IEnumerable<IDownloadOption> availableFormats;
-        bool allFormatsShown = false;
 
         protected MainViewModel<T> mainVm;
         protected IDialogService messageService;
         protected IFileService fileService;
-        protected IDownloadOptionProvider downloadOptionProvider;
+        // this should be set to the number of default download options during initialization
+        protected int defaultOptionsCount;
 
         public T Entry
         {
@@ -71,22 +64,21 @@ namespace Vividl.ViewModel
         // TODO Rename: IsPlaylist -> IsCollection
         public abstract bool IsPlaylist { get; }
 
-        public ObservableCollection<IDownloadOption> CurrentFormats
+        public IList<IDownloadOption> DownloadOptions
         {
-            get => currentFormats;
-            set
+            get
             {
-                currentFormats = value;
-                RaisePropertyChanged();
+                if (Settings.Default.ShowAllFormats) return Entry.DownloadOptions;
+                else return Entry.DownloadOptions.Take(defaultOptionsCount).ToList();
             }
         }
 
-        public int SelectedFormat
+        public int SelectedDownloadOption
         {
-            get => currentFormatSelection;
+            get => Entry.SelectedDownloadOption;
             set
             {
-                currentFormatSelection = value;
+                Entry.SelectedDownloadOption = value;
                 RaisePropertyChanged();
             }
         }
@@ -184,10 +176,6 @@ namespace Vividl.ViewModel
             this.mainVm = mainVm;
             this.messageService = SimpleIoc.Default.GetInstance<IDialogService>();
             this.fileService = SimpleIoc.Default.GetInstance<IFileService>();
-            this.downloadOptionProvider = SimpleIoc.Default.GetInstance<IDownloadOptionProvider>();
-            this.availableFormats = new List<IDownloadOption>();
-            CurrentFormats = new ObservableCollection<IDownloadOption>(downloadOptionProvider.CreateDownloadOptions());
-            SelectedFormat = Settings.Default.DefaultFormat;
             CurrentProgress = 0;
             // Init commands
             DownloadCommand = new RelayCommand(async () => await DownloadVideo(),
@@ -215,11 +203,10 @@ namespace Vividl.ViewModel
         public async Task DownloadVideo()
         {
             if (State != ItemState.Fetched) return;
-            var format = CurrentFormats[SelectedFormat];
             CurrentProgress = 0;
             mainVm.SetStats(finished: false);
             State = ItemState.Downloading;
-            DownloadResult result = await Entry.DownloadVideo(format);
+            DownloadResult result = await Entry.Download();
             switch (result)
             {
                 case DownloadResult.Success:
@@ -263,21 +250,12 @@ namespace Vividl.ViewModel
             // only execute if we can access the download options list
             if (State != ItemState.Fetched)
                 return;
-            if (Settings.Default.ShowAllFormats != allFormatsShown)
+            RaisePropertyChanged(nameof(DownloadOptions));
+            // if we disabled display of all formats, the current index can exceed the total items
+            // in this case, select the (new) default format
+            if (SelectedDownloadOption > (DownloadOptions.Count - 1))
             {
-                if (Settings.Default.ShowAllFormats)
-                {
-                    foreach (var option in availableFormats)
-                    {
-                        CurrentFormats.Add(option);
-                    }
-                }
-                else
-                {
-                    CurrentFormats = new ObservableCollection<IDownloadOption>(downloadOptionProvider.CreateDownloadOptions());
-                    SelectedFormat = Settings.Default.DefaultFormat;
-                }
-                allFormatsShown = Settings.Default.ShowAllFormats;
+                SelectedDownloadOption = Settings.Default.DefaultFormat;
             }
         }
 

@@ -25,7 +25,7 @@ namespace Vividl.Services
                 var videoVm = CreateItemViewModel(url, mainVm);
                 if (selectedFormat.HasValue)
                 {
-                    videoVm.SelectedFormat = selectedFormat.Value;
+                    videoVm.SelectedDownloadOption = selectedFormat.Value;
                 }
                 itemVms.Add(videoVm);
                 fetchedVideos.Add(videoVm);

@@ -79,7 +79,7 @@
             <TextBlock Text="{Binding Path=Entry.Title}" Margin="4"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal"
                         IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
-                <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
+                <ComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
                           Margin="4,0" Height="25">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

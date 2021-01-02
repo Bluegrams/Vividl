@@ -2,9 +2,11 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Vividl.Model;
 using Vividl.Properties;
+using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Options;
 
@@ -49,17 +51,35 @@ namespace Vividl.ViewModel
             }
             Entry.DownloadStateChanged += videoDownloadStateChanged;
             State = ItemState.Fetched;
+            initializeDownloadOptions();
+        }
+
+        private void initializeDownloadOptions()
+        {
+            // Add the default download options
+            var downloadOptionProvider = SimpleIoc.Default.GetInstance<IDownloadOptionProvider>();
+            foreach (var option in downloadOptionProvider.CreateDownloadOptions())
+            {
+                Entry.DownloadOptions.Add(option);
+            }
+            defaultOptionsCount = Entry.DownloadOptions.Count;
+            SelectedDownloadOption = Settings.Default.DefaultFormat;
             // Add additional download options
             if (Entry.Metadata.Formats != null)
             {
-                this.availableFormats = Entry.Metadata.Formats.Select(fm =>
+                var metadataOptions = Entry.Metadata.Formats.Select(fm =>
                 {
                     return new VideoDownload(fm.FormatId,
                                     description: String.Format("{0} - {1}", fm.Extension, fm.Format),
-                                    fileExtension: fm.Extension);
+                                    fileExtension: fm.Extension,
+                                    isAudio: fm.VideoCodec == "none");
                 });
-                UpdateCurrentFormats();
+                foreach (var option in metadataOptions)
+                {
+                    Entry.DownloadOptions.Add(option);
+                }
             }
+            RaisePropertyChanged(nameof(DownloadOptions));
         }
 
         private void videoDownloadStateChanged(object _, ProgressEventArgs e)

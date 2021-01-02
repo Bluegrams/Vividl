@@ -34,7 +34,7 @@
             <TextBlock Grid.Row="1" Margin="8,4" Text="{Binding InformationString}" />
         </Grid>
         <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
-            <ComboBox ItemsSource="{Binding CurrentFormats}" SelectedIndex="{Binding SelectedFormat}"
+            <ComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
                       Margin="4" VerticalContentAlignment="Center"
                       IsEnabled="{Binding ElementName=butDownload, Path=IsEnabled}">
                 <ComboBox.ItemTemplate>

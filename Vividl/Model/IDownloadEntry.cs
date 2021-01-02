@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Vividl.Services;
 
@@ -11,7 +12,14 @@ namespace Vividl.Model
         int TotalItems { get; }
         bool FileAvailable { get; }
 
-        Task<DownloadResult> DownloadVideo(IDownloadOption downloadOption);
+        IList<IDownloadOption> DownloadOptions { get; }
+        int SelectedDownloadOption { get; set; }
+
+        /// <summary>
+        /// Downloads the selected download option.
+        /// </summary>
+        /// <returns>A DownloadResult object representing the outcome of the download.</returns>
+        Task<DownloadResult> Download();
         void CancelDownload();
         void OpenInBrowser();
         void OpenFile();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -26,6 +27,9 @@ namespace Vividl.Model
         public abstract int TotalItems { get; }
         public abstract bool FileAvailable { get; }
 
+        public IList<IDownloadOption> DownloadOptions { get; }
+        public int SelectedDownloadOption { get; set; }
+
         public event EventHandler<ProgressEventArgs> DownloadStateChanged;
 
         public MediaEntry(YoutubeDL ydl, VideoData metadata, OptionSet overrideOptions = null)
@@ -33,6 +37,7 @@ namespace Vividl.Model
             this.ydl = ydl;
             this.Metadata = metadata;
             this.OverrideOptions = overrideOptions;
+            this.DownloadOptions = new List<IDownloadOption>();
             this.progress = new Progress<DownloadProgress>(p => RaiseDownloadStateChanged(p));
         }
 
@@ -55,12 +60,12 @@ namespace Vividl.Model
 
         protected abstract Task<DownloadResult> DoDownload(DownloadOption downloadOption);
 
-        public async Task<DownloadResult> DownloadVideo(IDownloadOption downloadOption)
+        public async Task<DownloadResult> Download()
         {
             CancelDownload(); // Cancel ongoing download if existent
             cts = new CancellationTokenSource();
             Directory.CreateDirectory(Settings.Default.DownloadFolder);
-            var result = await DoDownload((DownloadOption)downloadOption);
+            var result = await DoDownload((DownloadOption)DownloadOptions[SelectedDownloadOption]);
             cts.Dispose();
             cts = null;
             return result;

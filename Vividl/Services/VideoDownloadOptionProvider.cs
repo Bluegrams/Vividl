@@ -29,13 +29,13 @@ namespace Vividl.Services
                         description: Resources.DownloadOption_Webm),
                 new VideoDownload("bestvideo+bestaudio/best", recodeFormat: VideoRecodeFormat.Avi,
                         description: Resources.DownloadOption_AVI),
-                new VideoDownload("best", description: Resources.DownloadOption_Best),
                 new VideoDownload("bestvideo+bestaudio/best", recodeFormat: VideoRecodeFormat.Mkv,
                         description: Resources.DownloadOption_MKV),
                 new AudioConversionDownload(AudioConversionFormat.Mp3, Resources.DownloadOption_MP3),
                 new AudioConversionDownload(AudioConversionFormat.M4a, Resources.DownloadOption_M4A),
                 new AudioConversionDownload(AudioConversionFormat.Wav, Resources.DownloadOption_WAV),
-                new AudioConversionDownload(AudioConversionFormat.Vorbis, Resources.DownloadOption_Vorbis)
+                new AudioConversionDownload(AudioConversionFormat.Vorbis, Resources.DownloadOption_Vorbis),
+                new VideoDownload("best", description: Resources.DownloadOption_Best),
             };
             return options;
         }
