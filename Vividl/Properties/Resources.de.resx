@@ -469,4 +469,25 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
     <value>Gesamtgröße der aktuellen Datei</value>
   </data>
+  <data name="DownloadOption_Custom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
+  <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+    <value>Benutzerdefinierter Download</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="AudioOnly" xml:space="preserve">
+    <value>Nur Audio</value>
+  </data>
+  <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+    <value>Konvertiere zu:</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Anwenden</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
 </root>

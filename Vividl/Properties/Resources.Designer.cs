@@ -61,6 +61,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string Apply {
+            get {
+                return ResourceManager.GetString("Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Audio.
+        /// </summary>
+        public static string Audio {
+            get {
+                return ResourceManager.GetString("Audio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Audio only.
+        /// </summary>
+        public static string AudioOnly {
+            get {
+                return ResourceManager.GetString("AudioOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -84,6 +111,15 @@ namespace Vividl.Properties {
         public static string DownloadOption_Best {
             get {
                 return ResourceManager.GetString("DownloadOption_Best", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Download.
+        /// </summary>
+        public static string DownloadOption_Custom {
+            get {
+                return ResourceManager.GetString("DownloadOption_Custom", resourceCulture);
             }
         }
         
@@ -282,6 +318,51 @@ namespace Vividl.Properties {
         public static string FetchWindow_VideoPassword {
             get {
                 return ResourceManager.GetString("FetchWindow_VideoPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Convert to:.
+        /// </summary>
+        public static string FormatSelectionWindow_ConvertTo {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_ConvertTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Configuration:.
+        /// </summary>
+        public static string FormatSelectionWindow_CurrentConfiguration {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_CurrentConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Audio + Video.
+        /// </summary>
+        public static string FormatSelectionWindow_TabCombinedChannels {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_TabCombinedChannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video/ Audio only.
+        /// </summary>
+        public static string FormatSelectionWindow_TabSeparateChannels {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_TabSeparateChannels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure Download.
+        /// </summary>
+        public static string FormatSelectionWindow_Title {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_Title", resourceCulture);
             }
         }
         
@@ -917,6 +998,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Video.
+        /// </summary>
+        public static string Video {
+            get {
+                return ResourceManager.GetString("Video", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelled &quot;{0}&quot;..
         /// </summary>
         public static string Video_DownloadCancelled {
@@ -985,6 +1075,15 @@ namespace Vividl.Properties {
         public static string VideoEntry_CurrentProgress {
             get {
                 return ResourceManager.GetString("VideoEntry_CurrentProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customize Download.
+        /// </summary>
+        public static string VideoEntry_CustomizeDownload {
+            get {
+                return ResourceManager.GetString("VideoEntry_CustomizeDownload", resourceCulture);
             }
         }
         

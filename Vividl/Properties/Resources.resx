@@ -469,4 +469,37 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
     <value>Total download size of current file</value>
   </data>
+  <data name="FormatSelectionWindow_Title" xml:space="preserve">
+    <value>Configure Download</value>
+  </data>
+  <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+    <value>Current Configuration:</value>
+  </data>
+  <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+    <value>Audio + Video</value>
+  </data>
+  <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+    <value>Video/ Audio only</value>
+  </data>
+  <data name="DownloadOption_Custom" xml:space="preserve">
+    <value>Custom Download</value>
+  </data>
+  <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+    <value>Customize Download</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="AudioOnly" xml:space="preserve">
+    <value>Audio only</value>
+  </data>
+  <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+    <value>Convert to:</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
 </root>

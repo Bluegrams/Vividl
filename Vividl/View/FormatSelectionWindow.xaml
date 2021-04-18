@@ -1,0 +1,103 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.FormatSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        xmlns:ytdl="clr-namespace:YoutubeDLSharp.Metadata;assembly=YoutubeDLSharp"
+        xmlns:ytdlopt="clr-namespace:YoutubeDLSharp.Options;assembly=YoutubeDLSharp"
+        xmlns:h="clr-namespace:Vividl.Helpers"
+        Title="{Binding Source={lex:Loc FormatSelectionWindow_Title}}" Height="400" Width="400"
+         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <Window.Resources>
+        <DataTemplate x:Key="formatDataTemplate" DataType="{x:Type ytdl:FormatData}">
+            <TextBlock Text="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="4">
+            <TextBlock VerticalAlignment="Center" Text="{lex:Loc FormatSelectionWindow_CurrentConfiguration}"
+                       Margin="0,0,4,0"/>
+            <ComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
+                      Margin="4" VerticalContentAlignment="Center">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <icon:PackIconModern Kind="{Binding Converter={StaticResource iconConv}}"
+                                                     DockPanel.Dock="Left" Margin="0,0,4,0"/>
+                            <ContentControl Content="{Binding}"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+            <Button DockPanel.Dock="Right" IsDefault="True"
+                    MinWidth="80" h:ButtonEx.CloseWindow="True"
+                    Command="{Binding ApplyFormatSelectionCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{lex:Loc Apply}"/>
+                    <icon:PackIconModern Margin="6,0,0,0" Kind="Check"/>
+                </StackPanel>
+            </Button>
+            <Button DockPanel.Dock="Right" MinWidth="100" h:ButtonEx.CloseWindow="True"
+                    Command="{Binding DownloadCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
+                    <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="4">
+            <TextBlock VerticalAlignment="Center" Text="{lex:Loc FormatSelectionWindow_ConvertTo}"
+                       Margin="0,0,4,0"/>
+            <CheckBox Margin="8,0" Content="{lex:Loc AudioOnly}" IsChecked="{Binding HasAudioExtraction}"/>
+            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:VideoRecodeFormat}}"
+                      DisplayMemberPath="Description"
+                      SelectedValuePath="Value"
+                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource invBoolToVis}}"
+                      SelectedValue="{Binding VideoRecodeFormat, Mode=TwoWay}" />
+            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:AudioConversionFormat}}"
+                      DisplayMemberPath="Description"
+                      SelectedValuePath="Value"
+                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource boolToVis}}"
+                      SelectedValue="{Binding AudioConversionFormat, Mode=TwoWay}" />
+        </StackPanel>
+        <TabControl SelectedIndex="{Binding CurrentPage}">
+            <TabItem Header="{lex:Loc FormatSelectionWindow_TabCombinedChannels}">
+                <ListBox ItemsSource="{Binding AudioVideoDownloadOptions}" SelectionMode="Single"
+                         SelectedItem="{Binding SelectedAudioVideo}"
+                         ItemTemplate="{StaticResource formatDataTemplate}"
+                         SelectionChanged="ListBox_SelectionChanged"/>
+            </TabItem>
+            <TabItem Header="{lex:Loc FormatSelectionWindow_TabSeparateChannels}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Margin="4" Content="{lex:Loc Video}" IsChecked="{Binding HasSelectedVideo}"/>
+                    <CheckBox Grid.Column="1" Margin="4" Content="{lex:Loc Audio}" IsChecked="{Binding HasSelectedAudio}"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding VideoOnlyDownloadOptions}" SelectionMode="Single"
+                         SelectedItem="{Binding SelectedVideo}"
+                         ItemTemplate="{StaticResource formatDataTemplate}"
+                             SelectionChanged="ListBox_SelectionChanged"/>
+                    <ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AudioOnlyDownloadOptions}" SelectionMode="Single"
+                         SelectedItem="{Binding SelectedAudio}"
+                         ItemTemplate="{StaticResource formatDataTemplate}"
+                         SelectionChanged="ListBox_SelectionChanged"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</adonisControls:AdonisWindow>

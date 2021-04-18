@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using MahApps.Metro.IconPacks;
+using Vividl.Model;
 
 namespace Vividl.Helpers
 {
@@ -42,6 +43,21 @@ namespace Vividl.Helpers
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (int)value > 0 ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class TypeToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value == null || parameter == null) return Visibility.Collapsed;
+
+            return (value.GetType() == (Type)parameter) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -115,12 +131,13 @@ namespace Vividl.Helpers
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is bool isAudio)
+            if (value is IDownloadOption downloadOption)
             {
-                if (isAudio) return PackIconModernKind.Music;
+                if (downloadOption is CustomDownload) return PackIconModernKind.Tools;
+                else if (downloadOption.IsAudio) return PackIconModernKind.Music;
                 else return PackIconModernKind.Video;
             }
-            else throw new ArgumentException();
+            else return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -9,6 +9,7 @@
     <local:InverseBoolConverter x:Key="invBool"/>
     <BooleanToVisibilityConverter x:Key="boolToVis"/>
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
+    <local:TypeToVisibilityConverter x:Key="typeToVis"/>
     <local:StringToVisibilityConverter x:Key="stringToVis"/>
     <local:FloatToPercentConverter x:Key="floatToPercent"/>
     <local:ArrayToStringConverter x:Key="arrayToString"/>
@@ -84,7 +85,7 @@
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel>
-                                <icon:PackIconModern Kind="{Binding Path=IsAudio, Converter={StaticResource iconConv}}"
+                                <icon:PackIconModern Kind="{Binding Converter={StaticResource iconConv}}"
                                                      DockPanel.Dock="Left" Margin="0,0,4,0"/>
                                 <ContentControl Content="{Binding}"/>
                             </DockPanel>

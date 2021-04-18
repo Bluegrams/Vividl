@@ -36,6 +36,7 @@ namespace Vividl.Services
                 new AudioConversionDownload(AudioConversionFormat.Wav, Resources.DownloadOption_WAV),
                 new AudioConversionDownload(AudioConversionFormat.Vorbis, Resources.DownloadOption_Vorbis),
                 new VideoDownload("best", description: Resources.DownloadOption_Best),
+                new CustomDownload(Resources.DownloadOption_Custom),
             };
             return options;
         }

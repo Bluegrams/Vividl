@@ -60,6 +60,11 @@ namespace Vividl
                     DownloadOutputWindow.ShowDownloadOutputWindow(this);
                     break;
 #if VIVIDL
+                case WindowType.FormatSelectionWindow:
+                    var formatSelectionWindow = new FormatSelectionWindow(msg.Parameter as FormatSelectionViewModel);
+                    formatSelectionWindow.Owner = this;
+                    dialogResult = formatSelectionWindow.ShowDialog();
+                    break;
                 case WindowType.VideoDataWindow:
                     var videoDataWindow = new VideoDataWindow(msg.Parameter as VideoViewModel);
                     videoDataWindow.Owner = this;

@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Vividl.Model;
@@ -31,9 +33,20 @@ namespace Vividl.ViewModel
                 else return this.Duration;
             }
         }
+        public ICommand CustomizeDownloadCommand { get; }
 
         public VideoViewModel(string url, MainViewModel<MediaEntry> mainVm)
-            : base(url, mainVm) { }
+            : base(url, mainVm)
+        {
+            CustomizeDownloadCommand = new RelayCommand(
+                () => Messenger.Default.Send(new ShowWindowMessage(
+                    WindowType.FormatSelectionWindow,
+                    new FormatSelectionViewModel(this),
+                    (r, o) => RaisePropertyChanged(nameof(SelectedDownloadOption))
+                )),
+                () => State == ItemState.Fetched
+            );
+        }
 
         public async override Task Fetch(bool refetch = false, OptionSet overrideOptions = null)
         {
@@ -70,7 +83,7 @@ namespace Vividl.ViewModel
                 var metadataOptions = Entry.Metadata.Formats.Select(fm =>
                 {
                     return new VideoDownload(fm.FormatId,
-                                    description: String.Format("{0} - {1}", fm.Extension, fm.Format),
+                                    description: String.Format("[{0}] {1}", fm.Extension, fm.Format),
                                     fileExtension: fm.Extension,
                                     isAudio: fm.VideoCodec == "none");
                 });

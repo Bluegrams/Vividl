@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Vividl.Services;
 using YoutubeDLSharp;
+using YoutubeDLSharp.Metadata;
 using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
@@ -17,9 +18,11 @@ namespace Vividl.Model
         /// </summary>
         private readonly bool allowsOverwriteCheck;
 
+        public abstract string FormatSelection { get; }
+
         public string Description { get; }
 
-        public bool IsAudio { get; }
+        public bool IsAudio { get; protected set; }
 
         public DownloadOption(string description, bool isAudio, bool allowsOverwriteCheck)
         {
@@ -98,6 +101,8 @@ namespace Vividl.Model
 
     public class AudioConversionDownload : DownloadOption
     {
+        public override string FormatSelection => "bestaudio/best";
+
         public AudioConversionFormat ConversionFormat { get; }
 
         public AudioConversionDownload(AudioConversionFormat format,
@@ -107,29 +112,7 @@ namespace Vividl.Model
             this.ConversionFormat = format;
         }
 
-        protected override string GetExt()
-        {
-            switch (ConversionFormat)
-            {
-                case AudioConversionFormat.Mp3:
-                    return "mp3";
-                case AudioConversionFormat.M4a:
-                    return "m4a";
-                case AudioConversionFormat.Vorbis:
-                    return "ogg";
-                case AudioConversionFormat.Wav:
-                    return "wav";
-                case AudioConversionFormat.Opus:
-                    return "opus";
-                case AudioConversionFormat.Aac:
-                    return "aac";
-                case AudioConversionFormat.Flac:
-                    return "flac";
-                default:
-                    // Don't support 'best' because we don't know the extension in advance!
-                    throw new InvalidOperationException("AudioConversionFormat.Best is not supported.");
-            }
-        }
+        protected override string GetExt() => ExtProvider.GetExtForAudio(ConversionFormat);
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
@@ -154,7 +137,8 @@ namespace Vividl.Model
 
     public class VideoDownload : DownloadOption
     {
-        public string FormatSelection { get; }
+        public override string FormatSelection { get; }
+
         public VideoRecodeFormat RecodeFormat { get; }
 
         /* Use this to manually specify the file extension of this download option.
@@ -175,24 +159,7 @@ namespace Vividl.Model
         {
             if (!String.IsNullOrWhiteSpace(fileExtension))
                 return fileExtension;
-            switch (RecodeFormat)
-            {
-                case VideoRecodeFormat.Avi:
-                    return "avi";
-                case VideoRecodeFormat.Mp4:
-                    return "mp4";
-                case VideoRecodeFormat.Ogg:
-                    return "ogg";
-                case VideoRecodeFormat.Flv:
-                    return "flv";
-                case VideoRecodeFormat.Webm:
-                    return "webm";
-                case VideoRecodeFormat.Mkv:
-                    return "mkv";
-                default:
-                    // Don't support 'None' because we don't know the extension in advance!
-                    throw new InvalidOperationException("VideoRecodeFormat.None is not supported.");
-            }
+            return ExtProvider.GetExtForVideo(RecodeFormat);
         }
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
@@ -214,6 +181,105 @@ namespace Vividl.Model
                 output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
                 overrideOptions: overrideOptions
             );
+        }
+    }
+
+    public class CustomDownload : DownloadOption
+    {
+        public FormatData AudioFormat { get; private set; }
+        public FormatData VideoFormat { get; private set; }
+
+        public override string FormatSelection
+        {
+            get
+            {
+                if (AudioFormat == null) return VideoFormat?.FormatId;
+                else return VideoFormat.FormatId + "+" + AudioFormat.FormatId;
+            }
+        }
+
+        public AudioConversionFormat AudioConversionFormat { get; private set; }
+
+        public VideoRecodeFormat VideoRecodeFormat { get; private set; }
+
+        public CustomDownload(string description) : base(description, false, false)
+        { }
+
+        public void Configure(
+            FormatData videoFormat, FormatData audioFormat = null,
+            bool extractAudio = false,
+            AudioConversionFormat audioConversionFormat = AudioConversionFormat.Mp3,
+            VideoRecodeFormat videoRecodeFormat = VideoRecodeFormat.None)
+        {
+            if (extractAudio && audioConversionFormat == AudioConversionFormat.Best)
+                throw new InvalidOperationException("Cannot use AudioConversionFormat.Best.");
+            if (audioFormat != null && !extractAudio && videoRecodeFormat == VideoRecodeFormat.None)
+                throw new InvalidOperationException("Must specify a VideoRecodeFormat when merging formats.");
+            this.VideoFormat = videoFormat;
+            this.AudioFormat = audioFormat;
+            this.IsAudio = extractAudio;
+            this.AudioConversionFormat = audioConversionFormat;
+            this.VideoRecodeFormat = videoRecodeFormat;
+        }
+
+        protected override string GetExt()
+        {
+            if (IsAudio)
+            {
+                return ExtProvider.GetExtForAudio(AudioConversionFormat);
+            }
+            else if (VideoRecodeFormat == VideoRecodeFormat.None)
+            {
+                if (AudioFormat != null)
+                    throw new InvalidOperationException("Must specify a VideoRecodeFormat when merging formats.");
+                return VideoFormat.Extension;
+            }
+            else return ExtProvider.GetExtForVideo(VideoRecodeFormat);
+        }
+
+        protected override async Task<RunResult<string>> RunRealDownload(
+            YoutubeDL ydl, string url, CancellationToken ct,
+            IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
+        {
+            if (IsAudio)
+            {
+                return await ydl.RunAudioDownload(
+                    url, AudioConversionFormat, ct, progress,
+                    output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                    overrideOptions: overrideOptions
+                );
+            }
+            else
+            {
+                return await ydl.RunVideoDownload(
+                    url, FormatSelection,
+                    DownloadMergeFormat.Mkv, VideoRecodeFormat, ct, progress,
+                    output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                    overrideOptions: overrideOptions
+                );
+            }
+        }
+
+        protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(
+            YoutubeDL ydl, string url, int[] playlistItems, CancellationToken ct,
+            IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
+        {
+            if (IsAudio)
+            {
+                return await ydl.RunAudioPlaylistDownload(url, items: playlistItems,
+                    format: AudioConversionFormat, ct: ct, progress: progress,
+                    output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                    overrideOptions: overrideOptions
+                );
+            }
+            else
+            {
+                return await ydl.RunVideoPlaylistDownload(url, format: FormatSelection,
+                    items: playlistItems, recodeFormat: VideoRecodeFormat, ct: ct, progress: progress,
+                    output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
+                    overrideOptions: overrideOptions
+                );
+            }
         }
     }
 }
