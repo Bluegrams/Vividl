@@ -37,7 +37,7 @@ namespace Vividl.Model
         /// generic 'best' downloads (see implementations). But this is needed to determine the
         /// final file path for pre-download checks.
         /// </summary>
-        protected abstract string GetExt();
+        public abstract string GetExt();
 
         /// <summary>
         /// Performs the actual download of the specified URL by invoking the given YoutubeDL instance.
@@ -112,7 +112,7 @@ namespace Vividl.Model
             this.ConversionFormat = format;
         }
 
-        protected override string GetExt() => ExtProvider.GetExtForAudio(ConversionFormat);
+        public override string GetExt() => ExtProvider.GetExtForAudio(ConversionFormat);
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
@@ -155,7 +155,7 @@ namespace Vividl.Model
             this.fileExtension = fileExtension;
         }
 
-        protected override string GetExt()
+        public override string GetExt()
         {
             if (!String.IsNullOrWhiteSpace(fileExtension))
                 return fileExtension;
@@ -215,6 +215,8 @@ namespace Vividl.Model
                 throw new InvalidOperationException("Cannot use AudioConversionFormat.Best.");
             if (audioFormat != null && !extractAudio && videoRecodeFormat == VideoRecodeFormat.None)
                 throw new InvalidOperationException("Must specify a VideoRecodeFormat when merging formats.");
+            if (audioFormat == null && videoFormat.AudioCodec == "none" && extractAudio)
+                throw new InvalidOperationException("Cannot use video-only download when extracting audio.");
             this.VideoFormat = videoFormat;
             this.AudioFormat = audioFormat;
             this.IsAudio = extractAudio;
@@ -222,7 +224,7 @@ namespace Vividl.Model
             this.VideoRecodeFormat = videoRecodeFormat;
         }
 
-        protected override string GetExt()
+        public override string GetExt()
         {
             if (IsAudio)
             {
@@ -232,7 +234,7 @@ namespace Vividl.Model
             {
                 if (AudioFormat != null)
                     throw new InvalidOperationException("Must specify a VideoRecodeFormat when merging formats.");
-                return VideoFormat.Extension;
+                return VideoFormat?.Extension;
             }
             else return ExtProvider.GetExtForVideo(VideoRecodeFormat);
         }

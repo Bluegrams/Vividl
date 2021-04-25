@@ -6,6 +6,6 @@ namespace Vividl.Services
 {
     public interface IDownloadOptionProvider
     {
-        List<IDownloadOption> CreateDownloadOptions();
+        List<IDownloadOption> CreateDownloadOptions(bool withCustomDownload = false);
     }
 }

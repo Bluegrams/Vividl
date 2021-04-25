@@ -7,6 +7,9 @@ namespace Vividl.Model
 {
     public static class YoutubeDLExtensions
     {
+        public static string GetWidthAndHeight(this FormatData formatData)
+            => formatData.Width != null && formatData.Height != null ? $"{formatData.Width} x {formatData.Height}" : null;
+
         public static IEnumerable<FormatData> GetAudioVideoFormats(this VideoData videoData)
             => videoData.Formats.Where(f => f.VideoCodec != "none" && f.AudioCodec != "none");
 

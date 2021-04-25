@@ -6,6 +6,7 @@
                     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
                     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
                     xmlns:lex="http://wpflocalizeextension.codeplex.com">
+    <local:NullToVisibilityConverter x:Key="nullToVis"/>
     <local:InverseBoolConverter x:Key="invBool"/>
     <BooleanToVisibilityConverter x:Key="boolToVis"/>
     <local:InverseBooleanToVisibilityConverter x:Key="invBoolToVis"/>
@@ -92,10 +93,14 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
-                <Button Command="{Binding ShowMetadataCommand}" Margin="0" Height="25"
+                <Button Command="{Binding CustomizeDownloadCommand}" Margin="4,0" Height="25"
+                        ToolTip="{lex:Loc VideoEntry_CustomizeDownload}"
+                        Content="{icon:Modern Kind=Tools}"
+                        Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"/>
+                <Button Command="{Binding ShowMetadataCommand}" Margin="4,0" Height="25"
                         ToolTip="{lex:Loc VideoEntry_ShowInformation}"
                         Content="{icon:Modern Kind=InformationCircle}"/>
+                <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
             </StackPanel>
             <Grid Grid.Column="1" Grid.RowSpan="2" Margin="16,4"
                   Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">

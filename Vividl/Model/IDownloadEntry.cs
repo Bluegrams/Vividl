@@ -12,7 +12,7 @@ namespace Vividl.Model
         int TotalItems { get; }
         bool FileAvailable { get; }
 
-        IList<IDownloadOption> DownloadOptions { get; }
+        DownloadOptionCollection DownloadOptions { get; }
         int SelectedDownloadOption { get; set; }
 
         /// <summary>

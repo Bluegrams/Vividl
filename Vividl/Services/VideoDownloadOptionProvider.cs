@@ -19,7 +19,7 @@ namespace Vividl.Services
             else return $"{extension}/{BEST_MERGE}/{BEST}";
         }
 
-        public List<IDownloadOption> CreateDownloadOptions()
+        public List<IDownloadOption> CreateDownloadOptions(bool withCustomDownload = false)
         {
             var options = new List<IDownloadOption>()
             {
@@ -36,8 +36,11 @@ namespace Vividl.Services
                 new AudioConversionDownload(AudioConversionFormat.Wav, Resources.DownloadOption_WAV),
                 new AudioConversionDownload(AudioConversionFormat.Vorbis, Resources.DownloadOption_Vorbis),
                 new VideoDownload("best", description: Resources.DownloadOption_Best),
-                new CustomDownload(Resources.DownloadOption_Custom),
             };
+            if (withCustomDownload)
+            {
+                options.Add(new CustomDownload(Resources.DownloadOption_Custom));
+            }
             return options;
         }
     }

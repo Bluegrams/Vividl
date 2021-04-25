@@ -7,29 +7,36 @@ using GalaSoft.MvvmLight.CommandWpf;
 using Vividl.Model;
 using YoutubeDLSharp.Metadata;
 using YoutubeDLSharp.Options;
+using ByteSizeLib;
+using Vividl.Properties;
 
 namespace Vividl.ViewModel
 {
     public class FormatSelectionViewModel : ViewModelBase
     {
         // TODO v.0.5: Open FormatSelectionWindow when custom option is selected in combo box
-        // TODO v.0.5: Add row with format selection download info (e.g. size)
 
         private readonly MediaEntry entry;
+        private int selectedDownloadOption;
         private FormatData selectedAudioVideo, selectedAudio, selectedVideo;
         private bool hasAudioExtraction;
         private VideoRecodeFormat videoRecodeFormat;
-        private AudioConversionFormat audioConversionFormat;
+        private AudioConversionFormat audioConversionFormat = AudioConversionFormat.Mp3;
+        // Tracks changes on custom download configuration
+        private CustomDownload customDownload;
+        private bool isSelectionValid = true;
+        private string selectionErrorMessage;
 
-        public IList<IDownloadOption> DownloadOptions
+        public DownloadOptionCollection DownloadOptions
             => entry.DownloadOptions;
 
+        // This property should be persisted to `entry.SelectedDownloadOption`.
         public int SelectedDownloadOption
         {
-            get => entry.SelectedDownloadOption;
+            get => selectedDownloadOption;
             set
             {
-                entry.SelectedDownloadOption = value;
+                selectedDownloadOption = value;
                 applySelectedDownloadOption();
             }
         }
@@ -136,6 +143,52 @@ namespace Vividl.ViewModel
             }
         }
 
+        public string FileExtension
+        {
+            get
+            {
+                // use the cached changes if custom download is selected
+                if (SelectedDownloadOption == DownloadOptions.CustomDownloadIndex)
+                    return customDownload.GetExt();
+                else return DownloadOptions[SelectedDownloadOption].GetExt();
+            }
+        }
+
+        public string VideoWidthAndHeight => SelectedVideo?.GetWidthAndHeight() ?? SelectedAudioVideo?.GetWidthAndHeight();
+
+        public string DownloadSize
+        {
+            get
+            {
+                long bytes = 0L;
+                foreach (var format in new[] { SelectedAudioVideo, SelectedVideo, SelectedAudio})
+                {
+                    bytes += format?.FileSize ?? format?.ApproximateFileSize ?? 0L;
+                }
+                return ByteSize.FromBytes(bytes).ToString();
+            }
+        }
+
+        public bool IsSelectionValid
+        {
+            get => isSelectionValid;
+            set
+            {
+                isSelectionValid = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string SelectionErrorMessage
+        {
+            get => selectionErrorMessage;
+            set
+            {
+                selectionErrorMessage = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand ApplyFormatSelectionCommand { get; }
 
         public ICommand DownloadCommand { get; }
@@ -143,7 +196,8 @@ namespace Vividl.ViewModel
         public FormatSelectionViewModel(VideoViewModel videoVm)
         {
             this.entry = videoVm.Entry;
-            applySelectedDownloadOption();
+            this.customDownload = this.entry.DownloadOptions.CustomDownload;
+            this.SelectedDownloadOption = this.entry.SelectedDownloadOption;
             // Init commands
             ApplyFormatSelectionCommand = new RelayCommand(
                 () => ApplyFormatSelection(), () => canApplyFormatSelection(), keepTargetAlive: true
@@ -162,16 +216,13 @@ namespace Vividl.ViewModel
 
         public void ApplyFormatSelection()
         {
-            var selectedOption = DownloadOptions[SelectedDownloadOption];
             // We only need to do something if custom options are selected
-            if (selectedOption is CustomDownload customDownloadOption)
+            if (SelectedDownloadOption == DownloadOptions.CustomDownloadIndex)
             {
-                // TODO v.0.5: Prevent user selection of invalid conversion formats
-                customDownloadOption.Configure(
-                    SelectedVideo ?? SelectedAudioVideo, SelectedAudio,
-                    HasAudioExtraction, AudioConversionFormat, VideoRecodeFormat
-                );
+                DownloadOptions.CustomDownload = customDownload;
             }
+            // Persist SelectedDownloadOption
+            entry.SelectedDownloadOption = SelectedDownloadOption;
         }
 
         private void signalChangedProperties()
@@ -187,29 +238,33 @@ namespace Vividl.ViewModel
             RaisePropertyChanged(nameof(HasAudioExtraction));
             RaisePropertyChanged(nameof(VideoRecodeFormat));
             RaisePropertyChanged(nameof(AudioConversionFormat));
+            RaisePropertyChanged(nameof(FileExtension));
+            RaisePropertyChanged(nameof(VideoWidthAndHeight));
+            RaisePropertyChanged(nameof(DownloadSize));
         }
 
         private void applySelectedDownloadOption()
         {
-            var selectedOption = DownloadOptions[SelectedDownloadOption];
-            if (selectedOption is CustomDownload customDownloadOption)
+            // Check for type in DownloadOptions list but use the cached custom download object.
+            if (SelectedDownloadOption == DownloadOptions.CustomDownloadIndex)
             {
                 // VideoFormat of custom download option can be either video only or video+audio
-                if (AudioVideoDownloadOptions.Contains(customDownloadOption.VideoFormat))
+                if (AudioVideoDownloadOptions.Contains(customDownload.VideoFormat))
                 {
-                    this.selectedAudioVideo = customDownloadOption.VideoFormat;
+                    this.selectedAudioVideo = customDownload.VideoFormat;
                 }
                 else
                 {
-                    this.selectedVideo = customDownloadOption.VideoFormat;
+                    this.selectedVideo = customDownload.VideoFormat;
                 }
-                this.selectedAudio = customDownloadOption.AudioFormat;
-                this.hasAudioExtraction = customDownloadOption.IsAudio;
-                this.audioConversionFormat = customDownloadOption.AudioConversionFormat;
-                this.videoRecodeFormat = customDownloadOption.VideoRecodeFormat;
+                this.selectedAudio = customDownload.AudioFormat;
+                this.hasAudioExtraction = customDownload.IsAudio;
+                this.audioConversionFormat = customDownload.AudioConversionFormat;
+                this.videoRecodeFormat = customDownload.VideoRecodeFormat;
             }
             else
             {
+                var selectedOption = DownloadOptions[SelectedDownloadOption];
                 FormatData[] formats = entry.Metadata.SelectFormat(selectedOption.FormatSelection);
                 if (formats != null)
                 {
@@ -226,6 +281,9 @@ namespace Vividl.ViewModel
                 {
                     this.videoRecodeFormat = ((VideoDownload)selectedOption).RecodeFormat;
                 }
+                // selecting a pre-defined option is always valid
+                IsSelectionValid = true;
+                SelectionErrorMessage = null;
             }
             this.CurrentPage = this.selectedAudio != null || this.selectedVideo != null ? 1 : 0;
             signalChangedProperties();
@@ -234,19 +292,39 @@ namespace Vividl.ViewModel
         private void applyFormatSelectionChange(
             FormatData selectedAudioVideo = null, FormatData selectedVideo = null, FormatData selectedAudio = null)
         {
-            // select custom download
-            entry.SelectedDownloadOption = DownloadOptions.IndexOf(DownloadOptions.FirstOrDefault(f => f is CustomDownload));
             this.selectedAudioVideo = selectedAudioVideo;
             this.selectedVideo = selectedVideo;
             this.selectedAudio = selectedAudio;
+            tryUpdateCustomDownload();
             signalChangedProperties();
         }
 
         private void applyConversionChange()
         {
-            // select custom download
-            entry.SelectedDownloadOption = DownloadOptions.IndexOf(DownloadOptions.FirstOrDefault(f => f is CustomDownload));
+            tryUpdateCustomDownload();
             signalChangedProperties();
+        }
+
+        private void tryUpdateCustomDownload()
+        {
+            selectedDownloadOption = DownloadOptions.CustomDownloadIndex;
+            var newCustomDownload = new CustomDownload(Resources.DownloadOption_Custom);
+            try
+            {
+                newCustomDownload.Configure(
+                    SelectedVideo ?? SelectedAudioVideo, SelectedAudio,
+                    HasAudioExtraction, AudioConversionFormat, VideoRecodeFormat
+                );
+            }
+            catch (Exception ex)
+            {
+                IsSelectionValid = false;
+                SelectionErrorMessage = ex.Message;
+                return;
+            }
+            customDownload = newCustomDownload;
+            IsSelectionValid = true;
+            SelectionErrorMessage = null;
         }
     }
 }

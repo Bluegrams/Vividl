@@ -81,6 +81,9 @@
     <Reference Include="AppHelpers.WPF, Version=0.1.0.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AppHelpers.WPF.0.1.0-rc3\lib\net45\AppHelpers.WPF.dll</HintPath>
     </Reference>
+    <Reference Include="ByteSize, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ByteSize.2.0.0\lib\net45\ByteSize.dll</HintPath>
+    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
@@ -154,6 +157,7 @@
     <Compile Include="Helpers\ValueConverters.cs" />
     <Compile Include="Model\CustomYoutubeDL.cs" />
     <Compile Include="Model\DownloadOption.cs" />
+    <Compile Include="Model\DownloadOptionCollection.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\ExtProvider.cs" />
     <Compile Include="Model\IDownloadEntry.cs" />

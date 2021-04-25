@@ -71,7 +71,7 @@ namespace Vividl.ViewModel
         {
             // Add the default download options
             var downloadOptionProvider = SimpleIoc.Default.GetInstance<IDownloadOptionProvider>();
-            foreach (var option in downloadOptionProvider.CreateDownloadOptions())
+            foreach (var option in downloadOptionProvider.CreateDownloadOptions(!IsPlaylist))
             {
                 Entry.DownloadOptions.Add(option);
             }

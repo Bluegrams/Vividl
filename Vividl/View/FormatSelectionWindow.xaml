@@ -1,6 +1,7 @@
 ﻿<adonisControls:AdonisWindow x:Class="Vividl.View.FormatSelectionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
@@ -20,8 +21,15 @@
             <TextBlock Text="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="4">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4">
             <TextBlock VerticalAlignment="Center" Text="{lex:Loc FormatSelectionWindow_CurrentConfiguration}"
                        Margin="0,0,4,0"/>
             <ComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
@@ -37,39 +45,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
-        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
-            <Button DockPanel.Dock="Right" IsDefault="True"
-                    MinWidth="80" h:ButtonEx.CloseWindow="True"
-                    Command="{Binding ApplyFormatSelectionCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{lex:Loc Apply}"/>
-                    <icon:PackIconModern Margin="6,0,0,0" Kind="Check"/>
-                </StackPanel>
-            </Button>
-            <Button DockPanel.Dock="Right" MinWidth="100" h:ButtonEx.CloseWindow="True"
-                    Command="{Binding DownloadCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
-                    <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
-                </StackPanel>
-            </Button>
-        </DockPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="4">
-            <TextBlock VerticalAlignment="Center" Text="{lex:Loc FormatSelectionWindow_ConvertTo}"
-                       Margin="0,0,4,0"/>
-            <CheckBox Margin="8,0" Content="{lex:Loc AudioOnly}" IsChecked="{Binding HasAudioExtraction}"/>
-            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:VideoRecodeFormat}}"
-                      DisplayMemberPath="Description"
-                      SelectedValuePath="Value"
-                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource invBoolToVis}}"
-                      SelectedValue="{Binding VideoRecodeFormat, Mode=TwoWay}" />
-            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:AudioConversionFormat}}"
-                      DisplayMemberPath="Description"
-                      SelectedValuePath="Value"
-                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource boolToVis}}"
-                      SelectedValue="{Binding AudioConversionFormat, Mode=TwoWay}" />
-        </StackPanel>
-        <TabControl SelectedIndex="{Binding CurrentPage}">
+        <TabControl Grid.Row="1" SelectedIndex="{Binding CurrentPage}">
             <TabItem Header="{lex:Loc FormatSelectionWindow_TabCombinedChannels}">
                 <ListBox ItemsSource="{Binding AudioVideoDownloadOptions}" SelectionMode="Single"
                          SelectedItem="{Binding SelectedAudioVideo}"
@@ -99,5 +75,81 @@
                 </Grid>
             </TabItem>
         </TabControl>
-    </DockPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="4">
+            <TextBlock VerticalAlignment="Center" Text="{lex:Loc FormatSelectionWindow_ConvertTo}"
+                       Margin="0,0,4,0"/>
+            <CheckBox Margin="8,0" Content="{lex:Loc AudioOnly}" IsChecked="{Binding HasAudioExtraction}"/>
+            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:VideoRecodeFormat}}"
+                      DisplayMemberPath="Description"
+                      SelectedValuePath="Value"
+                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource invBoolToVis}}"
+                      SelectedValue="{Binding VideoRecodeFormat, Mode=TwoWay}" />
+            <ComboBox Margin="4,0" ItemsSource="{h:Enum {x:Type ytdlopt:AudioConversionFormat}, SkipCount=1}"
+                      DisplayMemberPath="Description"
+                      SelectedValuePath="Value"
+                      Visibility="{Binding HasAudioExtraction, Converter={StaticResource boolToVis}}"
+                      SelectedValue="{Binding AudioConversionFormat, Mode=TwoWay}" />
+        </StackPanel>
+        <Grid Grid.Row="3"
+              Visibility="{Binding IsSelectionValid, Converter={StaticResource invBoolToVis}}">
+            <Grid.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="8"/>
+                    <Setter Property="Orientation" Value="Horizontal"/>
+                </Style>
+            </Grid.Resources>
+            <StackPanel Grid.Column="0">
+                <icon:PackIconModern Margin="0,0,6,0" Kind="Warning"/>
+                <TextBlock Text="{Binding SelectionErrorMessage}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3"
+              Visibility="{Binding IsSelectionValid, Converter={StaticResource boolToVis}}">
+            <Grid.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="8"/>
+                    <Setter Property="Orientation" Value="Horizontal"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <icon:PackIconModern Margin="0,0,6,0" Kind="PageDownload"
+                                        Visibility="{Binding FileExtension, Converter={StaticResource nullToVis}}"/>
+                <TextBlock Text="{Binding FileExtension}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <icon:PackIconModern Margin="0,0,6,0" Kind="DimensionArrowBoxWidth"
+                                        Visibility="{Binding VideoWidthAndHeight, Converter={StaticResource nullToVis}}"/>
+                <TextBlock Text="{Binding VideoWidthAndHeight}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <icon:PackIconModern Margin="0,0,6,0" Kind="Box"
+                                        Visibility="{Binding DownloadSize, Converter={StaticResource nullToVis}}"/>
+                <TextBlock Text="{Binding DownloadSize}"/>
+            </StackPanel>
+        </Grid>
+        <DockPanel Grid.Row="4" Margin="4" LastChildFill="False"
+                   IsEnabled="{Binding IsSelectionValid}">
+            <Button DockPanel.Dock="Right" IsDefault="True"
+                    MinWidth="80" h:ButtonEx.CloseWindow="True"
+                    Command="{Binding ApplyFormatSelectionCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{lex:Loc Apply}"/>
+                    <icon:PackIconModern Margin="6,0,0,0" Kind="Check"/>
+                </StackPanel>
+            </Button>
+            <Button DockPanel.Dock="Right" MinWidth="100" h:ButtonEx.CloseWindow="True"
+                    Command="{Binding DownloadCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
+                    <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+    </Grid>
 </adonisControls:AdonisWindow>

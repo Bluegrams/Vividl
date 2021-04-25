@@ -27,7 +27,7 @@ namespace Vividl.Model
         public abstract int TotalItems { get; }
         public abstract bool FileAvailable { get; }
 
-        public IList<IDownloadOption> DownloadOptions { get; }
+        public DownloadOptionCollection DownloadOptions { get; }
         public int SelectedDownloadOption { get; set; }
 
         public event EventHandler<ProgressEventArgs> DownloadStateChanged;
@@ -37,7 +37,7 @@ namespace Vividl.Model
             this.ydl = ydl;
             this.Metadata = metadata;
             this.OverrideOptions = overrideOptions;
-            this.DownloadOptions = new List<IDownloadOption>();
+            this.DownloadOptions = new DownloadOptionCollection();
             this.progress = new Progress<DownloadProgress>(p => RaiseDownloadStateChanged(p));
         }
 

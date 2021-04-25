@@ -8,6 +8,8 @@ namespace Vividl.Helpers
     {
         private readonly Type enumType;
 
+        public int SkipCount { get; set; }
+
         public EnumExtension(Type enumType)
         {
             this.enumType = enumType;
@@ -16,6 +18,7 @@ namespace Vividl.Helpers
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return Enum.GetValues(enumType).Cast<object>()
+                .Skip(SkipCount)
                 .Select(o => new { Value = o, Description = o.ToString() });
         }
     }

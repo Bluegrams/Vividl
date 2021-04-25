@@ -216,7 +216,7 @@
                                                   Command="{Binding OpenInBrowserCommand}"
                                                   Icon="{icon:Modern Kind=BrowserWire}"/>
                                         <MenuItem Header="{lex:Loc VideoEntry_CustomizeDownload}"
-                                                  Visibility="{Binding Converter={StaticResource typeToVis}, ConverterParameter={x:Type vm:VideoViewModel}}"
+                                                  Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"
                                                   Command="{Binding CustomizeDownloadCommand}"
                                                   Icon="{icon:Modern Kind=Tools}"/>
                                         <Separator/>
