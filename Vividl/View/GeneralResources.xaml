@@ -3,6 +3,7 @@
                     xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
                     xmlns:p="clr-namespace:Vividl.Properties"
                     xmlns:local="clr-namespace:Vividl.Helpers"
+                    xmlns:v="clr-namespace:Vividl.View"
                     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
                     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
                     xmlns:lex="http://wpflocalizeextension.codeplex.com">
@@ -81,8 +82,9 @@
             <TextBlock Text="{Binding Path=Entry.Title}" Margin="4"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal"
                         IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
-                <ComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
-                          Margin="4,0" Height="25">
+                <v:DownloadOptionComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
+                                          Margin="4,0" Height="25"
+                                          CustomDownloadCommand="{Binding CustomizeDownloadCommand}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel>
@@ -92,7 +94,7 @@
                             </DockPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
-                </ComboBox>
+                </v:DownloadOptionComboBox>
                 <Button Command="{Binding CustomizeDownloadCommand}" Margin="4,0" Height="25"
                         ToolTip="{lex:Loc VideoEntry_CustomizeDownload}"
                         Content="{icon:Modern Kind=Tools}"

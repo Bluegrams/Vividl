@@ -14,8 +14,6 @@ namespace Vividl.ViewModel
 {
     public class FormatSelectionViewModel : ViewModelBase
     {
-        // TODO v.0.5: Open FormatSelectionWindow when custom option is selected in combo box
-
         private readonly MediaEntry entry;
         private int selectedDownloadOption;
         private FormatData selectedAudioVideo, selectedAudio, selectedVideo;
@@ -284,6 +282,11 @@ namespace Vividl.ViewModel
                 // selecting a pre-defined option is always valid
                 IsSelectionValid = true;
                 SelectionErrorMessage = null;
+            }
+            // Avoid AudioConversionFormat.Best
+            if (this.audioConversionFormat == AudioConversionFormat.Best)
+            {
+                this.audioConversionFormat = AudioConversionFormat.Mp3;
             }
             this.CurrentPage = this.selectedAudio != null || this.selectedVideo != null ? 1 : 0;
             signalChangedProperties();

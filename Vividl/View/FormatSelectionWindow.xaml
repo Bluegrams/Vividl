@@ -117,17 +117,17 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" ToolTip="{lex:Loc FormatSelectionWindow_FileExtension}">
                 <icon:PackIconModern Margin="0,0,6,0" Kind="PageDownload"
                                         Visibility="{Binding FileExtension, Converter={StaticResource nullToVis}}"/>
                 <TextBlock Text="{Binding FileExtension}"/>
             </StackPanel>
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" ToolTip="{lex:Loc FormatSelectionWindow_WidthAndHeight}">
                 <icon:PackIconModern Margin="0,0,6,0" Kind="DimensionArrowBoxWidth"
                                         Visibility="{Binding VideoWidthAndHeight, Converter={StaticResource nullToVis}}"/>
                 <TextBlock Text="{Binding VideoWidthAndHeight}"/>
             </StackPanel>
-            <StackPanel Grid.Column="2">
+            <StackPanel Grid.Column="2" ToolTip="{lex:Loc FormatSelectionWindow_DownloadSize}">
                 <icon:PackIconModern Margin="0,0,6,0" Kind="Box"
                                         Visibility="{Binding DownloadSize, Converter={StaticResource nullToVis}}"/>
                 <TextBlock Text="{Binding DownloadSize}"/>
@@ -135,21 +135,23 @@
         </Grid>
         <DockPanel Grid.Row="4" Margin="4" LastChildFill="False"
                    IsEnabled="{Binding IsSelectionValid}">
-            <Button DockPanel.Dock="Right" IsDefault="True"
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button MinWidth="100" h:ButtonEx.CloseWindow="True"
+                        Command="{Binding DownloadCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
+                        <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
+                    </StackPanel>
+                </Button>
+                <Button IsDefault="True"
                     MinWidth="80" h:ButtonEx.CloseWindow="True"
                     Command="{Binding ApplyFormatSelectionCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{lex:Loc Apply}"/>
-                    <icon:PackIconModern Margin="6,0,0,0" Kind="Check"/>
-                </StackPanel>
-            </Button>
-            <Button DockPanel.Dock="Right" MinWidth="100" h:ButtonEx.CloseWindow="True"
-                    Command="{Binding DownloadCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{lex:Loc VideoEntry_Download}"/>
-                    <icon:PackIconModern Margin="6,0,0,0" Kind="Download"/>
-                </StackPanel>
-            </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{lex:Loc Apply}"/>
+                        <icon:PackIconModern Margin="6,0,0,0" Kind="Check"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </DockPanel>
     </Grid>
 </adonisControls:AdonisWindow>

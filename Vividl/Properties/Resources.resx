@@ -502,4 +502,13 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="Audio" xml:space="preserve">
     <value>Audio</value>
   </data>
+  <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+    <value>File Extension</value>
+  </data>
+  <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+    <value>Video width and height</value>
+  </data>
+  <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+    <value>Approximate download size</value>
+  </data>
 </root>

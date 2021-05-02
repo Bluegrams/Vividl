@@ -490,4 +490,25 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="Audio" xml:space="preserve">
     <value>Audio</value>
   </data>
+  <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+    <value>Dateiendung</value>
+  </data>
+  <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+    <value>Videobreite und -höhe</value>
+  </data>
+  <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+    <value>Ungefähre Downloadgröße</value>
+  </data>
+  <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+    <value>Aktuelle Konfiguration:</value>
+  </data>
+  <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+    <value>Audio + Video</value>
+  </data>
+  <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+    <value>Nur Video/ Audio</value>
+  </data>
+  <data name="FormatSelectionWindow_Title" xml:space="preserve">
+    <value>Download konfigurieren</value>
+  </data>
 </root>

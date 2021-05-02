@@ -211,6 +211,9 @@ namespace Vividl.Model
             AudioConversionFormat audioConversionFormat = AudioConversionFormat.Mp3,
             VideoRecodeFormat videoRecodeFormat = VideoRecodeFormat.None)
         {
+            // TODO Localize error messages
+            if (videoFormat == null && audioFormat == null)
+                throw new InvalidOperationException("Must specify either video or audio format.");
             if (extractAudio && audioConversionFormat == AudioConversionFormat.Best)
                 throw new InvalidOperationException("Cannot use AudioConversionFormat.Best.");
             if (audioFormat != null && !extractAudio && videoRecodeFormat == VideoRecodeFormat.None)

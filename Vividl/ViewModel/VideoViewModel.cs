@@ -38,13 +38,17 @@ namespace Vividl.ViewModel
         public VideoViewModel(string url, MainViewModel<MediaEntry> mainVm)
             : base(url, mainVm)
         {
-            CustomizeDownloadCommand = new RelayCommand(
-                () => Messenger.Default.Send(new ShowWindowMessage(
+            CustomizeDownloadCommand = new RelayCommand<Action<bool>>(
+                (callback) => Messenger.Default.Send(new ShowWindowMessage(
                     WindowType.FormatSelectionWindow,
                     new FormatSelectionViewModel(this),
-                    (r, o) => RaisePropertyChanged(nameof(SelectedDownloadOption))
+                    (r, o) => 
+                    {
+                        RaisePropertyChanged(nameof(SelectedDownloadOption));
+                        callback?.Invoke(r.GetValueOrDefault());
+                    }
                 )),
-                () => State == ItemState.Fetched
+                (callback) => State == ItemState.Fetched
             );
         }
 

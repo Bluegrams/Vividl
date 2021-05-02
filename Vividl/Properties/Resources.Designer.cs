@@ -340,6 +340,24 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Approximate download size.
+        /// </summary>
+        public static string FormatSelectionWindow_DownloadSize {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_DownloadSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Extension.
+        /// </summary>
+        public static string FormatSelectionWindow_FileExtension {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_FileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Audio + Video.
         /// </summary>
         public static string FormatSelectionWindow_TabCombinedChannels {
@@ -363,6 +381,15 @@ namespace Vividl.Properties {
         public static string FormatSelectionWindow_Title {
             get {
                 return ResourceManager.GetString("FormatSelectionWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video width and height.
+        /// </summary>
+        public static string FormatSelectionWindow_WidthAndHeight {
+            get {
+                return ResourceManager.GetString("FormatSelectionWindow_WidthAndHeight", resourceCulture);
             }
         }
         

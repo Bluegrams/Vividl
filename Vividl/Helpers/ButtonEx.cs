@@ -31,6 +31,11 @@ namespace Vividl.Helpers
         }
 
         private static void buttonClick(object sender, RoutedEventArgs e)
-            => Window.GetWindow((DependencyObject)sender).Close();
+        {
+            Button button = (Button)sender;
+            Window window = Window.GetWindow(button);
+            window.DialogResult = button.IsDefault;
+            window.Close();
+        }
     }
 }

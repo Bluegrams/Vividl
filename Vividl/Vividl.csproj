@@ -184,6 +184,7 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShowWindowMessage.cs" />
     <Compile Include="Model\AccentColorScheme.cs" />
+    <Compile Include="View\DownloadOptionComboBox.cs" />
     <Compile Include="View\DownloadOutputWindow.xaml.cs">
       <DependentUpon>DownloadOutputWindow.xaml</DependentUpon>
     </Compile>
