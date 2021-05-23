@@ -26,8 +26,8 @@
     <Setting Name="FfmpegPath" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="OverwriteFiles" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="OverwriteMode" Roaming="true" Type="Vividl.Model.OverwriteMode" Scope="User">
+      <Value Profile="(Default)">Overwrite</Value>
     </Setting>
     <Setting Name="AppTheme" Roaming="true" Type="Vividl.Model.Theme" Scope="User">
       <Value Profile="(Default)">Light</Value>

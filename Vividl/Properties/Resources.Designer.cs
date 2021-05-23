@@ -737,6 +737,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Re-download (rename).
+        /// </summary>
+        public static string OverwriteMode_Increment {
+            get {
+                return ResourceManager.GetString("OverwriteMode_Increment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip existing.
+        /// </summary>
+        public static string OverwriteMode_None {
+            get {
+                return ResourceManager.GetString("OverwriteMode_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overwrite existing.
+        /// </summary>
+        public static string OverwriteMode_Overwrite {
+            get {
+                return ResourceManager.GetString("OverwriteMode_Overwrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change.
         /// </summary>
         public static string PathSelectionControl_Change {

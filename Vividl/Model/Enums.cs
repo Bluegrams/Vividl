@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel;
+
 namespace Vividl.Model
 {
     /// <summary>
@@ -24,5 +26,18 @@ namespace Vividl.Model
     public enum Theme
     {
         Light, Dark
+    }
+
+    /// <summary>
+    /// Specifies the possible options to handle (re-)downloads of items with the same file name.
+    /// </summary>
+    public enum OverwriteMode
+    {
+        [Description("OverwriteMode_None")]
+        None,
+        [Description("OverwriteMode_Overwrite")]
+        Overwrite,
+        [Description("OverwriteMode_Increment")]
+        Increment
     }
 }

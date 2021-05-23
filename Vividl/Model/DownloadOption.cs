@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Vividl.Properties;
 using Vividl.Services;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Metadata;
@@ -54,19 +55,52 @@ namespace Vividl.Model
         public async Task<RunResult<string>> RunDownload(YoutubeDL ydl, VideoEntry video,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
-            if (!ydl.OverwriteFiles && allowsOverwriteCheck)
+            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && allowsOverwriteCheck)
             {
                 bool restricted = ydl.RestrictFilenames;
                 string ext = GetExt();
-                string path = Path.Combine(ydl.OutputFolder, $"{Utils.Sanitize(video.Title, restricted)}.{ext}");
+                string fileName = Utils.Sanitize(video.Title, restricted);
+                string path = Path.Combine(ydl.OutputFolder, $"{fileName}.{ext}");
                 if (File.Exists(path))
                 {
-                    // Don't redownload if file exists.
-                    progress?.Report(new DownloadProgress(DownloadState.Success, data: path));
-                    return new RunResult<string>(true, new string[0], path);
+                    if (Settings.Default.OverwriteMode == OverwriteMode.None)
+                    {
+                        // Don't redownload if file exists.
+                        progress?.Report(new DownloadProgress(DownloadState.Success, data: path));
+                        return new RunResult<string>(true, new string[0], path);
+                    }
+                    else
+                    {
+                        // Set download path to a new location to prevent overwriting existing file.
+                        string downloadPath = getNotExistingFilePath(ydl.OutputFolder, fileName, ext);
+                        if (overrideOptions == null)
+                        {
+                            overrideOptions = new OptionSet();
+                        }
+                        overrideOptions.Output = downloadPath;
+                    }
                 }
             }
             return await RunRealDownload(ydl, video.Url, ct, progress, overrideOptions);
+        }
+
+        /// <summary>
+        /// Adds an incrementing counter after the file name until it found a non-existing file.
+        /// </summary>
+        private string getNotExistingFilePath(string folder, string fileName, string ext)
+        {
+            int i = 1;
+            while (i < 256)
+            {
+                string filePath = Path.Combine(folder, $"{fileName} ({i}).{ext}");
+                if (!File.Exists(filePath))
+                {
+                    return filePath;
+                }
+                i += 1;
+            }
+            // Stop trying to prevent long running
+            throw new InvalidOperationException($"Cannot find available file path for {fileName}.");
         }
 
         /// <summary>
@@ -75,7 +109,8 @@ namespace Vividl.Model
         public async Task<RunResult<string[]>> RunDownload(YoutubeDL ydl, PlaylistEntry playlist,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
-            if (!ydl.OverwriteFiles && allowsOverwriteCheck)
+            // TODO OverwriteMode.Increment currently not working for playlists.
+            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && allowsOverwriteCheck)
             {
                 bool restricted = ydl.RestrictFilenames;
                 string ext = GetExt();
@@ -202,7 +237,7 @@ namespace Vividl.Model
 
         public VideoRecodeFormat VideoRecodeFormat { get; private set; }
 
-        public CustomDownload(string description) : base(description, false, false)
+        public CustomDownload(string description) : base(description, false, true)
         { }
 
         public void Configure(

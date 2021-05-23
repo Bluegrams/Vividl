@@ -511,4 +511,13 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="FormatSelectionWindow_Title" xml:space="preserve">
     <value>Download konfigurieren</value>
   </data>
+  <data name="OverwriteMode_Increment" xml:space="preserve">
+    <value>Neu herunterladen (umbenennen)</value>
+  </data>
+  <data name="OverwriteMode_None" xml:space="preserve">
+    <value>Existierende überspringen</value>
+  </data>
+  <data name="OverwriteMode_Overwrite" xml:space="preserve">
+    <value>Existierende überschreiben</value>
+  </data>
 </root>

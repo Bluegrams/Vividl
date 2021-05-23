@@ -84,7 +84,7 @@ namespace Vividl
             ytdl.FFmpegPath = Settings.Default.FfmpegPath;
             ytdl.OutputFolder = Settings.Default.DownloadFolder;
             ytdl.RestrictFilenames = Settings.Default.RestrictFilenames;
-            ytdl.OverwriteFiles = Settings.Default.OverwriteFiles;
+            ytdl.OverwriteFiles = Settings.Default.OverwriteMode == OverwriteMode.Overwrite;
             ytdl.AddMetadata = Settings.Default.AddMetadata;
             ytdl.Proxy = Settings.Default.Proxy;
             if (Settings.Default.UseArchive)

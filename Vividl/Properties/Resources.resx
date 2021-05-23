@@ -511,4 +511,13 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
     <value>Approximate download size</value>
   </data>
+  <data name="OverwriteMode_None" xml:space="preserve">
+    <value>Skip existing</value>
+  </data>
+  <data name="OverwriteMode_Overwrite" xml:space="preserve">
+    <value>Overwrite existing</value>
+  </data>
+  <data name="OverwriteMode_Increment" xml:space="preserve">
+    <value>Re-download (rename)</value>
+  </data>
 </root>
