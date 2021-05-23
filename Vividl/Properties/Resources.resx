@@ -520,4 +520,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="OverwriteMode_Increment" xml:space="preserve">
     <value>Re-download (rename)</value>
   </data>
+  <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+    <value>A new version of youtube-dl is available! The latest version is {0}. You have {1}.</value>
+  </data>
 </root>

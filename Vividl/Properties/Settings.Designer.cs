@@ -230,5 +230,17 @@ namespace Vividl.Properties {
                 this["Proxy"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoCheckUpdatesYoutubeDL {
+            get {
+                return ((bool)(this["AutoCheckUpdatesYoutubeDL"]));
+            }
+            set {
+                this["AutoCheckUpdatesYoutubeDL"] = value;
+            }
+        }
     }
 }

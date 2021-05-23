@@ -520,4 +520,7 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="OverwriteMode_Overwrite" xml:space="preserve">
     <value>Existierende überschreiben</value>
   </data>
+  <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+    <value>Eine neue Version von youtube-dl ist verfügbar! Die neueste Version ist {0}. Die aktuelle Version ist {1}.</value>
+  </data>
 </root>

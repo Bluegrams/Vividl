@@ -25,12 +25,18 @@ namespace Vividl
             LocalizeDictionary.Instance.Culture = System.Globalization.CultureInfo.CurrentUICulture;
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             if (Settings.Default.AutoCheckUpdates)
             {
                 var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
                 updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
+            }
+            // Check for Youtube-DL updates
+            if (Settings.Default.AutoCheckUpdatesYoutubeDL)
+            {
+                var settingsVm = SimpleIoc.Default.GetInstance<SettingsViewModel>();
+                await settingsVm.CheckForYoutubeDLUpdates();
             }
         }
 

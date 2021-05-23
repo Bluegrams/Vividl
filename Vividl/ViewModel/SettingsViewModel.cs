@@ -31,16 +31,16 @@ namespace Vividl.ViewModel
         public ICommand UpdateYoutubeDLCommand { get; }
 
         public SettingsViewModel(IFileService fileService, IDialogService dialogService,
-            IThemeResolver themeResolver, IDownloadOptionProvider optionProvider)
+            IThemeResolver themeResolver, IDownloadOptionProvider optionProvider,
+            IUpdateChecker updateChecker, YtdlUpdateService ytdlUpdateService)
         {
             this.FileService = fileService;
             this.dialogService = dialogService;
             this.themeResolver = themeResolver;
-            this.updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
+            this.updateChecker = updateChecker;
+            this.YoutubeDLUpdateService = ytdlUpdateService;
             DefaultFormats = new ObservableCollection<IDownloadOption>(optionProvider.CreateDownloadOptions());
             SwitchAppThemeCommand = new RelayCommand(() => SwitchAppTheme());
-            var ydl = SimpleIoc.Default.GetInstance<YoutubeDLSharp.YoutubeDL>();
-            YoutubeDLUpdateService = new YtdlUpdateService(ydl);
             UpdateVividlCommand = new RelayCommand(() => UpdateVividl());
             UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
         }
@@ -54,6 +54,15 @@ namespace Vividl.ViewModel
         {
             var msg = await YoutubeDLUpdateService.Update();
             dialogService.ShowMessageBox(msg, "Vividl - " + Resources.Info);
+        }
+
+        public async Task CheckForYoutubeDLUpdates()
+        {
+            bool willUpdate = await YoutubeDLUpdateService.CheckForUpdates();
+            if (willUpdate)
+            {
+                await UpdateYoutubeDL();
+            }
         }
 
         public async Task ApplySettings()

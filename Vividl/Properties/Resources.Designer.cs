@@ -1266,5 +1266,14 @@ namespace Vividl.Properties {
                 return ResourceManager.GetString("VideoEntry_TotalDownloadSize", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new version of youtube-dl is available! The latest version is {0}. You have {1}..
+        /// </summary>
+        public static string YtdlUpdateService_NewUpdateMessage {
+            get {
+                return ResourceManager.GetString("YtdlUpdateService_NewUpdateMessage", resourceCulture);
+            }
+        }
     }
 }

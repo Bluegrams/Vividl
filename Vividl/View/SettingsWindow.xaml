@@ -13,7 +13,7 @@
         lex:LocalizeDictionary.DesignCulture="en"
         lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
         lex:ResxLocalizationProvider.DefaultDictionary="Resources"
-        Title="{lex:Loc SettingsWindow_Title}" Height="400" Width="500"
+        Title="{lex:Loc SettingsWindow_Title}" Height="420" Width="500"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
@@ -190,6 +190,8 @@
                                     </WrapPanel>
                                 </Label>
                             </DockPanel>
+                            <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
+                                      IsChecked="{Binding Settings.AutoCheckUpdatesYoutubeDL, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             <v:PathSelectionControl FileService="{Binding FileService}"
                                                     SelectedPath="{Binding Settings.YoutubeDLPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
                                                     ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
