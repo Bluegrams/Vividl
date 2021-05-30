@@ -158,4 +158,19 @@ namespace Vividl.Helpers
             throw new NotImplementedException();
         }
     }
+
+    class ValueGreaterEqualConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var result = (double)value >= double.Parse(parameter.ToString());
+            System.Diagnostics.Debug.WriteLine(result);
+            return result;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

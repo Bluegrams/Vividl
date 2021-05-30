@@ -18,6 +18,7 @@
     <local:IntToVisibilityConverter x:Key="intToVis"/>
     <local:ResTextConverter x:Key="resConv"/>
     <local:DownloadOptionIconConverter x:Key="iconConv"/>
+    <local:ValueGreaterEqualConverter x:Key="greaterEqual"/>
     <!-- Control styling -->
     <Style TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
         <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>
@@ -49,6 +50,8 @@
         <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>
         <Setter Property="adonisExtensions:LayerExtension.Layer" Value="1"/>
     </Style>
+    <!-- Custom combo box style -->
+    <Style TargetType="v:DownloadOptionComboBox" BasedOn="{StaticResource {x:Type ComboBox}}"></Style>
     
     <!-- Fetching -->
     <DataTemplate x:Key="fetchTemplate">
@@ -64,7 +67,7 @@
     </DataTemplate>
     <!-- Pre-Download / Download -->
     <DataTemplate x:Key="downloadTemplate">
-        <Grid Background="Transparent">
+        <Grid x:Name="mainGrid" Background="Transparent">
             <Grid.Resources>
                 <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
                     <Setter Property="VerticalAlignment" Value="Center"/>
@@ -75,12 +78,28 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding Path=Entry.Title}" Margin="4"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal"
+            <Image Grid.Column="0" Grid.RowSpan="2" Stretch="UniformToFill"
+                   Source="{Binding Entry.Metadata.Thumbnail}"
+                   Margin="4,2,4,2" RenderOptions.BitmapScalingMode="HighQuality">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Value="True" 
+                                         Binding="{Binding ActualWidth, ElementName=mainGrid, Converter={StaticResource greaterEqual}, ConverterParameter=865}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Entry.Title}" Margin="4"/>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"
                         IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
                 <v:DownloadOptionComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
                                           Margin="4,0" Height="25"
@@ -104,7 +123,7 @@
                         Content="{icon:Modern Kind=InformationCircle}"/>
                 <TextBlock Margin="8,4" Text="{Binding InformationString}"/>
             </StackPanel>
-            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="16,4"
+            <Grid Grid.Column="2" Grid.RowSpan="2" Margin="16,4"
                   Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
                 <Grid.Resources>
                     <Style TargetType="icon:PackIconModern">
@@ -148,7 +167,7 @@
                            HorizontalAlignment="Stretch" VerticalAlignment="Center"
                            ToolTip="{lex:Loc VideoEntry_CurrentProgress}"/>
             </Grid>
-            <StackPanel Grid.Column="2" Grid.RowSpan="2" Orientation="Horizontal"
+            <StackPanel Grid.Column="3" Grid.RowSpan="2" Orientation="Horizontal"
                         Visibility="{Binding IsDownloading, Converter={StaticResource invBoolToVis}}">
                 <Button Command="{Binding DownloadCommand}" Width="80" Height="25" Margin="4"
                         ToolTip="{lex:Loc VideoEntry_Download}">
@@ -159,7 +178,7 @@
                     <icon:PackIconModern Kind="Delete"/>
                 </Button>
             </StackPanel>
-            <DockPanel Grid.Column="2" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
+            <DockPanel Grid.Column="3" Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}">
                 <Button DockPanel.Dock="Right" ToolTip="{lex:Loc Cancel}"
                         Command="{Binding CancelCommand}">
                     <icon:PackIconModern Height="10" Kind="Close"/>
@@ -169,7 +188,7 @@
                 <TextBlock Text="{Binding Path=ProgressString, Mode=OneWay}"
                            Margin="2"/>
             </DockPanel>
-            <ProgressBar Grid.Column="2" Grid.Row="1" Width="200" Height="20"
+            <ProgressBar Grid.Column="3" Grid.Row="1" Width="200" Height="20"
                          Visibility="{Binding IsDownloading, Converter={StaticResource boolToVis}}"
                          Maximum="1" Value="{Binding CurrentProgress, Mode=OneWay}"/>
         </Grid>
@@ -182,23 +201,39 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
         </DataTemplate.Resources>
-        <Grid Background="Transparent">
+        <Grid x:Name="mainGrid" Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding Path=Entry.Title}"/>
+            <Image Grid.Column="0" Grid.RowSpan="2" Stretch="UniformToFill"
+                   Source="{Binding Entry.Metadata.Thumbnail}"
+                   Margin="4,2,4,2" RenderOptions.BitmapScalingMode="HighQuality">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Value="True" 
+                                         Binding="{Binding ActualWidth, ElementName=mainGrid, Converter={StaticResource greaterEqual}, ConverterParameter=865}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Entry.Title}"/>
             <!-- Show if file has been downloaded successfully -->
-            <TextBlock Grid.Row="1" Text="{lex:Loc VideoEntry_Finished}"
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{lex:Loc VideoEntry_Finished}"
                        Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource boolToVis}}"/>
             <!-- Show if file has not been re-downloaded because in archive || no overwrites -->
-            <TextBlock Grid.Row="1" Text="{lex:Loc VideoEntry_AlreadyDownloaded}"
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{lex:Loc VideoEntry_AlreadyDownloaded}"
                        Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource invBoolToVis}}"/>
-            <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
+            <StackPanel Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center">
                 <StackPanel.Resources>
                     <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
                         <Setter Property="Width" Value="80"/>

@@ -17,6 +17,7 @@
         <KeyBinding Command="{Binding PasteCommand}" Key="V" Modifiers="Ctrl"/>
         <KeyBinding Command="{Binding ImportCommand}" Key="O" Modifiers="Ctrl"/>
         <KeyBinding Command="{Binding ExportCommand}" Key="S" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding ReloadAllCommand}" Key="F5"/>
         <KeyBinding Command="{Binding DownloadAllCommand}" Key="A" Modifiers="Ctrl+Shift"/>
         <KeyBinding Command="{Binding CancelAllCommand}" Key="X" Modifiers="Ctrl+Shift"/>
         <KeyBinding Command="{Binding ClearCommand}" Key="D" Modifiers="Ctrl+Shift"/>
@@ -55,6 +56,8 @@
                           InputGestureText="Alt+F4"/>
                 </MenuItem>
                 <MenuItem Header="{lex:Loc MainWindow_HeaderVideos}" Padding="6,2">
+                    <MenuItem Header="{lex:Loc MainWindow_MenuReloadAll}" Command="{Binding ReloadAllCommand}"
+                              Icon="{icon:Modern Kind=RefreshCounterclockwiseDown}" InputGestureText="F5"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuDownloadAll}" Command="{Binding DownloadAllCommand}"
                           Icon="{icon:Modern Kind=Download}" InputGestureText="Ctrl+Shift+A"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
@@ -95,6 +98,8 @@
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuCancelAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Delete}" Command="{Binding ClearCommand}"
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuClearList}, Converter={StaticResource resConv}}"/>
+                <Button DockPanel.Dock="Right" Content="{icon:Modern Kind=Cog}" Command="{Binding SettingsCommand}"
+                        ToolTip="{Binding Source={lex:Loc MainWindow_MenuSettings}, Converter={StaticResource resConv}}"/>
             </DockPanel>
             <StatusBar DockPanel.Dock="Bottom" Height="24">
                 <StatusBar.Resources>

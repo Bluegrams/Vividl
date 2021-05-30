@@ -124,6 +124,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot use video-only download when extracting audio..
+        /// </summary>
+        public static string DownloadOption_Exception_NoAudio {
+            get {
+                return ResourceManager.GetString("DownloadOption_Exception_NoAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must specify either video or audio format..
+        /// </summary>
+        public static string DownloadOption_Exception_NoFormat {
+            get {
+                return ResourceManager.GetString("DownloadOption_Exception_NoFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must specify a video recode format when merging formats..
+        /// </summary>
+        public static string DownloadOption_Exception_RecodeFormat {
+            get {
+                return ResourceManager.GetString("DownloadOption_Exception_RecodeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Convert to M4A.
         /// </summary>
         public static string DownloadOption_M4A {
@@ -512,7 +539,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Clear Download List.
+        ///   Looks up a localized string similar to Clear _Download List.
         /// </summary>
         public static string MainWindow_MenuClearList {
             get {
@@ -571,6 +598,15 @@ namespace Vividl.Properties {
         public static string MainWindow_MenuPaste {
             get {
                 return ResourceManager.GetString("MainWindow_MenuPaste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Re_load All Videos.
+        /// </summary>
+        public static string MainWindow_MenuReloadAll {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuReloadAll", resourceCulture);
             }
         }
         

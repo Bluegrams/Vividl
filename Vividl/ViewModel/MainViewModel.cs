@@ -50,6 +50,8 @@ namespace Vividl.ViewModel
 
         public ICommand ExitCommand { get; }
 
+        public ICommand ReloadAllCommand { get; }
+
         public ICommand DownloadAllCommand { get; }
 
         public ICommand CancelAllCommand { get; }
@@ -121,6 +123,7 @@ namespace Vividl.ViewModel
             ImportCommand = new RelayCommand(async () => await ImportDownloadLinks());
             ExportCommand = new RelayCommand(() => ExportDownloadLinks());
             ExitCommand = new RelayCommand(() => Environment.Exit(0));
+            ReloadAllCommand = new RelayCommand(async () => await ReloadAll(), () => VideoInfos.Count > 0);
             DownloadAllCommand = new RelayCommand(async () => await DownloadAll(), () => VideoInfos.Count > 0);
             CancelAllCommand = new RelayCommand(() => CancelAllDownloads(), () => InProcessCount > 0);
             RemoveUnavailableCommand = new RelayCommand(() => RemoveAllUnavailable());
@@ -202,6 +205,16 @@ namespace Vividl.ViewModel
                         sw.WriteLine(vid.Entry.Url);
                 }
             }
+        }
+
+        public async Task ReloadAll()
+        {
+            var tasks = new List<Task>();
+            foreach (var vid in VideoInfos)
+            {
+                tasks.Add(vid.Reload());
+            }
+            await Task.WhenAll(tasks.ToArray());
         }
 
         public async Task DownloadAll()

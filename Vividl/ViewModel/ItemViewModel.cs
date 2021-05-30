@@ -237,6 +237,7 @@ namespace Vividl.ViewModel
         /// <returns></returns>
         public async Task Reload()
         {
+            Entry?.CancelDownload();
             State = ItemState.None;
             Unavailable = false;
             await Fetch(refetch: true);

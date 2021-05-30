@@ -182,7 +182,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>_Cancel All Downloads</value>
   </data>
   <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>_Clear Download List</value>
+    <value>Clear _Download List</value>
   </data>
   <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
     <value>_Download All Videos</value>
@@ -522,5 +522,17 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
     <value>A new version of youtube-dl is available! The latest version is {0}. You have {1}.</value>
+  </data>
+  <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+    <value>Must specify either video or audio format.</value>
+  </data>
+  <data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+    <value>Must specify a video recode format when merging formats.</value>
+  </data>
+  <data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+    <value>Cannot use video-only download when extracting audio.</value>
+  </data>
+  <data name="MainWindow_MenuReloadAll" xml:space="preserve">
+    <value>Re_load All Videos</value>
   </data>
 </root>
