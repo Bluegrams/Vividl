@@ -1,8 +1,17 @@
 # Vividl Changelog
 
+### v.0.5.0 (2021-06)
+- **New:** Customize download in "Configure Download" window
+- **New:** Show download size and resolution in "Configure Download" window
+- **New:** UI improvements: show video thumbnails; add settings to toolbar
+- **New:** Add mode to re-download videos with new name
+- **New:** Simple automatic update checking for youtube-dl
+- **New:** Add command to reload all videos
+- **Changed:** Put youtube-dl into `AppData` folder by default
+
 ### v.0.4.0 (2020-11)
 - **New:** Italian, Hebrew, Polish, Welsh, Portuguese, Arabic, French, Dutch and Swedish translation
-- **Updated:** Russion and Spanish translation
+- **Updated:** Russian and Spanish translation
 
 ### v.0.3.0 (2020-10)
 - **New:** Extended window for adding video links.

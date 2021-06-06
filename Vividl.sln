@@ -18,7 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{3F2A1700-8D21-4481-8DB5-34A3C2B3CB92}"
 	ProjectSection(SolutionItems) = preProject
 		img\icon.png = img\icon.png
-		img\vividl_screenshot.png = img\vividl_screenshot.png
+		img\vividl_view.png = img\vividl_view.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "choco", "choco", "{C2BA0038-9AFE-4A5C-AE0F-90AA8D57FABF}"

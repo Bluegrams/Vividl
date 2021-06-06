@@ -75,20 +75,20 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdonisUI, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdonisUI.1.16.0\lib\net45\AdonisUI.dll</HintPath>
+    <Reference Include="AdonisUI, Version=1.17.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdonisUI.1.17.0\lib\net45\AdonisUI.dll</HintPath>
     </Reference>
-    <Reference Include="AdonisUI.ClassicTheme, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdonisUI.ClassicTheme.1.16.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
+    <Reference Include="AdonisUI.ClassicTheme, Version=1.17.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdonisUI.ClassicTheme.1.17.0\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
     </Reference>
-    <Reference Include="AppHelpers.WPF, Version=0.1.0.12, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WPF.0.1.0-rc3\lib\net45\AppHelpers.WPF.dll</HintPath>
+    <Reference Include="AppHelpers.WPF, Version=0.1.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WPF.0.1.0-rc4\lib\net45\AppHelpers.WPF.dll</HintPath>
     </Reference>
     <Reference Include="ByteSize, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ByteSize.2.0.0\lib\net45\ByteSize.dll</HintPath>
     </Reference>
-    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
+    <Reference Include="CommonServiceLocator, Version=2.0.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.6\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
@@ -111,8 +111,8 @@
     <Reference Include="MahApps.Metro.IconPacks.Modern, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.Modern.4.8.0\lib\net46\MahApps.Metro.IconPacks.Modern.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PortableSettingsProvider, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\PortableSettingsProvider.0.2.3\lib\net45\PortableSettingsProvider.dll</HintPath>
@@ -146,8 +146,8 @@
     <Reference Include="XAMLMarkupExtensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c726e0262981a1eb, processorArchitecture=MSIL">
       <HintPath>..\packages\XAMLMarkupExtensions.2.0.0\lib\net452\XAMLMarkupExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="YoutubeDLSharp, Version=0.3.0.20271, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.0.3.0\lib\net45\YoutubeDLSharp.dll</HintPath>
+    <Reference Include="YoutubeDLSharp, Version=0.3.1.21157, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YoutubeDLSharp.0.3.1\lib\net45\YoutubeDLSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -287,8 +287,8 @@
     <EmbeddedResource Include="Properties\Resources.it.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ru.resx">
       <SubType>Designer</SubType>

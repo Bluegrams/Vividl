@@ -485,7 +485,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Custom Download</value>
   </data>
   <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
-    <value>Customize Download</value>
+    <value>Configure Download</value>
   </data>
   <data name="Video" xml:space="preserve">
     <value>Video</value>

@@ -473,7 +473,7 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
     <value>Benutzerdefiniert</value>
   </data>
   <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
-    <value>Benutzerdefinierter Download</value>
+    <value>Download konfigurieren</value>
   </data>
   <data name="Video" xml:space="preserve">
     <value>Video</value>

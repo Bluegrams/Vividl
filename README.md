@@ -15,7 +15,7 @@ paste it in Vividl and download the video in different qualities, convert it to 
 You can also manage the parallel download of multiple videos and retrieve additonal meta information using the simple UI.
 
 <p align="center">
-<img src="img/vividl_screenshot.png" height="350px">
+<img src="img/vividl_view.png" height="350px">
 </p>
 
 ## Features
@@ -33,7 +33,7 @@ You can also manage the parallel download of multiple videos and retrieve addito
 
 - See additional information before downloading a video
 
-- Modern and powerful UI for Windows
+- Modern UI for Windows with dark and light mode
 
 ## Setup
 
