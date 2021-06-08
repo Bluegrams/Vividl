@@ -9,6 +9,9 @@
 - **New:** Add command to reload all videos
 - **Changed:** Put youtube-dl into `AppData` folder by default
 
+#### v.0.5.1 (2021-06)
+- **Fixed:** App crashes when adding videos via "Add New Videos" window
+
 ### v.0.4.0 (2020-11)
 - **New:** Italian, Hebrew, Polish, Welsh, Portuguese, Arabic, French, Dutch and Swedish translation
 - **Updated:** Russian and Spanish translation

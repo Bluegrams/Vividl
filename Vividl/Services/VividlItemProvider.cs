@@ -23,13 +23,14 @@ namespace Vividl.Services
             foreach (var url in itemUrls)
             {
                 var videoVm = CreateItemViewModel(url, mainVm);
-                if (selectedFormat.HasValue)
-                {
-                    videoVm.SelectedDownloadOption = selectedFormat.Value;
-                }
                 itemVms.Add(videoVm);
                 fetchedVideos.Add(videoVm);
-                tasks.Add(videoVm, videoVm.Fetch(overrideOptions: overrideOptions));
+                tasks.Add(videoVm, videoVm.Fetch(overrideOptions: overrideOptions).ContinueWith((t) => {
+                    if (selectedFormat.HasValue)
+                    {
+                        videoVm.SelectedDownloadOption = selectedFormat.Value;
+                    }
+                }));
             }
             await Task.WhenAll(tasks.Values.ToArray());
             return fetchedVideos;
