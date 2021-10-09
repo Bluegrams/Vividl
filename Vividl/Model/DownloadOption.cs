@@ -152,6 +152,14 @@ namespace Vividl.Model
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
+            // When converting to mp3, add thumbnail.
+            if (Settings.Default.AddMetadata && ConversionFormat == AudioConversionFormat.Mp3)
+            {
+                overrideOptions = overrideOptions ?? new OptionSet();
+                overrideOptions.EmbedThumbnail = true;
+                // This ensures thumbnails are correctly shown on Windows.
+                overrideOptions.PostprocessorArgs = "-id3v2_version 3";
+            }
             return await ydl.RunAudioDownload(
                 url, ConversionFormat, ct, progress,
                 output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
@@ -162,6 +170,14 @@ namespace Vividl.Model
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
             int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
+            // When converting to mp3, add thumbnail.
+            if (Settings.Default.AddMetadata && ConversionFormat == AudioConversionFormat.Mp3)
+            {
+                overrideOptions = overrideOptions ?? new OptionSet();
+                overrideOptions.EmbedThumbnail = true;
+                // This ensures thumbnails are correctly shown on Windows.
+                overrideOptions.PostprocessorArgs = "-id3v2_version 3";
+            }
             return await ydl.RunAudioPlaylistDownload(url, items: playlistItems,
                 format: ConversionFormat, ct: ct, progress: progress,
                 output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
