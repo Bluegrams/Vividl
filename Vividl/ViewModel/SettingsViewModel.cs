@@ -32,7 +32,7 @@ namespace Vividl.ViewModel
 
         public SettingsViewModel(IFileService fileService, IDialogService dialogService,
             IThemeResolver themeResolver, IDownloadOptionProvider optionProvider,
-            IUpdateChecker updateChecker, YtdlUpdateService ytdlUpdateService)
+            IUpdateChecker updateChecker, YtDlpUpdateService ytdlUpdateService)
         {
             this.FileService = fileService;
             this.dialogService = dialogService;

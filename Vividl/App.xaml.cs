@@ -65,18 +65,23 @@ namespace Vividl
             if (String.IsNullOrEmpty(Settings.Default.DownloadFolder))
                 Settings.Default.DownloadFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos) + "\\Downloads";
 #if (WITH_LIB && PORTABLE)
-            if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath))
-                Settings.Default.YoutubeDLPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "youtube-dl.exe");
+            if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath) ||
+                // switch from youtube-dl.exe to yt-dlp.exe
+                isOldLibDefaultPath(Settings.Default.YoutubeDLPath, "youtube-dl.exe")
+            )
+                Settings.Default.YoutubeDLPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "yt-dlp.exe");
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
                 Settings.Default.FfmpegPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "ffmpeg.exe");
 #elif WITH_LIB
             string libPathBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Bluegrams", "Vividl", "Lib");
             if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath) ||
                 // move old location to new location
-                isOldLibDefaultPath(Settings.Default.YoutubeDLPath, "youtube-dl.exe")
+                isOldLibDefaultPath(Settings.Default.YoutubeDLPath, "youtube-dl.exe") ||
+                // switch from youtube-dl.exe to yt-dlp.exe
+                Settings.Default.YoutubeDLPath == Path.Combine(libPathBase, "youtube-dl.exe")
             )
             {
-                Settings.Default.YoutubeDLPath = Path.Combine(libPathBase, "youtube-dl.exe");
+                Settings.Default.YoutubeDLPath = Path.Combine(libPathBase, "yt-dlp.exe");
             }
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath) ||
                 // move old location to new location
@@ -87,7 +92,7 @@ namespace Vividl
             }
 #else
             if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath))
-                Settings.Default.YoutubeDLPath = "youtube-dl.exe";
+                Settings.Default.YoutubeDLPath = "yt-dlp.exe";
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
                 Settings.Default.FfmpegPath = "ffmpeg.exe";
 #endif
@@ -96,7 +101,7 @@ namespace Vividl
         private bool isOldLibDefaultPath(string path, string executable)
         {
             string oldDefaultPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", executable);
-            return path == oldDefaultPath && File.Exists(path);
+            return path == oldDefaultPath;
         }
 
         public static void InitializeDownloadEngine()
@@ -126,7 +131,7 @@ namespace Vividl
             SimpleIoc.Default.Register<IThemeResolver, ThemeResolver>();
             SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
             SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
-            SimpleIoc.Default.Register<YtdlUpdateService>();
+            SimpleIoc.Default.Register<YtDlpUpdateService>();
         }
 
         private void registerVMs()

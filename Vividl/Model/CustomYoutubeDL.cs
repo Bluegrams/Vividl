@@ -18,6 +18,11 @@ namespace Vividl.Model
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
+            // Workaround to suppress the warning in yt-dlp
+            if (YoutubeDLPath.Contains("yt-dlp.exe"))
+            {
+                options.ExternalDownloaderArgs = "ffmpeg:" + options.ExternalDownloaderArgs;
+            }
             options.DownloadArchive = this.DownloadArchive;
             options.AddMetadata = this.AddMetadata;
             options.Proxy = this.Proxy;

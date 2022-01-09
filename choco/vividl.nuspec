@@ -33,7 +33,7 @@
 
     <dependencies>
       <dependency id="dotnetfx" version="4.6.2.0" />
-      <dependency id="youtube-dl"/>
+      <dependency id="yt-dlp"/>
       <dependency id="ffmpeg"/>
     </dependencies>
   </metadata>
