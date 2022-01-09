@@ -535,4 +535,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="MainWindow_MenuReloadAll" xml:space="preserve">
     <value>Re_load All Videos</value>
   </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
 </root>

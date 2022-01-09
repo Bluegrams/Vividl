@@ -26,7 +26,7 @@ namespace Vividl.Services
                 itemVms.Add(videoVm);
                 fetchedVideos.Add(videoVm);
                 tasks.Add(videoVm, videoVm.Fetch(overrideOptions: overrideOptions).ContinueWith((t) => {
-                    if (selectedFormat.HasValue)
+                    if (selectedFormat.HasValue && !videoVm.Unavailable)
                     {
                         videoVm.SelectedDownloadOption = selectedFormat.Value;
                     }

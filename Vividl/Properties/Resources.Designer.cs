@@ -97,6 +97,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string Copy {
+            get {
+                return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Convert to AVI.
         /// </summary>
         public static string DownloadOption_AVI {
@@ -1169,7 +1178,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customize Download.
+        ///   Looks up a localized string similar to Configure Download.
         /// </summary>
         public static string VideoEntry_CustomizeDownload {
             get {

@@ -64,6 +64,7 @@ namespace Vividl.Services
                     Height = 18,
                     Width = 18
                 })
+                .WithButton(Resources.Copy, button => Clipboard.SetText($"{title}:\n{message}"))
                 .Dismiss().WithButton(buttonText ?? Resources.Submit, button => { })
                 .Dismiss().WithDelay(TimeSpan.FromSeconds(7)).Queue();
         }
