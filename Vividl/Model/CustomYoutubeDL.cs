@@ -4,7 +4,7 @@ using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
 {
-    class CustomYoutubeDL : YoutubeDL
+    public class CustomYoutubeDL : YoutubeDL
     {
         public CustomYoutubeDL(byte maxNumberOfProcesses) : base(maxNumberOfProcesses)
         { }
@@ -15,11 +15,14 @@ namespace Vividl.Model
 
         public string Proxy { get; set; }
 
+        // Dumb way to determine if we are likely using yt-dlp
+        public bool UsingYtDlp => YoutubeDLPath.Contains("yt-dlp");
+
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
             // Workaround to suppress the warning in yt-dlp
-            if (YoutubeDLPath.Contains("yt-dlp.exe"))
+            if (UsingYtDlp)
             {
                 options.ExternalDownloaderArgs = "ffmpeg:" + options.ExternalDownloaderArgs;
             }

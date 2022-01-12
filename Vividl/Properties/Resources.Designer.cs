@@ -953,6 +953,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use GPU acceleration for video recoding (requires CUDA).
+        /// </summary>
+        public static string SettingsWindow_FFmpegCudaAcceleration {
+            get {
+                return ResourceManager.GetString("SettingsWindow_FFmpegCudaAcceleration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filename.
         /// </summary>
         public static string SettingsWindow_Filename {

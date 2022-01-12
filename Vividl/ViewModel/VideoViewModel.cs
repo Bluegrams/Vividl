@@ -128,6 +128,9 @@ namespace Vividl.ViewModel
                         new NotificationMessage(String.Format(Resources.Video_DownloadFinished, name)));
                     break;
                 case DownloadState.Error:
+                    // Filter out unnecessary warning by yt-dlp
+                    if (e.Info.Data.StartsWith("WARNING: --post-processor-args given without specifying name."))
+                        break;
                     messageService.ShowError(e.Info.Data, $"\"{Entry.Title}\"");
                     break;
             }

@@ -538,4 +538,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
+  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
+    <value>Use GPU acceleration for video recoding (requires CUDA)</value>
+  </data>
 </root>
