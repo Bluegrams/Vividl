@@ -181,6 +181,14 @@
                                       IsChecked="{Binding Settings.SmartAutomationPatternIsRegex, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                         </StackPanel>
                     </GroupBox>
+                    <GroupBox Header="{lex:Loc CustomArgsWindow_Title}">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="{lex:Loc PathSelectionControl_Change}"
+                                    Command="{Binding EditCustomArgsCommand}"/>
+                            <TextBox IsReadOnly="True" Margin="4"
+                                     Text="{Binding Settings.CustomDownloaderArgs, Mode=OneWay, Converter={StaticResource removeLineBreaks}}"/>
+                        </DockPanel>
+                    </GroupBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="{lex:Loc SettingsWindow_Binaries}">

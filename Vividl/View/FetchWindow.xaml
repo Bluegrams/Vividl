@@ -16,23 +16,29 @@
     </Window.Style>
     <DockPanel>
         <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
-            <Button Content="{lex:Loc Cancel}"
+            <Button Padding="4,2" Command="{Binding SettingsCommand}" TabIndex="2">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIconModern Kind="Cog" Margin="0,0,4,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{lex:Loc FetchWindow_Settings}" Margin="4,2"/>
+                </StackPanel>
+            </Button>
+            <Button Content="{lex:Loc Cancel}" TabIndex="4"
                     DockPanel.Dock="Right" MinWidth="80"
                     IsCancel="True"/>
             <Button Content="{lex:Loc Submit}"
-                    DockPanel.Dock="Right" MinWidth="80"
-                    Click="Submit_Click"/>
+                    DockPanel.Dock="Right" MinWidth="80" TabIndex="3"
+                    Click="Submit_Click" IsDefault="True"/>
         </DockPanel>
         <StackPanel>
             <TextBlock Text="{lex:Loc FetchWindow_EnterUrls}"
                        Margin="8"/>
             <Grid>
-                <TextBox x:Name="txtUrl" AcceptsReturn="True" Height="90"
+                <TextBox x:Name="txtUrl" AcceptsReturn="True" Height="90" TabIndex="0"
                          Text="{Binding VideoUrls, Converter={StaticResource arrayToString}}"
                          VerticalScrollBarVisibility="Auto"
                          adonisExtensions:CursorSpotlightExtension.RelativeSpotlightSize="0"/>
             </Grid>
-            <Expander Header="{lex:Loc FetchWindow_Options}" Margin="0,2">
+            <Expander Header="{lex:Loc FetchWindow_Options}" Margin="0,2" TabIndex="1" KeyboardNavigation.TabNavigation="Local">
                 <TabControl Margin="0,2,0,0" Height="170">
                     <TabControl.Resources>
                         <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
@@ -71,14 +77,6 @@
                                       IsChecked="{Binding OverrideOptions.YesPlaylist}"/>
                             <CheckBox Content="{lex:Loc FetchWindow_ImmediateDownload}"
                                       IsChecked="{Binding ImmediateDownload}"/>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Padding="4,2" Command="{Binding SettingsCommand}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <icon:PackIconModern Kind="Cog" Margin="0,0,4,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="{lex:Loc FetchWindow_Settings}" Margin="4,2"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="{lex:Loc FetchWindow_TabAuthentication}">

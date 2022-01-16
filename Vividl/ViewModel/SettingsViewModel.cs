@@ -6,6 +6,7 @@ using Bluegrams.Application;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
@@ -25,6 +26,7 @@ namespace Vividl.ViewModel
         public ObservableCollection<IDownloadOption> DefaultFormats { get; }
 
         public ICommand SwitchAppThemeCommand { get; }
+        public ICommand EditCustomArgsCommand { get; }
 
         public ILibUpdateService YoutubeDLUpdateService { get; }
         public ICommand UpdateVividlCommand { get; }
@@ -41,8 +43,21 @@ namespace Vividl.ViewModel
             this.YoutubeDLUpdateService = ytdlUpdateService;
             DefaultFormats = new ObservableCollection<IDownloadOption>(optionProvider.CreateDownloadOptions());
             SwitchAppThemeCommand = new RelayCommand(() => SwitchAppTheme());
+            EditCustomArgsCommand = new RelayCommand(
+                () => Messenger.Default.Send(
+                    new ShowWindowMessage(WindowType.CustomArgsWindow, parameter: Settings.Default.CustomDownloaderArgs, callback: editCustomArgsCallback)
+                )
+            );
             UpdateVividlCommand = new RelayCommand(() => UpdateVividl());
             UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
+        }
+
+        private void editCustomArgsCallback(bool? dialogResult, object param)
+        {
+            if (dialogResult.GetValueOrDefault())
+            {
+                Settings.Default.CustomDownloaderArgs = param.ToString();
+            }
         }
 
         public void SwitchAppTheme()

@@ -290,5 +290,17 @@ namespace Vividl.Properties {
                 this["SmartAutomationPatternIsRegex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CustomDownloaderArgs {
+            get {
+                return ((string)(this["CustomDownloaderArgs"]));
+            }
+            set {
+                this["CustomDownloaderArgs"] = value;
+            }
+        }
     }
 }

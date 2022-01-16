@@ -562,4 +562,13 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
     <value>Regulären Ausdruck als Filterschema verwenden</value>
   </data>
+  <data name="CustomArgsWindow_Title" xml:space="preserve">
+    <value>Benutzerdefinierte Downloaderargumente</value>
+  </data>
+  <data name="CustomArgsWindow_Description" xml:space="preserve">
+    <value>Benutzerdefinierte Argumente in separaten Zeilen eingeben</value>
+  </data>
+  <data name="CustomArgsWindow_Warning" xml:space="preserve">
+    <value>WARNUNG: Gegebene Argumente werden direkt an Downloaderprozess weitergegeben. Es werden möglicherweise Optionen überschrieben, die für die korrekte Funktionsweise der Applikation nötig sind. Benutzung auf eigene Gefahr.</value>
+  </data>
 </root>

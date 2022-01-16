@@ -562,4 +562,13 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
     <value>Use regular expression as URL filter pattern</value>
   </data>
+  <data name="CustomArgsWindow_Title" xml:space="preserve">
+    <value>Custom Downloader Arguments</value>
+  </data>
+  <data name="CustomArgsWindow_Description" xml:space="preserve">
+    <value>Enter custom downloader arguments in separate lines</value>
+  </data>
+  <data name="CustomArgsWindow_Warning" xml:space="preserve">
+    <value>WARNING: Specified arguments are passed directly to the downloader process. They might override options required for the correct functioning of this application. Use at your own risk.</value>
+  </data>
 </root>

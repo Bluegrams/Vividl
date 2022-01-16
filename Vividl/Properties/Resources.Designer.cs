@@ -106,6 +106,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter custom downloader arguments in separate lines.
+        /// </summary>
+        public static string CustomArgsWindow_Description {
+            get {
+                return ResourceManager.GetString("CustomArgsWindow_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Downloader Arguments.
+        /// </summary>
+        public static string CustomArgsWindow_Title {
+            get {
+                return ResourceManager.GetString("CustomArgsWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING: Specified arguments are passed directly to the downloader process. They might override options required for the correct functioning of this application. Use at your own risk..
+        /// </summary>
+        public static string CustomArgsWindow_Warning {
+            get {
+                return ResourceManager.GetString("CustomArgsWindow_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Convert to AVI.
         /// </summary>
         public static string DownloadOption_AVI {

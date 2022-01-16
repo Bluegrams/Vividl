@@ -1,0 +1,38 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.CustomArgsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        Title="{lex:Loc CustomArgsWindow_Title}"
+        Width="350" Height="350"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <DockPanel>
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+            <Button Content="{lex:Loc Cancel}" TabIndex="2"
+                    DockPanel.Dock="Right" MinWidth="80"
+                    IsCancel="True"/>
+            <Button Content="{lex:Loc Submit}" TabIndex="1"
+                    DockPanel.Dock="Right" MinWidth="80"
+                    Click="Submit_Click" IsDefault="True"/>
+        </DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="{lex:Loc CustomArgsWindow_Description}"
+                       Margin="8"/>
+            <TextBlock Text="{lex:Loc CustomArgsWindow_Warning}"
+                       TextWrapping="Wrap"
+                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.AccentBrush}}"
+                       Margin="8,0,8,8"/>
+        </StackPanel>
+        <TextBox x:Name="txtArgs" AcceptsReturn="True" TabIndex="0"
+                         VerticalScrollBarVisibility="Auto"
+                         adonisExtensions:CursorSpotlightExtension.RelativeSpotlightSize="0"/>
+    </DockPanel>
+</adonisControls:AdonisWindow>

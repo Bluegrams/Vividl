@@ -36,7 +36,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="1" Panel.ZIndex="1">
-            <notif:NotificationMessageContainer Manager="{Binding NotificationManager}"/>
+            <notif:NotificationMessageContainer IsTabStop="False" Manager="{Binding NotificationManager}"/>
         </Border>
         <DockPanel Grid.ColumnSpan="3">
             <Menu DockPanel.Dock="Top">

@@ -10,6 +10,7 @@ using Vividl.Properties;
 using Vividl.Services;
 using Vividl.ViewModel;
 using YoutubeDLSharp;
+using YoutubeDLSharp.Options;
 
 namespace Vividl
 {
@@ -119,6 +120,16 @@ namespace Vividl
                 ytdl.DownloadArchive = Path.Combine(Settings.Default.DownloadFolder, Settings.Default.ArchiveFilename);
             }
             else ytdl.DownloadArchive = null;
+            if (!String.IsNullOrEmpty(Settings.Default.CustomDownloaderArgs))
+            {
+                ytdl.CustomDownloadOptions = OptionSet.FromString(
+                    Settings.Default.CustomDownloaderArgs.Split(new[] { Environment.NewLine }, StringSplitOptions.None)
+                );
+            }
+            else
+            {
+                ytdl.CustomDownloadOptions = null;
+            }
         }
 
         private void registerServices()

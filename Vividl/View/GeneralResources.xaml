@@ -19,6 +19,7 @@
     <local:ResTextConverter x:Key="resConv"/>
     <local:DownloadOptionIconConverter x:Key="iconConv"/>
     <local:ValueGreaterEqualConverter x:Key="greaterEqual"/>
+    <local:RemoveLineBreaksConverter x:Key="removeLineBreaks"/>
     <!-- Control styling -->
     <Style TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
         <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"/>

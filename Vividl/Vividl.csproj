@@ -194,6 +194,9 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShowWindowMessage.cs" />
     <Compile Include="Model\AccentColorScheme.cs" />
+    <Compile Include="View\CustomArgsWindow.xaml.cs">
+      <DependentUpon>CustomArgsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DownloadOptionComboBox.cs" />
     <Compile Include="View\DownloadOutputWindow.xaml.cs">
       <DependentUpon>DownloadOutputWindow.xaml</DependentUpon>
@@ -229,6 +232,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CustomArgsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DownloadOutputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

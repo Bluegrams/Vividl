@@ -59,7 +59,7 @@ namespace Vividl.ViewModel
             OverrideOptions = new OptionSet();
             SelectedDownloadOption = Settings.Default.DefaultFormat;
             SettingsCommand = new RelayCommand(
-                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow))
+                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, 0))
             );
         }
     }

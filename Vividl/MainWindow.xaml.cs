@@ -81,6 +81,12 @@ namespace Vividl
                     playlistDataWindow.Owner = this;
                     dialogResult = playlistDataWindow.ShowDialog();
                     break;
+                case WindowType.CustomArgsWindow:
+                    var customArgsWindow = new CustomArgsWindow(msg.Parameter as string);
+                    customArgsWindow.Owner = this;
+                    dialogResult = customArgsWindow.ShowDialog();
+                    returnVal = customArgsWindow.ReturnValue;
+                    break;
 #else
                 case WindowType.VideoDataWindow:
                 case WindowType.PlaylistDataWindow:

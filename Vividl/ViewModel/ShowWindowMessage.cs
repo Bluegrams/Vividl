@@ -10,7 +10,8 @@ namespace Vividl.ViewModel
         SettingsWindow,
         FetchWindow,
         DownloadOutputWindow,
-        FormatSelectionWindow
+        FormatSelectionWindow,
+        CustomArgsWindow
     }
 
 
