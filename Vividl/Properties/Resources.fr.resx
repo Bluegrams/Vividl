@@ -252,15 +252,6 @@
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value> lien vidéo</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Remove</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Tous les téléchargements _Finished</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Tous les téléchargements _Unavailable</value>
-  </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Modifier Télécharger _Folder...</value>
   </data>
@@ -397,7 +388,7 @@
     <value>Liste de téléchargement</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>D'accord</value>

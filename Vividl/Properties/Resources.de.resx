@@ -208,14 +208,11 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>Video Link ein_fügen</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>Ent_fernen</value>
-  </data>
   <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Alle _beendeten Downloads</value>
+    <value>_Beendete entfernen</value>
   </data>
   <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Alle _unverfügbaren Downloads</value>
+    <value>_Unverfügbare entfernen</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Downloadordner _ändern...</value>
@@ -341,7 +338,7 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
     <value>Downloadliste</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>OK</value>
@@ -540,5 +537,29 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   </data>
   <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
     <value>Hardwarebeschleunigung für Videorekodierung verwenden (benötigt CUDA)</value>
+  </data>
+  <data name="MainWindow_HeaderAutomate" xml:space="preserve">
+    <value>_Automatisieren</value>
+  </data>
+  <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+    <value>_Auto-importieren aus Zwischenablage</value>
+  </data>
+  <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+    <value>Videos direkt herunterladen</value>
+  </data>
+  <data name="SettingsWindow_Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+    <value>URL Filterschema</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+    <value>Ausdruck zum Filtern der Zwischenablage eingeben</value>
+  </data>
+  <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+    <value>_Konfiguration...</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+    <value>Regulären Ausdruck als Filterschema verwenden</value>
   </data>
 </root>

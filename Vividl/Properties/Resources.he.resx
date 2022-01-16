@@ -253,15 +253,6 @@
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_הדבק קישור וידאו</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_הסר</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>כל _ההורדות שהסתיימו</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>כל _ההורדות הלא זמינות</value>
-  </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>שנה _תיקיית הורדה...</value>
   </data>
@@ -398,7 +389,7 @@
     <value>רשימת הורדה</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>OK</value>

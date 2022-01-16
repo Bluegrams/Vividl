@@ -253,15 +253,6 @@
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_لصق رابط الفيديو</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_إزالة</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>كل التحميلات _المنتهية</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>كل التحميلات _الغير متوفرة</value>
-  </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>تغيير _مجلد التحميل...</value>
   </data>
@@ -398,7 +389,7 @@
     <value>قائمة التحميل</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>موافق</value>

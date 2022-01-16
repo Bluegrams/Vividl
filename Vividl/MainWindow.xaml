@@ -21,7 +21,8 @@
         <KeyBinding Command="{Binding DownloadAllCommand}" Key="A" Modifiers="Ctrl+Shift"/>
         <KeyBinding Command="{Binding CancelAllCommand}" Key="X" Modifiers="Ctrl+Shift"/>
         <KeyBinding Command="{Binding ClearCommand}" Key="D" Modifiers="Ctrl+Shift"/>
-        <KeyBinding Command="{Binding SettingsCommand}" Key="OemComma" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding SmartAutomationCommand}" Key="F3"/>
+        <KeyBinding Command="{Binding SettingsCommand}" CommandParameter="0" Key="OemComma" Modifiers="Ctrl"/>
         <KeyBinding Command="{Binding AboutCommand}" Key="F1"/>
         <KeyBinding Command="{Binding ShowDownloadOutputWindowCommand}" Key="F12"/>
     </Window.InputBindings>
@@ -63,21 +64,27 @@
                     <MenuItem Header="{lex:Loc MainWindow_MenuCancelAll}" Command="{Binding CancelAllCommand}"
                           Icon="{icon:Modern Kind=Close}" InputGestureText="Ctrl+Shift+X"/>
                     <Separator/>
-                    <MenuItem Header="{lex:Loc MainWindow_MenuRemove}">
-                        <MenuItem Header="{lex:Loc MainWindow_MenuRemoveUnavailable}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuRemoveUnavailable}"
                                   Command="{Binding RemoveUnavailableCommand}"/>
-                        <MenuItem Header="{lex:Loc MainWindow_MenuRemoveFinished}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuRemoveFinished}"
                                   Command="{Binding RemoveFinishedCommand}"/>
-                    </MenuItem>
                     <MenuItem Header="{lex:Loc MainWindow_MenuClearList}" Command="{Binding ClearCommand}"
                           Icon="{icon:Modern Kind=Delete}" InputGestureText="Ctrl+Shift+D"/>
+                </MenuItem>
+                <MenuItem Header="{lex:Loc MainWindow_HeaderAutomate}" Padding="6,2">
+                    <MenuItem Header="{lex:Loc MainWindow_MenuAutomateEnable}" InputGestureText="F3"
+                              IsChecked="{Binding SmartAutomationMode, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="{lex:Loc MainWindow_MenuAutomateConfiguration}"
+                              Command="{Binding SettingsCommand}" CommandParameter="2"
+                              Icon="{icon:Modern Kind=Cog}"/>
                 </MenuItem>
                 <MenuItem Header="{lex:Loc MainWindow_HeaderOptions}" Padding="6,2">
                     <MenuItem Header="{lex:Loc MainWindow_MenuSelectFolder}"
                           Command="{Binding SelectDownloadFolderCommand}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
                               InputGestureText="F12"/>
-                    <MenuItem Header="{lex:Loc MainWindow_MenuSettings}" Command="{Binding SettingsCommand}"
+                    <MenuItem Header="{lex:Loc MainWindow_MenuSettings}"
+                              Command="{Binding SettingsCommand}" CommandParameter="0"
                               Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>
                     <Separator/>
                     <MenuItem Header="{lex:Loc SettingsWindow_CheckForUpdates}"
@@ -91,14 +98,19 @@
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuAdd}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=ClipboardPaste}" Command="{Binding PasteCommand}"
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuPaste}, Converter={StaticResource resConv}}"/>
+                <ToggleButton Content="{icon:Modern Kind=Lightning}" IsChecked="{Binding SmartAutomationMode, Mode=TwoWay}"
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuAutomateEnable}, Converter={StaticResource resConv}}"/>
                 <Separator/>
+                <Button Content="{icon:Modern Kind=RefreshCounterclockwiseDown}"  Command="{Binding ReloadAllCommand}"
+                    ToolTip="{Binding Source={lex:Loc MainWindow_MenuReloadAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Download}" Command="{Binding DownloadAllCommand}"
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuDownloadAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Close}" Command="{Binding CancelAllCommand}"
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuCancelAll}, Converter={StaticResource resConv}}"/>
                 <Button Content="{icon:Modern Kind=Delete}" Command="{Binding ClearCommand}"
                     ToolTip="{Binding Source={lex:Loc MainWindow_MenuClearList}, Converter={StaticResource resConv}}"/>
-                <Button DockPanel.Dock="Right" Content="{icon:Modern Kind=Cog}" Command="{Binding SettingsCommand}"
+                <Button DockPanel.Dock="Right" Content="{icon:Modern Kind=Cog}"
+                        Command="{Binding SettingsCommand}" CommandParameter="0"
                         ToolTip="{Binding Source={lex:Loc MainWindow_MenuSettings}, Converter={StaticResource resConv}}"/>
             </DockPanel>
             <StatusBar DockPanel.Dock="Bottom" Height="24">

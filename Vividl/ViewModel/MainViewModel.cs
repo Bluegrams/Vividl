@@ -25,6 +25,7 @@ namespace Vividl.ViewModel
         IDialogService dialogService;
         IFileService fileService;
         int inProcessCount, successCount, failedCount;
+        SmartAutomationService automationService;
 
         public INotificationMessageManager NotificationManager { get; }
 
@@ -61,6 +62,8 @@ namespace Vividl.ViewModel
         public ICommand RemoveFinishedCommand { get; }
 
         public ICommand DeleteCommand { get; }
+
+        public ICommand SmartAutomationCommand { get; }
 
         public ICommand SettingsCommand { get; }
 
@@ -103,13 +106,27 @@ namespace Vividl.ViewModel
             }
         }
 
+        // Automate
+        public bool SmartAutomationMode
+        {
+            get => automationService.IsEnabled;
+            set
+            {
+                automationService.IsEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public MainViewModel(IItemProvider<T> itemProvider, IDialogService dialogService,
-            IFileService fileService, INotificationMessageManager notificationManager)
+            IFileService fileService, INotificationMessageManager notificationManager,
+            SmartAutomationService automationService)
         {
             this.itemProvider = itemProvider;
             this.dialogService = dialogService;
             this.fileService = fileService;
             this.NotificationManager = notificationManager;
+            this.automationService = automationService;
+            this.automationService.InputReceived += automationService_InputReceived;
             VideoInfos = new ObservableCollection<ItemViewModel<T>>();
             // Init commands
             FetchCommand = new RelayCommand(
@@ -129,8 +146,9 @@ namespace Vividl.ViewModel
             RemoveUnavailableCommand = new RelayCommand(() => RemoveAllUnavailable());
             RemoveFinishedCommand = new RelayCommand(() => RemoveAllFinished());
             DeleteCommand = new RelayCommand<ItemViewModel<T>>(o => Delete(o));
-            SettingsCommand = new RelayCommand(
-                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, callback: applySettingsCallback))
+            SmartAutomationCommand = new RelayCommand(() => SmartAutomationMode = !SmartAutomationMode);
+            SettingsCommand = new RelayCommand<int>(
+                (p) => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, p, callback: applySettingsCallback))
             );
             OpenDownloadFolderCommand = new RelayCommand(
                 () => fileService.ShowInExplorer(Settings.Default.DownloadFolder, true)
@@ -175,6 +193,16 @@ namespace Vividl.ViewModel
                     }
                     await Task.WhenAll(tasks.ToArray());
                 }
+            }
+        }
+
+        private async void automationService_InputReceived(object sender, UrlsEventArgs e)
+        {
+            var fetchedVideos = await itemProvider.FetchItemList(e.Urls, VideoInfos, this, dialogService);
+            if (Settings.Default.SmartAutomationDownload)
+            {
+                var tasks = fetchedVideos.Select(vid => vid.DownloadVideo());
+                await Task.WhenAll(tasks);
             }
         }
 

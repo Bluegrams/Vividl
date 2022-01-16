@@ -344,7 +344,7 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
     <value>Versión:</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
     <value>Buscando actualizaciones...</value>
@@ -387,15 +387,6 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
   </data>
   <data name="MetadataWindow_Source" xml:space="preserve">
     <value>Origen:</value>
-  </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Eliminar</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Todas las descargas _finalizadas</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Todas las descargas no _disponibles</value>
   </data>
   <data name="Video_DownloadFailed" xml:space="preserve">
     <value>Falló la descarga de "{0}".</value>

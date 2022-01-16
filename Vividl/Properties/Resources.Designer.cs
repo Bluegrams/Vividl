@@ -485,6 +485,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Automate.
+        /// </summary>
+        public static string MainWindow_HeaderAutomate {
+            get {
+                return ResourceManager.GetString("MainWindow_HeaderAutomate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _File.
         /// </summary>
         public static string MainWindow_HeaderFile {
@@ -535,6 +544,24 @@ namespace Vividl.Properties {
         public static string MainWindow_MenuAdd {
             get {
                 return ResourceManager.GetString("MainWindow_MenuAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Configuration....
+        /// </summary>
+        public static string MainWindow_MenuAutomateConfiguration {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuAutomateConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Auto-import URLs from Clipboard.
+        /// </summary>
+        public static string MainWindow_MenuAutomateEnable {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuAutomateEnable", resourceCulture);
             }
         }
         
@@ -620,16 +647,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Remove.
-        /// </summary>
-        public static string MainWindow_MenuRemove {
-            get {
-                return ResourceManager.GetString("MainWindow_MenuRemove", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to All _Finished Downloads.
+        ///   Looks up a localized string similar to Remove _Finished.
         /// </summary>
         public static string MainWindow_MenuRemoveFinished {
             get {
@@ -638,7 +656,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All _Unavailable Downloads.
+        ///   Looks up a localized string similar to Remove _Unavailable.
         /// </summary>
         public static string MainWindow_MenuRemoveUnavailable {
             get {
@@ -845,6 +863,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string SettingsWindow_Advanced {
+            get {
+                return ResourceManager.GetString("SettingsWindow_Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow duplicate video entries.
         /// </summary>
         public static string SettingsWindow_AllowDuplicates {
@@ -877,6 +904,42 @@ namespace Vividl.Properties {
         public static string SettingsWindow_AutoCheckUpdates {
             get {
                 return ResourceManager.GetString("SettingsWindow_AutoCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directly Download Videos.
+        /// </summary>
+        public static string SettingsWindow_AutomateDownload {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AutomateDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL Filter Pattern.
+        /// </summary>
+        public static string SettingsWindow_AutomatePattern {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AutomatePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter expression to filter clipboard text.
+        /// </summary>
+        public static string SettingsWindow_AutomatePatternHint {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AutomatePatternHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use regular expression as URL filter pattern.
+        /// </summary>
+        public static string SettingsWindow_AutomatePatternIsRegex {
+            get {
+                return ResourceManager.GetString("SettingsWindow_AutomatePatternIsRegex", resourceCulture);
             }
         }
         
@@ -1088,7 +1151,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to youtube-dl.
+        ///   Looks up a localized string similar to youtube-dl/ yt-dlp.
         /// </summary>
         public static string SettingsWindow_YoutubeDL {
             get {

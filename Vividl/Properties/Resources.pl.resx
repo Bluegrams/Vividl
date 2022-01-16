@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="MetadataWindow_Views" xml:space="preserve">
     <value>Wyświetleń:</value>
@@ -421,12 +421,6 @@
   <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
     <value>Zezwól na duplikowanie wejść filmów</value>
   </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Wszystkie _niedostępne pobrania</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Wszystkie _zakończone pobrania</value>
-  </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
     <value>Dodaj nowe filmy wklejając lub importując adresy URL.</value>
   </data>
@@ -441,9 +435,6 @@
   </data>
   <data name="MainWindow_MenuSettings" xml:space="preserve">
     <value>_Ustawienia</value>
-  </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Usuń</value>
   </data>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_Wklej link filmu</value>

@@ -52,7 +52,7 @@ namespace Vividl
             switch (msg.Window)
             {
                 case WindowType.SettingsWindow:
-                    var settingsWindow = new SettingsWindow();
+                    var settingsWindow = new SettingsWindow((int)msg.Parameter);
                     settingsWindow.Owner = this;
                     dialogResult = settingsWindow.ShowDialog();
                     break;

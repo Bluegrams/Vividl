@@ -207,15 +207,6 @@
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>Video Link invoegen</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>Verwijderen</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Alle _afgewerkte Downloads</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Alle _onafgewerkte Downloads</value>
-  </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Wijzid de _downoadmap </value>
   </data>
@@ -340,7 +331,7 @@
     <value>Downloadlijst</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>OK</value>

@@ -132,6 +132,7 @@ namespace Vividl
             SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
             SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
             SimpleIoc.Default.Register<YtdlUpdateService>();
+            SimpleIoc.Default.Register<SmartAutomationService>();
         }
 
         private void registerVMs()

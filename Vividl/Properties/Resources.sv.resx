@@ -151,7 +151,7 @@
     <value>Letar efter uppdateringar...</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="SettingsWindow_Version" xml:space="preserve">
     <value>Version:</value>
@@ -273,12 +273,6 @@
   <data name="Video_DownloadFailed" xml:space="preserve">
     <value>Nerladdning misslyckades "{0}".</value>
   </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Alla _otillgängliga Nerladdningar</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Alla _Färdiga Nerladdningar</value>
-  </data>
   <data name="DownloadOption_AVI" xml:space="preserve">
     <value>Konvertera till AVI</value>
   </data>
@@ -360,9 +354,6 @@ För att tillåta, gå till Alternativ -&gt; Inställningar.</value>
   </data>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_Klistra in Videoklippslänk</value>
-  </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Eliminera</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Ändra Nerladdning_Mapp...</value>

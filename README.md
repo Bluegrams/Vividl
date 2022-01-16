@@ -31,6 +31,8 @@ You can also manage the parallel download of multiple videos and retrieve addito
 
 - Download multiple videos in parallel
 
+- Auto-import & download URLs from clipboard
+
 - See additional information before downloading a video
 
 - Modern UI for Windows with dark and light mode
@@ -89,4 +91,5 @@ This software is published under the [BSD-3-clause license](LICENSE.txt) by Blue
 - [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) is licensed under MIT license
 - [Wpf.Notifications](https://github.com/Enterwell/Wpf.Notifications) is licensed under MIT license
 - [YoutubeDLSharp](https://github.com/bluegrams/YoutubeDLSharp) is licensed under BSD-3-clause license
+- [SharpClipboard](https://github.com/Willy-Kimura/SharpClipboard)
 - Icons by @templarian, [ModernUIIcons.com](http://modernuiicons.com/), licensed under CC BY-ND 3.0

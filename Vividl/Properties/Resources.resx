@@ -344,7 +344,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Version:</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
     <value>Checking for updates...</value>
@@ -388,14 +388,11 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="MetadataWindow_Source" xml:space="preserve">
     <value>Source:</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Remove</value>
-  </data>
   <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>All _Finished Downloads</value>
+    <value>Remove _Finished</value>
   </data>
   <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>All _Unavailable Downloads</value>
+    <value>Remove _Unavailable</value>
   </data>
   <data name="Video_DownloadFailed" xml:space="preserve">
     <value>Failed to download "{0}".</value>
@@ -540,5 +537,29 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   </data>
   <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
     <value>Use GPU acceleration for video recoding (requires CUDA)</value>
+  </data>
+  <data name="MainWindow_HeaderAutomate" xml:space="preserve">
+    <value>_Automate</value>
+  </data>
+  <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+    <value>_Auto-import URLs from Clipboard</value>
+  </data>
+  <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+    <value>Directly Download Videos</value>
+  </data>
+  <data name="SettingsWindow_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+    <value>URL Filter Pattern</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+    <value>Enter expression to filter clipboard text</value>
+  </data>
+  <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+    <value>_Configuration...</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+    <value>Use regular expression as URL filter pattern</value>
   </data>
 </root>

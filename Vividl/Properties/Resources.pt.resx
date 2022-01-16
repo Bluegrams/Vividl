@@ -253,15 +253,6 @@
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_Colar link de vídeo</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Retirar</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Todos os downloads concluídos</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Todos os downloads indisponíveis</value>
-  </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Alterar pasta de download ...</value>
   </data>
@@ -398,7 +389,7 @@
     <value>Lista de download</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>OK</value>

@@ -418,7 +418,7 @@
     <comment />
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
     <comment />
   </data>
   <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
@@ -475,18 +475,6 @@
   </data>
   <data name="MetadataWindow_Source" xml:space="preserve">
     <value>Ffynhonnell:</value>
-    <comment />
-  </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Tynnu</value>
-    <comment />
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Pob Dadlwythiad Gorffenedig</value>
-    <comment />
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Pob Dadlwythiad Heb fod ar Gael</value>
     <comment />
   </data>
   <data name="Video_DownloadFailed" xml:space="preserve">

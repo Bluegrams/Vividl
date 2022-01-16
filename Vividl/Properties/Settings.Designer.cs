@@ -254,5 +254,41 @@ namespace Vividl.Properties {
                 this["FFmpegCudaAcceleration"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SmartAutomationDownload {
+            get {
+                return ((bool)(this["SmartAutomationDownload"]));
+            }
+            set {
+                this["SmartAutomationDownload"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SmartAutomationPattern {
+            get {
+                return ((string)(this["SmartAutomationPattern"]));
+            }
+            set {
+                this["SmartAutomationPattern"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SmartAutomationPatternIsRegex {
+            get {
+                return ((bool)(this["SmartAutomationPatternIsRegex"]));
+            }
+            set {
+                this["SmartAutomationPatternIsRegex"] = value;
+            }
+        }
     }
 }

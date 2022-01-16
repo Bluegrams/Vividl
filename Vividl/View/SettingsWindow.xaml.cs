@@ -13,12 +13,13 @@ namespace Vividl.View
         SettingsViewModel vm;
         HashSet<BindingExpressionBase> beSet;
 
-        public SettingsWindow()
+        public SettingsWindow(int initialPage = 0)
         {
             InitializeComponent();
             this.vm = SimpleIoc.Default.GetInstance<SettingsViewModel>();
             this.DataContext = vm;
             beSet = new HashSet<BindingExpressionBase>();
+            tabSettings.SelectedIndex = initialPage;
         }
 
         private async void SubmitButton_Click(object sender, RoutedEventArgs e)

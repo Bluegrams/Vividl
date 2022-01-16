@@ -225,11 +225,8 @@
   <data name="Video_DownloadCancelled" xml:space="preserve">
     <value>Отменено "{0}".</value>
   </data>
-  <data name="MainWindow_MenuRemove" xml:space="preserve">
-    <value>_Удалить</value>
-  </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl</value>
+    <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="Video_DownloadFinished" xml:space="preserve">
     <value>Завершено "{0}".</value>
@@ -239,9 +236,6 @@
   </data>
   <data name="MainWindow_DownloadFolder" xml:space="preserve">
     <value>Папка загрузки</value>
-  </data>
-  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
-    <value>Все _завершенные загрузки</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Изменить _папку загрузки...</value>
@@ -320,9 +314,6 @@
   </data>
   <data name="SettingsWindow_VideoList" xml:space="preserve">
     <value>Список загрузок</value>
-  </data>
-  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
-    <value>Все _недоступные загрузки</value>
   </data>
   <data name="FetchWindow_EnterUrls" xml:space="preserve">
     <value>Введите URL-адреса видео в отдельные строки</value>

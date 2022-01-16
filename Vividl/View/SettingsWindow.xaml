@@ -8,6 +8,7 @@
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
         xmlns:app="clr-namespace:Bluegrams.Application;assembly=AppHelpers.WPF"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
         lex:LocalizeDictionary.DesignCulture="en"
@@ -40,7 +41,7 @@
                     DockPanel.Dock="Right" MinWidth="80"
                     Click="SubmitButton_Click" IsDefault="True"/>
         </DockPanel>
-        <TabControl SelectionChanged="TabControl_SelectionChanged">
+        <TabControl x:Name="tabSettings" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="{lex:Loc SettingsWindow_General}">
                 <StackPanel>
                     <GroupBox Header="{lex:Loc SettingsWindow_Appearance}">
@@ -148,6 +149,36 @@
                                 <TextBox Grid.Column="1" Margin="4"
                                          Text="{Binding Settings.Proxy, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{lex:Loc SettingsWindow_Advanced}">
+                <StackPanel>
+                    <GroupBox>
+                        <GroupBox.Header>
+                            <TextBlock>
+                                <Run Text="{Binding Source={lex:Loc MainWindow_HeaderAutomate}, Converter={StaticResource resConv}}"/>
+                                <Run Text="-"/>
+                                <Run Text="{Binding Source={lex:Loc MainWindow_MenuAutomateEnable}, Converter={StaticResource resConv}}"/>
+                            </TextBlock>
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox Content="{lex:Loc SettingsWindow_AutomateDownload}"
+                                      IsChecked="{Binding Settings.SmartAutomationDownload, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{lex:Loc SettingsWindow_AutomatePattern}"
+                                           VerticalAlignment="Center" Margin="4"/>
+                                <TextBox Grid.Column="1" Margin="4"
+                                         adonisExtensions:WatermarkExtension.Watermark="{lex:Loc SettingsWindow_AutomatePatternHint}"
+                                         Text="{Binding Settings.SmartAutomationPattern, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </Grid>
+                            <CheckBox Content="{lex:Loc SettingsWindow_AutomatePatternIsRegex}"
+                                      IsChecked="{Binding Settings.SmartAutomationPatternIsRegex, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>
