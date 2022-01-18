@@ -8,9 +8,9 @@
 
 [![](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/vividl/files/)
 
-Vividl is a Windows app that lets you download videos from various websites, including YouTube, Vimeo and Dailymotion.
-It uses the popular program [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) to extract videos
-from [several hundred websites](https://ytdl-org.github.io/youtube-dl/supportedsites.html). Just copy a video URL,
+Vividl is a Windows app that lets you download videos from various websites, including YouTube, Soundcloud, Vimeo, Dailymotion and various media channels.
+It uses the popular downloader [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html)/ [yt-dlp](https://github.com/yt-dlp/yt-dlp) to extract videos
+from [several hundred websites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md). Just copy a video URL,
 paste it in Vividl and download the video in different qualities, convert it to other formats or to an audio track.
 You can also manage the parallel download of multiple videos and retrieve additonal meta information using the simple UI.
 
@@ -20,8 +20,8 @@ You can also manage the parallel download of multiple videos and retrieve addito
 
 ## Features
 
-- Download videos from all important websites with the help of youtube-dl
-(see [all sites supported by youtube-dl](https://ytdl-org.github.io/youtube-dl/supportedsites.html))
+- Download videos from all important websites with the help of youtube-dl/ yt-dlp
+(see [all sites supported by yt-dlp](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md))
 
 - Select between all provided download formats
 
@@ -84,7 +84,7 @@ This software is published under the [BSD-3-clause license](LICENSE.txt) by Blue
 
 ## Credits
 
-- [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is licensed under The Unlicense
+- [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) and [yt-dlp](https://github.com/yt-dlp/yt-dlp) are licensed under The Unlicense
 - [FFmpeg](https://www.ffmpeg.org/) is licensed under GNU LGPL v2.1
 - [Adonis UI](https://github.com/benruehl/adonis-ui) is licensed under MIT license
 - [MVVM Light](http://www.mvvmlight.net/) is licensed under MIT license

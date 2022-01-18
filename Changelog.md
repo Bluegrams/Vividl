@@ -1,5 +1,14 @@
 # Vividl Changelog
 
+### v.0.6.0 (2022-01)
+- **New:** Smart Automation mode: Auto-import & download URLs from clipboard
+- **New:** Add option for CUDA-supported FFmpeg conversion.
+- **New:** Add thumbnails to mp3 conversion downloads (with "Add metadata to files" setting).
+- **New:** Minor UI tweaks (e.g. in main menu & tool bar)
+- **New:** Allow setting custom downloader arguments.
+- **Changed:** Switch from youtube-dl to yt-dlp as default download engine (faster download speed).
+- **Fixed:** Crash with invalid URLs in fetch window.
+
 ### v.0.5.0 (2021-06)
 - **New:** Customize download in "Configure Download" window
 - **New:** Show download size and resolution in "Configure Download" window

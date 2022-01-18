@@ -5,7 +5,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>vividl</id>
-    <version>0.5.1</version>
+    <version>0.6.0</version>
     <owners>alxnull</owners>
     <!-- ============================== -->
 
@@ -14,16 +14,16 @@
     <authors>alxnull</authors>
     <projectUrl>https://vividl.sourceforge.io/</projectUrl>
     <iconUrl>https://gitcdn.xyz/repo/Bluegrams/Vividl/master/img/icon.png</iconUrl>
-    <copyright>© 2021 Bluegrams</copyright>
+    <copyright>© 2020-2022 Bluegrams</copyright>
     <licenseUrl>https://github.com/bluegrams/Vividl/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/bluegrams/Vividl</projectSourceUrl>
     <bugTrackerUrl>https://github.com/bluegrams/Vividl/issues</bugTrackerUrl>
-    <tags>video download youtube youtube-dl vividl downloader mp3</tags>
+    <tags>video download youtube youtube-dl vividl downloader mp3 yt-dlp</tags>
     <summary>Free video downloader for Windows</summary>
     <description>
-      Vividl is a Windows app that lets you download videos from various websites, including YouTube, Vimeo and Dailymotion.
-      It uses the popular program youtube-dl to extract videos
+      Vividl is a Windows app that lets you download videos from various websites, including YouTube, Soundcloud, Vimeo, Dailymotion and various media channels.
+      It uses the popular downloader youtube-dl/ yt-dlp to extract videos
       from several hundred websites. Just copy a video URL,
       paste it in Vividl and download the video in different qualities, convert it to other formats or to an audio track.
       You can also manage the parallel download of multiple videos and retrieve additonal meta information using the simple UI.
