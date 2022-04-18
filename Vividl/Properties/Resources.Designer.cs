@@ -457,6 +457,33 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AMD (AMF).
+        /// </summary>
+        public static string HwAccelMode_AmdAmf {
+            get {
+                return ResourceManager.GetString("HwAccelMode_AmdAmf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string HwAccelMode_None {
+            get {
+                return ResourceManager.GetString("HwAccelMode_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nvidia (CUDA).
+        /// </summary>
+        public static string HwAccelMode_NvidiaCuda {
+            get {
+                return ResourceManager.GetString("HwAccelMode_NvidiaCuda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
         public static string Info {
@@ -1043,15 +1070,6 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use GPU acceleration for video recoding (requires CUDA).
-        /// </summary>
-        public static string SettingsWindow_FFmpegCudaAcceleration {
-            get {
-                return ResourceManager.GetString("SettingsWindow_FFmpegCudaAcceleration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Filename.
         /// </summary>
         public static string SettingsWindow_Filename {
@@ -1066,6 +1084,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_General {
             get {
                 return ResourceManager.GetString("SettingsWindow_General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use GPU acceleration for video recoding.
+        /// </summary>
+        public static string SettingsWindow_HardwareAcceleration {
+            get {
+                return ResourceManager.GetString("SettingsWindow_HardwareAcceleration", resourceCulture);
             }
         }
         

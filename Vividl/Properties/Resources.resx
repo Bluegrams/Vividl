@@ -535,8 +535,8 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
-  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
-    <value>Use GPU acceleration for video recoding (requires CUDA)</value>
+  <data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
+    <value>Use GPU acceleration for video recoding</value>
   </data>
   <data name="MainWindow_HeaderAutomate" xml:space="preserve">
     <value>_Automate</value>
@@ -570,5 +570,14 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   </data>
   <data name="CustomArgsWindow_Warning" xml:space="preserve">
     <value>WARNING: Specified arguments are passed directly to the downloader process. They might override options required for the correct functioning of this application. Use at your own risk.</value>
+  </data>
+  <data name="HwAccelMode_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
+    <value>Nvidia (CUDA)</value>
+  </data>
+  <data name="HwAccelMode_AmdAmf" xml:space="preserve">
+    <value>AMD (AMF)</value>
   </data>
 </root>

@@ -53,9 +53,6 @@
     <Setting Name="AutoCheckUpdatesYoutubeDL" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="FFmpegCudaAcceleration" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="SmartAutomationDownload" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -67,6 +64,9 @@
     </Setting>
     <Setting Name="CustomDownloaderArgs" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FFmpegHardwareAcceleration" Type="Vividl.Model.HwAccelMode" Scope="User">
+      <Value Profile="(Default)">None</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -21,7 +21,7 @@ namespace Vividl.Model
 
         public static OptionSet ApplyForVideoDownload(DownloadOption download, OptionSet options)
         {
-            if (Settings.Default.FFmpegCudaAcceleration && download.GetExt() == "mp4")
+            if (Settings.Default.FFmpegHardwareAcceleration == HwAccelMode.NvidiaCuda && download.GetExt() == "mp4")
             {
                 options = options ?? new OptionSet();
                 // Use CUDA-based H.264 encoder for MP4
@@ -29,6 +29,7 @@ namespace Vividl.Model
                 // Add another post-processor option for input file args
                 options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel cuda -hwaccel_output_format cuda");
             }
+            // TODO add case for AMD GPUs
             return options;
         }
     }

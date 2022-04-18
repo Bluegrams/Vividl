@@ -40,4 +40,17 @@ namespace Vividl.Model
         [Description("OverwriteMode_Increment")]
         Increment
     }
+
+    /// <summary>
+    /// Specifies the possible hardware acceleration configurations.
+    /// </summary>
+    public enum HwAccelMode
+    {
+        [Description("HwAccelMode_None")]
+        None,
+        [Description("HwAccelMode_NvidiaCuda")]
+        NvidiaCuda,
+        [Description("HwAccelMode_AmdAmf")]
+        AmdAmf,
+    }
 }
