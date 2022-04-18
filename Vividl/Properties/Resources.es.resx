@@ -460,4 +460,115 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
     <value>Tamaño total de descarga del archivo actual</value>
   </data>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>Eliminar _finalizado</value>
+  </data>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>Eliminar _no disponible</value>
+  </data>
+  <data name="FormatSelectionWindow_Title" xml:space="preserve">
+    <value>Configurar descarga</value>
+  </data>
+  <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+    <value>Configuración actual:</value>
+  </data>
+  <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+    <value>Audio + Vídeo</value>
+  </data>
+  <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+    <value>Solo vídeo/audio</value>
+  </data>
+  <data name="DownloadOption_Custom" xml:space="preserve">
+    <value>Descarga personalizada</value>
+  </data>
+  <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+    <value>Configurar descarga</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Vídeo</value>
+  </data>
+  <data name="AudioOnly" xml:space="preserve">
+    <value>Solo audio</value>
+  </data>
+  <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+    <value>Convertir a:</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+    <value>Extensión de archivo</value>
+  </data>
+  <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+    <value>Ancho y alto del video</value>
+  </data>
+  <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+    <value>Tamaño aproximado de descarga</value>
+  </data>
+  <data name="OverwriteMode_None" xml:space="preserve">
+    <value>Omitir existentes</value>
+  </data>
+  <data name="OverwriteMode_Overwrite" xml:space="preserve">
+    <value>Sobreexcribir existentes</value>
+  </data>
+  <data name="OverwriteMode_Increment" xml:space="preserve">
+    <value>Volver a descargar (renombrar)</value>
+  </data>
+  <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+    <value>¡Una nueva versión de youtube-dl está disponible! La última versión es {0}. Tienes {1}.</value>
+  </data>
+  <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+    <value>Debe especificar el formato de video o audio.</value>
+  </data>
+  <data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+    <value>Debe especificar un formato de recodificación de video al fusionar formatos.</value>
+  </data>
+  <data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+    <value>No se puede usar la descarga de solo video al extraer audio.</value>
+  </data>
+  <data name="MainWindow_MenuReloadAll" xml:space="preserve">
+    <value>_Recargar todos los vídeos</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
+    <value>Use la aceleración de GPU para la grabación de video (requiere CUDA)</value>
+  </data>
+  <data name="MainWindow_HeaderAutomate" xml:space="preserve">
+    <value>_Automatizar</value>
+  </data>
+  <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+    <value>_Importación automática de URL desde el Portapapeles</value>
+  </data>
+  <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+    <value>Descargar videos directamente</value>
+  </data>
+  <data name="SettingsWindow_Advanced" xml:space="preserve">
+    <value>Avanzado</value>
+  </data>
+  <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+    <value>Patrón de filtro de URL</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+    <value>Introduzca la expresión para filtrar el texto del portapapeles</value>
+  </data>
+  <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+    <value>C_onfiguración…</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+    <value>Usar expresiones regulares como patrón de filtro de URL</value>
+  </data>
+  <data name="CustomArgsWindow_Title" xml:space="preserve">
+    <value>Argumentos personalizados del descargador</value>
+  </data>
+  <data name="CustomArgsWindow_Description" xml:space="preserve">
+    <value>Ingrese los argumentos del descargador personalizado en líneas separadas</value>
+  </data>
+  <data name="CustomArgsWindow_Warning" xml:space="preserve">
+    <value>ADVERTENCIA: Los argumentos especificados se pasan directamente al proceso de descarga. Pueden anular las opciones necesarias para el correcto funcionamiento de esta aplicación. Úselo bajo su propio riesgo.</value>
+  </data>
 </root>
