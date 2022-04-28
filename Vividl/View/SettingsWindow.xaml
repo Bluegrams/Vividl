@@ -139,7 +139,7 @@
                                 <ComboBox ItemsSource="{h:Enum {x:Type model:HwAccelMode}}"
                                           SelectedValuePath="Value"
                                           Margin="4"
-                                          SelectedValue="{Binding Settings.HardwareAcceleration, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                                          SelectedValue="{Binding Settings.FFmpegHardwareAcceleration, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="{lex:Loc {Binding Description}}"/>

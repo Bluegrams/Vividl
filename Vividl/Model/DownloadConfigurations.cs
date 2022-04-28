@@ -1,5 +1,4 @@
-﻿using System;
-using Vividl.Properties;
+﻿using Vividl.Properties;
 using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
@@ -21,15 +20,23 @@ namespace Vividl.Model
 
         public static OptionSet ApplyForVideoDownload(DownloadOption download, OptionSet options)
         {
-            if (Settings.Default.FFmpegHardwareAcceleration == HwAccelMode.NvidiaCuda && download.GetExt() == "mp4")
+            if (download.GetExt() == "mp4")
             {
-                options = options ?? new OptionSet();
-                // Use CUDA-based H.264 encoder for MP4
-                options.PostprocessorArgs = "ffmpeg:-vcodec h264_nvenc";
-                // Add another post-processor option for input file args
-                options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel cuda -hwaccel_output_format cuda");
+                switch (Settings.Default.FFmpegHardwareAcceleration)
+                {
+                    case HwAccelMode.NvidiaCuda:
+                        options = options ?? new OptionSet();
+                        options.PostprocessorArgs = "ffmpeg:-vcodec h264_nvenc"; // Use CUDA-based H.264 encoder for MP4
+                        options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel cuda -hwaccel_output_format cuda"); // Add another post-processor option for input file args
+                        break;
+                    case HwAccelMode.AmdAmf:
+                        // AMD support is still in beta
+                        options = options ?? new OptionSet();
+                        options.PostprocessorArgs = "ffmpeg:-vcodec h264_amf"; // Use AMD-based H.264 encoder for MP4
+                        options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel auto"); // Add another post-processor option for input file args
+                        break;
+                }
             }
-            // TODO add case for AMD GPUs
             return options;
         }
     }
