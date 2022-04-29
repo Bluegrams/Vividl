@@ -52,5 +52,7 @@ namespace Vividl.Model
         NvidiaCuda,
         [Description("HwAccelMode_AmdAmf")]
         AmdAmf,
+        [Description("HwAccelMode_IntelQsv")]
+        IntelQsv,
     }
 }

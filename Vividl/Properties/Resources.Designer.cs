@@ -466,6 +466,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Intel (QSV).
+        /// </summary>
+        public static string HwAccelMode_IntelQsv {
+            get {
+                return ResourceManager.GetString("HwAccelMode_IntelQsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string HwAccelMode_None {

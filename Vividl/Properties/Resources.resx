@@ -580,4 +580,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
   <data name="HwAccelMode_AmdAmf" xml:space="preserve">
     <value>AMD (AMF)</value>
   </data>
+  <data name="HwAccelMode_IntelQsv" xml:space="preserve">
+    <value>Intel (QSV)</value>
+  </data>
 </root>

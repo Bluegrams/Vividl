@@ -1,4 +1,5 @@
-﻿using Vividl.Properties;
+﻿using System;
+using Vividl.Properties;
 using YoutubeDLSharp.Options;
 
 namespace Vividl.Model
@@ -33,6 +34,12 @@ namespace Vividl.Model
                         // AMD support is still in beta
                         options = options ?? new OptionSet();
                         options.PostprocessorArgs = "ffmpeg:-vcodec h264_amf"; // Use AMD-based H.264 encoder for MP4
+                        options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel auto"); // Add another post-processor option for input file args
+                        break;
+                    case HwAccelMode.IntelQsv:
+                        // QSV support is still in beta
+                        options = options ?? new OptionSet();
+                        options.PostprocessorArgs = "ffmpeg:-vcodec h264_qsv"; // Use Intel-based H.264 encoder for MP4
                         options.AddCustomOption("--postprocessor-args", "ffmpeg_i1:-hwaccel auto"); // Add another post-processor option for input file args
                         break;
                 }
