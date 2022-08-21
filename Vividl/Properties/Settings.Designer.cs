@@ -246,18 +246,6 @@ namespace Vividl.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool FFmpegCudaAcceleration {
-            get {
-                return ((bool)(this["FFmpegCudaAcceleration"]));
-            }
-            set {
-                this["FFmpegCudaAcceleration"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SmartAutomationDownload {
             get {
                 return ((bool)(this["SmartAutomationDownload"]));
@@ -300,6 +288,18 @@ namespace Vividl.Properties {
             }
             set {
                 this["CustomDownloaderArgs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::Vividl.Model.HwAccelMode FFmpegHardwareAcceleration {
+            get {
+                return ((global::Vividl.Model.HwAccelMode)(this["FFmpegHardwareAcceleration"]));
+            }
+            set {
+                this["FFmpegHardwareAcceleration"] = value;
             }
         }
     }

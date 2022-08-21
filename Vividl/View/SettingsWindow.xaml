@@ -133,8 +133,20 @@
                                       IsChecked="{Binding Settings.RestrictFilenames, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             <CheckBox Content="{lex:Loc SettingsWindow_AddMetadata}"
                                       IsChecked="{Binding Settings.AddMetadata, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <CheckBox Content="{lex:Loc SettingsWindow_FFmpegCudaAcceleration}"
-                                      IsChecked="{Binding Settings.FFmpegCudaAcceleration, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{lex:Loc SettingsWindow_HardwareAcceleration}"
+                                           VerticalAlignment="Center" Margin="4,4,10,4"/>
+                                <ComboBox ItemsSource="{h:Enum {x:Type model:HwAccelMode}}"
+                                          SelectedValuePath="Value"
+                                          Margin="4"
+                                          SelectedValue="{Binding Settings.FFmpegHardwareAcceleration, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{lex:Loc {Binding Description}}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="{lex:Loc SettingsWindow_Proxy}">

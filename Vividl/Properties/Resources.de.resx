@@ -535,8 +535,8 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="Copy" xml:space="preserve">
     <value>Kopieren</value>
   </data>
-  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
-    <value>Hardwarebeschleunigung für Videorekodierung verwenden (benötigt CUDA)</value>
+  <data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
+    <value>Hardwarebeschleunigung für Videorekodierung verwenden</value>
   </data>
   <data name="MainWindow_HeaderAutomate" xml:space="preserve">
     <value>_Automatisieren</value>
