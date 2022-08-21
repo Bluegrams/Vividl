@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,6 +123,9 @@
   <data name="DownloadOption_AVI" xml:space="preserve">
     <value>Конвертировать в AVI</value>
   </data>
+  <data name="DownloadOption_Best" xml:space="preserve">
+    <value>Лучшая прямая загрузка</value>
+  </data>
   <data name="DownloadOption_M4A" xml:space="preserve">
     <value>Конвертировать в M4A</value>
   </data>
@@ -141,14 +144,27 @@
   <data name="DownloadOption_WAV" xml:space="preserve">
     <value>Конвертировать в WAV</value>
   </data>
-  <data name="DownloadOption_Webm" xml:space="preserve">
-    <value>Конвертировать в WebM</value>
-  </data>
   <data name="Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="FetchWindow_EnterUrls" xml:space="preserve">
+    <value>Введите URL-адреса видео в отдельные строки</value>
+  </data>
   <data name="Info" xml:space="preserve">
     <value>Информация</value>
+  </data>
+  <data name="MainWindow_AlreadyFetched" xml:space="preserve">
+    <value>Это видео уже было загружено в список загрузок.
+Чтобы разрешить дубликаты, перейдите в меню параметры -&gt; настройки.</value>
+  </data>
+  <data name="MainWindow_CountFailedFetches" xml:space="preserve">
+    <value>Не удалось получить {0} видео:</value>
+  </data>
+  <data name="MainWindow_DownloadFolder" xml:space="preserve">
+    <value>Папка загрузки</value>
+  </data>
+  <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+    <value>Не удалось получить видео</value>
   </data>
   <data name="MainWindow_HeaderFile" xml:space="preserve">
     <value>_Файл</value>
@@ -159,14 +175,14 @@
   <data name="MainWindow_HeaderVideos" xml:space="preserve">
     <value>_Видео</value>
   </data>
-  <data name="MainWindow_MenuAbout" xml:space="preserve">
-    <value>_О программе</value>
-  </data>
   <data name="MainWindow_MenuAdd" xml:space="preserve">
     <value>_Добавить новые видео</value>
   </data>
   <data name="MainWindow_MenuCancelAll" xml:space="preserve">
     <value>_Отменить все загрузки</value>
+  </data>
+  <data name="MainWindow_MenuClearList" xml:space="preserve">
+    <value>_Очистить список загрузок</value>
   </data>
   <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
     <value>_Загрузить все видео</value>
@@ -180,62 +196,11 @@
   <data name="MainWindow_MenuImport" xml:space="preserve">
     <value>_Импортировать видео ссылки</value>
   </data>
-  <data name="Submit" xml:space="preserve">
-    <value>ОК</value>
-  </data>
   <data name="SettingsWindow_Version" xml:space="preserve">
     <value>Версия:</value>
   </data>
-  <data name="SettingsWindow_Title" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="SettingsWindow_Theme" xml:space="preserve">
-    <value>Тема приложения:</value>
-  </data>
-  <data name="VideoEntry_Converting" xml:space="preserve">
-    <value>Конвертирование...</value>
-  </data>
-  <data name="VideoEntry_CopyUrl" xml:space="preserve">
-    <value>Копировать URL видео</value>
-  </data>
-  <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
-    <value>Открыть в браузере</value>
-  </data>
-  <data name="VideoEntry_Play" xml:space="preserve">
-    <value>Воспроизвести</value>
-  </data>
-  <data name="VideoEntry_Playlist" xml:space="preserve">
-    <value>Плейлист - {0} видео</value>
-  </data>
-  <data name="VideoEntry_Remove" xml:space="preserve">
-    <value>Удалить видео</value>
-  </data>
-  <data name="VideoEntry_ShowInFolder" xml:space="preserve">
-    <value>Показать в папке</value>
-  </data>
-  <data name="VideoEntry_ShowInformation" xml:space="preserve">
-    <value>Показать информацию</value>
-  </data>
-  <data name="VideoEntry_Downloading" xml:space="preserve">
-    <value>Загрузка...</value>
-  </data>
-  <data name="Video_DownloadStarting" xml:space="preserve">
-    <value>Загрузка "{0}"...</value>
-  </data>
-  <data name="Video_DownloadCancelled" xml:space="preserve">
-    <value>Отменено "{0}".</value>
-  </data>
-  <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
-    <value>youtube-dl/ yt-dlp</value>
-  </data>
-  <data name="Video_DownloadFinished" xml:space="preserve">
-    <value>Завершено "{0}".</value>
-  </data>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
     <value>_Вставить видео ссылку</value>
-  </data>
-  <data name="MainWindow_DownloadFolder" xml:space="preserve">
-    <value>Папка загрузки</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
     <value>Изменить _папку загрузки...</value>
@@ -246,8 +211,17 @@
   <data name="MainWindow_OpenFolder" xml:space="preserve">
     <value>Открыть</value>
   </data>
+  <data name="MainWindow_StatusFailed" xml:space="preserve">
+    <value>Неудачно:</value>
+  </data>
   <data name="MainWindow_StatusInProcess" xml:space="preserve">
     <value>В процессе:</value>
+  </data>
+  <data name="MainWindow_StatusSucceeded" xml:space="preserve">
+    <value>Успешно:</value>
+  </data>
+  <data name="MetadataWindow_Creator" xml:space="preserve">
+    <value>Автор:</value>
   </data>
   <data name="MetadataWindow_Description" xml:space="preserve">
     <value>Описание</value>
@@ -261,101 +235,26 @@
   <data name="MetadataWindow_UploadDate" xml:space="preserve">
     <value>Загружено:</value>
   </data>
-  <data name="PathSelectionControl_Change" xml:space="preserve">
-    <value>Изменить</value>
-  </data>
-  <data name="SettingsWindow_Binaries" xml:space="preserve">
-    <value>Приложение</value>
-  </data>
-  <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
-    <value>Проверка обновлений...</value>
-  </data>
-  <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
-    <value>ffmpeg</value>
-  </data>
-  <data name="MainWindow_StatusFailed" xml:space="preserve">
-    <value>Неудачно:</value>
-  </data>
-  <data name="MainWindow_StatusSucceeded" xml:space="preserve">
-    <value>Успешно:</value>
-  </data>
-  <data name="MetadataWindow_Creator" xml:space="preserve">
-    <value>Автор:</value>
-  </data>
   <data name="MetadataWindow_Uploader" xml:space="preserve">
     <value>Добавил:</value>
   </data>
   <data name="MetadataWindow_Views" xml:space="preserve">
     <value>Просмотров:</value>
   </data>
-  <data name="VideoEntry_Finished" xml:space="preserve">
-    <value>Завершено.</value>
-  </data>
-  <data name="VideoEntry_PreProcessing" xml:space="preserve">
-    <value>Подготовка...</value>
-  </data>
-  <data name="MainWindow_ListEmpty" xml:space="preserve">
-    <value>Добавить новые видео, вставляя или импортируя URL-адреса.</value>
-  </data>
-  <data name="VideoEntry_Reload" xml:space="preserve">
-    <value>Перезагрузить видео</value>
-  </data>
-  <data name="VideoEntry_Download" xml:space="preserve">
-    <value>Загрузить</value>
-  </data>
-  <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
-    <value>Перезаписать существующие файлы</value>
-  </data>
-  <data name="DownloadOption_Best" xml:space="preserve">
-    <value>Лучшая прямая загрузка</value>
-  </data>
-  <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>_Очистить список загрузок</value>
-  </data>
-  <data name="SettingsWindow_VideoList" xml:space="preserve">
-    <value>Список загрузок</value>
-  </data>
-  <data name="FetchWindow_EnterUrls" xml:space="preserve">
-    <value>Введите URL-адреса видео в отдельные строки</value>
-  </data>
-  <data name="MetadataWindow_Details" xml:space="preserve">
-    <value>Подробная информация</value>
-  </data>
-  <data name="MetadataWindow_Duration" xml:space="preserve">
-    <value>Продолжительность:</value>
-  </data>
-  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
-    <value>Уже существует. Пункт пропущен.</value>
-  </data>
-  <data name="Video_DownloadFailed" xml:space="preserve">
-    <value>Не удалось загрузить "{0}".</value>
-  </data>
-  <data name="MainWindow_FetchFailed_General" xml:space="preserve">
-    <value>Пожалуйста, убедитесь, что данный URL-адрес является действительным.</value>
-  </data>
-  <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
-    <value>Не удалось получить видео</value>
-  </data>
-  <data name="MainWindow_CountFailedFetches" xml:space="preserve">
-    <value>Не удалось получить {0} видео:</value>
-  </data>
-  <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
-    <value>Копировать URL плейлиста</value>
-  </data>
-  <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
-    <value>Показать все доступные форматы</value>
+  <data name="SelectDirectory_Description" xml:space="preserve">
+    <value>Выберите каталог, в котором будут сохранены загруженные видео:</value>
   </data>
   <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
     <value>Разрешить повторяющиеся записи видео</value>
   </data>
-  <data name="SettingsWindow_Appearance" xml:space="preserve">
-    <value>Вид</value>
+  <data name="PathSelectionControl_Change" xml:space="preserve">
+    <value>Изменить</value>
   </data>
-  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
-    <value>Автоматически проверять обновления при запуске</value>
+  <data name="SettingsWindow_Binaries" xml:space="preserve">
+    <value>Приложение</value>
   </data>
-  <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
-    <value>Формат загрузки по умолчанию:</value>
+  <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+    <value>ffmpeg</value>
   </data>
   <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
     <value>Папка видео загрузки</value>
@@ -363,30 +262,125 @@
   <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
     <value>Параметры загрузки</value>
   </data>
-  <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
-    <value>Проверить обновления</value>
-  </data>
-  <data name="MainWindow_AlreadyFetched" xml:space="preserve">
-    <value>Это видео уже было загружено в список загрузок.
-Чтобы разрешить дубликаты, перейдите в меню параметры -&gt; настройки.</value>
+  <data name="SettingsWindow_Filename" xml:space="preserve">
+    <value>Имя файла</value>
   </data>
   <data name="SettingsWindow_General" xml:space="preserve">
     <value>Общие</value>
   </data>
-  <data name="SettingsWindow_Filename" xml:space="preserve">
-    <value>Имя файла</value>
+  <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+    <value>Максимальное количество одновременных загрузок</value>
+  </data>
+  <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+    <value>Перезаписать существующие файлы</value>
+  </data>
+  <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+    <value>Ограничивать имя файла символами ASCII</value>
+  </data>
+  <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+    <value>Показать все доступные форматы</value>
+  </data>
+  <data name="SettingsWindow_Title" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="SettingsWindow_VideoList" xml:space="preserve">
+    <value>Список загрузок</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="VideoEntry_Converting" xml:space="preserve">
+    <value>Конвертирование...</value>
+  </data>
+  <data name="VideoEntry_CopyUrl" xml:space="preserve">
+    <value>Копировать URL видео</value>
+  </data>
+  <data name="VideoEntry_Download" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="VideoEntry_Downloading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="VideoEntry_Finished" xml:space="preserve">
+    <value>Завершено.</value>
+  </data>
+  <data name="VideoEntry_Play" xml:space="preserve">
+    <value>Воспроизвести</value>
+  </data>
+  <data name="VideoEntry_Playlist" xml:space="preserve">
+    <value>Плейлист - {0} видео</value>
+  </data>
+  <data name="VideoEntry_PreProcessing" xml:space="preserve">
+    <value>Подготовка...</value>
+  </data>
+  <data name="VideoEntry_Remove" xml:space="preserve">
+    <value>Удалить видео</value>
+  </data>
+  <data name="VideoEntry_ShowInFolder" xml:space="preserve">
+    <value>Показать в папке</value>
+  </data>
+  <data name="VideoEntry_ShowInformation" xml:space="preserve">
+    <value>Показать информацию</value>
+  </data>
+  <data name="Video_DownloadCancelled" xml:space="preserve">
+    <value>Отменено "{0}".</value>
+  </data>
+  <data name="Video_DownloadFinished" xml:space="preserve">
+    <value>Завершено "{0}".</value>
+  </data>
+  <data name="MainWindow_MenuAbout" xml:space="preserve">
+    <value>_О программе</value>
+  </data>
+  <data name="MetadataWindow_Duration" xml:space="preserve">
+    <value>Продолжительность:</value>
+  </data>
+  <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+    <value>Формат загрузки по умолчанию:</value>
+  </data>
+  <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+    <value>Проверить обновления</value>
+  </data>
+  <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+    <value>youtube-dl/ yt-dlp</value>
+  </data>
+  <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+    <value>Проверка обновлений...</value>
+  </data>
+  <data name="MainWindow_FetchFailed_General" xml:space="preserve">
+    <value>Пожалуйста, убедитесь, что данный URL-адрес является действительным.</value>
+  </data>
+  <data name="Video_DownloadStarting" xml:space="preserve">
+    <value>Загрузка "{0}"...</value>
+  </data>
+  <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+    <value>Открыть в браузере</value>
+  </data>
+  <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+    <value>Копировать URL плейлиста</value>
+  </data>
+  <data name="MetadataWindow_Details" xml:space="preserve">
+    <value>Подробная информация</value>
+  </data>
+  <data name="SettingsWindow_Appearance" xml:space="preserve">
+    <value>Вид</value>
+  </data>
+  <data name="SettingsWindow_Theme" xml:space="preserve">
+    <value>Тема приложения:</value>
+  </data>
+  <data name="MainWindow_ListEmpty" xml:space="preserve">
+    <value>Добавить новые видео, вставляя или импортируя URL-адреса.</value>
+  </data>
+  <data name="DownloadOption_Webm" xml:space="preserve">
+    <value>Конвертировать в WebM</value>
   </data>
   <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
     <value>Загружать лучшее качество и конвертировать</value>
   </data>
+  <data name="VideoEntry_Reload" xml:space="preserve">
+    <value>Перезагрузить видео</value>
+  </data>
   <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
     <value>Использовать архив загрузки</value>
-  </data>
-  <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
-    <value>Максимальное количество одновременных загрузок</value>
-  </data>
-  <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
-    <value>Ограничивать имя файла символами ASCII</value>
   </data>
   <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
     <value>Расположение исполняемого файла на вашем ПК</value>
@@ -394,17 +388,23 @@
   <data name="SettingsWindow_Download" xml:space="preserve">
     <value>Загрузка</value>
   </data>
-  <data name="SelectDirectory_Description" xml:space="preserve">
-    <value>Выберите каталог, в котором будут сохранены загруженные видео:</value>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>Удалить _завершённые</value>
   </data>
-  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
-    <value>Очистить вывод</value>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>Удалить _недоступные</value>
   </data>
-  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
-    <value>Копировать вывод</value>
+  <data name="Video_DownloadFailed" xml:space="preserve">
+    <value>Не удалось загрузить "{0}".</value>
   </data>
-  <data name="DownloadOutputWindow_Title" xml:space="preserve">
-    <value>Загрузить вывод</value>
+  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+    <value>Автоматически проверять обновления при запуске</value>
+  </data>
+  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+    <value>Уже существует. Пункт пропущен.</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>Опции</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
     <value>Формат скачивания</value>
@@ -414,9 +414,6 @@
   </data>
   <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
     <value>Начать загрузку немедленно</value>
-  </data>
-  <data name="FetchWindow_Options" xml:space="preserve">
-    <value>Опции</value>
   </data>
   <data name="FetchWindow_Password" xml:space="preserve">
     <value>Пароль</value>
@@ -437,7 +434,16 @@
     <value>Видео пароль</value>
   </data>
   <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
-    <value>Показать окно вывода</value>
+    <value>Показать окно вывода</value> 
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>Очистить вывод</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>Копировать вывод</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>Загрузить вывод</value>
   </data>
   <data name="SettingsWindow_AddMetadata" xml:space="preserve">
     <value>Добавить метаданные к файлам</value>
@@ -459,5 +465,110 @@
   </data>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
     <value>Общий размер загружаемого файла</value>
+  </data>
+  <data name="AudioOnly" xml:space="preserve">
+    <value>Только аудио</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+    <value>Конвертировать в:</value>
+  </data>
+  <data name="MainWindow_HeaderAutomate" xml:space="preserve">
+    <value>_Автоматизация</value>
+  </data>
+  <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+    <value>_Настройка...</value>
+  </data>
+  <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+    <value>_Автоматический импорт URL-адресов из буфера обмена</value>
+  </data>
+  <data name="MainWindow_MenuReloadAll" xml:space="preserve">
+    <value>Пе_резагрузить все видео</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
+    <value>Использовать GPU ускорение для записи видео (требуется CUDA)</value>
+  </data>
+  <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+    <value>Аудио + видео</value>
+  </data>
+  <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+    <value>Видео/ только аудио</value>
+  </data>
+  <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+    <value>Ширина и высота видео</value>
+  </data>
+  <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+    <value>Текущая конфигурация:</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Аудио</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="SettingsWindow_Advanced" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="OverwriteMode_None" xml:space="preserve">
+    <value>Пропускать существующие</value>
+  </data>
+  <data name="OverwriteMode_Overwrite" xml:space="preserve">
+    <value>Перезаписывать существующие</value>
+  </data>
+  <data name="OverwriteMode_Increment" xml:space="preserve">
+    <value>Повторно загружать (переименование)</value>
+  </data>
+  <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+    <value>Расширение файла</value>
+  </data>
+  <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+    <value>Приблизительный размер загрузки</value>
+  </data>
+  <data name="FormatSelectionWindow_Title" xml:space="preserve">
+    <value>Настройка загрузки</value>
+  </data>
+  <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+    <value>Настройка загрузки</value>
+  </data>
+  <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+    <value>Доступна новая версия youtube-dl! Последняя версия - {0}. У вас {1}.</value>
+  </data>
+  <data name="CustomArgsWindow_Title" xml:space="preserve">
+    <value>Пользовательские аргументы загрузчика</value>
+  </data>
+  <data name="CustomArgsWindow_Description" xml:space="preserve">
+    <value>Введите пользовательские аргументы загрузчика в отдельных строках</value>
+  </data>
+  <data name="DownloadOption_Custom" xml:space="preserve">
+    <value>Пользовательская загрузка</value>
+  </data>
+  <data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+    <value>Невозможно использовать загрузку «только видео» при извлечении аудио.</value>
+  </data>
+  <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+    <value>Необходимо указать формат видео или аудио.</value>
+  </data>
+  <data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+    <value>Необходимо указать формат видеозаписи при объединении форматов.</value>
+  </data>
+  <data name="CustomArgsWindow_Warning" xml:space="preserve">
+    <value>ПРЕДУПРЕЖДЕНИЕ: Указанные аргументы передаются непосредственно процессу загрузки. Они могут переопределять параметры, необходимые для правильного функционирования этого приложения. Используйте на свой страх и риск.</value>
+  </data>
+  <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+    <value>Прямая загрузка видео</value>
+  </data>
+  <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+    <value>Шаблон фильтра URL-адресов</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+    <value>Использовать регулярное выражение в качестве шаблона фильтра URL-адресов</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+    <value>Введите выражение для фильтрации текста в буфере обмена</value>
   </data>
 </root>
