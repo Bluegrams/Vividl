@@ -19,7 +19,7 @@ namespace Vividl.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -908,6 +908,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string Reset {
+            get {
+                return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the directory where the downloaded videos will be saved:.
         /// </summary>
         public static string SelectDirectory_Description {
@@ -1030,6 +1039,16 @@ namespace Vividl.Properties {
         public static string SettingsWindow_CheckingForUpdates {
             get {
                 return ResourceManager.GetString("SettingsWindow_CheckingForUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuing will reset all customizations configured in the settings.
+        ///Really continue?.
+        /// </summary>
+        public static string SettingsWindow_ConfirmReset {
+            get {
+                return ResourceManager.GetString("SettingsWindow_ConfirmReset", resourceCulture);
             }
         }
         
@@ -1192,6 +1211,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_Title {
             get {
                 return ResourceManager.GetString("SettingsWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset all settings to their default values..
+        /// </summary>
+        public static string SettingsWindow_ToolTipReset {
+            get {
+                return ResourceManager.GetString("SettingsWindow_ToolTipReset", resourceCulture);
             }
         }
         
@@ -1444,6 +1472,15 @@ namespace Vividl.Properties {
         public static string VideoEntry_TotalDownloadSize {
             get {
                 return ResourceManager.GetString("VideoEntry_TotalDownloadSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
         

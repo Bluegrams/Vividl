@@ -571,4 +571,17 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
   <data name="CustomArgsWindow_Warning" xml:space="preserve">
     <value>WARNUNG: Gegebene Argumente werden direkt an Downloaderprozess weitergegeben. Es werden möglicherweise Optionen überschrieben, die für die korrekte Funktionsweise der Applikation nötig sind. Benutzung auf eigene Gefahr.</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="SettingsWindow_ToolTipReset" xml:space="preserve">
+    <value>Alle Einstellungen auf Standardwerte zurücksetzen.</value>
+  </data>
+  <data name="SettingsWindow_ConfirmReset" xml:space="preserve">
+    <value>Fortsetzen setzt alle benutzerdefinierten Einstellungen zurück.
+Wirklich fortsetzen?</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
 </root>

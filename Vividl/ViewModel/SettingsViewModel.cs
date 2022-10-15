@@ -32,6 +32,8 @@ namespace Vividl.ViewModel
         public ICommand UpdateVividlCommand { get; }
         public ICommand UpdateYoutubeDLCommand { get; }
 
+        public ICommand ResetAllSettingsCommand { get; }
+
         public SettingsViewModel(IFileService fileService, IDialogService dialogService,
             IThemeResolver themeResolver, IDownloadOptionProvider optionProvider,
             IUpdateChecker updateChecker, YtdlUpdateService ytdlUpdateService)
@@ -50,6 +52,7 @@ namespace Vividl.ViewModel
             );
             UpdateVividlCommand = new RelayCommand(() => UpdateVividl());
             UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
+            ResetAllSettingsCommand = new RelayCommand(() => ResetAllSettings());
         }
 
         private void editCustomArgsCallback(bool? dialogResult, object param)
@@ -85,6 +88,12 @@ namespace Vividl.ViewModel
             App.InitializeDownloadEngine();
             var ydl = SimpleIoc.Default.GetInstance<YoutubeDLSharp.YoutubeDL>();
             await ydl.SetMaxNumberOfProcesses(Settings.Default.MaxProcesses);
+        }
+
+        public void ResetAllSettings()
+        {
+            if (dialogService.ShowConfirmation(Resources.SettingsWindow_ConfirmReset, "Vividl - " + Resources.Warning))
+                Settings.Default.Reset();
         }
     }
 }

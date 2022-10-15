@@ -33,12 +33,17 @@
         </Style>
     </Window.Resources>
     <DockPanel>
-        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False"
+                   KeyboardNavigation.TabNavigation="Local">
+            <Button Content="{lex:Loc Reset}"
+                    ToolTip="{lex:Loc SettingsWindow_ToolTipReset}"
+                    DockPanel.Dock="Left" TabIndex="0" MinWidth="80"
+                    Command="{Binding ResetAllSettingsCommand}"/>
             <Button Content="{lex:Loc Cancel}"
-                    DockPanel.Dock="Right" MinWidth="80"
+                    DockPanel.Dock="Right" TabIndex="2" MinWidth="80"
                     IsCancel="True"/>
             <Button Content="{lex:Loc Submit}"
-                    DockPanel.Dock="Right" MinWidth="80"
+                    DockPanel.Dock="Right" TabIndex="1" MinWidth="80"
                     Click="SubmitButton_Click" IsDefault="True"/>
         </DockPanel>
         <TabControl x:Name="tabSettings" SelectionChanged="TabControl_SelectionChanged">

@@ -157,7 +157,7 @@ namespace Vividl.ViewModel
             ShowDownloadOutputWindowCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
             );
-            CheckForUpdatesCommand = new RelayCommand(() => CheckForUpdates());
+            CheckForUpdatesCommand = new RelayCommand(async () => await CheckForUpdates());
             AboutCommand = new RelayCommand(() => ShowAboutBox());
         }
 
@@ -312,8 +312,11 @@ namespace Vividl.ViewModel
             }
         }
 
-        public void CheckForUpdates()
+        public async Task CheckForUpdates()
         {
+            var ytdlUpdateService = SimpleIoc.Default.GetInstance<YtdlUpdateService>();
+            var msg = await ytdlUpdateService.Update();
+            dialogService.ShowMessageBox(msg, "Vividl - " + Resources.Info);
             var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
             updateChecker.CheckForUpdates(UpdateNotifyMode.Always);
         }
