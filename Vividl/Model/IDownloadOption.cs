@@ -7,6 +7,6 @@ namespace Vividl.Model
         string Description { get; }
         bool IsAudio { get; }
 
-        string GetExt();
+        string GetExt(string defaultValue = null);
     }
 }

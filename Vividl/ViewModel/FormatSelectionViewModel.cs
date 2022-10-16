@@ -148,7 +148,10 @@ namespace Vividl.ViewModel
                 // use the cached changes if custom download is selected
                 if (SelectedDownloadOption == DownloadOptions.CustomDownloadIndex)
                     return customDownload.GetExt();
-                else return DownloadOptions[SelectedDownloadOption].GetExt();
+                else return DownloadOptions[SelectedDownloadOption].GetExt(
+                    // if not able to resolve, we have "best" option without recoding
+                    defaultValue: SelectedAudioVideo?.Extension
+                );
             }
         }
 

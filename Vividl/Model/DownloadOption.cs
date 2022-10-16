@@ -38,7 +38,7 @@ namespace Vividl.Model
         /// generic 'best' downloads (see implementations). But this is needed to determine the
         /// final file path for pre-download checks.
         /// </summary>
-        public abstract string GetExt();
+        public abstract string GetExt(string defaultValue = null);
 
         /// <summary>
         /// Performs the actual download of the specified URL by invoking the given YoutubeDL instance.
@@ -147,7 +147,8 @@ namespace Vividl.Model
             this.ConversionFormat = format;
         }
 
-        public override string GetExt() => ExtProvider.GetExtForAudio(ConversionFormat);
+        public override string GetExt(string defaultValue = null)
+            => ExtProvider.GetExtForAudio(ConversionFormat, defaultValue);
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
@@ -192,11 +193,11 @@ namespace Vividl.Model
             this.fileExtension = fileExtension;
         }
 
-        public override string GetExt()
+        public override string GetExt(string defaultValue = null)
         {
             if (!String.IsNullOrWhiteSpace(fileExtension))
                 return fileExtension;
-            return ExtProvider.GetExtForVideo(RecodeFormat);
+            return ExtProvider.GetExtForVideo(RecodeFormat, defaultValue);
         }
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
@@ -265,11 +266,11 @@ namespace Vividl.Model
             this.VideoRecodeFormat = videoRecodeFormat;
         }
 
-        public override string GetExt()
+        public override string GetExt(string defaultValue = null)
         {
             if (IsAudio)
             {
-                return ExtProvider.GetExtForAudio(AudioConversionFormat);
+                return ExtProvider.GetExtForAudio(AudioConversionFormat, defaultValue);
             }
             else if (VideoRecodeFormat == VideoRecodeFormat.None)
             {
@@ -277,7 +278,7 @@ namespace Vividl.Model
                     throw new InvalidOperationException("Must specify a VideoRecodeFormat when merging formats.");
                 return VideoFormat?.Extension;
             }
-            else return ExtProvider.GetExtForVideo(VideoRecodeFormat);
+            else return ExtProvider.GetExtForVideo(VideoRecodeFormat, defaultValue);
         }
 
         protected override async Task<RunResult<string>> RunRealDownload(

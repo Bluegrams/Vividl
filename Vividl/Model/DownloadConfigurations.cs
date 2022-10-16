@@ -9,7 +9,7 @@ namespace Vividl.Model
         public static OptionSet ApplyForAudioDownload(DownloadOption download, OptionSet options)
         {
             // When converting to mp3, add thumbnail.
-            if (Settings.Default.AddMetadata && download.GetExt() == "mp3")
+            if (Settings.Default.AddMetadata && download.GetExt(defaultValue: "") == "mp3")
             {
                 options = options ?? new OptionSet();
                 options.EmbedThumbnail = true;
@@ -21,7 +21,7 @@ namespace Vividl.Model
 
         public static OptionSet ApplyForVideoDownload(DownloadOption download, OptionSet options)
         {
-            if (download.GetExt() == "mp4")
+            if (download.GetExt(defaultValue: "") == "mp4")
             {
                 switch (Settings.Default.FFmpegHardwareAcceleration)
                 {

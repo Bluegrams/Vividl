@@ -5,7 +5,7 @@ namespace Vividl.Model
 {
     public static class ExtProvider
     {
-        public static string GetExtForAudio(AudioConversionFormat audioConversionFormat)
+        public static string GetExtForAudio(AudioConversionFormat audioConversionFormat, string defaultValue = null)
         {
             switch (audioConversionFormat)
             {
@@ -25,11 +25,13 @@ namespace Vividl.Model
                     return "flac";
                 default:
                     // Don't support 'best' because we don't know the extension in advance!
-                    throw new InvalidOperationException("AudioConversionFormat.Best is not supported.");
+                    if (defaultValue == null)
+                        throw new InvalidOperationException("AudioConversionFormat.Best is not supported.");
+                    else return defaultValue;
             }
         }
 
-        public static string GetExtForVideo(VideoRecodeFormat videoRecodeFormat)
+        public static string GetExtForVideo(VideoRecodeFormat videoRecodeFormat, string defaultValue = null)
         {
             switch (videoRecodeFormat)
             {
@@ -47,7 +49,9 @@ namespace Vividl.Model
                     return "mkv";
                 default:
                     // Don't support 'None' because we don't know the extension in advance!
-                    throw new InvalidOperationException("VideoRecodeFormat.None is not supported.");
+                    if (defaultValue == null)
+                        throw new InvalidOperationException("VideoRecodeFormat.None is not supported.");
+                    else return defaultValue;
             }
         }
     }
