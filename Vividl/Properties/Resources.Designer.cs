@@ -584,7 +584,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new videos by pasting or importing URLs..
+        ///   Looks up a localized string similar to Add new videos by pasting, importing or dragging &amp; dropping URLs..
         /// </summary>
         public static string MainWindow_ListEmpty {
             get {

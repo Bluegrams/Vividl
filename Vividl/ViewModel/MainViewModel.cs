@@ -45,6 +45,8 @@ namespace Vividl.ViewModel
 
         public ICommand PasteCommand { get; }
 
+        public ICommand DropCommand { get; }
+
         public ICommand ImportCommand { get; }
 
         public ICommand ExportCommand { get; }
@@ -137,6 +139,7 @@ namespace Vividl.ViewModel
             );
             ClearCommand = new RelayCommand(() => this.Clear(), () => InProcessCount < 1);
             PasteCommand = new RelayCommand(async () => await FetchVideo(Clipboard.GetText()));
+            DropCommand = new RelayCommand<DragEventArgs>(async e => await DragDrop(e));
             ImportCommand = new RelayCommand(async () => await ImportDownloadLinks());
             ExportCommand = new RelayCommand(() => ExportDownloadLinks());
             ExitCommand = new RelayCommand(() => Environment.Exit(0));
@@ -173,6 +176,16 @@ namespace Vividl.ViewModel
                 return;
             }
             await itemProvider.FetchItemList(new[] { videoUrl }, VideoInfos, this, dialogService);
+        }
+
+        public async Task DragDrop(DragEventArgs e)
+        {
+            // Check if dropped item is a string
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string videoUrl = (string)e.Data.GetData(DataFormats.StringFormat);
+                await FetchVideo(videoUrl);
+            }
         }
 
         private async void fetchCommandCallback(bool? dialogResult, object param)

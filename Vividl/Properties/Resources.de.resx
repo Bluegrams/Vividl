@@ -401,7 +401,7 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
     <value>Speicherort des Programms im Dateisystem</value>
   </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
-    <value>Videos URLs aus Zwischenablage oder Datei hinzufügen.</value>
+    <value>Videos URLs aus Zwischenablage, Datei oder per Drag &amp; Drop hinzufügen.</value>
   </data>
   <data name="FetchWindow_TabAuthentication" xml:space="preserve">
     <value>Authentifizierung</value>

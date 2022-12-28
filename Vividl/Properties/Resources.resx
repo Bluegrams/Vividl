@@ -371,7 +371,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Application Theme:</value>
   </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
-    <value>Add new videos by pasting or importing URLs.</value>
+    <value>Add new videos by pasting, importing or dragging &amp; dropping URLs.</value>
   </data>
   <data name="DownloadOption_Webm" xml:space="preserve">
     <value>Convert to WebM</value>

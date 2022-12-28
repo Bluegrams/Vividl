@@ -1,6 +1,8 @@
 ﻿<adonisControls:AdonisWindow x:Class="Vividl.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:notif="clr-namespace:Enterwell.Clients.Wpf.Notifications.Controls;assembly=Enterwell.Clients.Wpf.Notifications"
         xmlns:p="clr-namespace:Vividl.Properties"
@@ -185,7 +187,13 @@
                         ToolTip="{lex:Loc PathSelectionControl_Change}"
                         Command="{Binding SelectDownloadFolderCommand}"/>
                 </Grid>
-                <ListBox Grid.Row="1" x:Name="listVideos" ItemsSource="{Binding VideoInfos}" SelectionMode="Single">
+                <ListBox Grid.Row="1" x:Name="listVideos" ItemsSource="{Binding VideoInfos}" SelectionMode="Single"
+                         AllowDrop="True">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Drop">
+                            <cmd:EventToCommand Command="{Binding DropCommand}" PassEventArgsToCommand="True" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <ListBox.Style>
                         <Style TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
                             <Style.Triggers>
@@ -193,9 +201,12 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate>
-                                                <TextBlock Text="{lex:Loc MainWindow_ListEmpty}"
+                                                <Grid AllowDrop="True" Background="Transparent"
+                                                      VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{lex:Loc MainWindow_ListEmpty}" TextWrapping="Wrap"
                                                            VerticalAlignment="Center" HorizontalAlignment="Center"
                                                            Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                                </Grid>
                                             </ControlTemplate>
                                         </Setter.Value>
                                     </Setter>
