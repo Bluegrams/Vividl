@@ -32,7 +32,7 @@
     <!-- =============================== -->      
 
     <dependencies>
-      <dependency id="dotnetfx" version="4.6.2.0" />
+      <dependency id="netfx-4.8"/>
       <dependency id="yt-dlp"/>
       <dependency id="ffmpeg"/>
     </dependencies>

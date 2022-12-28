@@ -124,9 +124,9 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.6.2"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.8"
                 "AllowLaterVersions" = "11:FALSE"
-                "InstallUrl" = "8:https://go.microsoft.com/fwlink/?LinkId=780596"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer"
                 }
             }
         }

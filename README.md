@@ -39,22 +39,22 @@ You can also manage the parallel download of multiple videos and retrieve addito
 
 ## Setup
 
-#### Requirements
+### Installer/ Portable
 
-Vividl requires Windows 7 or newer with the following components installed:
-- [.NET Framework v.4.6.2](https://www.microsoft.com/de-de/download/details.aspx?id=53345) or higher
-- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/de-de/download/details.aspx?id=8328)
+1. **Requirements:** Vividl requires Windows 7 or newer with the following components installed:
+    - .NET Framework v.4.8 or higher: [Download here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
+    - Microsoft Visual C++ 2010 Redistributable Package (x86): [Download here](https://www.microsoft.com/en-us/download/details.aspx?id=26999)
+2. **Download:** Get the [latest release from SourceForge](https://sourceforge.net/projects/vividl/files/).
 
-#### Get Vividl
+### From Chocolatey
 
-- Download the [latest release from SourceForge](https://sourceforge.net/projects/vividl/files/)
+You can find the Vividl Chocolatey package [here](https://community.chocolatey.org/packages/vividl).
 
-or
-
-- Install from [Chocolatey](https://chocolatey.org):
 ```
 choco install vividl
 ```
+
+This will automatically install required dependencies.
 
 ## Version History
 
