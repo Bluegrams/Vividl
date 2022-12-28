@@ -313,7 +313,21 @@ namespace Vividl.ViewModel
 
         private void tryUpdateCustomDownload()
         {
-            selectedDownloadOption = DownloadOptions.CustomDownloadIndex;
+            // Check if we have selected one of the default formats w/o any conversion:
+            // This is the case if conversions are deactivated & exactly one format is selected
+            if (!HasAudioExtraction && VideoRecodeFormat == VideoRecodeFormat.None
+                && (SelectedAudioVideo != null ^ SelectedVideo != null ^ SelectedAudio != null))
+            {
+                FormatData format = SelectedAudioVideo ?? SelectedVideo ?? SelectedAudio;
+                int index = DownloadOptions.IndexOfFirstOrDefault(d => d.FormatSelection == format?.FormatId);
+                if (index >= 0)
+                {
+                    this.selectedDownloadOption = index;
+                    return;
+                }
+            }
+
+            this.selectedDownloadOption = DownloadOptions.CustomDownloadIndex;
             var newCustomDownload = new CustomDownload(Resources.DownloadOption_Custom);
             try
             {

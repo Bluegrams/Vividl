@@ -200,12 +200,17 @@ namespace Vividl.Model
             return ExtProvider.GetExtForVideo(RecodeFormat, defaultValue);
         }
 
+        // yt-dlp gives a warning if we pass "best", therefore change to "b" before download.
+        private string fixFormatSelection(YoutubeDL ydl, string formatSelection)
+            => (((CustomYoutubeDL)ydl).UsingYtDlp && FormatSelection == "best") ? "b" : formatSelection;
+
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
+            string formatSelection = fixFormatSelection(ydl, FormatSelection);
             overrideOptions = DownloadConfigurations.ApplyForVideoDownload(this, overrideOptions);
             return await ydl.RunVideoDownload(
-                url, FormatSelection,
+                url, formatSelection,
                 DownloadMergeFormat.Mkv, RecodeFormat, ct, progress,
                 output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
                 overrideOptions: overrideOptions
@@ -215,8 +220,9 @@ namespace Vividl.Model
         protected override async Task<RunResult<string[]>> RunRealPlaylistDownload(YoutubeDL ydl, string url,
             int[] playlistItems, CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
+            string formatSelection = fixFormatSelection(ydl, FormatSelection);
             overrideOptions = DownloadConfigurations.ApplyForVideoDownload(this, overrideOptions);
-            return await ydl.RunVideoPlaylistDownload(url, format: FormatSelection,
+            return await ydl.RunVideoPlaylistDownload(url, format: formatSelection,
                 items: playlistItems, recodeFormat: RecodeFormat, ct: ct, progress: progress,
                 output: new Progress<string>(s => DownloadOutputLogger.Instance.WriteOutput(url, s)),
                 overrideOptions: overrideOptions
@@ -234,6 +240,7 @@ namespace Vividl.Model
             get
             {
                 if (AudioFormat == null) return VideoFormat?.FormatId;
+                else if (VideoFormat == null) return AudioFormat?.FormatId;
                 else return VideoFormat.FormatId + "+" + AudioFormat.FormatId;
             }
         }

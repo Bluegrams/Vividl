@@ -27,18 +27,18 @@ namespace Vividl.Model
         /// <returns>The selected format or null if not found.</returns>
         public static FormatData SelectSingleFormat(this VideoData videoData, string formatSpecifier)
         {
-            if (new[] { "best", "worst" , null }.Contains(formatSpecifier))
+            if (new[] { "best", "worst" , "b", "w", null }.Contains(formatSpecifier))
             {
                 var audioVideoFormats = videoData.GetAudioVideoFormats().ToList();
                 if (audioVideoFormats.Count > 0)
                 {
-                    int index = formatSpecifier == "worst" ? 0 : (audioVideoFormats.Count - 1);
+                    int index = (formatSpecifier?.StartsWith("w") ?? false) ? 0 : (audioVideoFormats.Count - 1);
                     return audioVideoFormats[index];
                 }
                 // select best video-only or audio-only format
                 else
                 {
-                    int index = formatSpecifier == "worst" ? 0 : (videoData.Formats.Length - 1);
+                    int index = (formatSpecifier?.StartsWith("w") ?? false) ? 0 : (videoData.Formats.Length - 1);
                     return videoData.Formats[index];
                 }
             }
