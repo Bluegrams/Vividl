@@ -2,7 +2,7 @@
 
 - [alxnull](https://github.com/alxnull): Core development
 - [xetrin](https://github.com/xetrin): Russian translation
-- Leandro Martín Drudi: Spanish translation
+- Leandro Martï¿½n Drudi: Spanish translation
 - [gennady9](https://github.com/gennady9): Hebrew translation
 - [Krnlsoft](https://github.com/Krnlsoft): Italian translation
 - [TomWia9](https://github.com/TomWia9): Polish translation
@@ -13,3 +13,4 @@
 - [Alain Seys](https://github.com/alainseys): Dutch translation
 - [id-konstantin-stepanov](https://github.com/id-konstantin-stepanov): Russian translation
 - [FrejBjornsson](https://github.com/FrejBjornsson): Swedish translation
+- [TechDragon](https://github.com/techdragon): Update to YoutubeDLSharp 1.0.3beta  

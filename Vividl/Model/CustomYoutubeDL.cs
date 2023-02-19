@@ -23,13 +23,19 @@ namespace Vividl.Model
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
+            #if LegacyYoutubeDLSharp
             // Workaround to suppress the warning in yt-dlp
             if (UsingYtDlp)
             {
                 options.ExternalDownloaderArgs = "ffmpeg:" + options.ExternalDownloaderArgs;
             }
+            #endif
             options.DownloadArchive = this.DownloadArchive;
+            #if LegacyYoutubeDLSharp
             options.AddMetadata = this.AddMetadata;
+            #else
+            options.EmbedMetadata = this.AddMetadata;
+            #endif
             options.Proxy = this.Proxy;
             if (this.CustomDownloadOptions != null)
             {
