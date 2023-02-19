@@ -73,6 +73,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'LegacyYoutubeDLSharp|AnyCPU' ">
     <OutputPath>bin\LegacyYoutubeDLSharp\</OutputPath>
+    <DefineConstants>LegacyYoutubeDLSharp</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>

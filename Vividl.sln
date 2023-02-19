@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vividl", "Vividl\Vividl.csproj", "{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}"
 EndProject
@@ -35,6 +35,7 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		LegacyYoutubeDLSharp|Any CPU = LegacyYoutubeDLSharp|Any CPU
 		Publish-Install|Any CPU = Publish-Install|Any CPU
 		Publish-Install-NoLib|Any CPU = Publish-Install-NoLib|Any CPU
 		Publish-Portable|Any CPU = Publish-Portable|Any CPU
@@ -44,6 +45,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.LegacyYoutubeDLSharp|Any CPU.ActiveCfg = LegacyYoutubeDLSharp|Any CPU
+		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.LegacyYoutubeDLSharp|Any CPU.Build.0 = LegacyYoutubeDLSharp|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install|Any CPU.Build.0 = Release|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Publish-Install-NoLib|Any CPU.ActiveCfg = Release-NoLib|Any CPU
@@ -55,6 +58,8 @@ Global
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA439FC-2767-4EBF-A2D8-2C13D1CA69C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Debug|Any CPU.ActiveCfg = Debug
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.LegacyYoutubeDLSharp|Any CPU.ActiveCfg = Release
+		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.LegacyYoutubeDLSharp|Any CPU.Build.0 = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.ActiveCfg = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install|Any CPU.Build.0 = Release
 		{55E86E66-05B3-417F-8C95-10BCAB80C1AF}.Publish-Install-NoLib|Any CPU.ActiveCfg = Release
