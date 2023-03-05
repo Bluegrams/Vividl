@@ -5,7 +5,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>vividl</id>
-    <version>0.6.0</version>
+    <version>0.7.0</version>
     <owners>alxnull</owners>
     <!-- ============================== -->
 
@@ -14,7 +14,7 @@
     <authors>alxnull</authors>
     <projectUrl>https://vividl.sourceforge.io/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/Bluegrams/Vividl/master/img/icon.png</iconUrl>
-    <copyright>© 2020-2022 Bluegrams</copyright>
+    <copyright>© 2020-2023 Bluegrams</copyright>
     <licenseUrl>https://github.com/bluegrams/Vividl/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/bluegrams/Vividl</projectSourceUrl>

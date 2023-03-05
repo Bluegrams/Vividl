@@ -9,7 +9,7 @@ using Bluegrams.Application.Attributes;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bluegrams")]
 [assembly: AssemblyProduct("Vividl")]
-[assembly: AssemblyCopyright("Copyright © 2020-2022 Bluegrams")]
+[assembly: AssemblyCopyright("Copyright © 2020-2023 Bluegrams")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -45,5 +45,5 @@ using Bluegrams.Application.Attributes;
                                               // app, or any theme specific resource dictionaries)
 )]
 
-[assembly: AssemblyVersion("0.6.0.0")]
-[assembly: AssemblyFileVersion("0.6.0.0")]
+[assembly: AssemblyVersion("0.7.0.0")]
+[assembly: AssemblyFileVersion("0.7.0.0")]

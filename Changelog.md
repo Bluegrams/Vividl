@@ -1,5 +1,16 @@
 # Vividl Changelog
 
+### v.0.7.0 (2023-03)
+- **New:** Add drag & drop support for importing URLs.
+- **New:** Add GPU acceleration option for AMD (AMF) and Intel (QSV) GPUs.
+- **New:** Japanese translation.
+- **Updated:** Dutch, Spanish and Russian translation.
+- **Fixed:** Various issues causing crashes with newer yt-dlp versions.
+- **Fixed:** App crashes with "Best direct download" option.
+- **Fixed:** Missing download progress bar for some downloads.
+- **Fixed:** Issues with audio-only downloads in custom download window.
+- **Fixed:** Remove unnecessary yt-dlp warnings.
+
 ### v.0.6.0 (2022-01)
 - **New:** Smart Automation mode: Auto-import & download URLs from clipboard
 - **New:** Add option for CUDA-supported FFmpeg conversion.
