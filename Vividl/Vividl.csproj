@@ -158,8 +158,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' != 'LegacyYoutubeDLSharp|AnyCPU' ">
-    <Reference Include="YoutubeDLSharp, Version=1.0.0.2317, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.1.0.0-beta3\lib\net45\YoutubeDLSharp.dll</HintPath>
+	<Reference Include="YoutubeDLSharp, Version=1.0.0.2364, Culture=neutral, processorArchitecture=MSIL">
+	    <HintPath>..\packages\YoutubeDLSharp.1.0.0-beta4\lib\net45\YoutubeDLSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'LegacyYoutubeDLSharp|AnyCPU' ">

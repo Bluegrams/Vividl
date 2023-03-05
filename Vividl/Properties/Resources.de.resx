@@ -584,4 +584,7 @@ Wirklich fortsetzen?</value>
   <data name="Warning" xml:space="preserve">
     <value>Warnung</value>
   </data>
+  <data name="MainWindow_MenuErrorLog" xml:space="preserve">
+    <value>_Fehlerlog öffnen</value>
+  </data>
 </root>

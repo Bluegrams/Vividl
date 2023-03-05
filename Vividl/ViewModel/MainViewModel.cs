@@ -75,6 +75,8 @@ namespace Vividl.ViewModel
 
         public ICommand ShowDownloadOutputWindowCommand { get; }
 
+        public ICommand OpenErrorLogCommand { get; }
+
         public ICommand CheckForUpdatesCommand { get; }
 
         public ICommand AboutCommand { get; }
@@ -160,6 +162,7 @@ namespace Vividl.ViewModel
             ShowDownloadOutputWindowCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
             );
+            OpenErrorLogCommand = new RelayCommand(() => OpenErrorLog());
             CheckForUpdatesCommand = new RelayCommand(async () => await CheckForUpdates());
             AboutCommand = new RelayCommand(() => ShowAboutBox());
         }
@@ -323,6 +326,11 @@ namespace Vividl.ViewModel
                 Settings.Default.DownloadFolder = dir;
                 App.InitializeDownloadEngine();
             }
+        }
+
+        public void OpenErrorLog()
+        {
+            if (!App.OpenErrorLog()) dialogService.ShowMessageBox("No error log available.", "Vividl - " + Resources.Info);
         }
 
         public async Task CheckForUpdates()

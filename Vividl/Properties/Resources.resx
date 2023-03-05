@@ -596,4 +596,7 @@ Really continue?</value>
   <data name="Warning" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="MainWindow_MenuErrorLog" xml:space="preserve">
+    <value>Open _Error Log</value>
+  </data>
 </root>

@@ -85,6 +85,7 @@
                           Command="{Binding SelectDownloadFolderCommand}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
                               InputGestureText="F12"/>
+                    <MenuItem Header="{lex:Loc MainWindow_MenuErrorLog}" Command="{Binding OpenErrorLogCommand}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuSettings}"
                               Command="{Binding SettingsCommand}" CommandParameter="0"
                               Icon="{icon:Modern Kind=Cog}" InputGestureText="Ctrl+,"/>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
@@ -26,6 +27,17 @@ namespace Vividl
 #else
         private const string UPDATE_IDENTIFIER = "install";
 #endif
+
+        public static bool OpenErrorLog()
+        {
+            string logFile = Path.Combine(Path.GetTempPath(), AppInfo.ProductName.ToLower() + ".log");
+            if (File.Exists(logFile))
+            {
+                Process.Start(logFile);
+                return true;
+            }
+            return false;
+        }
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -111,6 +123,7 @@ namespace Vividl
             ytdl.YoutubeDLPath = Settings.Default.YoutubeDLPath;
             ytdl.FFmpegPath = Settings.Default.FfmpegPath;
             ytdl.OutputFolder = Settings.Default.DownloadFolder;
+            ytdl.OutputFileTemplate = "%(title)s.%(ext)s";
             ytdl.RestrictFilenames = Settings.Default.RestrictFilenames;
             ytdl.OverwriteFiles = Settings.Default.OverwriteMode == OverwriteMode.Overwrite;
             ytdl.AddMetadata = Settings.Default.AddMetadata;
