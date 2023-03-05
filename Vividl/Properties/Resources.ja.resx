@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Cancel" xml:space="preserve">
+		<value>キャンセル</value>
+	</data>
+	<data name="DownloadOption_AVI" xml:space="preserve">
+		<value>AVI に変換</value>
+	</data>
+	<data name="DownloadOption_Best" xml:space="preserve">
+		<value>最良を直接ダウンロード</value>
+	</data>
+	<data name="DownloadOption_M4A" xml:space="preserve">
+		<value>M4A に変換</value>
+	</data>
+	<data name="DownloadOption_MKV" xml:space="preserve">
+		<value>MKV に結合</value>
+	</data>
+	<data name="DownloadOption_MP3" xml:space="preserve">
+		<value>MP3 に変換</value>
+	</data>
+	<data name="DownloadOption_MP4" xml:space="preserve">
+		<value>MP4 に変換</value>
+	</data>
+	<data name="DownloadOption_Vorbis" xml:space="preserve">
+		<value>Ogg Vorbis に変換</value>
+	</data>
+	<data name="DownloadOption_WAV" xml:space="preserve">
+		<value>WAV に変換</value>
+	</data>
+	<data name="Error" xml:space="preserve">
+		<value>エラー</value>
+	</data>
+	<data name="FetchWindow_EnterUrls" xml:space="preserve">
+		<value>動画のURLを1行ごとに入力</value>
+	</data>
+	<data name="Info" xml:space="preserve">
+		<value>情報</value>
+	</data>
+	<data name="MainWindow_AlreadyFetched" xml:space="preserve">
+		<value>この動画は既にダウンロード一覧に登録済みです。
+オプション -&gt; 設定 から重複を許可することもできます。</value>
+	</data>
+	<data name="MainWindow_CountFailedFetches" xml:space="preserve">
+		<value>{0}本の動画の取得に失敗:</value>
+	</data>
+	<data name="MainWindow_DownloadFolder" xml:space="preserve">
+		<value>ダウンロード先のフォルダー</value>
+	</data>
+	<data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+		<value>動画の取得に失敗</value>
+	</data>
+	<data name="MainWindow_HeaderFile" xml:space="preserve">
+		<value>ファイル(_F)</value>
+	</data>
+	<data name="MainWindow_HeaderOptions" xml:space="preserve">
+		<value>オプション(_O)</value>
+	</data>
+	<data name="MainWindow_HeaderVideos" xml:space="preserve">
+		<value>動画(_V)</value>
+	</data>
+	<data name="MainWindow_MenuAdd" xml:space="preserve">
+		<value>新しい動画を追加(_A)</value>
+	</data>
+	<data name="MainWindow_MenuCancelAll" xml:space="preserve">
+		<value>すべてのダウンロードをキャンセル(_C)</value>
+	</data>
+	<data name="MainWindow_MenuClearList" xml:space="preserve">
+		<value>ダウンロード一覧をすべて消去(_D)</value>
+	</data>
+	<data name="MainWindow_MenuDownloadAll" xml:space="preserve">
+		<value>すべての動画をダウンロード(_D)</value>
+	</data>
+	<data name="MainWindow_MenuExit" xml:space="preserve">
+		<value>終了(_E)</value>
+	</data>
+	<data name="MainWindow_MenuExport" xml:space="preserve">
+		<value>動画のリンクをエクスポート(_E)</value>
+	</data>
+	<data name="MainWindow_MenuImport" xml:space="preserve">
+		<value>動画のリンクをインポート(_I)</value>
+	</data>
+	<data name="MainWindow_MenuPaste" xml:space="preserve">
+		<value>動画のリンクを貼り付け(_P)</value>
+	</data>
+	<data name="MainWindow_MenuSelectFolder" xml:space="preserve">
+		<value>ダウンロード先のフォルダー変更(_F)...</value>
+	</data>
+	<data name="MainWindow_MenuSettings" xml:space="preserve">
+		<value>設定(_S)</value>
+	</data>
+	<data name="MainWindow_OpenFolder" xml:space="preserve">
+		<value>開く</value>
+	</data>
+	<data name="MainWindow_StatusFailed" xml:space="preserve">
+		<value>失敗:</value>
+	</data>
+	<data name="MainWindow_StatusInProcess" xml:space="preserve">
+		<value>進行中:</value>
+	</data>
+	<data name="MainWindow_StatusSucceeded" xml:space="preserve">
+		<value>成功:</value>
+	</data>
+	<data name="MetadataWindow_Creator" xml:space="preserve">
+		<value>作成者:</value>
+	</data>
+	<data name="MetadataWindow_Description" xml:space="preserve">
+		<value>説明</value>
+	</data>
+	<data name="MetadataWindow_Duration" xml:space="preserve">
+		<value>再生時間:</value>
+	</data>
+	<data name="MetadataWindow_Link" xml:space="preserve">
+		<value>リンク</value>
+	</data>
+	<data name="MetadataWindow_UploadDate" xml:space="preserve">
+		<value>アップロード日:</value>
+	</data>
+	<data name="MetadataWindow_Uploader" xml:space="preserve">
+		<value>アップロード者:</value>
+	</data>
+	<data name="MetadataWindow_Views" xml:space="preserve">
+		<value>再生回数:</value>
+	</data>
+	<data name="SelectDirectory_Description" xml:space="preserve">
+		<value>ダウンロードした動画が保存されるフォルダを選択:</value>
+	</data>
+	<data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
+		<value>重複した動画の登録を許可</value>
+	</data>
+	<data name="PathSelectionControl_Change" xml:space="preserve">
+		<value>変更</value>
+	</data>
+	<data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+		<value>既定のダウンロード形式:</value>
+	</data>
+	<data name="SettingsWindow_Download" xml:space="preserve">
+		<value>ダウンロード</value>
+	</data>
+	<data name="SettingsWindow_DownloadFolder" xml:space="preserve">
+		<value>動画をダウンロードするフォルダー</value>
+	</data>
+	<data name="SettingsWindow_DownloadOptions" xml:space="preserve">
+		<value>ダウンロード オプション</value>
+	</data>
+	<data name="SettingsWindow_Filename" xml:space="preserve">
+		<value>ファイル名</value>
+	</data>
+	<data name="SettingsWindow_General" xml:space="preserve">
+		<value>一般</value>
+	</data>
+	<data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+		<value>最大同時ダウンロード数</value>
+	</data>
+	<data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+		<value>既に存在するファイルの上書き</value>
+	</data>
+	<data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+		<value>ファイル名をASCII文字に制限</value>
+	</data>
+	<data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+		<value>すべての利用可能な形式を表示</value>
+	</data>
+	<data name="SettingsWindow_Title" xml:space="preserve">
+		<value>設定</value>
+	</data>
+	<data name="SettingsWindow_VideoList" xml:space="preserve">
+		<value>ダウンロード一覧</value>
+	</data>
+	<data name="Submit" xml:space="preserve">
+		<value>OK</value>
+	</data>
+	<data name="VideoEntry_Converting" xml:space="preserve">
+		<value>変換中...</value>
+	</data>
+	<data name="VideoEntry_CopyUrl" xml:space="preserve">
+		<value>動画のURLをコピー</value>
+	</data>
+	<data name="VideoEntry_Download" xml:space="preserve">
+		<value>ダウンロード</value>
+	</data>
+	<data name="VideoEntry_Downloading" xml:space="preserve">
+		<value>ダウンロード中...</value>
+	</data>
+	<data name="VideoEntry_Finished" xml:space="preserve">
+		<value>完了.</value>
+	</data>
+	<data name="VideoEntry_Play" xml:space="preserve">
+		<value>再生</value>
+	</data>
+	<data name="VideoEntry_Playlist" xml:space="preserve">
+		<value>再生リスト - {0}本の動画</value>
+	</data>
+	<data name="VideoEntry_PreProcessing" xml:space="preserve">
+		<value>準備中...</value>
+	</data>
+	<data name="VideoEntry_Remove" xml:space="preserve">
+		<value>動画の除去</value>
+	</data>
+	<data name="VideoEntry_ShowInFolder" xml:space="preserve">
+		<value>フォルダーを開く</value>
+	</data>
+	<data name="VideoEntry_ShowInformation" xml:space="preserve">
+		<value>情報を表示</value>
+	</data>
+	<data name="Video_DownloadCancelled" xml:space="preserve">
+		<value>キャンセル "{0}".</value>
+	</data>
+	<data name="Video_DownloadFinished" xml:space="preserve">
+		<value>完了 "{0}".</value>
+	</data>
+	<data name="MainWindow_MenuAbout" xml:space="preserve">
+		<value>情報(_A)</value>
+	</data>
+	<data name="SettingsWindow_Binaries" xml:space="preserve">
+		<value>アプリケーション</value>
+	</data>
+	<data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+		<value>更新確認</value>
+	</data>
+	<data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+		<value>ffmpeg</value>
+	</data>
+	<data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
+		<value>パソコン内での実行ファイルの場所</value>
+	</data>
+	<data name="SettingsWindow_Version" xml:space="preserve">
+		<value>バージョン:</value>
+	</data>
+	<data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+		<value>youtube-dl/ yt-dlp</value>
+	</data>
+	<data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+		<value>更新を確認中...</value>
+	</data>
+	<data name="MainWindow_FetchFailed_General" xml:space="preserve">
+		<value>このURLが有効か確認してください。</value>
+	</data>
+	<data name="Video_DownloadStarting" xml:space="preserve">
+		<value>ダウンロード中 "{0}"...</value>
+	</data>
+	<data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+		<value>ブラウザで開く</value>
+	</data>
+	<data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+		<value>再生リストのURLをコピー</value>
+	</data>
+	<data name="MetadataWindow_Details" xml:space="preserve">
+		<value>詳細</value>
+	</data>
+	<data name="SettingsWindow_Appearance" xml:space="preserve">
+		<value>外観</value>
+	</data>
+	<data name="SettingsWindow_Theme" xml:space="preserve">
+		<value>アプリのテーマ:</value>
+	</data>
+	<data name="MainWindow_ListEmpty" xml:space="preserve">
+		<value>貼り付け、インポート、URLのドラッグ&amp;ドロップで新しい動画を追加。</value>
+	</data>
+	<data name="DownloadOption_Webm" xml:space="preserve">
+		<value>WebM に変換</value>
+	</data>
+	<data name="SettingsWindow_PreferRecoding" xml:space="preserve">
+		<value>最良の品質でダウンロードして変換</value>
+	</data>
+	<data name="VideoEntry_Reload" xml:space="preserve">
+		<value>動画を再読込</value>
+	</data>
+	<data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+		<value>ダウンロードアーカイブの記録を使用</value>
+	</data>
+	<data name="MetadataWindow_Source" xml:space="preserve">
+		<value>対象サイト:</value>
+	</data>
+	<data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+		<value>完了済みを削除(_F)</value>
+	</data>
+	<data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+		<value>利用不可を削除(_U)</value>
+	</data>
+	<data name="Video_DownloadFailed" xml:space="preserve">
+		<value>ダウンロード失敗 "{0}".</value>
+	</data>
+	<data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+		<value>起動時に自動で更新確認</value>
+	</data>
+	<data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+		<value>既に存在します。この項目は飛ばします。</value>
+	</data>
+	<data name="FetchWindow_Options" xml:space="preserve">
+		<value>オプション</value>
+	</data>
+	<data name="FetchWindow_DownloadFormat" xml:space="preserve">
+		<value>ダウンロードする形式</value>
+	</data>
+	<data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+		<value>存在すれば再生リストをダウンロード</value>
+	</data>
+	<data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+		<value>すぐにダウンロード開始</value>
+	</data>
+	<data name="FetchWindow_Password" xml:space="preserve">
+		<value>パスワード</value>
+	</data>
+	<data name="FetchWindow_Settings" xml:space="preserve">
+		<value>設定</value>
+	</data>
+	<data name="FetchWindow_TabAuthentication" xml:space="preserve">
+		<value>認証</value>
+	</data>
+	<data name="FetchWindow_TabGeneral" xml:space="preserve">
+		<value>一般</value>
+	</data>
+	<data name="FetchWindow_Username" xml:space="preserve">
+		<value>ユーザー名</value>
+	</data>
+	<data name="FetchWindow_VideoPassword" xml:space="preserve">
+		<value>動画のパスワード</value>
+	</data>
+	<data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+		<value>出力ウィンドウを表示</value>
+	</data>
+	<data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+		<value>出力を消去</value>
+	</data>
+	<data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+		<value>出力をコピー</value>
+	</data>
+	<data name="DownloadOutputWindow_Title" xml:space="preserve">
+		<value>ダウンロードの出力状況</value>
+	</data>
+	<data name="SettingsWindow_AddMetadata" xml:space="preserve">
+		<value>メタデータをファイルに追加</value>
+	</data>
+	<data name="SettingsWindow_Proxy" xml:space="preserve">
+		<value>プロキシ</value>
+	</data>
+	<data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+		<value>プロキシURL</value>
+	</data>
+	<data name="VideoEntry_CurrentProgress" xml:space="preserve">
+		<value>進行状況</value>
+	</data>
+	<data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+		<value>ダウンロード速度</value>
+	</data>
+	<data name="VideoEntry_RemainingTime" xml:space="preserve">
+		<value>予想残り時間</value>
+	</data>
+	<data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+		<value>合計ダウンロードサイズ</value>
+	</data>
+	<data name="FormatSelectionWindow_Title" xml:space="preserve">
+		<value>ダウンロードの構成</value>
+	</data>
+	<data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+		<value>現在の設定:</value>
+	</data>
+	<data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+		<value>音声 + 動画</value>
+	</data>
+	<data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+		<value>動画/ 音声のみ</value>
+	</data>
+	<data name="DownloadOption_Custom" xml:space="preserve">
+		<value>ダウンロードの指定</value>
+	</data>
+	<data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+		<value>ダウンロードの構成</value>
+	</data>
+	<data name="Video" xml:space="preserve">
+		<value>動画</value>
+	</data>
+	<data name="AudioOnly" xml:space="preserve">
+		<value>音声のみ</value>
+	</data>
+	<data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+		<value>変換先:</value>
+	</data>
+	<data name="Apply" xml:space="preserve">
+		<value>適用</value>
+	</data>
+	<data name="Audio" xml:space="preserve">
+		<value>音声</value>
+	</data>
+	<data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+		<value>ファイル拡張子</value>
+	</data>
+	<data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+		<value>動画の幅と高さ</value>
+	</data>
+	<data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+		<value>およそのダウンロードサイズ</value>
+	</data>
+	<data name="OverwriteMode_None" xml:space="preserve">
+		<value>存在すれば処理しない</value>
+	</data>
+	<data name="OverwriteMode_Overwrite" xml:space="preserve">
+		<value>存在すれば上書する</value>
+	</data>
+	<data name="OverwriteMode_Increment" xml:space="preserve">
+		<value>再ダウンロード (改名)</value>
+	</data>
+	<data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+		<value>youtube-dl の最新版があります! 最新版 {0}:. 使用中: {1}.</value>
+	</data>
+	<data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+		<value>動画か音声どちらかの形式を指定する必要があります。</value>
+	</data>
+	<data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+		<value>形式を結合するには、動画を再エンコードする形式を指定する必要があります。</value>
+	</data>
+	<data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+		<value>音声抽出時は動画のみのダウンロードはできません。</value>
+	</data>
+	<data name="MainWindow_MenuReloadAll" xml:space="preserve">
+		<value>すべての動画を再読込(_L)</value>
+	</data>
+	<data name="Copy" xml:space="preserve">
+		<value>コピー</value>
+	</data>
+	<data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
+		<value>動画の再変換に GPU アクセラレーションを使用</value>
+	</data>
+	<data name="MainWindow_HeaderAutomate" xml:space="preserve">
+		<value>自動化(_A)</value>
+	</data>
+	<data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+		<value>クリップボードからURLを自動でインポート(_A)</value>
+	</data>
+	<data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+		<value>動画を直接ダウンロード</value>
+	</data>
+	<data name="SettingsWindow_Advanced" xml:space="preserve">
+		<value>高度</value>
+	</data>
+	<data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+		<value>URL絞り込み規則</value>
+	</data>
+	<data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+		<value>クリップボードの文字列から絞り込む式を入力</value>
+	</data>
+	<data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+		<value>設定(_C)...</value>
+	</data>
+	<data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+		<value>URLの絞り込み規則に正規表現を使用</value>
+	</data>
+	<data name="CustomArgsWindow_Title" xml:space="preserve">
+		<value>ダウンロードの引数の指定</value>
+	</data>
+	<data name="CustomArgsWindow_Description" xml:space="preserve">
+		<value>1行ごとにダウンローダーの引数を入力</value>
+	</data>
+	<data name="CustomArgsWindow_Warning" xml:space="preserve">
+		<value>警告: 指定された引数は、ダウンローダーの処理に直接渡されます。このアプリケーションが正しく機能するのに必要なオプションを上書きする可能性があります。自己責任で利用してください。</value>
+	</data>
+	<data name="HwAccelMode_None" xml:space="preserve">
+		<value>なし</value>
+	</data>
+	<data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
+		<value>Nvidia (CUDA)</value>
+	</data>
+	<data name="HwAccelMode_AmdAmf" xml:space="preserve">
+		<value>AMD (AMF)</value>
+	</data>
+	<data name="HwAccelMode_IntelQsv" xml:space="preserve">
+		<value>Intel (QSV)</value>
+	</data>
+	<data name="Reset" xml:space="preserve">
+		<value>初期化</value>
+	</data>
+	<data name="SettingsWindow_ToolTipReset" xml:space="preserve">
+		<value>すべての設定を初期値に戻します。</value>
+	</data>
+	<data name="SettingsWindow_ConfirmReset" xml:space="preserve">
+		<value>続行すると、すべての設定が初期化されます。
+続行しますか？</value>
+	</data>
+	<data name="Warning" xml:space="preserve">
+		<value>警告</value>
+	</data>
+</root>
