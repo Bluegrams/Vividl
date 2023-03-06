@@ -596,4 +596,7 @@
 	<data name="Warning" xml:space="preserve">
 		<value>警告</value>
 	</data>
+	<data name="MainWindow_MenuErrorLog" xml:space="preserve">
+		<value>エラーログを開く(_E)</value>
+	</data>
 </root>
