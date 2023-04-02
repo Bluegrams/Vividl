@@ -11,6 +11,10 @@
 - **Fixed:** Issues with audio-only downloads in custom download window.
 - **Fixed:** Remove unnecessary yt-dlp warnings.
 
+#### v.0.7.1 (2023-04)
+- **Fixed:** Crashes when importing videos from certain sites.
+- **Updated:** Japanese and Italian translation.
+
 ### v.0.6.0 (2022-01)
 - **New:** Smart Automation mode: Auto-import & download URLs from clipboard
 - **New:** Add option for CUDA-supported FFmpeg conversion.
