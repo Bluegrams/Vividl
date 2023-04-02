@@ -656,6 +656,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open _Error Log.
+        /// </summary>
+        public static string MainWindow_MenuErrorLog {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuErrorLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Exit.
         /// </summary>
         public static string MainWindow_MenuExit {

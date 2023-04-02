@@ -19,7 +19,13 @@ namespace Vividl.ViewModel
         public override bool IsPlaylist => Entry is PlaylistEntry;
 
         public string Duration
-            => TimeSpan.FromSeconds(Entry.Metadata.Duration.GetValueOrDefault()).ToString("c");
+        {
+            get
+            {
+                var t = TimeSpan.FromSeconds(Entry.Metadata.Duration.GetValueOrDefault());
+                return string.Format("{0:00}:{1:mm}:{1:ss}", (int)t.TotalHours, t);
+            }
+        }
 
         public override string InformationString
         {

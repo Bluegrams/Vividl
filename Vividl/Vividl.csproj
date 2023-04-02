@@ -85,8 +85,8 @@
     <Reference Include="AdonisUI.ClassicTheme, Version=1.17.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AdonisUI.ClassicTheme.1.17.1\lib\net45\AdonisUI.ClassicTheme.dll</HintPath>
     </Reference>
-    <Reference Include="AppHelpers.WPF, Version=0.1.0.14, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WPF.0.1.0\lib\net45\AppHelpers.WPF.dll</HintPath>
+    <Reference Include="AppHelpers.WPF, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WPF.0.1.1\lib\net45\AppHelpers.WPF.dll</HintPath>
     </Reference>
     <Reference Include="ByteSize, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ByteSize.2.1.1\lib\net45\ByteSize.dll</HintPath>
@@ -134,6 +134,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -156,15 +157,8 @@
     <Reference Include="XAMLMarkupExtensions, Version=2.1.3.0, Culture=neutral, PublicKeyToken=c726e0262981a1eb, processorArchitecture=MSIL">
       <HintPath>..\packages\XAMLMarkupExtensions.2.1.3\lib\net48\XAMLMarkupExtensions.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' != 'LegacyYoutubeDLSharp|AnyCPU' ">
-    <Reference Include="YoutubeDLSharp, Version=1.0.0.2364, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.1.0.0-beta4\lib\net45\YoutubeDLSharp.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'LegacyYoutubeDLSharp|AnyCPU' ">
-    <Reference Include="YoutubeDLSharp, Version=0.4.3.22289, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.0.4.3\lib\net45\YoutubeDLSharp.dll</HintPath>
+    <Reference Include="YoutubeDLSharp, Version=1.0.0.2392, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YoutubeDLSharp.1.0.0-beta5\lib\net45\YoutubeDLSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
