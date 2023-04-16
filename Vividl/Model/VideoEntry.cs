@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using Vividl.Services;
 using YoutubeDLSharp;
@@ -46,8 +47,9 @@ namespace Vividl.Model
 
         public override void ShowInFolder(IFileService fileService)
         {
-            if (FileAvailable)
+            if (FileAvailable && File.Exists(DownloadPath))
                 fileService.ShowInExplorer(DownloadPath);
+            else throw new FileNotFoundException();
         }
     }
 }

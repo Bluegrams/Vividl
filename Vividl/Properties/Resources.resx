@@ -599,4 +599,10 @@ Really continue?</value>
   <data name="MainWindow_MenuErrorLog" xml:space="preserve">
     <value>Open _Error Log</value>
   </data>
+  <data name="VideoEntry_ShowInFolderFailed" xml:space="preserve">
+    <value>Could not show video in folder. It might have been renamed or removed.</value>
+  </data>
+  <data name="VideoEntry_PlayFailed" xml:space="preserve">
+    <value>Could not play video. It might have been renamed or removed.</value>
+  </data>
 </root>

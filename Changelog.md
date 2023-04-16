@@ -13,6 +13,7 @@
 
 #### v.0.7.1 (2023-04)
 - **Fixed:** Crashes when importing videos from certain sites.
+- **Fixed:** Crashes when attempting to play removed files.
 - **Updated:** Japanese and Italian translation.
 
 ### v.0.6.0 (2022-01)

@@ -189,9 +189,9 @@ namespace Vividl.ViewModel
             CopyClipboardCommand = new RelayCommand(() => Clipboard.SetText(this.url));
             OpenInBrowserCommand = new RelayCommand(() => Entry.OpenInBrowser(),
                 () => State != ItemState.None);
-            ShowInFolderCommand = new RelayCommand(() => Entry.ShowInFolder(fileService),
+            ShowInFolderCommand = new RelayCommand(() => ShowInFolder(),
                 () => State == ItemState.Succeeded && Entry.FileAvailable);
-            PlayCommand = new RelayCommand(() => Entry.OpenFile(),
+            PlayCommand = new RelayCommand(() => Play(),
                 () => State == ItemState.Succeeded && Entry.FileAvailable);
             ReloadCommand = new RelayCommand(async () => await Reload(),
                 () => State == ItemState.Succeeded || Unavailable);
@@ -257,6 +257,30 @@ namespace Vividl.ViewModel
             if (SelectedDownloadOption > (DownloadOptions.Count - 1))
             {
                 SelectedDownloadOption = Settings.Default.DefaultFormat;
+            }
+        }
+
+        public void ShowInFolder()
+        {
+            try
+            {
+                Entry.ShowInFolder(fileService);
+            }
+            catch
+            {
+                messageService.ShowMessage(Resources.VideoEntry_ShowInFolderFailed, Resources.Info);
+            }
+        }
+
+        public void Play()
+        {
+            try
+            {
+                Entry.OpenFile();
+            }
+            catch
+            {
+                messageService.ShowMessage(Resources.VideoEntry_PlayFailed, Resources.Info);
             }
         }
 

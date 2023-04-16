@@ -1413,6 +1413,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not play video. It might have been renamed or removed..
+        /// </summary>
+        public static string VideoEntry_PlayFailed {
+            get {
+                return ResourceManager.GetString("VideoEntry_PlayFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playlist - {0} Videos.
         /// </summary>
         public static string VideoEntry_Playlist {
@@ -1463,6 +1472,15 @@ namespace Vividl.Properties {
         public static string VideoEntry_ShowInFolder {
             get {
                 return ResourceManager.GetString("VideoEntry_ShowInFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not show video in folder. It might have been renamed or removed..
+        /// </summary>
+        public static string VideoEntry_ShowInFolderFailed {
+            get {
+                return ResourceManager.GetString("VideoEntry_ShowInFolderFailed", resourceCulture);
             }
         }
         
