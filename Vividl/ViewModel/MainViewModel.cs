@@ -144,7 +144,7 @@ namespace Vividl.ViewModel
             DropCommand = new RelayCommand<DragEventArgs>(async e => await DragDrop(e));
             ImportCommand = new RelayCommand(async () => await ImportDownloadLinks());
             ExportCommand = new RelayCommand(() => ExportDownloadLinks());
-            ExitCommand = new RelayCommand(() => Environment.Exit(0));
+            ExitCommand = new RelayCommand(() => Application.Current.Shutdown());
             ReloadAllCommand = new RelayCommand(async () => await ReloadAll(), () => VideoInfos.Count > 0);
             DownloadAllCommand = new RelayCommand(async () => await DownloadAll(), () => VideoInfos.Count > 0);
             CancelAllCommand = new RelayCommand(() => CancelAllDownloads(), () => InProcessCount > 0);
