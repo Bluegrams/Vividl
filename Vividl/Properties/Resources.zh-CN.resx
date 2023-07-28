@@ -253,13 +253,13 @@
     <value>AMD (AMF)</value>
   </data>
   <data name="HwAccelMode_IntelQsv" xml:space="preserve">
-    <value>英特尔 (QSV)</value>
+    <value>Intel (QSV)</value>
   </data>
   <data name="HwAccelMode_None" xml:space="preserve">
     <value>无</value>
   </data>
   <data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
-    <value>英伟达 (CUDA)</value>
+    <value>Nvidia (CUDA)</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>信息</value>
@@ -450,7 +450,7 @@
   </data>
   <data name="SettingsWindow_ConfirmReset" xml:space="preserve">
     <value>继续将重置设置中配置的所有自定义项。
-真的继续吗？</value>
+您真的要继续吗？</value>
   </data>
   <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
     <value>默认下载格式：</value>
@@ -483,7 +483,7 @@
     <value>覆盖现有文件</value>
   </data>
   <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
-    <value>可执行文件在 PC 上的位置</value>
+    <value>可执行文件在计算机上的位置</value>
   </data>
   <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
     <value>下载最佳质量并转换</value>
@@ -537,7 +537,7 @@
     <value>正在下载 "{0}"...</value>
   </data>
   <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
-    <value>已经存在了。该文件已跳过。</value>
+    <value>文件已经存在。已跳过该文件。</value>
   </data>
   <data name="VideoEntry_Converting" xml:space="preserve">
     <value>转换中...</value>
@@ -603,6 +603,6 @@
     <value>警告</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>新版本的 youtube-dl 现已推出！ 最新版本是{0}。 您有{1}。</value>
+    <value>新版本的 youtube-dl 现已推出！最新版本是 {0}。您正在使用 {1}。</value>
   </data>
 </root>
