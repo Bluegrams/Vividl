@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>音频</value>
+  </data>
+  <data name="AudioOnly" xml:space="preserve">
+    <value>仅音频</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="CustomArgsWindow_Description" xml:space="preserve">
+    <value>输入自定义下载器参数，每行一个</value>
+  </data>
+  <data name="CustomArgsWindow_Title" xml:space="preserve">
+    <value>自定义下载器参数</value>
+  </data>
+  <data name="CustomArgsWindow_Warning" xml:space="preserve">
+    <value>警告：指定的参数直接传递给下载程序进程。它们可能会覆盖此应用程序正确运行所需的选项。使用风险自负。</value>
+  </data>
+  <data name="DownloadOption_AVI" xml:space="preserve">
+    <value>转换为 AVI</value>
+  </data>
+  <data name="DownloadOption_Best" xml:space="preserve">
+    <value>最佳直接下载</value>
+  </data>
+  <data name="DownloadOption_Custom" xml:space="preserve">
+    <value>自定义下载</value>
+  </data>
+  <data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+    <value>提取音频时无法使用仅视频下载。</value>
+  </data>
+  <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+    <value>必须指定视频或音频格式。</value>
+  </data>
+  <data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+    <value>合并格式时必须指定视频重新编码格式。</value>
+  </data>
+  <data name="DownloadOption_M4A" xml:space="preserve">
+    <value>转换为 M4A</value>
+  </data>
+  <data name="DownloadOption_MKV" xml:space="preserve">
+    <value>合并到 MKV</value>
+  </data>
+  <data name="DownloadOption_MP3" xml:space="preserve">
+    <value>转换为 MP3</value>
+  </data>
+  <data name="DownloadOption_MP4" xml:space="preserve">
+    <value>转换为 MP4</value>
+  </data>
+  <data name="DownloadOption_Vorbis" xml:space="preserve">
+    <value>转换为 Ogg Vorbis</value>
+  </data>
+  <data name="DownloadOption_WAV" xml:space="preserve">
+    <value>转换为 WAV</value>
+  </data>
+  <data name="DownloadOption_Webm" xml:space="preserve">
+    <value>转换为 WebM</value>
+  </data>
+  <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+    <value>清除输出</value>
+  </data>
+  <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+    <value>复制输出</value>
+  </data>
+  <data name="DownloadOutputWindow_Title" xml:space="preserve">
+    <value>下载输出</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="FetchWindow_DownloadFormat" xml:space="preserve">
+    <value>下载格式</value>
+  </data>
+  <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+    <value>下载播放列表（如果有）</value>
+  </data>
+  <data name="FetchWindow_EnterUrls" xml:space="preserve">
+    <value>输入视频 URL，每行一个</value>
+  </data>
+  <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+    <value>立即开始下载</value>
+  </data>
+  <data name="FetchWindow_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="FetchWindow_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="FetchWindow_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="FetchWindow_TabAuthentication" xml:space="preserve">
+    <value>验证</value>
+  </data>
+  <data name="FetchWindow_TabGeneral" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="FetchWindow_Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="FetchWindow_VideoPassword" xml:space="preserve">
+    <value>视频密码</value>
+  </data>
+  <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+    <value>转换为：</value>
+  </data>
+  <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+    <value>当前配置：</value>
+  </data>
+  <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+    <value>大约下载大小</value>
+  </data>
+  <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+    <value>文件扩展名</value>
+  </data>
+  <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+    <value>音频+视频</value>
+  </data>
+  <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+    <value>仅视频/音频</value>
+  </data>
+  <data name="FormatSelectionWindow_Title" xml:space="preserve">
+    <value>配置下载</value>
+  </data>
+  <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+    <value>视频宽度和高度</value>
+  </data>
+  <data name="HwAccelMode_AmdAmf" xml:space="preserve">
+    <value>AMD (AMF)</value>
+  </data>
+  <data name="HwAccelMode_IntelQsv" xml:space="preserve">
+    <value>Intel (QSV)</value>
+  </data>
+  <data name="HwAccelMode_None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
+    <value>Nvidia (CUDA)</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="MainWindow_AlreadyFetched" xml:space="preserve">
+    <value>该视频已被提取到下载列表中。
+要允许重复项，请转至选项 -&gt; 设置。</value>
+  </data>
+  <data name="MainWindow_CountFailedFetches" xml:space="preserve">
+    <value>无法获取 {0} 个视频：</value>
+  </data>
+  <data name="MainWindow_DownloadFolder" xml:space="preserve">
+    <value>下载文件夹</value>
+  </data>
+  <data name="MainWindow_FetchFailed_General" xml:space="preserve">
+    <value>请确保给定的 URL 有效。</value>
+  </data>
+  <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+    <value>获取视频失败</value>
+  </data>
+  <data name="MainWindow_HeaderAutomate" xml:space="preserve">
+    <value>自动化(_A)</value>
+  </data>
+  <data name="MainWindow_HeaderFile" xml:space="preserve">
+    <value>文件(_F)</value>
+  </data>
+  <data name="MainWindow_HeaderOptions" xml:space="preserve">
+    <value>选项(_O)</value>
+  </data>
+  <data name="MainWindow_HeaderVideos" xml:space="preserve">
+    <value>视频(_V)</value>
+  </data>
+  <data name="MainWindow_ListEmpty" xml:space="preserve">
+    <value>通过粘贴、导入或拖放 URL 添加新视频。</value>
+  </data>
+  <data name="MainWindow_MenuAbout" xml:space="preserve">
+    <value>关于(_A)</value>
+  </data>
+  <data name="MainWindow_MenuAdd" xml:space="preserve">
+    <value>添加新视频(_A)</value>
+  </data>
+  <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+    <value>配置(_C)...</value>
+  </data>
+  <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+    <value>从剪贴板自动导入 URL(_A)</value>
+  </data>
+  <data name="MainWindow_MenuCancelAll" xml:space="preserve">
+    <value>取消所有下载(_C)</value>
+  </data>
+  <data name="MainWindow_MenuClearList" xml:space="preserve">
+    <value>清除下载列表(_D)</value>
+  </data>
+  <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
+    <value>下载所有视频(_D)</value>
+  </data>
+  <data name="MainWindow_MenuErrorLog" xml:space="preserve">
+    <value>打开错误日志(_E)</value>
+  </data>
+  <data name="MainWindow_MenuExit" xml:space="preserve">
+    <value>退出(_E)</value>
+  </data>
+  <data name="MainWindow_MenuExport" xml:space="preserve">
+    <value>导出视频链接(_E)</value>
+  </data>
+  <data name="MainWindow_MenuImport" xml:space="preserve">
+    <value>导入视频链接(_I)</value>
+  </data>
+  <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+    <value>显示输出窗口</value>
+  </data>
+  <data name="MainWindow_MenuPaste" xml:space="preserve">
+    <value>粘贴视频链接(_P)</value>
+  </data>
+  <data name="MainWindow_MenuReloadAll" xml:space="preserve">
+    <value>重新加载所有视频(_L)</value>
+  </data>
+  <data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+    <value>删除不可用的 (_U)</value>
+  </data>
+  <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
+    <value>更改下载文件夹(_F)...</value>
+  </data>
+  <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+    <value>删除完成的(_F)</value>
+  </data>
+  <data name="MainWindow_MenuSettings" xml:space="preserve">
+    <value>设置(_S)</value>
+  </data>
+  <data name="MainWindow_OpenFolder" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="MainWindow_StatusFailed" xml:space="preserve">
+    <value>失败：</value>
+  </data>
+  <data name="MainWindow_StatusInProcess" xml:space="preserve">
+    <value>处理中：</value>
+  </data>
+  <data name="MainWindow_StatusSucceeded" xml:space="preserve">
+    <value>成功：</value>
+  </data>
+  <data name="MetadataWindow_Creator" xml:space="preserve">
+    <value>创建者：</value>
+  </data>
+  <data name="MetadataWindow_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="MetadataWindow_Details" xml:space="preserve">
+    <value>详情</value>
+  </data>
+  <data name="MetadataWindow_Duration" xml:space="preserve">
+    <value>时长：</value>
+  </data>
+  <data name="MetadataWindow_Link" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="MetadataWindow_Source" xml:space="preserve">
+    <value>来源：</value>
+  </data>
+  <data name="MetadataWindow_UploadDate" xml:space="preserve">
+    <value>上传日期：</value>
+  </data>
+  <data name="MetadataWindow_Uploader" xml:space="preserve">
+    <value>上传者：</value>
+  </data>
+  <data name="MetadataWindow_Views" xml:space="preserve">
+    <value>浏览次数：</value>
+  </data>
+  <data name="OverwriteMode_Increment" xml:space="preserve">
+    <value>重新下载（重命名）</value>
+  </data>
+  <data name="OverwriteMode_None" xml:space="preserve">
+    <value>跳过现有的</value>
+  </data>
+  <data name="OverwriteMode_Overwrite" xml:space="preserve">
+    <value>覆盖现有的</value>
+  </data>
+  <data name="PathSelectionControl_Change" xml:space="preserve">
+    <value>改变</value>
+  </data>
+  <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+    <value>复制播放列表 URL</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="SelectDirectory_Description" xml:space="preserve">
+    <value>选择下载视频的保存目录：</value>
+  </data>
+  <data name="SettingsWindow_AddMetadata" xml:space="preserve">
+    <value>将元数据添加到文件</value>
+  </data>
+  <data name="SettingsWindow_Advanced" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
+    <value>允许重复的视频条目</value>
+  </data>
+  <data name="SettingsWindow_Appearance" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+    <value>使用下载存档</value>
+  </data>
+  <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+    <value>启动时自动检查更新</value>
+  </data>
+  <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+    <value>直接下载视频</value>
+  </data>
+  <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+    <value>URL 过滤模式</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+    <value>输入表达式以过滤剪贴板文本</value>
+  </data>
+  <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+    <value>使用正则表达式作为 URL 过滤模式</value>
+  </data>
+  <data name="SettingsWindow_Binaries" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+    <value>正在检查更新...</value>
+  </data>
+  <data name="SettingsWindow_ConfirmReset" xml:space="preserve">
+    <value>继续将重置设置中配置的所有自定义项。
+您真的要继续吗？</value>
+  </data>
+  <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+    <value>默认下载格式：</value>
+  </data>
+  <data name="SettingsWindow_Download" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
+    <value>视频下载文件夹</value>
+  </data>
+  <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
+    <value>下载选项</value>
+  </data>
+  <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+    <value>ffmpeg</value>
+  </data>
+  <data name="SettingsWindow_Filename" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="SettingsWindow_General" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
+    <value>使用 GPU 加速进行视频重新编码</value>
+  </data>
+  <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+    <value>最大并发下载数</value>
+  </data>
+  <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+    <value>覆盖现有文件</value>
+  </data>
+  <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
+    <value>可执行文件在计算机上的位置</value>
+  </data>
+  <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
+    <value>下载最佳质量并转换</value>
+  </data>
+  <data name="SettingsWindow_Proxy" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+    <value>代理 URL</value>
+  </data>
+  <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+    <value>将文件名限制为 ASCII 字符</value>
+  </data>
+  <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+    <value>显示所有可用格式</value>
+  </data>
+  <data name="SettingsWindow_Theme" xml:space="preserve">
+    <value>应用主题：</value>
+  </data>
+  <data name="SettingsWindow_Title" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingsWindow_ToolTipReset" xml:space="preserve">
+    <value>将所有设置重置为默认值。</value>
+  </data>
+  <data name="SettingsWindow_Version" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="SettingsWindow_VideoList" xml:space="preserve">
+    <value>下载列表</value>
+  </data>
+  <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+    <value>youtube-dl/ yt-dlp</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>视频</value>
+  </data>
+  <data name="Video_DownloadCancelled" xml:space="preserve">
+    <value>取消了 "{0}"。</value>
+  </data>
+  <data name="Video_DownloadFailed" xml:space="preserve">
+    <value>无法下载 "{0}"。</value>
+  </data>
+  <data name="Video_DownloadFinished" xml:space="preserve">
+    <value>完成 "{0}"。</value>
+  </data>
+  <data name="Video_DownloadStarting" xml:space="preserve">
+    <value>正在下载 "{0}"...</value>
+  </data>
+  <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+    <value>文件已经存在。已跳过该文件。</value>
+  </data>
+  <data name="VideoEntry_Converting" xml:space="preserve">
+    <value>转换中...</value>
+  </data>
+  <data name="VideoEntry_CopyUrl" xml:space="preserve">
+    <value>复制视频网址</value>
+  </data>
+  <data name="VideoEntry_CurrentProgress" xml:space="preserve">
+    <value>当前文件下载进度</value>
+  </data>
+  <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+    <value>配置下载</value>
+  </data>
+  <data name="VideoEntry_Download" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="VideoEntry_Downloading" xml:space="preserve">
+    <value>正在下载...</value>
+  </data>
+  <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+    <value>当前下载速率</value>
+  </data>
+  <data name="VideoEntry_Finished" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+    <value>在浏览器中打开</value>
+  </data>
+  <data name="VideoEntry_Play" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="VideoEntry_PlayFailed" xml:space="preserve">
+    <value>无法播放视频。它可能已被重命名或删除。</value>
+  </data>
+  <data name="VideoEntry_Playlist" xml:space="preserve">
+    <value>播放列表 - {0} 个视频</value>
+  </data>
+  <data name="VideoEntry_PreProcessing" xml:space="preserve">
+    <value>正在准备...</value>
+  </data>
+  <data name="VideoEntry_Reload" xml:space="preserve">
+    <value>重新加载视频</value>
+  </data>
+  <data name="VideoEntry_RemainingTime" xml:space="preserve">
+    <value>当前文件的预计剩余时间</value>
+  </data>
+  <data name="VideoEntry_Remove" xml:space="preserve">
+    <value>删除视频</value>
+  </data>
+  <data name="VideoEntry_ShowInFolder" xml:space="preserve">
+    <value>在文件夹中显示</value>
+  </data>
+  <data name="VideoEntry_ShowInFolderFailed" xml:space="preserve">
+    <value>无法在文件夹中显示视频。它可能已被重命名或删除。</value>
+  </data>
+  <data name="VideoEntry_ShowInformation" xml:space="preserve">
+    <value>展开信息</value>
+  </data>
+  <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+    <value>当前文件的总下载大小</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+    <value>新版本的 youtube-dl 现已推出！最新版本是 {0}。您正在使用 {1}。</value>
+  </data>
+</root>
