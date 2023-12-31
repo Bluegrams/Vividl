@@ -13,23 +13,16 @@ namespace Vividl.Model
 {
     public abstract class DownloadOption : IDownloadOption
     {
-        /// <summary>
-        /// If this field is set to true, the download method checks the existence of the requested file before handing over to youtube-dl.
-        /// This is required for all downloads including conversion as the pre-conversion file would be redownloaded otherwise.
-        /// </summary>
-        private readonly bool allowsOverwriteCheck;
-
         public abstract string FormatSelection { get; }
 
         public string Description { get; }
 
         public bool IsAudio { get; protected set; }
 
-        public DownloadOption(string description, bool isAudio, bool allowsOverwriteCheck)
+        public DownloadOption(string description, bool isAudio)
         {
             this.Description = description;
             this.IsAudio = isAudio;
-            this.allowsOverwriteCheck = allowsOverwriteCheck;
         }
 
         /// <summary>
@@ -55,10 +48,19 @@ namespace Vividl.Model
         public async Task<RunResult<string>> RunDownload(YoutubeDL ydl, VideoEntry video,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
-            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && allowsOverwriteCheck)
+            string ext;
+            try
+            {
+                ext = GetExt(video.Metadata.SelectSingleFormat(FormatSelection)?.Extension);
+            }
+            catch (InvalidOperationException)
+            {
+                ext = null;
+            }
+            // If file ext could not be resolved, we cannot make pre-download checks -> default to overwriting
+            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && (ext != null))
             {
                 bool restricted = ydl.RestrictFilenames;
-                string ext = GetExt();
                 string fileName = Utils.Sanitize(video.Title, restricted);
                 string path = Path.Combine(ydl.OutputFolder, $"{fileName}.{ext}");
                 if (File.Exists(path))
@@ -109,11 +111,20 @@ namespace Vividl.Model
         public async Task<RunResult<string[]>> RunDownload(YoutubeDL ydl, PlaylistEntry playlist,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)
         {
+            string ext;
+            try
+            {
+                ext = GetExt();
+            }
+            catch (InvalidOperationException)
+            {
+                ext = null;
+            }
+            // If file ext could not be resolved, we cannot make pre-download checks -> default to overwriting
             // TODO OverwriteMode.Increment currently not working for playlists.
-            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && allowsOverwriteCheck)
+            if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && (ext != null))
             {
                 bool restricted = ydl.RestrictFilenames;
-                string ext = GetExt();
                 // Check if some videos have already been downloaded.
                 var indices = new List<int>();
                 int index = 1;
@@ -142,7 +153,7 @@ namespace Vividl.Model
 
         public AudioConversionDownload(AudioConversionFormat format,
             string description = null)
-            : base(description, true, true)
+            : base(description, true)
         {
             this.ConversionFormat = format;
         }
@@ -186,7 +197,7 @@ namespace Vividl.Model
         public VideoDownload(string formatSelection,
                             VideoRecodeFormat recodeFormat = VideoRecodeFormat.None,
                             string description = null, string fileExtension = "", bool isAudio = false)
-            : base(description, isAudio, !String.IsNullOrEmpty(fileExtension) || recodeFormat != VideoRecodeFormat.None)
+            : base(description, isAudio)
         {
             this.FormatSelection = formatSelection;
             this.RecodeFormat = recodeFormat;
@@ -249,7 +260,7 @@ namespace Vividl.Model
 
         public VideoRecodeFormat VideoRecodeFormat { get; private set; }
 
-        public CustomDownload(string description) : base(description, false, true)
+        public CustomDownload(string description) : base(description, false)
         { }
 
         public void Configure(

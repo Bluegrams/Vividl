@@ -246,7 +246,7 @@ namespace Vividl.ViewModel
                 using (StreamWriter sw = new StreamWriter(path))
                 {
                     foreach (var vid in VideoInfos)
-                        sw.WriteLine(vid.Entry.Url);
+                        sw.WriteLine(vid.ToString());
                 }
             }
         }
