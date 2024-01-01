@@ -150,8 +150,8 @@ namespace Vividl
             SimpleIoc.Default.Register<IDownloadOptionProvider, VideoDownloadOptionProvider>();
             SimpleIoc.Default.Register<IItemProvider<MediaEntry>, VividlItemProvider>();
             SimpleIoc.Default.Register<IFileService, FileService>();
-            SimpleIoc.Default.Register<IDialogService, NotificationDialogService>();
-            SimpleIoc.Default.Register<INotificationMessageManager, NotificationMessageManager>();
+            SimpleIoc.Default.Register<NotificationDialogService>();
+            SimpleIoc.Default.Register<IDialogService>(() => SimpleIoc.Default.GetInstance<NotificationDialogService>());
             SimpleIoc.Default.Register<IThemeResolver, ThemeResolver>();
             SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
             SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
@@ -163,6 +163,7 @@ namespace Vividl
         {
             SimpleIoc.Default.Register<MainViewModel<MediaEntry>>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<NotificationViewModel>();
         }
     }
 }

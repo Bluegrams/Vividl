@@ -11,7 +11,8 @@ namespace Vividl.ViewModel
         FetchWindow,
         DownloadOutputWindow,
         FormatSelectionWindow,
-        CustomArgsWindow
+        CustomArgsWindow,
+        NotificationLogWindow,
     }
 
 

@@ -587,4 +587,13 @@ Wirklich fortsetzen?</value>
   <data name="MainWindow_MenuErrorLog" xml:space="preserve">
     <value>_Fehlerlog öffnen</value>
   </data>
+  <data name="NotificationLogWindow_Title" xml:space="preserve">
+    <value>Notifikationen</value>
+  </data>
+  <data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+    <value>_Notifikationen anzeigen</value>
+  </data>
+  <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+    <value>Alle löschen</value>
+  </data>
 </root>

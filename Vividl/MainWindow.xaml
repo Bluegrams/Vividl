@@ -85,6 +85,8 @@
                           Command="{Binding SelectDownloadFolderCommand}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuOutputWindow}" Command="{Binding ShowDownloadOutputWindowCommand}"
                               InputGestureText="F12"/>
+                    <MenuItem Header="{lex:Loc MainWindow_MenuNotificationLog}" Command="{Binding ShowNotificationLogCommand}"
+                              Icon="{icon:Modern Kind=NotificationAboveMultiple}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuErrorLog}" Command="{Binding OpenErrorLogCommand}"/>
                     <MenuItem Header="{lex:Loc MainWindow_MenuSettings}"
                               Command="{Binding SettingsCommand}" CommandParameter="0"
@@ -146,6 +148,25 @@
                         <icon:PackIconModern Kind="Stop"/>
                         <TextBlock Text="{Binding FailedCount}"/>
                     </StackPanel>
+                </StatusBarItem>
+                <StatusBarItem Width="40" DockPanel.Dock="Right" Padding="0" Margin="0"
+                               HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <Button ToolTip="{Binding Source={lex:Loc MainWindow_MenuNotificationLog}, Converter={StaticResource resConv}}"
+                            Command="{Binding ShowNotificationLogCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource {x:Static adonisUi:Styles.ToolbarButton}}">
+                                <Setter Property="Margin" Value="0"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Style>
+                        </Button.Style>
+                        <Grid DataContext="{Binding NotificationViewModel}">
+                            <icon:PackIconModern Height="13" Kind="NotificationAboveMultiple"/>
+                            <Ellipse Fill="{DynamicResource {x:Static adonisUi:Brushes.AccentBrush}}"
+                                     Width="8" Height="8" Margin="-3"
+                                     HorizontalAlignment="Right" VerticalAlignment="Top"
+                                     Visibility="{Binding HasNotifications, Converter={StaticResource boolToVis}}"/>
+                        </Grid>
+                    </Button>
                 </StatusBarItem>
                 <Separator/>
                 <StatusBarItem>

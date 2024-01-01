@@ -65,6 +65,9 @@ namespace Vividl
                 case WindowType.DownloadOutputWindow:
                     DownloadOutputWindow.ShowDownloadOutputWindow(this);
                     break;
+                case WindowType.NotificationLogWindow:
+                    NotificationLogWindow.ShowNotificationLogWindow(SimpleIoc.Default.GetInstance<NotificationViewModel>(), this);
+                    break;
 #if VIVIDL
                 case WindowType.FormatSelectionWindow:
                     var formatSelectionWindow = new FormatSelectionWindow(msg.Parameter as FormatSelectionViewModel);

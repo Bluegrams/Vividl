@@ -75,6 +75,8 @@ namespace Vividl.ViewModel
 
         public ICommand ShowDownloadOutputWindowCommand { get; }
 
+        public ICommand ShowNotificationLogCommand { get; }
+
         public ICommand OpenErrorLogCommand { get; }
 
         public ICommand CheckForUpdatesCommand { get; }
@@ -121,14 +123,18 @@ namespace Vividl.ViewModel
             }
         }
 
-        public MainViewModel(IItemProvider<T> itemProvider, IDialogService dialogService,
-            IFileService fileService, INotificationMessageManager notificationManager,
+        public NotificationViewModel NotificationViewModel
+            => SimpleIoc.Default.GetInstance<NotificationViewModel>();
+
+        public MainViewModel(IItemProvider<T> itemProvider,
+            NotificationDialogService dialogService,
+            IFileService fileService,
             SmartAutomationService automationService)
         {
             this.itemProvider = itemProvider;
             this.dialogService = dialogService;
             this.fileService = fileService;
-            this.NotificationManager = notificationManager;
+            this.NotificationManager = dialogService.MainMessageManager;
             this.automationService = automationService;
             this.automationService.InputReceived += automationService_InputReceived;
             VideoInfos = new ObservableCollection<ItemViewModel<T>>();
@@ -161,6 +167,9 @@ namespace Vividl.ViewModel
             SelectDownloadFolderCommand = new RelayCommand(() => SelectDownloadFolder(), true);
             ShowDownloadOutputWindowCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
+            );
+            ShowNotificationLogCommand = new RelayCommand(
+                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.NotificationLogWindow))
             );
             OpenErrorLogCommand = new RelayCommand(() => OpenErrorLog());
             CheckForUpdatesCommand = new RelayCommand(async () => await CheckForUpdates());

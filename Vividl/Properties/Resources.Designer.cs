@@ -692,6 +692,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show _Notifications.
+        /// </summary>
+        public static string MainWindow_MenuNotificationLog {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuNotificationLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Output Window.
         /// </summary>
         public static string MainWindow_MenuOutputWindow {
@@ -868,6 +877,24 @@ namespace Vividl.Properties {
         public static string MetadataWindow_Views {
             get {
                 return ResourceManager.GetString("MetadataWindow_Views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear All.
+        /// </summary>
+        public static string NotificationLogWindow_ClearAll {
+            get {
+                return ResourceManager.GetString("NotificationLogWindow_ClearAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        public static string NotificationLogWindow_Title {
+            get {
+                return ResourceManager.GetString("NotificationLogWindow_Title", resourceCulture);
             }
         }
         
