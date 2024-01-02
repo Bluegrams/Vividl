@@ -8,15 +8,27 @@ namespace Vividl.Services
 {
     public class VideoDownloadOptionProvider : IDownloadOptionProvider
     {
-        private const string BEST_MERGE = "bestvideo+bestaudio";
-        private const string BEST = "best";
-
         // based on settings, prefer downloading requested format (faster) or download best and convert to requested (better quality)
         private string getFormatString(string extension)
         {
-            if (Settings.Default.PreferRecoding)
-                return $"{BEST_MERGE}/{BEST}/{extension}";
-            else return $"{extension}/{BEST_MERGE}/{BEST}";
+            string s;
+            if (App.UsingYtDlp)
+            {
+                if (Settings.Default.PreferRecoding)
+                    s = "bv*+ba/b";
+                else s = $"{extension}/bv*+ba/b";
+            }
+            else
+            {
+                if (Settings.Default.PreferRecoding)
+                    s = "bestvideo+bestaudio/best";
+                else s = $"{extension}/best/bestvideo+bestaudio";
+            }
+            if (!Settings.Default.PreferRecoding && extension != null)
+            {
+                s = extension + "/" + s;
+            }
+            return s;
         }
 
         public List<IDownloadOption> CreateDownloadOptions(bool withCustomDownload = false)
@@ -27,9 +39,9 @@ namespace Vividl.Services
                         description: Resources.DownloadOption_MP4),
                 new VideoDownload(getFormatString("webm"), VideoRecodeFormat.Webm,
                         description: Resources.DownloadOption_Webm),
-                new VideoDownload("bestvideo+bestaudio/best", recodeFormat: VideoRecodeFormat.Avi,
+                new VideoDownload(getFormatString(null), recodeFormat: VideoRecodeFormat.Avi,
                         description: Resources.DownloadOption_AVI),
-                new VideoDownload("bestvideo+bestaudio/best", recodeFormat: VideoRecodeFormat.Mkv,
+                new VideoDownload(getFormatString(null), recodeFormat: VideoRecodeFormat.Mkv,
                         description: Resources.DownloadOption_MKV),
                 new AudioConversionDownload(AudioConversionFormat.Mp3, Resources.DownloadOption_MP3),
                 new AudioConversionDownload(AudioConversionFormat.M4a, Resources.DownloadOption_M4A),

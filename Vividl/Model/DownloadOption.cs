@@ -214,7 +214,7 @@ namespace Vividl.Model
 
         // yt-dlp gives a warning if we pass "best", therefore change to "b" before download.
         private string fixFormatSelection(YoutubeDL ydl, string formatSelection)
-            => (((CustomYoutubeDL)ydl).UsingYtDlp && FormatSelection == "best") ? "b" : formatSelection;
+            => (App.UsingYtDlp && FormatSelection == "best") ? "b" : formatSelection;
 
         protected override async Task<RunResult<string>> RunRealDownload(YoutubeDL ydl, string url,
             CancellationToken ct, IProgress<DownloadProgress> progress, OptionSet overrideOptions = null)

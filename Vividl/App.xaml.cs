@@ -158,6 +158,9 @@ namespace Vividl
             }
         }
 
+        // Dumb way to determine if we are likely using yt-dlp
+        public static bool UsingYtDlp => Settings.Default.YoutubeDLPath.Contains("yt-dlp");
+
         private void registerServices()
         {
             SimpleIoc.Default.Register<IDownloadOptionProvider, VideoDownloadOptionProvider>();

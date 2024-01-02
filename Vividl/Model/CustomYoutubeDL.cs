@@ -17,9 +17,6 @@ namespace Vividl.Model
 
         public OptionSet CustomDownloadOptions { get; set; }
 
-        // Dumb way to determine if we are likely using yt-dlp
-        public bool UsingYtDlp => YoutubeDLPath.Contains("yt-dlp");
-
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
