@@ -57,32 +57,33 @@ namespace Vividl.Model
             {
                 ext = null;
             }
+            bool restricted = ydl.RestrictFilenames;
+            string fileName = Utils.Sanitize(video.DownloadName, restricted);
+            string downloadPath = Path.Combine(ydl.OutputFolder, $"{fileName}.{ext}");
             // If file ext could not be resolved, we cannot make pre-download checks -> default to overwriting
             if ((Settings.Default.OverwriteMode != OverwriteMode.Overwrite) && (ext != null))
             {
-                bool restricted = ydl.RestrictFilenames;
-                string fileName = Utils.Sanitize(video.Title, restricted);
-                string path = Path.Combine(ydl.OutputFolder, $"{fileName}.{ext}");
-                if (File.Exists(path))
+                if (File.Exists(downloadPath))
                 {
                     if (Settings.Default.OverwriteMode == OverwriteMode.None)
                     {
                         // Don't redownload if file exists.
-                        progress?.Report(new DownloadProgress(DownloadState.Success, data: path));
-                        return new RunResult<string>(true, new string[0], path);
+                        progress?.Report(new DownloadProgress(DownloadState.Success, data: downloadPath));
+                        return new RunResult<string>(true, new string[0], downloadPath);
                     }
                     else
                     {
                         // Set download path to a new location to prevent overwriting existing file.
-                        string downloadPath = getNotExistingFilePath(ydl.OutputFolder, fileName, ext);
-                        if (overrideOptions == null)
-                        {
-                            overrideOptions = new OptionSet();
-                        }
-                        overrideOptions.Output = downloadPath;
+                        downloadPath = getNotExistingFilePath(ydl.OutputFolder, fileName, ext);
                     }
                 }
             }
+            // Always set download output name because it may be custom
+            if (overrideOptions == null)
+            {
+                overrideOptions = new OptionSet();
+            }
+            overrideOptions.Output = downloadPath;
             return await RunRealDownload(ydl, video.Url, ct, progress, overrideOptions);
         }
 

@@ -1,0 +1,36 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.NameEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Vividl.Properties"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        Title="{Binding Source={lex:Loc NameEditWindow_Title}}" Width="350" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <DockPanel>
+        <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
+            <Button Content="{lex:Loc Cancel}" TabIndex="4"
+                    DockPanel.Dock="Right" MinWidth="80"
+                    IsCancel="True"/>
+            <Button Content="{lex:Loc Submit}"
+                    DockPanel.Dock="Right" MinWidth="80" TabIndex="3"
+                    Click="Submit_Click" IsDefault="True"/>
+        </DockPanel>
+        <StackPanel>
+            <TextBlock Text="{lex:Loc NameEditWindow_Text}"
+                       Margin="8,8,8,0"/>
+            <Grid>
+                <TextBox TabIndex="0" Margin="8" Padding="6"
+                         Text="{Binding NameValue, ValidatesOnDataErrors=True}"
+                         adonisExtensions:CursorSpotlightExtension.RelativeSpotlightSize="0"/>
+            </Grid>
+        </StackPanel>
+    </DockPanel>
+</adonisControls:AdonisWindow>

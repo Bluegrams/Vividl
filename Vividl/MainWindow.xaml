@@ -265,6 +265,11 @@
                                         <MenuItem Header="{lex:Loc VideoEntry_OpenInBrowser}"
                                                   Command="{Binding OpenInBrowserCommand}"
                                                   Icon="{icon:Modern Kind=BrowserWire}"/>
+                                        <Separator Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"/>
+                                        <MenuItem Header="{lex:Loc NameEditWindow_Title}"
+                                                  Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"
+                                                  Command="{Binding EditNameCommand}"
+                                                  Icon="{icon:Modern Kind=Edit}"/>
                                         <MenuItem Header="{lex:Loc VideoEntry_CustomizeDownload}"
                                                   Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"
                                                   Command="{Binding CustomizeDownloadCommand}"

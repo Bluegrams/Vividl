@@ -872,6 +872,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Title:.
+        /// </summary>
+        public static string MetadataWindow_Title {
+            get {
+                return ResourceManager.GetString("MetadataWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uploaded:.
         /// </summary>
         public static string MetadataWindow_UploadDate {
@@ -895,6 +904,24 @@ namespace Vividl.Properties {
         public static string MetadataWindow_Views {
             get {
                 return ResourceManager.GetString("MetadataWindow_Views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter new item name below.
+        /// </summary>
+        public static string NameEditWindow_Text {
+            get {
+                return ResourceManager.GetString("NameEditWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Name.
+        /// </summary>
+        public static string NameEditWindow_Title {
+            get {
+                return ResourceManager.GetString("NameEditWindow_Title", resourceCulture);
             }
         }
         
@@ -1319,6 +1346,15 @@ namespace Vividl.Properties {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value cannot be empty.
+        /// </summary>
+        public static string Validation_ValueNonEmpty {
+            get {
+                return ResourceManager.GetString("Validation_ValueNonEmpty", resourceCulture);
             }
         }
         

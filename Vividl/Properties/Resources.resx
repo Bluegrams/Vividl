@@ -623,4 +623,16 @@ Really continue?</value>
   <data name="AppCrashWindow_Text" xml:space="preserve">
     <value>Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash.</value>
   </data>
+  <data name="NameEditWindow_Title" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
+  <data name="NameEditWindow_Text" xml:space="preserve">
+    <value>Enter new item name below</value>
+  </data>
+  <data name="Validation_ValueNonEmpty" xml:space="preserve">
+    <value>Value cannot be empty</value>
+  </data>
+  <data name="MetadataWindow_Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
 </root>

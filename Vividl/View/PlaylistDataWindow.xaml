@@ -28,7 +28,7 @@
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBox Margin="8,4" Text="{Binding Entry.Title, Mode=OneWay}"
+            <TextBox Margin="8,4" Text="{Binding DownloadName, Mode=OneWay}"
                      FontSize="16" VerticalAlignment="Center"
                      Style="{StaticResource labelBox}"/>
             <TextBlock Grid.Row="1" Margin="8,4" Text="{Binding InformationString}" />

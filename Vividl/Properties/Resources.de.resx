@@ -605,4 +605,16 @@ Wirklich fortsetzen?</value>
   <data name="AppCrashWindow_Text" xml:space="preserve">
     <value>Entschuldigung, ein unerwarteter Fehler hat zum Absturz der App geführt! Bitte nach Neustart der App den Fehlerlog inspizieren und diesen Absturz melden.</value>
   </data>
+  <data name="NameEditWindow_Title" xml:space="preserve">
+    <value>Name bearbeiten</value>
+  </data>
+  <data name="NameEditWindow_Text" xml:space="preserve">
+    <value>Neuen Elementnamen eingeben</value>
+  </data>
+  <data name="Validation_ValueNonEmpty" xml:space="preserve">
+    <value>Wert kann nicht leer sein</value>
+  </data>
+  <data name="MetadataWindow_Title" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
 </root>

@@ -68,6 +68,12 @@ namespace Vividl
                 case WindowType.NotificationLogWindow:
                     NotificationLogWindow.ShowNotificationLogWindow(SimpleIoc.Default.GetInstance<NotificationViewModel>(), this);
                     break;
+                case WindowType.NameEditWindow:
+                    var editWindow = new NameEditWindow((string)msg.Parameter);
+                    editWindow.Owner = this;
+                    dialogResult = editWindow.ShowDialog();
+                    returnVal = editWindow.NameValue;
+                    break;
 #if VIVIDL
                 case WindowType.FormatSelectionWindow:
                     var formatSelectionWindow = new FormatSelectionWindow(msg.Parameter as FormatSelectionViewModel);

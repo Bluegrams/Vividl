@@ -13,6 +13,7 @@ namespace Vividl.ViewModel
         FormatSelectionWindow,
         CustomArgsWindow,
         NotificationLogWindow,
+        NameEditWindow,
     }
 
 

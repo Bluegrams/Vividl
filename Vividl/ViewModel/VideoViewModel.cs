@@ -121,7 +121,7 @@ namespace Vividl.ViewModel
                     if (State == ItemState.Downloading) // Prevent msg being sent after cancelled msg.
                     {
                         Messenger.Default.Send(
-                            new NotificationMessage(String.Format(Resources.Video_DownloadStarting, Entry.Title)));
+                            new NotificationMessage(String.Format(Resources.Video_DownloadStarting, Entry.DownloadName)));
                     }
                     break;
                 case DownloadState.PostProcessing:
@@ -138,7 +138,7 @@ namespace Vividl.ViewModel
                     if (e.Info.Data.StartsWith("WARNING: --post-processor-args given without specifying name.")
                         || e.Info.Data.StartsWith("WARNING: Post-Processor arguments given without specifying name."))
                         break;
-                    messageService.ShowError(e.Info.Data, $"\"{Entry.Title}\"");
+                    messageService.ShowError(e.Info.Data, $"\"{Entry.DownloadName}\"");
                     break;
             }
         }
