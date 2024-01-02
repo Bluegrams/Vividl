@@ -614,4 +614,13 @@ Really continue?</value>
   <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
     <value>Clear All</value>
   </data>
+  <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+    <value>Cache unfinished entries between app restarts</value>
+  </data>
+  <data name="AppCrashWindow_Title" xml:space="preserve">
+    <value>ERROR: Vividl has unexpectedly crashed</value>
+  </data>
+  <data name="AppCrashWindow_Text" xml:space="preserve">
+    <value>Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash.</value>
+  </data>
 </root>

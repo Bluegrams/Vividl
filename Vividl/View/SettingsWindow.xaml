@@ -94,7 +94,9 @@
                                       IsChecked="{Binding Settings.ShowAllFormats, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             <CheckBox Content="{lex:Loc SettingsWindow_AllowDuplicates}"
                                       IsChecked="{Binding Settings.AllowDuplicateEntries, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                        </StackPanel>
+                            <CheckBox Content="{lex:Loc SettingsWindow_CacheDownloadLinks}"
+                                      IsChecked="{Binding Settings.CacheDownloadLinks, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </StackPanel>
                     </GroupBox>
                     </StackPanel>
                 </ScrollViewer>

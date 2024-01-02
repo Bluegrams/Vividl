@@ -4,7 +4,6 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using Bluegrams.Application;
-using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
 using Vividl.Model;
 using Vividl.Properties;
@@ -55,7 +54,9 @@ namespace Vividl
             themeResolver.SetColorScheme(Settings.Default.AppTheme);
             // setup main window
             MainWindow mainWindow = new MainWindow();
-            mainWindow.DataContext = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            var mainVm = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            mainWindow.DataContext = mainVm;
+            mainWindow.Loaded += async (o, _) => await mainVm.Initialize();
             SimpleIoc.Default.Register<IUpdateChecker>(
                 () => new WpfUpdateChecker(UPDATE_URL, mainWindow, UPDATE_IDENTIFIER));
             mainWindow.Show();
@@ -65,10 +66,22 @@ namespace Vividl
         {
             Logger.Default.Log("An unhandled exception caused the application to terminate unexpectedly.",
                 (Exception)e.ExceptionObject);
+            // Try to save current state
+            try
+            {
+                Deinitialize();
+                MessageBox.Show(Vividl.Properties.Resources.AppCrashWindow_Text, Vividl.Properties.Resources.AppCrashWindow_Title);
+            }
+            catch (Exception) { }
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
+            => Deinitialize();
+
+        public void Deinitialize()
         {
+            var mainVm = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            mainVm.Deinitialize();
             Settings.Default.Save();
         }
 

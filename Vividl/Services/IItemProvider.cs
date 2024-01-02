@@ -16,7 +16,7 @@ namespace Vividl.Services
     {
         ItemViewModel<T> CreateItemViewModel(string url, MainViewModel<T> mainVm);
         Task<IEnumerable<ItemViewModel<T>>> FetchItemList(
-            string[] itemUrls, ICollection<ItemViewModel<T>> itemVms,
+            IEnumerable<string> itemUrls, ICollection<ItemViewModel<T>> itemVms,
             MainViewModel<T> mainVm, IDialogService dialogService,
             int? selectedFormat = null, OptionSet overrideOptions = null);
     }

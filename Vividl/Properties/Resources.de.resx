@@ -596,4 +596,13 @@ Wirklich fortsetzen?</value>
   <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
     <value>Alle löschen</value>
   </data>
+  <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+    <value>Unfertige Einträge zwischen Neustarts cachen</value>
+  </data>
+  <data name="AppCrashWindow_Title" xml:space="preserve">
+    <value>FEHLER: Vividl ist unerwartet abgestürzt</value>
+  </data>
+  <data name="AppCrashWindow_Text" xml:space="preserve">
+    <value>Entschuldigung, ein unerwarteter Fehler hat zum Absturz der App geführt! Bitte nach Neustart der App den Fehlerlog inspizieren und diesen Absturz melden.</value>
+  </data>
 </root>

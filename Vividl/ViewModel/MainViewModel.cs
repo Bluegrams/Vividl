@@ -15,6 +15,7 @@ using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
 using Enterwell.Clients.Wpf.Notifications;
+using System.Collections.Specialized;
 
 namespace Vividl.ViewModel
 {
@@ -174,6 +175,29 @@ namespace Vividl.ViewModel
             OpenErrorLogCommand = new RelayCommand(() => OpenErrorLog());
             CheckForUpdatesCommand = new RelayCommand(async () => await CheckForUpdates());
             AboutCommand = new RelayCommand(() => ShowAboutBox());
+        }
+
+        public async Task Initialize()
+        {
+            if (Settings.Default.CacheDownloadLinks && Settings.Default.DownloadLinks != null)
+            {
+                await itemProvider.FetchItemList(Settings.Default.DownloadLinks.Cast<string>(), VideoInfos, this, dialogService);
+            }
+        }
+
+        public void Deinitialize()
+        {
+            // Store current video links for next startup
+            if (Settings.Default.CacheDownloadLinks)
+            {
+                var collection = new StringCollection();
+                collection.AddRange(VideoInfos
+                    .Where(v => v.State == ItemState.Fetched || v.State == ItemState.Downloading)
+                    .Select(v => v.ToString()).ToArray()
+                );
+                Settings.Default.DownloadLinks = collection;
+            }
+            else Settings.Default.DownloadLinks = null;
         }
 
         private bool checkExists(string url)

@@ -61,6 +61,24 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash..
+        /// </summary>
+        public static string AppCrashWindow_Text {
+            get {
+                return ResourceManager.GetString("AppCrashWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR: Vividl has unexpectedly crashed.
+        /// </summary>
+        public static string AppCrashWindow_Title {
+            get {
+                return ResourceManager.GetString("AppCrashWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -1057,6 +1075,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_Binaries {
             get {
                 return ResourceManager.GetString("SettingsWindow_Binaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cache unfinished entries between app restarts.
+        /// </summary>
+        public static string SettingsWindow_CacheDownloadLinks {
+            get {
+                return ResourceManager.GetString("SettingsWindow_CacheDownloadLinks", resourceCulture);
             }
         }
         
