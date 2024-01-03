@@ -169,6 +169,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Audio-only Download.
+        /// </summary>
+        public static string DownloadOption_BestAudio {
+            get {
+                return ResourceManager.GetString("DownloadOption_BestAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom Download.
         /// </summary>
         public static string DownloadOption_Custom {

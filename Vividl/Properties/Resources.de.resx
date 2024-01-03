@@ -620,4 +620,7 @@ Wirklich fortsetzen?</value>
   <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
     <value>Bevorzugte Videoauflösung:</value>
   </data>
+  <data name="DownloadOption_BestAudio" xml:space="preserve">
+    <value>Bester nur-Audio Download</value>
+  </data>
 </root>

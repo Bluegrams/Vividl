@@ -151,8 +151,8 @@ namespace Vividl.ViewModel
                 if (SelectedDownloadOption == DownloadOptions.CustomDownloadIndex)
                     return customDownload.GetExt();
                 else return DownloadOptions[SelectedDownloadOption].GetExt(
-                    // if not able to resolve, we have "best" option without recoding
-                    defaultValue: SelectedAudioVideo?.Extension
+                    // if not able to resolve, we have "best" or "bestaudio" option without recoding
+                    defaultValue: SelectedAudioVideo?.Extension ?? SelectedAudio?.Extension
                 );
             }
         }
