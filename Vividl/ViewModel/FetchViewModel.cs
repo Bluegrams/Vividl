@@ -15,6 +15,7 @@ namespace Vividl.ViewModel
     {
         private string[] videoUrls;
         private int selectedDownloadOption;
+        private Resolution preferredResolution;
         private bool immediateDownload;
 
         public OptionSet OverrideOptions { get; }
@@ -52,12 +53,24 @@ namespace Vividl.ViewModel
             }
         }
 
+        public Resolution PreferredResolution
+        {
+            get => preferredResolution;
+            set
+            {
+                preferredResolution = value;
+                OverrideOptions.FormatSort = value.ToFormatSort();
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand SettingsCommand { get; }
 
         public FetchViewModel()
         {
             OverrideOptions = new OptionSet();
             SelectedDownloadOption = Settings.Default.DefaultFormat;
+            PreferredResolution = Settings.Default.DefaultResolution;
             SettingsCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.SettingsWindow, 0))
             );

@@ -74,5 +74,8 @@
     <Setting Name="CacheDownloadLinks" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="DefaultResolution" Type="Vividl.Model.Resolution" Scope="User">
+      <Value Profile="(Default)">Res1080</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

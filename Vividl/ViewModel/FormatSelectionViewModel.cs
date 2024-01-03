@@ -39,14 +39,16 @@ namespace Vividl.ViewModel
             }
         }
 
+        // Reverse order of options to have preferred ones on top
+
         public IEnumerable<FormatData> AudioVideoDownloadOptions
-            => this.entry.Metadata.GetAudioVideoFormats();
+            => this.entry.Metadata.Formats.GetAudioVideoFormats().Reverse();
 
         public IEnumerable<FormatData> AudioOnlyDownloadOptions
-            => this.entry.Metadata.GetAudioOnlyFormats();
+            => this.entry.Metadata.Formats.GetAudioOnlyFormats().Reverse();
 
         public IEnumerable<FormatData> VideoOnlyDownloadOptions
-            => this.entry.Metadata.GetVideoOnlyFormats();
+            => this.entry.Metadata.Formats.GetVideoOnlyFormats().Reverse();
 
         public FormatData SelectedAudioVideo
         {
@@ -269,9 +271,9 @@ namespace Vividl.ViewModel
                 FormatData[] formats = entry.Metadata.SelectFormat(selectedOption.FormatSelection);
                 if (formats != null)
                 {
-                    this.selectedAudioVideo = formats.FirstOrDefault(f => f.VideoCodec != "none" && f.AudioCodec != "none");
-                    this.selectedAudio = formats.FirstOrDefault(f => f.VideoCodec == "none");
-                    this.selectedVideo = formats.FirstOrDefault(f => f.AudioCodec == "none");
+                    this.selectedAudioVideo = formats.GetAudioVideoFormats().FirstOrDefault();
+                    this.selectedAudio = formats.GetAudioOnlyFormats().FirstOrDefault();
+                    this.selectedVideo = formats.GetVideoOnlyFormats().FirstOrDefault();
                 }
                 this.hasAudioExtraction = selectedOption is AudioConversionDownload;
                 if (hasAudioExtraction)

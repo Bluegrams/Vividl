@@ -304,7 +304,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download Format.
+        ///   Looks up a localized string similar to Download Format:.
         /// </summary>
         public static string FetchWindow_DownloadFormat {
             get {
@@ -1148,6 +1148,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_DefaultFormat {
             get {
                 return ResourceManager.GetString("SettingsWindow_DefaultFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferred Video Resolution:.
+        /// </summary>
+        public static string SettingsWindow_DefaultResolution {
+            get {
+                return ResourceManager.GetString("SettingsWindow_DefaultResolution", resourceCulture);
             }
         }
         

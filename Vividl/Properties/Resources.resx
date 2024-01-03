@@ -407,7 +407,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Options</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Download Format</value>
+    <value>Download Format:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>Download playlist if available</value>
@@ -634,5 +634,8 @@ Really continue?</value>
   </data>
   <data name="MetadataWindow_Title" xml:space="preserve">
     <value>Title:</value>
+  </data>
+  <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+    <value>Preferred Video Resolution:</value>
   </data>
 </root>

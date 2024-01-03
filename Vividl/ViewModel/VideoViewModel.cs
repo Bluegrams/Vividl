@@ -39,6 +39,7 @@ namespace Vividl.ViewModel
                 else return this.Duration;
             }
         }
+
         public ICommand CustomizeDownloadCommand { get; }
 
         public VideoViewModel(string url, MainViewModel<MediaEntry> mainVm)
@@ -95,8 +96,8 @@ namespace Vividl.ViewModel
                     return new VideoDownload(fm.FormatId,
                                     description: String.Format("[{0}] {1}", fm.Extension, fm.Format),
                                     fileExtension: fm.Extension,
-                                    isAudio: fm.VideoCodec == "none");
-                });
+                                    isAudio: fm.VideoCodec == "none" && fm.AudioCodec != "none");
+                }).Reverse();
                 foreach (var option in metadataOptions)
                 {
                     Entry.DownloadOptions.Add(option);

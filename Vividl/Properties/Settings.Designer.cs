@@ -325,5 +325,17 @@ namespace Vividl.Properties {
                 this["CacheDownloadLinks"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Res1080")]
+        public global::Vividl.Model.Resolution DefaultResolution {
+            get {
+                return ((global::Vividl.Model.Resolution)(this["DefaultResolution"]));
+            }
+            set {
+                this["DefaultResolution"] = value;
+            }
+        }
     }
 }

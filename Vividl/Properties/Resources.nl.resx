@@ -400,7 +400,7 @@
     <value>Authenticatie</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Downloadformaat</value>
+    <value>Downloadformaat:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>Download indien mogelijk de playlist</value>

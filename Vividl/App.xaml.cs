@@ -141,6 +141,7 @@ namespace Vividl
             ytdl.OverwriteFiles = Settings.Default.OverwriteMode == OverwriteMode.Overwrite;
             ytdl.AddMetadata = Settings.Default.AddMetadata;
             ytdl.Proxy = Settings.Default.Proxy;
+            ytdl.FormatSort = Settings.Default.DefaultResolution.ToFormatSort();
             if (Settings.Default.UseArchive)
             {
                 ytdl.DownloadArchive = Path.Combine(Settings.Default.DownloadFolder, Settings.Default.ArchiveFilename);

@@ -18,17 +18,20 @@ namespace Vividl.Model
             RegexOptions.Compiled
         );
 
+        // Copied from yt-dlp documentation (removing res)
+        private const string DEFAULT_SORT_ORDER = "lang,quality,fps,hdr:12,vcodec:vp9.2,channels,acodec,size,br,asr,proto,ext,hasaud,source,id";
+
         public static string GetWidthAndHeight(this FormatData formatData)
             => formatData.Width != null && formatData.Height != null ? $"{formatData.Width} x {formatData.Height}" : null;
 
-        public static IEnumerable<FormatData> GetAudioVideoFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.VideoCodec != "none" && f.AudioCodec != "none");
+        public static IEnumerable<FormatData> GetAudioVideoFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec != "none" && f.AudioCodec != "none");
 
-        public static IEnumerable<FormatData> GetAudioOnlyFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.VideoCodec == "none");
+        public static IEnumerable<FormatData> GetAudioOnlyFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec == "none" && f.AudioCodec != "none");
 
-        public static IEnumerable<FormatData> GetVideoOnlyFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.AudioCodec == "none");
+        public static IEnumerable<FormatData> GetVideoOnlyFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec != "none" && f.AudioCodec == "none");
 
         /// <summary>
         /// Selects a format from the list of available formats based on the given format specifier (single).
@@ -124,6 +127,28 @@ namespace Vividl.Model
             }
             // we have found none of the given formats
             return null;
+        }
+
+        /// <summary>
+        /// Converts a Resolution enum object to a yt-dlp format sorting string.
+        /// </summary>
+        /// <returns>A format sorting string which can be passed to --format-sort.</returns>
+        public static string ToFormatSort(this Resolution resolution)
+        {
+            string formatSort;
+            switch (resolution)
+            {
+                case Resolution.ResMin:
+                    formatSort = "+res";
+                    break;
+                case Resolution.ResMax:
+                    formatSort = "res";
+                    break;
+                default:
+                    formatSort = $"res:{(int)resolution}";
+                    break;
+            }
+            return formatSort + "," + DEFAULT_SORT_ORDER;
         }
     }
 }
