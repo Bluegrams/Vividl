@@ -1,5 +1,21 @@
 # Vividl Changelog
 
+### v.0.8.0 (2024-01)
+- **New:** Allow specifying preferred video resolution in settings & fetch window.
+- **New:** Support for editing video download names before download.
+- **New:** Add notification log window & notifications button in status bar.
+- **New:** Cache links of unfinished downloads between app restarts by default.
+- **New:** Add "best audio-only download" to default download formats.
+- **New:** Chinese translation.
+- **Updated:** Rewrite of download format selection to better target yt-dlp.
+- **Updated:** Remove invalid formats from download customization window; order by format preference.
+- **Updated:** Japanese translation
+- **Fixed:** Overwrite/ re-download handling for "Best direct download".
+- **Fixed:** App crashed when exporting video links with unavailable videos.
+- **Fixed:** Scrolling of settings window for larger text sizes.
+- **Fixed:** Settings not correctly saved when closed via "Exit" menu or changed in different tab.
+- **Fixed:** Video info parsing errors causing app crashes during fetching.
+
 ### v.0.7.0 (2023-03)
 - **New:** Add drag & drop support for importing URLs.
 - **New:** Add GPU acceleration option for AMD (AMF) and Intel (QSV) GPUs.

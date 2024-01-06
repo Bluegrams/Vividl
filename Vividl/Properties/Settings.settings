@@ -33,7 +33,7 @@
       <Value Profile="(Default)">Light</Value>
     </Setting>
     <Setting Name="PreferRecoding" Roaming="true" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ArchiveFilename" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">.archive.txt</Value>
