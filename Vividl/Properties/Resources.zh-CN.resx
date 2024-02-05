@@ -193,7 +193,7 @@
     <value>错误</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>下载格式</value>
+    <value>下载格式：</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>下载播放列表（如果有）</value>
@@ -604,5 +604,44 @@
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
     <value>新版本的 youtube-dl 现已推出！最新版本是 {0}。您正在使用 {1}。</value>
+  </data>
+  <data name="NotificationLogWindow_Title" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+    <value>显示通知(_N)</value>
+  </data>
+  <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+    <value>在应用程序重新启动之间缓存未完成的条目</value>
+  </data>
+  <data name="AppCrashWindow_Title" xml:space="preserve">
+    <value>错误：Vividl 意外崩溃</value>
+  </data>
+  <data name="AppCrashWindow_Text" xml:space="preserve">
+    <value>抱歉，意外错误导致应用程序崩溃！请重新启动应用程序后检查错误日志并报告此崩溃。</value>
+  </data>
+  <data name="NameEditWindow_Title" xml:space="preserve">
+    <value>编辑名称</value>
+  </data>
+  <data name="NameEditWindow_Text" xml:space="preserve">
+    <value>在下面输入新的项目名称</value>
+  </data>
+  <data name="Validation_ValueNonEmpty" xml:space="preserve">
+    <value>值不能为空</value>
+  </data>
+  <data name="MetadataWindow_Title" xml:space="preserve">
+    <value>标题：</value>
+  </data>
+  <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+    <value>首选视频分辨率：</value>
+  </data>
+  <data name="DownloadOption_BestAudio" xml:space="preserve">
+    <value>最佳纯音频下载</value>
+  </data>
+  <data name="SettingsWindow_FFmpegCudaAcceleration" xml:space="preserve">
+    <value>使用 GPU 加速进行视频录制（需要 CUDA）</value>
   </data>
 </root>
