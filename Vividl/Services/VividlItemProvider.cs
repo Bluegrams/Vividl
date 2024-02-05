@@ -15,7 +15,7 @@ namespace Vividl.Services
             => new VideoViewModel(url, mainVm);
 
         public async Task<IEnumerable<ItemViewModel<MediaEntry>>> FetchItemList(
-            string[] itemUrls, ICollection<ItemViewModel<MediaEntry>> itemVms,
+            IEnumerable<string> itemUrls, ICollection<ItemViewModel<MediaEntry>> itemVms,
             MainViewModel<MediaEntry> mainVm, IDialogService dialogService, int? selectedFormat = null, OptionSet overrideOptions = null)
         {
             var tasks = new Dictionary<ItemViewModel<MediaEntry>, Task>();

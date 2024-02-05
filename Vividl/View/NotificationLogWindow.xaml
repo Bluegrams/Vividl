@@ -1,0 +1,30 @@
+﻿<adonisControls:AdonisWindow x:Class="Vividl.View.NotificationLogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        Title="{lex:Loc NotificationLogWindow_Title}" Height="450" Width="450"
+        ShowInTaskbar="False" Closed="Window_Closed">
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Command="{Binding ClearAllCommand}" Margin="4,2">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIconModern Height="12" Width="12" Kind="Delete"
+                                         Margin="0,0,4,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{lex:Loc NotificationLogWindow_ClearAll}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding NotificationLog}" />
+        </ScrollViewer>
+    </DockPanel>
+</adonisControls:AdonisWindow>

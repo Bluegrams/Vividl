@@ -22,6 +22,7 @@ namespace Vividl.Model
         public VideoData Metadata { get; }
         public string Url => Metadata.WebpageUrl;
         public string Title => Metadata.Title;
+        public string DownloadName { get; set; }
         public OptionSet OverrideOptions { get; }
 
         public abstract int TotalItems { get; }
@@ -36,6 +37,8 @@ namespace Vividl.Model
         {
             this.ydl = ydl;
             this.Metadata = metadata;
+            // Download name is initialized to entry title
+            this.DownloadName = Metadata.Title;
             this.OverrideOptions = overrideOptions;
             this.DownloadOptions = new DownloadOptionCollection();
             this.progress = new Progress<DownloadProgress>(p => RaiseDownloadStateChanged(p));

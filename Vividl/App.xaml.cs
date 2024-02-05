@@ -4,7 +4,6 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using Bluegrams.Application;
-using Enterwell.Clients.Wpf.Notifications;
 using GalaSoft.MvvmLight.Ioc;
 using Vividl.Model;
 using Vividl.Properties;
@@ -55,7 +54,9 @@ namespace Vividl
             themeResolver.SetColorScheme(Settings.Default.AppTheme);
             // setup main window
             MainWindow mainWindow = new MainWindow();
-            mainWindow.DataContext = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            var mainVm = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            mainWindow.DataContext = mainVm;
+            mainWindow.Loaded += async (o, _) => await mainVm.Initialize();
             SimpleIoc.Default.Register<IUpdateChecker>(
                 () => new WpfUpdateChecker(UPDATE_URL, mainWindow, UPDATE_IDENTIFIER));
             mainWindow.Show();
@@ -65,10 +66,22 @@ namespace Vividl
         {
             Logger.Default.Log("An unhandled exception caused the application to terminate unexpectedly.",
                 (Exception)e.ExceptionObject);
+            // Try to save current state
+            try
+            {
+                Deinitialize();
+                MessageBox.Show(Vividl.Properties.Resources.AppCrashWindow_Text, Vividl.Properties.Resources.AppCrashWindow_Title);
+            }
+            catch (Exception) { }
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
+            => Deinitialize();
+
+        public void Deinitialize()
         {
+            var mainVm = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
+            mainVm.Deinitialize();
             Settings.Default.Save();
         }
 
@@ -128,6 +141,7 @@ namespace Vividl
             ytdl.OverwriteFiles = Settings.Default.OverwriteMode == OverwriteMode.Overwrite;
             ytdl.AddMetadata = Settings.Default.AddMetadata;
             ytdl.Proxy = Settings.Default.Proxy;
+            ytdl.FormatSort = Settings.Default.DefaultResolution.ToFormatSort();
             if (Settings.Default.UseArchive)
             {
                 ytdl.DownloadArchive = Path.Combine(Settings.Default.DownloadFolder, Settings.Default.ArchiveFilename);
@@ -145,13 +159,16 @@ namespace Vividl
             }
         }
 
+        // Dumb way to determine if we are likely using yt-dlp
+        public static bool UsingYtDlp => Settings.Default.YoutubeDLPath.Contains("yt-dlp");
+
         private void registerServices()
         {
             SimpleIoc.Default.Register<IDownloadOptionProvider, VideoDownloadOptionProvider>();
             SimpleIoc.Default.Register<IItemProvider<MediaEntry>, VividlItemProvider>();
             SimpleIoc.Default.Register<IFileService, FileService>();
-            SimpleIoc.Default.Register<IDialogService, NotificationDialogService>();
-            SimpleIoc.Default.Register<INotificationMessageManager, NotificationMessageManager>();
+            SimpleIoc.Default.Register<NotificationDialogService>();
+            SimpleIoc.Default.Register<IDialogService>(() => SimpleIoc.Default.GetInstance<NotificationDialogService>());
             SimpleIoc.Default.Register<IThemeResolver, ThemeResolver>();
             SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
             SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
@@ -163,6 +180,7 @@ namespace Vividl
         {
             SimpleIoc.Default.Register<MainViewModel<MediaEntry>>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<NotificationViewModel>();
         }
     }
 }

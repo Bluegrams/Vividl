@@ -1,89 +1,94 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using YoutubeDLSharp.Metadata;
 
 namespace Vividl.Model
 {
     public static class YoutubeDLExtensions
     {
+        // Adapted from https://github.com/yt-dlp/yt-dlp/blob/85b33f5c163f60dbd089a6b9bc2ba1366d3ddf93/yt_dlp/utils/_utils.py#L4996
+        private static readonly string[] COMMON_VIDEO = new[] { "3gp", "avi", "flv", "mkv", "mov", "mp4", "webm" };
+        private static readonly string[] COMMON_AUDIO = new[] { "aiff", "alac", "flac", "m4a", "mka", "mp3", "ogg", "opus", "wav" };
+
+        // Adapted from https://github.com/yt-dlp/yt-dlp/blob/85b33f5c163f60dbd089a6b9bc2ba1366d3ddf93/yt_dlp/YoutubeDL.py#L2415-L2417
+        private static readonly Regex rgxSelection = new Regex(
+            @"(?<bw>best|worst|b|w)(?<type>video|audio|v|a)?(?<mod>\*)?(?:\.(?<n>[1-9]\d*))?$",
+            RegexOptions.Compiled
+        );
+
+        // Copied from yt-dlp documentation (removing res)
+        private const string DEFAULT_SORT_ORDER = "lang,quality,fps,hdr:12,vcodec:vp9.2,channels,acodec,size,br,asr,proto,ext,hasaud,source,id";
+
         public static string GetWidthAndHeight(this FormatData formatData)
             => formatData.Width != null && formatData.Height != null ? $"{formatData.Width} x {formatData.Height}" : null;
 
-        public static IEnumerable<FormatData> GetAudioVideoFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.VideoCodec != "none" && f.AudioCodec != "none");
+        public static IEnumerable<FormatData> GetAudioVideoFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec != "none" && f.AudioCodec != "none");
 
-        public static IEnumerable<FormatData> GetAudioOnlyFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.VideoCodec == "none");
+        public static IEnumerable<FormatData> GetAudioOnlyFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec == "none" && f.AudioCodec != "none");
 
-        public static IEnumerable<FormatData> GetVideoOnlyFormats(this VideoData videoData)
-            => videoData.Formats.Where(f => f.AudioCodec == "none");
+        public static IEnumerable<FormatData> GetVideoOnlyFormats(this FormatData[] formats)
+            => formats.Where(f => f.VideoCodec != "none" && f.AudioCodec == "none");
 
         /// <summary>
         /// Selects a format from the list of available formats based on the given format specifier (single).
         /// Ported from _build_selector_function() in youtube_dl/YoutubeDL.py:
-        /// https://github.com/ytdl-org/youtube-dl/blob/9c1e164e0cd77331ea4f0b474b32fd06f84bad71/youtube_dl/YoutubeDL.py#L1262-L1316.
+        /// https://github.com/yt-dlp/yt-dlp/blob/85b33f5c163f60dbd089a6b9bc2ba1366d3ddf93/yt_dlp/YoutubeDL.py#L2395-L2463.
         /// </summary>
         /// <returns>The selected format or null if not found.</returns>
         public static FormatData SelectSingleFormat(this VideoData videoData, string formatSpecifier)
         {
-            if (new[] { "best", "worst" , "b", "w", null }.Contains(formatSpecifier))
+            Func<FormatData, bool> filterF;
+            Match match = rgxSelection.Match(formatSpecifier);
+            bool formatReverse = true;
+            int formatIdx = 1;
+            if (match.Success)
             {
-                var audioVideoFormats = videoData.GetAudioVideoFormats().ToList();
-                if (audioVideoFormats.Count > 0)
+                if (!int.TryParse(match.Groups["n"].Value, out formatIdx))
+                    formatIdx = 1;
+                formatReverse = match.Groups["bw"].Value[0] == 'b';
+                string formatType = match.Groups["type"].Success ? match.Groups["type"].Value[0].ToString() : null;
+                string notFormatType = formatType == "v" ? "a" : "v";
+                bool formatModified = match.Groups["mod"].Success;
+                bool formatFallback = formatType == null && !formatModified;
+                Func<FormatData, bool> _filterF;
+
+                // bv*, ba*, wv*, wa*
+                if (formatType != null && formatModified)
                 {
-                    int index = (formatSpecifier?.StartsWith("w") ?? false) ? 0 : (audioVideoFormats.Count - 1);
-                    return audioVideoFormats[index];
+                    if (formatType == "v") _filterF = (f) => f.VideoCodec != "none";
+                    else _filterF = (f) => f.AudioCodec != "none";
                 }
-                // select best video-only or audio-only format
-                else
+                // bv, ba, wv, wa
+                else if (formatType != null)
                 {
-                    int index = (formatSpecifier?.StartsWith("w") ?? false) ? 0 : (videoData.Formats.Length - 1);
-                    return videoData.Formats[index];
+                    if (formatType == "v") _filterF = (f) => f.AudioCodec == "none";
+                    else _filterF = (f) => f.VideoCodec == "none";
                 }
-            }
-            else if (formatSpecifier == "bestaudio")
-            {
-                var audioFormats = videoData.GetAudioOnlyFormats().ToList();
-                if (audioFormats.Count > 0)
-                    return audioFormats[audioFormats.Count - 1];
-                else return null;
-            }
-            else if (formatSpecifier == "worstaudio")
-            {
-                var audioFormats = videoData.GetAudioOnlyFormats().ToList();
-                if (audioFormats.Count > 0)
-                    return audioFormats[0];
-                else return null;
-            }
-            else if (formatSpecifier == "bestvideo")
-            {
-                var audioFormats = videoData.GetVideoOnlyFormats().ToList();
-                if (audioFormats.Count > 0)
-                    return audioFormats[audioFormats.Count - 1];
-                else return null;
-            }
-            else if (formatSpecifier == "worstvideo")
-            {
-                var audioFormats = videoData.GetVideoOnlyFormats().ToList();
-                if (audioFormats.Count > 0)
-                    return audioFormats[0];
-                else return null;
+                // b, w
+                else if (!formatModified)
+                    _filterF = (f) => f.VideoCodec != "none" && f.AudioCodec != "none";
+                // b*, w*
+                else _filterF = (f) => true;
+                filterF = (f) => _filterF(f) && (f.VideoCodec != "none" || f.AudioCodec != "none");
             }
             else
             {
-                string[] extensions = new[] { "mp4", "flv", "webm", "3gp", "m4a", "mp3", "ogg", "aac", "wav" };
-                if (extensions.Contains(formatSpecifier))
-                {
-                    var matches = videoData.Formats.Where(f => f.Extension == formatSpecifier);
-                    return matches.LastOrDefault();
-                }
-                else
-                {
-                    var matches = videoData.Formats.Where(f => f.FormatId == formatSpecifier);
-                    return matches.LastOrDefault();
-                }
+                if (COMMON_VIDEO.Contains(formatSpecifier) || COMMON_AUDIO.Contains(formatSpecifier))
+                    filterF = (f) => f.Extension == formatSpecifier;
+                else filterF = (f) => f.FormatId == formatSpecifier;
             }
+
+            // eqv. to selector_function()
+            var matches = videoData.Formats.Where(filterF);
+            if (formatReverse)
+                matches = matches.Reverse();
+            if (matches.Count() >= formatIdx)
+                return matches.ToList()[formatIdx - 1];
+            else return null;
         }
 
         /// <summary>
@@ -122,6 +127,28 @@ namespace Vividl.Model
             }
             // we have found none of the given formats
             return null;
+        }
+
+        /// <summary>
+        /// Converts a Resolution enum object to a yt-dlp format sorting string.
+        /// </summary>
+        /// <returns>A format sorting string which can be passed to --format-sort.</returns>
+        public static string ToFormatSort(this Resolution resolution)
+        {
+            string formatSort;
+            switch (resolution)
+            {
+                case Resolution.ResMin:
+                    formatSort = "+res";
+                    break;
+                case Resolution.ResMax:
+                    formatSort = "res";
+                    break;
+                default:
+                    formatSort = $"res:{(int)resolution}";
+                    break;
+            }
+            return formatSort + "," + DEFAULT_SORT_ORDER;
         }
     }
 }

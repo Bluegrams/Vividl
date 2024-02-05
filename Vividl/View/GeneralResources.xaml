@@ -114,7 +114,16 @@
                     </Style>
                 </Image.Style>
             </Image>
-            <TextBlock Grid.Column="1" Text="{Binding Path=Entry.Title}" Margin="4"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <TextBlock Text="{Binding Path=DownloadName}" Margin="4"/>
+                <Button Command="{Binding EditNameCommand}"
+                        Visibility="{Binding IsPlaylist, Converter={StaticResource invBoolToVis}}"
+                        ToolTip="{lex:Loc NameEditWindow_Title}"
+                        Background="Transparent" BorderThickness="0"
+                        Margin="0" VerticalAlignment="Center"> 
+                    <icon:PackIconModern Kind="Edit" Height="12"/>
+                </Button>
+            </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"
                         IsEnabled="{Binding IsDownloading, Converter={StaticResource invBool}}">
                 <v:DownloadOptionComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
@@ -242,7 +251,7 @@
                     </Style>
                 </Image.Style>
             </Image>
-            <TextBlock Grid.Column="1" Text="{Binding Path=Entry.Title}"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=DownloadName}"/>
             <!-- Show if file has been downloaded successfully -->
             <TextBlock Grid.Column="1" Grid.Row="1" Text="{lex:Loc VideoEntry_Finished}"
                        Visibility="{Binding Path=Entry.FileAvailable, Converter={StaticResource boolToVis}}"/>

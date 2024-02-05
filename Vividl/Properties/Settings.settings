@@ -68,5 +68,14 @@
     <Setting Name="FFmpegHardwareAcceleration" Type="Vividl.Model.HwAccelMode" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
+    <Setting Name="DownloadLinks" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CacheDownloadLinks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DefaultResolution" Type="Vividl.Model.Resolution" Scope="User">
+      <Value Profile="(Default)">Res1080</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

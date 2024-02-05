@@ -49,7 +49,7 @@ namespace Vividl.Services
 
         public async Task<bool> CheckForUpdates()
         {
-            if (ydl.UsingYtDlp)
+            if (App.UsingYtDlp)
             {
                 return await checkForUpdatesYtDlp();
             }

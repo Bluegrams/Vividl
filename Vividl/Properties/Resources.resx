@@ -407,7 +407,7 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Options</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Download Format</value>
+    <value>Download Format:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>Download playlist if available</value>
@@ -604,5 +604,41 @@ Really continue?</value>
   </data>
   <data name="VideoEntry_PlayFailed" xml:space="preserve">
     <value>Could not play video. It might have been renamed or removed.</value>
+  </data>
+  <data name="NotificationLogWindow_Title" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+    <value>Show _Notifications</value>
+  </data>
+  <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+    <value>Clear All</value>
+  </data>
+  <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+    <value>Cache unfinished entries between app restarts</value>
+  </data>
+  <data name="AppCrashWindow_Title" xml:space="preserve">
+    <value>ERROR: Vividl has unexpectedly crashed</value>
+  </data>
+  <data name="AppCrashWindow_Text" xml:space="preserve">
+    <value>Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash.</value>
+  </data>
+  <data name="NameEditWindow_Title" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
+  <data name="NameEditWindow_Text" xml:space="preserve">
+    <value>Enter new item name below</value>
+  </data>
+  <data name="Validation_ValueNonEmpty" xml:space="preserve">
+    <value>Value cannot be empty</value>
+  </data>
+  <data name="MetadataWindow_Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+    <value>Preferred Video Resolution:</value>
+  </data>
+  <data name="DownloadOption_BestAudio" xml:space="preserve">
+    <value>Best Audio-only Download</value>
   </data>
 </root>

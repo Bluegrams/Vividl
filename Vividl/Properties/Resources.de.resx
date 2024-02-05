@@ -407,7 +407,7 @@ Um Duplikate zu erlauben, gehe zu Optionen -&gt; Einstellungen.</value>
     <value>Authentifizierung</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Downloadformat</value>
+    <value>Downloadformat:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>Wenn möglich Playlist herunterladen</value>
@@ -586,5 +586,41 @@ Wirklich fortsetzen?</value>
   </data>
   <data name="MainWindow_MenuErrorLog" xml:space="preserve">
     <value>_Fehlerlog öffnen</value>
+  </data>
+  <data name="NotificationLogWindow_Title" xml:space="preserve">
+    <value>Notifikationen</value>
+  </data>
+  <data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+    <value>_Notifikationen anzeigen</value>
+  </data>
+  <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+    <value>Alle löschen</value>
+  </data>
+  <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+    <value>Unfertige Einträge zwischen Neustarts cachen</value>
+  </data>
+  <data name="AppCrashWindow_Title" xml:space="preserve">
+    <value>FEHLER: Vividl ist unerwartet abgestürzt</value>
+  </data>
+  <data name="AppCrashWindow_Text" xml:space="preserve">
+    <value>Entschuldigung, ein unerwarteter Fehler hat zum Absturz der App geführt! Bitte nach Neustart der App den Fehlerlog inspizieren und diesen Absturz melden.</value>
+  </data>
+  <data name="NameEditWindow_Title" xml:space="preserve">
+    <value>Name bearbeiten</value>
+  </data>
+  <data name="NameEditWindow_Text" xml:space="preserve">
+    <value>Neuen Elementnamen eingeben</value>
+  </data>
+  <data name="Validation_ValueNonEmpty" xml:space="preserve">
+    <value>Wert kann nicht leer sein</value>
+  </data>
+  <data name="MetadataWindow_Title" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+    <value>Bevorzugte Videoauflösung:</value>
+  </data>
+  <data name="DownloadOption_BestAudio" xml:space="preserve">
+    <value>Bester nur-Audio Download</value>
   </data>
 </root>

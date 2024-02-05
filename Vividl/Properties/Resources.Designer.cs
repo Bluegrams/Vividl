@@ -61,6 +61,24 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash..
+        /// </summary>
+        public static string AppCrashWindow_Text {
+            get {
+                return ResourceManager.GetString("AppCrashWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR: Vividl has unexpectedly crashed.
+        /// </summary>
+        public static string AppCrashWindow_Title {
+            get {
+                return ResourceManager.GetString("AppCrashWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -147,6 +165,15 @@ namespace Vividl.Properties {
         public static string DownloadOption_Best {
             get {
                 return ResourceManager.GetString("DownloadOption_Best", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best Audio-only Download.
+        /// </summary>
+        public static string DownloadOption_BestAudio {
+            get {
+                return ResourceManager.GetString("DownloadOption_BestAudio", resourceCulture);
             }
         }
         
@@ -286,7 +313,7 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download Format.
+        ///   Looks up a localized string similar to Download Format:.
         /// </summary>
         public static string FetchWindow_DownloadFormat {
             get {
@@ -692,6 +719,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show _Notifications.
+        /// </summary>
+        public static string MainWindow_MenuNotificationLog {
+            get {
+                return ResourceManager.GetString("MainWindow_MenuNotificationLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Output Window.
         /// </summary>
         public static string MainWindow_MenuOutputWindow {
@@ -845,6 +881,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Title:.
+        /// </summary>
+        public static string MetadataWindow_Title {
+            get {
+                return ResourceManager.GetString("MetadataWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uploaded:.
         /// </summary>
         public static string MetadataWindow_UploadDate {
@@ -868,6 +913,42 @@ namespace Vividl.Properties {
         public static string MetadataWindow_Views {
             get {
                 return ResourceManager.GetString("MetadataWindow_Views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter new item name below.
+        /// </summary>
+        public static string NameEditWindow_Text {
+            get {
+                return ResourceManager.GetString("NameEditWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Name.
+        /// </summary>
+        public static string NameEditWindow_Title {
+            get {
+                return ResourceManager.GetString("NameEditWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear All.
+        /// </summary>
+        public static string NotificationLogWindow_ClearAll {
+            get {
+                return ResourceManager.GetString("NotificationLogWindow_ClearAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        public static string NotificationLogWindow_Title {
+            get {
+                return ResourceManager.GetString("NotificationLogWindow_Title", resourceCulture);
             }
         }
         
@@ -1034,6 +1115,15 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cache unfinished entries between app restarts.
+        /// </summary>
+        public static string SettingsWindow_CacheDownloadLinks {
+            get {
+                return ResourceManager.GetString("SettingsWindow_CacheDownloadLinks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check For Updates.
         /// </summary>
         public static string SettingsWindow_CheckForUpdates {
@@ -1067,6 +1157,15 @@ namespace Vividl.Properties {
         public static string SettingsWindow_DefaultFormat {
             get {
                 return ResourceManager.GetString("SettingsWindow_DefaultFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferred Video Resolution:.
+        /// </summary>
+        public static string SettingsWindow_DefaultResolution {
+            get {
+                return ResourceManager.GetString("SettingsWindow_DefaultResolution", resourceCulture);
             }
         }
         
@@ -1265,6 +1364,15 @@ namespace Vividl.Properties {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value cannot be empty.
+        /// </summary>
+        public static string Validation_ValueNonEmpty {
+            get {
+                return ResourceManager.GetString("Validation_ValueNonEmpty", resourceCulture);
             }
         }
         

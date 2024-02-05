@@ -15,6 +15,7 @@ using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
 using Enterwell.Clients.Wpf.Notifications;
+using System.Collections.Specialized;
 
 namespace Vividl.ViewModel
 {
@@ -75,6 +76,8 @@ namespace Vividl.ViewModel
 
         public ICommand ShowDownloadOutputWindowCommand { get; }
 
+        public ICommand ShowNotificationLogCommand { get; }
+
         public ICommand OpenErrorLogCommand { get; }
 
         public ICommand CheckForUpdatesCommand { get; }
@@ -121,14 +124,18 @@ namespace Vividl.ViewModel
             }
         }
 
-        public MainViewModel(IItemProvider<T> itemProvider, IDialogService dialogService,
-            IFileService fileService, INotificationMessageManager notificationManager,
+        public NotificationViewModel NotificationViewModel
+            => SimpleIoc.Default.GetInstance<NotificationViewModel>();
+
+        public MainViewModel(IItemProvider<T> itemProvider,
+            NotificationDialogService dialogService,
+            IFileService fileService,
             SmartAutomationService automationService)
         {
             this.itemProvider = itemProvider;
             this.dialogService = dialogService;
             this.fileService = fileService;
-            this.NotificationManager = notificationManager;
+            this.NotificationManager = dialogService.MainMessageManager;
             this.automationService = automationService;
             this.automationService.InputReceived += automationService_InputReceived;
             VideoInfos = new ObservableCollection<ItemViewModel<T>>();
@@ -162,9 +169,35 @@ namespace Vividl.ViewModel
             ShowDownloadOutputWindowCommand = new RelayCommand(
                 () => Messenger.Default.Send(new ShowWindowMessage(WindowType.DownloadOutputWindow))
             );
+            ShowNotificationLogCommand = new RelayCommand(
+                () => Messenger.Default.Send(new ShowWindowMessage(WindowType.NotificationLogWindow))
+            );
             OpenErrorLogCommand = new RelayCommand(() => OpenErrorLog());
             CheckForUpdatesCommand = new RelayCommand(async () => await CheckForUpdates());
             AboutCommand = new RelayCommand(() => ShowAboutBox());
+        }
+
+        public async Task Initialize()
+        {
+            if (Settings.Default.CacheDownloadLinks && Settings.Default.DownloadLinks != null)
+            {
+                await itemProvider.FetchItemList(Settings.Default.DownloadLinks.Cast<string>(), VideoInfos, this, dialogService);
+            }
+        }
+
+        public void Deinitialize()
+        {
+            // Store current video links for next startup
+            if (Settings.Default.CacheDownloadLinks)
+            {
+                var collection = new StringCollection();
+                collection.AddRange(VideoInfos
+                    .Where(v => v.State == ItemState.Fetched || v.State == ItemState.Downloading)
+                    .Select(v => v.ToString()).ToArray()
+                );
+                Settings.Default.DownloadLinks = collection;
+            }
+            else Settings.Default.DownloadLinks = null;
         }
 
         private bool checkExists(string url)
@@ -246,7 +279,7 @@ namespace Vividl.ViewModel
                 using (StreamWriter sw = new StreamWriter(path))
                 {
                     foreach (var vid in VideoInfos)
-                        sw.WriteLine(vid.Entry.Url);
+                        sw.WriteLine(vid.ToString());
                 }
             }
         }

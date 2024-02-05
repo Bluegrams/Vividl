@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:p="clr-namespace:Vividl.Properties"
+        xmlns:vividl="clr-namespace:Vividl"
         xmlns:v="clr-namespace:Vividl.View"
         xmlns:h="clr-namespace:Vividl.Helpers"
         xmlns:model="clr-namespace:Vividl.Model"
@@ -14,7 +15,7 @@
         lex:LocalizeDictionary.DesignCulture="en"
         lex:ResxLocalizationProvider.DefaultAssembly="Vividl"
         lex:ResxLocalizationProvider.DefaultDictionary="Resources"
-        Title="{lex:Loc SettingsWindow_Title}" Height="430" Width="500"
+        Title="{lex:Loc SettingsWindow_Title}" Height="440" Width="500"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
@@ -46,10 +47,11 @@
                     DockPanel.Dock="Right" TabIndex="1" MinWidth="80"
                     Click="SubmitButton_Click" IsDefault="True"/>
         </DockPanel>
-        <TabControl x:Name="tabSettings" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl x:Name="tabSettings" SelectionChanged="TabControl_SelectionChanged" Padding="0">
             <TabItem Header="{lex:Loc SettingsWindow_General}">
-                <StackPanel>
-                    <GroupBox Header="{lex:Loc SettingsWindow_Appearance}">
+                <ScrollViewer Margin="-4" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <GroupBox Margin="0" Header="{lex:Loc SettingsWindow_Appearance}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{lex:Loc SettingsWindow_Theme}"
                                            VerticalAlignment="Center" Margin="4,4,10,4"/>
@@ -89,178 +91,196 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        IsEnabled="{x:Static vividl:App.UsingYtDlp}">
+                                <TextBlock Text="{lex:Loc SettingsWindow_DefaultResolution}"
+                                        VerticalAlignment="Center" Margin="4,4,10,4"/>
+                                <ComboBox Margin="4" ItemsSource="{h:Enum {x:Type model:Resolution}}"
+                                        DisplayMemberPath="Description"
+                                        SelectedValuePath="Value"
+                                        SelectedValue="{Binding Settings.DefaultResolution, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+                            </StackPanel>
                             <CheckBox Content="{lex:Loc SettingsWindow_ShowAllFormats}"
                                       IsChecked="{Binding Settings.ShowAllFormats, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
                             <CheckBox Content="{lex:Loc SettingsWindow_AllowDuplicates}"
                                       IsChecked="{Binding Settings.AllowDuplicateEntries, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                        </StackPanel>
+                            <CheckBox Content="{lex:Loc SettingsWindow_CacheDownloadLinks}"
+                                      IsChecked="{Binding Settings.CacheDownloadLinks, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                            </StackPanel>
                     </GroupBox>
-                </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="{lex:Loc SettingsWindow_Download}">
-                <StackPanel>
-                    <GroupBox Header="{lex:Loc SettingsWindow_DownloadOptions}">
-                        <StackPanel>
-                            <DockPanel>
-                                <TextBlock Text="{lex:Loc SettingsWindow_MaxProcesses}"
+                <ScrollViewer Margin="-4" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <GroupBox Margin="0" Header="{lex:Loc SettingsWindow_DownloadOptions}">
+                            <StackPanel>
+                                <DockPanel>
+                                    <TextBlock Text="{lex:Loc SettingsWindow_MaxProcesses}"
                                            DockPanel.Dock="Left" VerticalAlignment="Center"/>
-                                <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center"
+                                    <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center"
                                            Text="{Binding ElementName=slideProcesses, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
-                                <Slider x:Name="slideProcesses" Minimum="1" Maximum="8" IsSnapToTickEnabled="True"
+                                    <Slider x:Name="slideProcesses" Minimum="1" Maximum="8" IsSnapToTickEnabled="True"
                                         TickPlacement="BottomRight" TickFrequency="1" Margin="8,2"
                                         Value="{Binding Settings.MaxProcesses, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            </DockPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{lex:Loc SettingsWindow_OverwriteFiles}"
+                                </DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{lex:Loc SettingsWindow_OverwriteFiles}"
                                            VerticalAlignment="Center" Margin="4,4,10,4"/>
-                                <ComboBox ItemsSource="{h:Enum {x:Type model:OverwriteMode}}"
+                                    <ComboBox ItemsSource="{h:Enum {x:Type model:OverwriteMode}}"
                                           SelectedValuePath="Value"
                                           Margin="4"
                                           SelectedValue="{Binding Settings.OverwriteMode, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                                    <ComboBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{lex:Loc {Binding Description}}"/>
-                                        </DataTemplate>
-                                    </ComboBox.ItemTemplate>
-                                </ComboBox>
-                            </StackPanel>
-                            <CheckBox Content="{lex:Loc SettingsWindow_PreferRecoding}"
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{lex:Loc {Binding Description}}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </StackPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_PreferRecoding}"
                                       IsChecked="{Binding Settings.PreferRecoding, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <StackPanel Orientation="Horizontal">
-                                <CheckBox x:Name="chkArchive" Content="{lex:Loc SettingsWindow_ArchiveFile}"
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="chkArchive" Content="{lex:Loc SettingsWindow_ArchiveFile}"
                                           IsChecked="{Binding Settings.UseArchive, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
                                           VerticalAlignment="Center" Margin="4,4,10,4"/>
-                                <TextBox Margin="4" MinWidth="150"
+                                    <TextBox Margin="4" MinWidth="150"
                                          IsEnabled="{Binding ElementName=chkArchive, Path=IsChecked}"
                                          Text="{Binding Settings.ArchiveFilename, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            </StackPanel>
-                            <CheckBox Content="{lex:Loc SettingsWindow_RestrictFilenames}"
+                                </StackPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_RestrictFilenames}"
                                       IsChecked="{Binding Settings.RestrictFilenames, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <CheckBox Content="{lex:Loc SettingsWindow_AddMetadata}"
+                                <CheckBox Content="{lex:Loc SettingsWindow_AddMetadata}"
                                       IsChecked="{Binding Settings.AddMetadata, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{lex:Loc SettingsWindow_HardwareAcceleration}"
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{lex:Loc SettingsWindow_HardwareAcceleration}"
                                            VerticalAlignment="Center" Margin="4,4,10,4"/>
-                                <ComboBox ItemsSource="{h:Enum {x:Type model:HwAccelMode}}"
+                                    <ComboBox ItemsSource="{h:Enum {x:Type model:HwAccelMode}}"
                                           SelectedValuePath="Value"
                                           Margin="4"
                                           SelectedValue="{Binding Settings.FFmpegHardwareAcceleration, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                                    <ComboBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{lex:Loc {Binding Description}}"/>
-                                        </DataTemplate>
-                                    </ComboBox.ItemTemplate>
-                                </ComboBox>
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{lex:Loc {Binding Description}}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="{lex:Loc SettingsWindow_Proxy}">
-                        <StackPanel>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="3*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{lex:Loc SettingsWindow_ProxyUrl}"
+                        </GroupBox>
+                        <GroupBox Header="{lex:Loc SettingsWindow_Proxy}">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{lex:Loc SettingsWindow_ProxyUrl}"
                                            VerticalAlignment="Center" Margin="4"/>
-                                <TextBox Grid.Column="1" Margin="4"
+                                    <TextBox Grid.Column="1" Margin="4"
                                          Text="{Binding Settings.Proxy, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            </Grid>
-                        </StackPanel>
-                    </GroupBox>
-                </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="{lex:Loc SettingsWindow_Advanced}">
-                <StackPanel>
-                    <GroupBox>
-                        <GroupBox.Header>
-                            <TextBlock>
+                <ScrollViewer Margin="-4" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <GroupBox Margin="0">
+                            <GroupBox.Header>
+                                <TextBlock>
                                 <Run Text="{Binding Source={lex:Loc MainWindow_HeaderAutomate}, Converter={StaticResource resConv}}"/>
                                 <Run Text="-"/>
                                 <Run Text="{Binding Source={lex:Loc MainWindow_MenuAutomateEnable}, Converter={StaticResource resConv}}"/>
-                            </TextBlock>
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Content="{lex:Loc SettingsWindow_AutomateDownload}"
+                                </TextBlock>
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_AutomateDownload}"
                                       IsChecked="{Binding Settings.SmartAutomationDownload, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="3*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{lex:Loc SettingsWindow_AutomatePattern}"
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{lex:Loc SettingsWindow_AutomatePattern}"
                                            VerticalAlignment="Center" Margin="4"/>
-                                <TextBox Grid.Column="1" Margin="4"
+                                    <TextBox Grid.Column="1" Margin="4"
                                          adonisExtensions:WatermarkExtension.Watermark="{lex:Loc SettingsWindow_AutomatePatternHint}"
                                          Text="{Binding Settings.SmartAutomationPattern, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            </Grid>
-                            <CheckBox Content="{lex:Loc SettingsWindow_AutomatePatternIsRegex}"
+                                </Grid>
+                                <CheckBox Content="{lex:Loc SettingsWindow_AutomatePatternIsRegex}"
                                       IsChecked="{Binding Settings.SmartAutomationPatternIsRegex, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="{lex:Loc CustomArgsWindow_Title}">
-                        <DockPanel>
-                            <Button DockPanel.Dock="Right" Content="{lex:Loc PathSelectionControl_Change}"
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{lex:Loc CustomArgsWindow_Title}">
+                            <DockPanel>
+                                <Button DockPanel.Dock="Right" Content="{lex:Loc PathSelectionControl_Change}"
                                     Command="{Binding EditCustomArgsCommand}"/>
-                            <TextBox IsReadOnly="True" Margin="4"
+                                <TextBox IsReadOnly="True" Margin="4"
                                      Text="{Binding Settings.CustomDownloaderArgs, Mode=OneWay, Converter={StaticResource removeLineBreaks}}"/>
-                        </DockPanel>
-                    </GroupBox>
-                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="{lex:Loc SettingsWindow_Binaries}">
-                <StackPanel>
-                    <GroupBox Header="Vividl">
-                        <StackPanel>
-                            <DockPanel>
-                                <Button DockPanel.Dock="Right" Content="{lex:Loc SettingsWindow_CheckForUpdates}"
+                <ScrollViewer Margin="-4" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <GroupBox Margin="0" Header="Vividl">
+                            <StackPanel>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Content="{lex:Loc SettingsWindow_CheckForUpdates}"
                                         Command="{Binding Path=UpdateVividlCommand}"/>
-                                <Label>
-                                    <WrapPanel>
-                                        <TextBlock>
+                                    <Label>
+                                        <WrapPanel>
+                                            <TextBlock>
                                             <Run Text="{lex:Loc SettingsWindow_Version}"/>
                                             <Run Text="  "/>
                                             <Run Text="{x:Static app:AppInfo.Version}"/>
-                                        </TextBlock>
-                                    </WrapPanel>
-                                </Label>
-                            </DockPanel>
-                            <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
+                                            </TextBlock>
+                                        </WrapPanel>
+                                    </Label>
+                                </DockPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
                                       IsChecked="{Binding Settings.AutoCheckUpdates, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="{lex:Loc SettingsWindow_YoutubeDL}">
-                        <StackPanel>
-                            <DockPanel>
-                                <Button DockPanel.Dock="Right" Content="{lex:Loc SettingsWindow_CheckForUpdates}"
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{lex:Loc SettingsWindow_YoutubeDL}">
+                            <StackPanel>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Content="{lex:Loc SettingsWindow_CheckForUpdates}"
                                         Command="{Binding Path=UpdateYoutubeDLCommand}"
                                         IsEnabled="{Binding Path=YoutubeDLUpdateService.IsUpdating, Converter={StaticResource invBool}}"/>
-                                <Label>
-                                    <WrapPanel>
-                                        <TextBlock>
+                                    <Label>
+                                        <WrapPanel>
+                                            <TextBlock>
                                             <Run Text="{lex:Loc SettingsWindow_Version}"/>
                                             <Run Text="  "/>
                                             <Run Text="{Binding YoutubeDLUpdateService.Version, Mode=OneWay}"/>
-                                        </TextBlock>
-                                        <TextBlock Text="{lex:Loc SettingsWindow_CheckingForUpdates}"
+                                            </TextBlock>
+                                            <TextBlock Text="{lex:Loc SettingsWindow_CheckingForUpdates}"
                                                    Margin="8,0"
                                                    Visibility="{Binding Path=YoutubeDLUpdateService.IsUpdating, Converter={StaticResource boolToVis}}"/>
-                                    </WrapPanel>
-                                </Label>
-                            </DockPanel>
-                            <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
+                                        </WrapPanel>
+                                    </Label>
+                                </DockPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
                                       IsChecked="{Binding Settings.AutoCheckUpdatesYoutubeDL, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
-                            <v:PathSelectionControl FileService="{Binding FileService}"
+                                <v:PathSelectionControl FileService="{Binding FileService}"
                                                     SelectedPath="{Binding Settings.YoutubeDLPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
                                                     ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="{lex:Loc SettingsWindow_Ffmpeg}">
-                        <v:PathSelectionControl FileService="{Binding FileService}"
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{lex:Loc SettingsWindow_Ffmpeg}">
+                            <v:PathSelectionControl FileService="{Binding FileService}"
                                                 SelectedPath="{Binding Settings.FfmpegPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
                                                 ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
-                    </GroupBox>
-                </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
         </TabControl>
     </DockPanel>
