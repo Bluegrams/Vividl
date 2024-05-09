@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Cancel" xml:space="preserve">
+		<value>취소</value>
+	</data>
+	<data name="DownloadOption_AVI" xml:space="preserve">
+		<value>AVI로 변환</value>
+	</data>
+	<data name="DownloadOption_Best" xml:space="preserve">
+		<value>직접 다운로드</value>
+	</data>
+	<data name="DownloadOption_M4A" xml:space="preserve">
+		<value>M4A로 변환</value>
+	</data>
+	<data name="DownloadOption_MKV" xml:space="preserve">
+		<value>MKV로 결합</value>
+	</data>
+	<data name="DownloadOption_MP3" xml:space="preserve">
+		<value>MP3로 변환</value>
+	</data>
+	<data name="DownloadOption_MP4" xml:space="preserve">
+		<value>MP4로 변환</value>
+	</data>
+	<data name="DownloadOption_Vorbis" xml:space="preserve">
+		<value>Ogg Vorbis로 변환</value>
+	</data>
+	<data name="DownloadOption_WAV" xml:space="preserve">
+		<value>WAV로 변환</value>
+	</data>
+	<data name="Error" xml:space="preserve">
+		<value>에러</value>
+	</data>
+	<data name="FetchWindow_EnterUrls" xml:space="preserve">
+		<value>동영상의 URL을 각 줄마다 입력하세요</value>
+	</data>
+	<data name="Info" xml:space="preserve">
+		<value>정보</value>
+	</data>
+	<data name="MainWindow_AlreadyFetched" xml:space="preserve">
+		<value>이미 다운로드 목록에 추가된 동영상입니다.
+옵션 -&gt; 설정에서 중복 항목을 허용할 수 있습니다.</value>
+	</data>
+	<data name="MainWindow_CountFailedFetches" xml:space="preserve">
+		<value>{0}개의 동영상 가져오기 실패:</value>
+	</data>
+	<data name="MainWindow_DownloadFolder" xml:space="preserve">
+		<value>다운로드 폴더</value>
+	</data>
+	<data name="MainWindow_FetchFailed_Title" xml:space="preserve">
+		<value>동영상 추출에 실패하였습니다</value>
+	</data>
+	<data name="MainWindow_HeaderFile" xml:space="preserve">
+		<value>파일(_F)</value>
+	</data>
+	<data name="MainWindow_HeaderOptions" xml:space="preserve">
+		<value>옵션(_O)</value>
+	</data>
+	<data name="MainWindow_HeaderVideos" xml:space="preserve">
+		<value>동영상(_V)</value>
+	</data>
+	<data name="MainWindow_MenuAdd" xml:space="preserve">
+		<value>새 동영상 추가(_A)</value>
+	</data>
+	<data name="MainWindow_MenuCancelAll" xml:space="preserve">
+		<value>전체 다운로드 취소(_C)</value>
+	</data>
+	<data name="MainWindow_MenuClearList" xml:space="preserve">
+		<value>다운로드 목록 비우기(_D)</value>
+	</data>
+	<data name="MainWindow_MenuDownloadAll" xml:space="preserve">
+		<value>전체 동영상 다운로드(_D)</value>
+	</data>
+	<data name="MainWindow_MenuExit" xml:space="preserve">
+		<value>종료(_E)</value>
+	</data>
+	<data name="MainWindow_MenuExport" xml:space="preserve">
+		<value>동영상 링크 내보내기(_E)</value>
+	</data>
+	<data name="MainWindow_MenuImport" xml:space="preserve">
+		<value>동영상 링크 가져오기(_I)</value>
+	</data>
+	<data name="MainWindow_MenuPaste" xml:space="preserve">
+		<value>동영상 링크 붙여넣기(_P)</value>
+	</data>
+	<data name="MainWindow_MenuSelectFolder" xml:space="preserve">
+		<value>다운로드 폴더 변경(_F)...</value>
+	</data>
+	<data name="MainWindow_MenuSettings" xml:space="preserve">
+		<value>설정(_S)</value>
+	</data>
+	<data name="MainWindow_OpenFolder" xml:space="preserve">
+		<value>열기</value>
+	</data>
+	<data name="MainWindow_StatusFailed" xml:space="preserve">
+		<value>실패:</value>
+	</data>
+	<data name="MainWindow_StatusInProcess" xml:space="preserve">
+		<value>진행중:</value>
+	</data>
+	<data name="MainWindow_StatusSucceeded" xml:space="preserve">
+		<value>성공:</value>
+	</data>
+	<data name="MetadataWindow_Creator" xml:space="preserve">
+		<value>제작자:</value>
+	</data>
+	<data name="MetadataWindow_Description" xml:space="preserve">
+		<value>설명</value>
+	</data>
+	<data name="MetadataWindow_Duration" xml:space="preserve">
+		<value>재생시간:</value>
+	</data>
+	<data name="MetadataWindow_Link" xml:space="preserve">
+		<value>링크</value>
+	</data>
+	<data name="MetadataWindow_UploadDate" xml:space="preserve">
+		<value>업로드 날짜:</value>
+	</data>
+	<data name="MetadataWindow_Uploader" xml:space="preserve">
+		<value>게시자:</value>
+	</data>
+	<data name="MetadataWindow_Views" xml:space="preserve">
+		<value>조회수:</value>
+	</data>
+	<data name="SelectDirectory_Description" xml:space="preserve">
+		<value>다운로드된 동영상을 저장할 폴더를 선택하세요:</value>
+	</data>
+	<data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
+		<value>중복 동영상 등록 허용</value>
+	</data>
+	<data name="PathSelectionControl_Change" xml:space="preserve">
+		<value>변경</value>
+	</data>
+	<data name="SettingsWindow_DefaultFormat" xml:space="preserve">
+		<value>기본 다운로드 포맷:</value>
+	</data>
+	<data name="SettingsWindow_Download" xml:space="preserve">
+		<value>다운로드</value>
+	</data>
+	<data name="SettingsWindow_DownloadFolder" xml:space="preserve">
+		<value>동영상 다운로드 폴더</value>
+	</data>
+	<data name="SettingsWindow_DownloadOptions" xml:space="preserve">
+		<value>다운로드 옵션</value>
+	</data>
+	<data name="SettingsWindow_Filename" xml:space="preserve">
+		<value>파일명</value>
+	</data>
+	<data name="SettingsWindow_General" xml:space="preserve">
+		<value>일반</value>
+	</data>
+	<data name="SettingsWindow_MaxProcesses" xml:space="preserve">
+		<value>최대 동시 다운로드 수</value>
+	</data>
+	<data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
+		<value>이미 존재하는 파일 덮어쓰기</value>
+	</data>
+	<data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
+		<value>파일명을 ASCII 문자로 변경</value>
+	</data>
+	<data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
+		<value>사용 가능한 모든 포맷 표시</value>
+	</data>
+	<data name="SettingsWindow_Title" xml:space="preserve">
+		<value>설정</value>
+	</data>
+	<data name="SettingsWindow_VideoList" xml:space="preserve">
+		<value>다운로드 목록</value>
+	</data>
+	<data name="Submit" xml:space="preserve">
+		<value>OK</value>
+	</data>
+	<data name="VideoEntry_Converting" xml:space="preserve">
+		<value>변환중...</value>
+	</data>
+	<data name="VideoEntry_CopyUrl" xml:space="preserve">
+		<value>동영상 URL 복사</value>
+	</data>
+	<data name="VideoEntry_Download" xml:space="preserve">
+		<value>다운로드</value>
+	</data>
+	<data name="VideoEntry_Downloading" xml:space="preserve">
+		<value>다운로드 중...</value>
+	</data>
+	<data name="VideoEntry_Finished" xml:space="preserve">
+		<value>완료.</value>
+	</data>
+	<data name="VideoEntry_Play" xml:space="preserve">
+		<value>재생</value>
+	</data>
+	<data name="VideoEntry_Playlist" xml:space="preserve">
+		<value>재생목록 - {0}개의 동영상</value>
+	</data>
+	<data name="VideoEntry_PreProcessing" xml:space="preserve">
+		<value>준비중...</value>
+	</data>
+	<data name="VideoEntry_Remove" xml:space="preserve">
+		<value>동영상 삭제</value>
+	</data>
+	<data name="VideoEntry_ShowInFolder" xml:space="preserve">
+		<value>폴더에서 열기</value>
+	</data>
+	<data name="VideoEntry_ShowInformation" xml:space="preserve">
+		<value>정보 표시</value>
+	</data>
+	<data name="Video_DownloadCancelled" xml:space="preserve">
+		<value>취소 "{0}".</value>
+	</data>
+	<data name="Video_DownloadFinished" xml:space="preserve">
+		<value>완료 "{0}".</value>
+	</data>
+	<data name="MainWindow_MenuAbout" xml:space="preserve">
+		<value>정보(_A)</value>
+	</data>
+	<data name="SettingsWindow_Binaries" xml:space="preserve">
+		<value>애플리케이션</value>
+	</data>
+	<data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
+		<value>업데이트 확인</value>
+	</data>
+	<data name="SettingsWindow_Ffmpeg" xml:space="preserve">
+		<value>ffmpeg</value>
+	</data>
+	<data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
+		<value>실행 파일의 위치</value>
+	</data>
+	<data name="SettingsWindow_Version" xml:space="preserve">
+		<value>버전:</value>
+	</data>
+	<data name="SettingsWindow_YoutubeDL" xml:space="preserve">
+		<value>youtube-dl/ yt-dlp</value>
+	</data>
+	<data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
+		<value>업데이트 확인 중...</value>
+	</data>
+	<data name="MainWindow_FetchFailed_General" xml:space="preserve">
+		<value>유효한 URL이 아닙니다.</value>
+	</data>
+	<data name="Video_DownloadStarting" xml:space="preserve">
+		<value>다운로드 중 "{0}"...</value>
+	</data>
+	<data name="VideoEntry_OpenInBrowser" xml:space="preserve">
+		<value>브라우저에서 열기</value>
+	</data>
+	<data name="PlaylistEntry_CopyUrl" xml:space="preserve">
+		<value>재생목록 URL 복사</value>
+	</data>
+	<data name="MetadataWindow_Details" xml:space="preserve">
+		<value>세부사항</value>
+	</data>
+	<data name="SettingsWindow_Appearance" xml:space="preserve">
+		<value>외형</value>
+	</data>
+	<data name="SettingsWindow_Theme" xml:space="preserve">
+		<value>애플리케이션 테마:</value>
+	</data>
+	<data name="MainWindow_ListEmpty" xml:space="preserve">
+		<value>URL을 가져오거나, 붙여넣거나, 드래그 &amp; 드롭으로 새 동영상을 추가하세요.</value>
+	</data>
+	<data name="DownloadOption_Webm" xml:space="preserve">
+		<value>WebM으로 변환</value>
+	</data>
+	<data name="SettingsWindow_PreferRecoding" xml:space="preserve">
+		<value>최고 품질로 다운로드 및 변환</value>
+	</data>
+	<data name="VideoEntry_Reload" xml:space="preserve">
+		<value>동영상 새로고침</value>
+	</data>
+	<data name="SettingsWindow_ArchiveFile" xml:space="preserve">
+		<value>보관된 다운로드 사용</value>
+	</data>
+	<data name="MetadataWindow_Source" xml:space="preserve">
+		<value>출처:</value>
+	</data>
+	<data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
+		<value>완료 목록 삭제(_F)</value>
+	</data>
+	<data name="MainWindow_MenuRemoveUnavailable" xml:space="preserve">
+		<value>사용할 수 없는 목록 삭제(_U)</value>
+	</data>
+	<data name="Video_DownloadFailed" xml:space="preserve">
+		<value>다운로드 실패 "{0}".</value>
+	</data>
+	<data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
+		<value>시작 시 자동으로 업데이트 확인</value>
+	</data>
+	<data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
+		<value>이미 존재하는 항목입니다. 해당 항목을 건너뜁니다.</value>
+	</data>
+	<data name="FetchWindow_Options" xml:space="preserve">
+		<value>옵션</value>
+	</data>
+	<data name="FetchWindow_DownloadFormat" xml:space="preserve">
+		<value>다운로드 포맷:</value>
+	</data>
+	<data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
+		<value>사용 가능한 재생목록 다운로드</value>
+	</data>
+	<data name="FetchWindow_ImmediateDownload" xml:space="preserve">
+		<value>즉시 다운로드 시작</value>
+	</data>
+	<data name="FetchWindow_Password" xml:space="preserve">
+		<value>비밀번호</value>
+	</data>
+	<data name="FetchWindow_Settings" xml:space="preserve">
+		<value>설정</value>
+	</data>
+	<data name="FetchWindow_TabAuthentication" xml:space="preserve">
+		<value>인증</value>
+	</data>
+	<data name="FetchWindow_TabGeneral" xml:space="preserve">
+		<value>일반</value>
+	</data>
+	<data name="FetchWindow_Username" xml:space="preserve">
+		<value>사용자명</value>
+	</data>
+	<data name="FetchWindow_VideoPassword" xml:space="preserve">
+		<value>동영상 비밀번호</value>
+	</data>
+	<data name="MainWindow_MenuOutputWindow" xml:space="preserve">
+		<value>출력창 표시</value>
+	</data>
+	<data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
+		<value>출력 비우기</value>
+	</data>
+	<data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
+		<value>출력 복사</value>
+	</data>
+	<data name="DownloadOutputWindow_Title" xml:space="preserve">
+		<value>다운로드 출력 현황</value>
+	</data>
+	<data name="SettingsWindow_AddMetadata" xml:space="preserve">
+		<value>파일에 메타데이터 추가하기</value>
+	</data>
+	<data name="SettingsWindow_Proxy" xml:space="preserve">
+		<value>프록시</value>
+	</data>
+	<data name="SettingsWindow_ProxyUrl" xml:space="preserve">
+		<value>프록시 URL</value>
+	</data>
+	<data name="VideoEntry_CurrentProgress" xml:space="preserve">
+		<value>현재 파일의 다운로드 진행상황</value>
+	</data>
+	<data name="VideoEntry_DownloadSpeed" xml:space="preserve">
+		<value>다운로드 속도</value>
+	</data>
+	<data name="VideoEntry_RemainingTime" xml:space="preserve">
+		<value>예상 다운로드 잔여시간</value>
+	</data>
+	<data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
+		<value>현재 다운로드중인 파일 크기</value>
+	</data>
+	<data name="FormatSelectionWindow_Title" xml:space="preserve">
+		<value>다운로드 설정</value>
+	</data>
+	<data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
+		<value>현재 설정:</value>
+	</data>
+	<data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
+		<value>음원 + 동영상</value>
+	</data>
+	<data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
+		<value>동영상/ 오디오 전용</value>
+	</data>
+	<data name="DownloadOption_Custom" xml:space="preserve">
+		<value>사용자 지정 다운로드</value>
+	</data>
+	<data name="VideoEntry_CustomizeDownload" xml:space="preserve">
+		<value>다운로드 구성</value>
+	</data>
+	<data name="Video" xml:space="preserve">
+		<value>동영상</value>
+	</data>
+	<data name="AudioOnly" xml:space="preserve">
+		<value>오디오 전용</value>
+	</data>
+	<data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
+		<value>변환할 포맷 선택:</value>
+	</data>
+	<data name="Apply" xml:space="preserve">
+		<value>적용</value>
+	</data>
+	<data name="Audio" xml:space="preserve">
+		<value>오디오</value>
+	</data>
+	<data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
+		<value>파일 확장자</value>
+	</data>
+	<data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
+		<value>동영상의 길이와 높이</value>
+	</data>
+	<data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
+		<value>예상 다운로드 크기</value>
+	</data>
+	<data name="OverwriteMode_None" xml:space="preserve">
+		<value>이미 존재하는 항목 건너뛰기</value>
+	</data>
+	<data name="OverwriteMode_Overwrite" xml:space="preserve">
+		<value>이미 존재하는 항목 덮어쓰기</value>
+	</data>
+	<data name="OverwriteMode_Increment" xml:space="preserve">
+		<value>재다운로드 (이름 변경)</value>
+	</data>
+	<data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
+		<value>youtube-dl의 새 버전이 확인되었습니다! 최신 버전 {0}:. 현재 버전: {1}.</value>
+	</data>
+	<data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
+		<value>동영상 또는 오디오 포맷을 선택해주세요.</value>
+	</data>
+	<data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
+		<value>포맷을 결합하려면 동영상 녹화 포맷을 선택하세요.</value>
+	</data>
+	<data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
+		<value>오디오 추출 중에는 동영상 전용 다운로드를 사용할 수 없습니다.</value>
+	</data>
+	<data name="MainWindow_MenuReloadAll" xml:space="preserve">
+		<value>전체 동영상 새로고침(_L)</value>
+	</data>
+	<data name="Copy" xml:space="preserve">
+		<value>복사</value>
+	</data>
+	<data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
+		<value>동영상 재변환시 GPU 가속 사용</value>
+	</data>
+	<data name="MainWindow_HeaderAutomate" xml:space="preserve">
+		<value>자동화(_A)</value>
+	</data>
+	<data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
+		<value>클립보드에서 URL 자동으로 가져오기(_A)</value>
+	</data>
+	<data name="SettingsWindow_AutomateDownload" xml:space="preserve">
+		<value>동영상 직접 다운로드</value>
+	</data>
+	<data name="SettingsWindow_Advanced" xml:space="preserve">
+		<value>고급</value>
+	</data>
+	<data name="SettingsWindow_AutomatePattern" xml:space="preserve">
+		<value>URL 필터링 규칙</value>
+	</data>
+	<data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
+		<value>클립보드 텍스트를 필터링하려면 표현식을 입력하세요</value>
+	</data>
+	<data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
+		<value>설정(_C)...</value>
+	</data>
+	<data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
+		<value>표현식을 URL 필터링 규칙으로 사용하기</value>
+	</data>
+	<data name="CustomArgsWindow_Title" xml:space="preserve">
+		<value>사용자 지정 다운로드 인수</value>
+	</data>
+	<data name="CustomArgsWindow_Description" xml:space="preserve">
+		<value>사용자 지정 다운로드 인수를 각 줄마다 입력하세요</value>
+	</data>
+	<data name="CustomArgsWindow_Warning" xml:space="preserve">
+		<value>경고: 이 애플리케이션의 정상적인 작동에 영향을 끼칠 수 있는 특정 인수는 다운로드 과정에서 무시될 수 있습니다. 해당 인수의 사용 시 발생할 수 있는 위험에 대한 책임은 사용자에게 있습니다.</value>
+	</data>
+	<data name="HwAccelMode_None" xml:space="preserve">
+		<value>없음</value>
+	</data>
+	<data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
+		<value>Nvidia (CUDA)</value>
+	</data>
+	<data name="HwAccelMode_AmdAmf" xml:space="preserve">
+		<value>AMD (AMF)</value>
+	</data>
+	<data name="HwAccelMode_IntelQsv" xml:space="preserve">
+		<value>Intel (QSV)</value>
+	</data>
+	<data name="Reset" xml:space="preserve">
+		<value>초기화</value>
+	</data>
+	<data name="SettingsWindow_ToolTipReset" xml:space="preserve">
+		<value>전체 설정을 기본값으로 초기화</value>
+	</data>
+	<data name="SettingsWindow_ConfirmReset" xml:space="preserve">
+		<value>모든 설정을 기본값으로 초기화합니다.
+정말 계속하시겠습니까?</value>
+	</data>
+	<data name="Warning" xml:space="preserve">
+		<value>경고</value>
+	</data>
+	<data name="MainWindow_MenuErrorLog" xml:space="preserve">
+		<value>에러 로그 열기(_E)</value>
+	</data>	
+	<data name="VideoEntry_ShowInFolderFailed" xml:space="preserve">
+		<value>해당 폴더의 동영상을 찾을 수 없습니다. 파일명이 변경되었거나 파일이 삭제되었을 수 있습니다.</value>
+	</data>
+	<data name="VideoEntry_PlayFailed" xml:space="preserve">
+		<value>동영상을 재생할 수 없습니다. 파일명이 변경되었거나 파일이 삭제되었을 수 있습니다.</value>
+	</data>
+	<data name="NotificationLogWindow_Title" xml:space="preserve">
+    <value>알림</value>
+	</data>
+	<data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+		<value>알림 표시(_N)</value>
+	</data>
+	<data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+		<value>전체 삭제</value>
+	</data>
+	<data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+		<value>애플리케이션 재시작 중 완료되지 않은 항목 임시저장</value>
+	</data>
+	<data name="AppCrashWindow_Title" xml:space="preserve">
+		<value>에러: Vividl에서 예상치 못한 문제가 발생하였습니다</value>
+	</data>
+	<data name="AppCrashWindow_Text" xml:space="preserve">
+		<value>죄송합니다, 애플리케이션에서 예상치 못한 문제가 발생하였습니다! 에러 로그를 확인하고, 애플리케이션을 재시작한 후 해당 내용을 보고해 주시기 바랍니다.</value>
+	</data>
+	<data name="NameEditWindow_Title" xml:space="preserve">
+		<value>이름 수정</value>
+	</data>
+	<data name="NameEditWindow_Text" xml:space="preserve">
+		<value>새 이름을 입력하세요</value>
+	</data>
+	<data name="Validation_ValueNonEmpty" xml:space="preserve">
+		<value>빈 값은 설정할 수 없습니다</value>
+	</data>
+	<data name="MetadataWindow_Title" xml:space="preserve">
+		<value>제목:</value>
+	</data>
+	<data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+		<value>선호하는 해상도:</value>
+	</data>
+	<data name="DownloadOption_BestAudio" xml:space="preserve">
+		<value>최적의 오디오 전용 다운로드</value>
+	</data>
+</root>
