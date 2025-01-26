@@ -407,7 +407,7 @@
 		<value>オプション</value>
 	</data>
 	<data name="FetchWindow_DownloadFormat" xml:space="preserve">
-		<value>ダウンロードする形式</value>
+		<value>ダウンロードする形式:</value>
 	</data>
 	<data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
 		<value>存在すれば再生リストをダウンロード</value>
@@ -604,5 +604,41 @@
 	</data>
 	<data name="VideoEntry_PlayFailed" xml:space="preserve">
 		<value>動画を再生できません。名前の変更または削除された可能性があります。</value>
+	</data>
+	<data name="NotificationLogWindow_Title" xml:space="preserve">
+		<value>通知</value>
+	</data>
+	<data name="MainWindow_MenuNotificationLog" xml:space="preserve">
+		<value>通知を表示(_N)</value>
+	</data>
+	<data name="NotificationLogWindow_ClearAll" xml:space="preserve">
+		<value>すべて消去</value>
+	</data>
+	<data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
+		<value>アプリの再起動間で未完了の項目をキャッシュする</value>
+	</data>
+	<data name="AppCrashWindow_Title" xml:space="preserve">
+		<value>エラー: Vividl は予期せずクラッシュしました</value>
+	</data>
+	<data name="AppCrashWindow_Text" xml:space="preserve">
+		<value>すみません。予期しないエラーによりアプリがクラッシュしました！アプリの再起動後にエラーログを確認し、このクラッシュを報告してください。</value>
+	</data>
+	<data name="NameEditWindow_Title" xml:space="preserve">
+		<value>名前を編集</value>
+	</data>
+	<data name="NameEditWindow_Text" xml:space="preserve">
+		<value>新しい項目名を入力します</value>
+	</data>
+	<data name="Validation_ValueNonEmpty" xml:space="preserve">
+		<value>空にはできません</value>
+	</data>
+	<data name="MetadataWindow_Title" xml:space="preserve">
+		<value>題名:</value>
+	</data>
+	<data name="SettingsWindow_DefaultResolution" xml:space="preserve">
+		<value>優先する動画の解像度:</value>
+	</data>
+	<data name="DownloadOption_BestAudio" xml:space="preserve">
+		<value>最良の音声のみをダウンロード</value>
 	</data>
 </root>
