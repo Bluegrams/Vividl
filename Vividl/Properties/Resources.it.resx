@@ -407,7 +407,7 @@ Per permettere duplicati, vai in Opzioni &gt; Impostazioni.</value>
     <value>Opzioni</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Formato download</value>
+    <value>Formato download:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
     <value>Download playlist se disponibile</value>

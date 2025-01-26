@@ -9,6 +9,10 @@ namespace Vividl.Model
     {
         string Url { get; }
         string Title { get; }
+        /// <summary>
+        /// The (file) name under which to download this entry.
+        /// </summary>
+        string DownloadName { get; set; }
         int TotalItems { get; }
         bool FileAvailable { get; }
 

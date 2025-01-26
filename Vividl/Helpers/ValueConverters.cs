@@ -164,7 +164,6 @@ namespace Vividl.Helpers
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var result = (double)value >= double.Parse(parameter.ToString());
-            System.Diagnostics.Debug.WriteLine(result);
             return result;
         }
 

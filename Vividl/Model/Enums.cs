@@ -55,4 +55,23 @@ namespace Vividl.Model
         [Description("HwAccelMode_IntelQsv")]
         IntelQsv,
     }
+
+    /// <summary>
+    /// Specifies possible preferred resolutions.
+    /// </summary>
+    public enum Resolution
+    {
+        [Description("Min")]
+        ResMin = 0,
+        [Description("360p")]
+        Res360 = 360,
+        [Description("480p")]
+        Res480 = 480,
+        [Description("720p")]
+        Res720 = 720,
+        [Description("1080p")]
+        Res1080 = 1080,
+        [Description("Max")]
+        ResMax = int.MaxValue
+    }
 }

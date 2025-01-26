@@ -39,6 +39,7 @@ namespace Vividl.ViewModel
                 else return this.Duration;
             }
         }
+
         public ICommand CustomizeDownloadCommand { get; }
 
         public VideoViewModel(string url, MainViewModel<MediaEntry> mainVm)
@@ -95,8 +96,8 @@ namespace Vividl.ViewModel
                     return new VideoDownload(fm.FormatId,
                                     description: String.Format("[{0}] {1}", fm.Extension, fm.Format),
                                     fileExtension: fm.Extension,
-                                    isAudio: fm.VideoCodec == "none");
-                });
+                                    isAudio: fm.VideoCodec == "none" && fm.AudioCodec != "none");
+                }).Reverse();
                 foreach (var option in metadataOptions)
                 {
                     Entry.DownloadOptions.Add(option);
@@ -121,7 +122,7 @@ namespace Vividl.ViewModel
                     if (State == ItemState.Downloading) // Prevent msg being sent after cancelled msg.
                     {
                         Messenger.Default.Send(
-                            new NotificationMessage(String.Format(Resources.Video_DownloadStarting, Entry.Title)));
+                            new NotificationMessage(String.Format(Resources.Video_DownloadStarting, Entry.DownloadName)));
                     }
                     break;
                 case DownloadState.PostProcessing:
@@ -138,7 +139,7 @@ namespace Vividl.ViewModel
                     if (e.Info.Data.StartsWith("WARNING: --post-processor-args given without specifying name.")
                         || e.Info.Data.StartsWith("WARNING: Post-Processor arguments given without specifying name."))
                         break;
-                    messageService.ShowError(e.Info.Data, $"\"{Entry.Title}\"");
+                    messageService.ShowError(e.Info.Data, $"\"{Entry.DownloadName}\"");
                     break;
             }
         }

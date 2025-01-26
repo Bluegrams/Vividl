@@ -43,9 +43,21 @@ namespace Vividl.ViewModel
             }
         }
 
+        public string DownloadName
+        {
+            get => entry.DownloadName;
+            set
+            {
+                entry.DownloadName = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand DownloadCommand { get; }
 
         public ICommand ShowMetadataCommand { get; }
+
+        public ICommand EditNameCommand { get; }
 
         public ICommand CancelCommand { get; }
 
@@ -185,6 +197,11 @@ namespace Vividl.ViewModel
                     new ShowWindowMessage(IsPlaylist ? WindowType.PlaylistDataWindow : WindowType.VideoDataWindow, this)),
                 () => State != ItemState.None
                 );
+            EditNameCommand = new RelayCommand(
+                () => Messenger.Default.Send(
+                    new ShowWindowMessage(WindowType.NameEditWindow, DownloadName, editNameCallback)),
+                () => State == ItemState.Fetched
+                );
             CancelCommand = new RelayCommand(() => Entry.CancelDownload());
             CopyClipboardCommand = new RelayCommand(() => Clipboard.SetText(this.url));
             OpenInBrowserCommand = new RelayCommand(() => Entry.OpenInBrowser(),
@@ -216,7 +233,7 @@ namespace Vividl.ViewModel
                 case DownloadResult.Cancelled:
                     State = ItemState.Fetched;
                     Messenger.Default.Send(
-                        new NotificationMessage(String.Format(Resources.Video_DownloadCancelled, Entry.Title)));
+                        new NotificationMessage(String.Format(Resources.Video_DownloadCancelled, Entry.DownloadName)));
                     int remaining = Entry.TotalItems - downloadIndex + 1;
                     mainVm.SetStats(finished: true, success: false);
                     break;
@@ -224,7 +241,7 @@ namespace Vividl.ViewModel
                     State = ItemState.Fetched;
                     mainVm.SetStats(finished: true, success: false);
                     Messenger.Default.Send(
-                        new NotificationMessage(String.Format(Resources.Video_DownloadFailed, Entry.Title)));
+                        new NotificationMessage(String.Format(Resources.Video_DownloadFailed, Entry.DownloadName)));
                     break;
             }
             // Manually update CanExecute state of commands.
@@ -285,5 +302,13 @@ namespace Vividl.ViewModel
         }
 
         public override string ToString() => url;
+
+        private void editNameCallback(bool? dialogResult, object param)
+        {
+            if (dialogResult.GetValueOrDefault())
+            {
+                DownloadName = param.ToString();
+            }
+        }
     }
 }

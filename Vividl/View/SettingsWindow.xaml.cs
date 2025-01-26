@@ -24,7 +24,8 @@ namespace Vividl.View
 
         private async void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            beSet.UnionWith(BindingOperations.GetSourceUpdatingBindings(this));
+            // Passing 'null' returns all binding expression that haven't been updated.
+            beSet.UnionWith(BindingOperations.GetSourceUpdatingBindings(null));
             foreach (var be in beSet)
             {
                 be.UpdateSource();

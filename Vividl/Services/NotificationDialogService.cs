@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -6,7 +7,7 @@ using System.Windows.Media.Imaging;
 using Bluegrams.Application;
 using Bluegrams.Application.WPF;
 using Enterwell.Clients.Wpf.Notifications;
-using GalaSoft.MvvmLight.Ioc;
+using Enterwell.Clients.Wpf.Notifications.Controls;
 using MahApps.Metro.IconPacks;
 using Vividl.Properties;
 using WPFLocalizeExtension.Engine;
@@ -16,14 +17,19 @@ using Colors = AdonisUI.Colors;
 
 namespace Vividl.Services
 {
-    class NotificationDialogService : SimpleDialogService
+    public class NotificationDialogService : SimpleDialogService
     {
-        private INotificationMessageManager notificationManager;
+        public INotificationMessageManager MainMessageManager { get; }
+
+        public event EventHandler<NotificationEventArgs> NotificationAdded;
+
+        public event EventHandler<NotificationEventArgs> NotificationRemoved;
 
         public NotificationDialogService()
         {
             AccentColor = App.DARK_ACCENT;
-            notificationManager = SimpleIoc.Default.GetInstance<INotificationMessageManager>();
+            // Show a maximum of 3 notifications.
+            MainMessageManager = new CappedNotificationMessageManager(3);
         }
 
         public override void ShowAboutBox(IUpdateChecker updateChecker = null)
@@ -51,22 +57,59 @@ namespace Vividl.Services
         public override void ShowWarning(string message, string title, string buttonText = null)
             => createMessage(message, title, buttonText, PackIconModernKind.Warning);
 
-        private void createMessage(string message, string title, string buttonText, PackIconModernKind icon)
+        private NotificationMessage createNotificationMsgObject(string message, string title, string buttonText, PackIconModernKind icon)
         {
-            notificationManager.CreateMessage()
-                .Accent(new SolidColorBrush(AccentColor))
-                .Background((Brush)Application.Current.Resources[Brushes.Layer3BackgroundBrush])
-                .Foreground(((Color)Application.Current.Resources[Colors.ForegroundColor]).ToString())
-                .HasMessage($"{title}:\n{message}")
-                .WithAdditionalContent(ContentLocation.AboveBadge, new PackIconModern()
+            return new NotificationMessage
+            {
+                AccentBrush = new SolidColorBrush(AccentColor),
+                Background = (Brush)Application.Current.Resources[Brushes.Layer3BackgroundBrush],
+                Foreground = new SolidColorBrush((Color)Application.Current.Resources[Colors.ForegroundColor]),
+                Message = $"{title}:\n{message}",
+                AdditionalContentOverBadge = new PackIconModern()
                 {
                     Kind = icon,
                     Height = 18,
                     Width = 18
-                })
-                .WithButton(Resources.Copy, button => Clipboard.SetText($"{title}:\n{message}"))
-                .Dismiss().WithButton(buttonText ?? Resources.Submit, button => { })
+                },
+                Buttons = new ObservableCollection<object>
+                {
+                   new NotificationMessageButton()
+                   {
+                       Content = Resources.Copy,
+                       Callback = button => Clipboard.SetText($"{title}:\n{message}")
+                   }
+                }
+            };
+        }
+
+        private void createMessage(string message, string title, string buttonText, PackIconModernKind icon)
+        {
+            // Add to main manager
+            var builder = MainMessageManager.CreateMessage();
+            builder.Manager = MainMessageManager;
+            builder.Message = createNotificationMsgObject(message, title, buttonText, icon);
+            builder.Dismiss().WithButton(buttonText ?? Resources.Submit, button => { })
                 .Dismiss().WithDelay(TimeSpan.FromSeconds(7)).Queue();
+            // Add to log
+            var msgObject = createNotificationMsgObject(message, title, buttonText, icon);
+            msgObject.Buttons.Add(
+                new NotificationMessageButton()
+                {
+                    Content = buttonText ?? Resources.Submit,
+                    Callback = button => NotificationRemoved?.Invoke(this, new NotificationEventArgs(msgObject)),
+                }
+            );
+            NotificationAdded?.Invoke(this, new NotificationEventArgs(msgObject));
+        }
+    }
+
+    public class NotificationEventArgs : EventArgs
+    {
+        public NotificationMessage Message { get; }
+
+        public NotificationEventArgs(NotificationMessage message)
+        {
+            Message = message;
         }
     }
 }

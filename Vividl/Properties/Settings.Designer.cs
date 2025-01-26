@@ -12,7 +12,7 @@ namespace Vividl.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -300,6 +300,41 @@ namespace Vividl.Properties {
             }
             set {
                 this["FFmpegHardwareAcceleration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection DownloadLinks {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["DownloadLinks"]));
+            }
+            set {
+                this["DownloadLinks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CacheDownloadLinks {
+            get {
+                return ((bool)(this["CacheDownloadLinks"]));
+            }
+            set {
+                this["CacheDownloadLinks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Res1080")]
+        public global::Vividl.Model.Resolution DefaultResolution {
+            get {
+                return ((global::Vividl.Model.Resolution)(this["DefaultResolution"]));
+            }
+            set {
+                this["DefaultResolution"] = value;
             }
         }
     }

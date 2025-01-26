@@ -27,9 +27,17 @@
                    ContextMenu="{StaticResource contxtVideo}" Background="Transparent">
             <Image DockPanel.Dock="Left" Height="64" Source="{Binding Entry.Metadata.Thumbnail}"
                    Margin="4" RenderOptions.BitmapScalingMode="HighQuality"/>
-            <TextBox Margin="4" Text="{Binding Entry.Title, Mode=OneWay}"
-                     FontSize="16" VerticalAlignment="Center"
-                     Style="{StaticResource labelBox}"/>
+            <WrapPanel VerticalAlignment="Center">
+                <TextBox Margin="4,0" Text="{Binding DownloadName, Mode=OneWay}"
+                         FontSize="16" VerticalAlignment="Center"
+                         Style="{StaticResource labelBox}"/>
+                <Button Command="{Binding EditNameCommand}"
+                        ToolTip="{lex:Loc NameEditWindow_Title}"
+                        Background="Transparent" BorderThickness="0"
+                        VerticalAlignment="Center">
+                    <icon:PackIconModern Kind="Edit" Height="14"/>
+                </Button>
+            </WrapPanel>
         </DockPanel>
         <DockPanel Margin="4" DockPanel.Dock="Bottom" LastChildFill="False">
             <v:DownloadOptionComboBox ItemsSource="{Binding DownloadOptions}" SelectedIndex="{Binding SelectedDownloadOption}"
@@ -78,40 +86,46 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                                 <RowDefinition/>
+                                <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock>
-                            <Run Text="{lex:Loc MetadataWindow_Source}"/>
-                            <Run/>
-                            <Run Text="{Binding Entry.Metadata.ExtractorKey, Mode=OneWay}"/>
+                            <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap">
+                                <Run Text="{lex:Loc MetadataWindow_Title}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.Title, Mode=OneWay}"/>
                             </TextBlock>
-                            <TextBlock Grid.Column="1">
-                            <Run Text="{lex:Loc MetadataWindow_Duration}"/>
-                            <Run/>
-                            <Run Text="{Binding Duration, Mode=OneWay}"/>
-                            </TextBlock>
-                            <TextBlock Grid.Row="1" Grid.Column="0">
-                            <Run Text="{lex:Loc MetadataWindow_Creator}"/>
-                            <Run/>
-                            <Run Text="{Binding Entry.Metadata.Creator, Mode=OneWay}"/>
+                            <TextBlock Grid.Row="1">
+                                <Run Text="{lex:Loc MetadataWindow_Source}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.ExtractorKey, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="1" Grid.Column="1">
-                            <Run Text="{lex:Loc MetadataWindow_UploadDate}"/>
-                            <Run/>
-                            <Run Text="{Binding Entry.Metadata.UploadDate, Mode=OneWay, StringFormat='{}{0:yyyy-MM-dd}'}"/>
+                                <Run Text="{lex:Loc MetadataWindow_Duration}"/>
+                                <Run/>
+                                <Run Text="{Binding Duration, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="0">
-                            <Run Text="{lex:Loc MetadataWindow_Uploader}"/>
-                            <Run/>
-                            <Run Text="{Binding Entry.Metadata.Uploader, Mode=OneWay}"/>
+                                <Run Text="{lex:Loc MetadataWindow_Creator}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.Creator, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1">
-                            <Run Text="{lex:Loc MetadataWindow_Views}"/>
-                            <Run/>
-                            <Run Text="{Binding Entry.Metadata.ViewCount, Mode=OneWay}"/>
+                                <Run Text="{lex:Loc MetadataWindow_UploadDate}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.UploadDate, Mode=OneWay, StringFormat='{}{0:yyyy-MM-dd}'}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="0">
+                                <Run Text="{lex:Loc MetadataWindow_Uploader}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.Uploader, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="1">
+                                <Run Text="{lex:Loc MetadataWindow_Views}"/>
+                                <Run/>
+                                <Run Text="{Binding Entry.Metadata.ViewCount, Mode=OneWay}"/>
                             </TextBlock>
                         </Grid>
                     </GroupBox>

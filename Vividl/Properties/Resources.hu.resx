@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,53 +118,53 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Törölje</value>
   </data>
   <data name="DownloadOption_AVI" xml:space="preserve">
-    <value>Convert to AVI</value>
+    <value>AVI-ba konvertálás</value>
   </data>
   <data name="DownloadOption_Best" xml:space="preserve">
-    <value>Best Direct Download</value>
+    <value>Legjobb közvetlen letöltés</value>
   </data>
   <data name="DownloadOption_M4A" xml:space="preserve">
-    <value>Convert to M4A</value>
+    <value>Átalakítás M4A</value>
   </data>
   <data name="DownloadOption_MKV" xml:space="preserve">
-    <value>Merge to MKV</value>
+    <value>Összeolvasztás MKV</value>
   </data>
   <data name="DownloadOption_MP3" xml:space="preserve">
-    <value>Convert to MP3</value>
+    <value>MP3 konvertálása</value>
   </data>
   <data name="DownloadOption_MP4" xml:space="preserve">
-    <value>Convert to MP4</value>
+    <value>Átalakítás MP4-be</value>
   </data>
   <data name="DownloadOption_Vorbis" xml:space="preserve">
-    <value>Convert to Ogg Vorbis</value>
+    <value>Konvertálás Ogg Vorbisba</value>
   </data>
   <data name="DownloadOption_WAV" xml:space="preserve">
-    <value>Convert to WAV</value>
+    <value>Átalakítás WAV-ra</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Hiba</value>
   </data>
   <data name="FetchWindow_EnterUrls" xml:space="preserve">
-    <value>Enter Video URLs in separate lines</value>
+    <value>Videó URL-címek külön sorban történő megadása</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Info</value>
   </data>
   <data name="MainWindow_AlreadyFetched" xml:space="preserve">
-    <value>This video has already been fetched to the download list.
-To allow duplicates, go to Options -&gt; Settings.</value>
+    <value>Ez a videó már a letöltési listára került.
+A duplikációk engedélyezéséhez lépjen a Beállítások -&gt; Beállítások menüpontba.</value>
   </data>
   <data name="MainWindow_CountFailedFetches" xml:space="preserve">
-    <value>Fetching {0} videos failed:</value>
+    <value>{0} videó letöltése sikertelen:</value>
   </data>
   <data name="MainWindow_DownloadFolder" xml:space="preserve">
-    <value>Download Folder</value>
+    <value>Letöltési mappa</value>
   </data>
   <data name="MainWindow_FetchFailed_Title" xml:space="preserve">
-    <value>Failed to fetch video</value>
+    <value>Sikertelen videó lekérése</value>
   </data>
   <data name="MainWindow_HeaderFile" xml:space="preserve">
     <value>_File</value>
@@ -173,220 +173,220 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>_Options</value>
   </data>
   <data name="MainWindow_HeaderVideos" xml:space="preserve">
-    <value>_Videos</value>
+    <value>_Videók</value>
   </data>
   <data name="MainWindow_MenuAdd" xml:space="preserve">
     <value>_Add New Videos</value>
   </data>
   <data name="MainWindow_MenuCancelAll" xml:space="preserve">
-    <value>_Cancel All Downloads</value>
+    <value>_Minden letöltés törlése</value>
   </data>
   <data name="MainWindow_MenuClearList" xml:space="preserve">
-    <value>Clear _Download List</value>
+    <value>Letöltési lista törlése</value>
   </data>
   <data name="MainWindow_MenuDownloadAll" xml:space="preserve">
-    <value>_Download All Videos</value>
+    <value>_Minden videó letöltése</value>
   </data>
   <data name="MainWindow_MenuExit" xml:space="preserve">
-    <value>_Exit</value>
+    <value>_Kilépés</value>
   </data>
   <data name="MainWindow_MenuExport" xml:space="preserve">
-    <value>_Export Video Links</value>
+    <value>_Videó linkek exportálása</value>
   </data>
   <data name="MainWindow_MenuImport" xml:space="preserve">
-    <value>_Import Video Links</value>
+    <value>_Videó linkek importálása</value>
   </data>
   <data name="MainWindow_MenuPaste" xml:space="preserve">
-    <value>_Paste Video Link</value>
+    <value>_Videó link beillesztése</value>
   </data>
   <data name="MainWindow_MenuSelectFolder" xml:space="preserve">
-    <value>Change Download _Folder...</value>
+    <value>Letöltés módosítása _Mappa...</value>
   </data>
   <data name="MainWindow_MenuSettings" xml:space="preserve">
-    <value>_Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="MainWindow_OpenFolder" xml:space="preserve">
-    <value>Open</value>
+    <value>Megnyitás</value>
   </data>
   <data name="MainWindow_StatusFailed" xml:space="preserve">
-    <value>Failed:</value>
+    <value>Sikertelen:</value>
   </data>
   <data name="MainWindow_StatusInProcess" xml:space="preserve">
-    <value>In Process:</value>
+    <value>Folyamatban:</value>
   </data>
   <data name="MainWindow_StatusSucceeded" xml:space="preserve">
-    <value>Successful:</value>
+    <value>Sikeres:</value>
   </data>
   <data name="MetadataWindow_Creator" xml:space="preserve">
     <value>Creator:</value>
   </data>
   <data name="MetadataWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Leírás:</value>
   </data>
   <data name="MetadataWindow_Duration" xml:space="preserve">
-    <value>Duration:</value>
+    <value>Időtartam:</value>
   </data>
   <data name="MetadataWindow_Link" xml:space="preserve">
     <value>Link</value>
   </data>
   <data name="MetadataWindow_UploadDate" xml:space="preserve">
-    <value>Uploaded:</value>
+    <value>Feltöltés: Felvétel: Link:</value>
   </data>
   <data name="MetadataWindow_Uploader" xml:space="preserve">
-    <value>Uploader:</value>
+    <value>Feltöltő: Feltöltő: A feltöltő:</value>
   </data>
   <data name="MetadataWindow_Views" xml:space="preserve">
-    <value>Views:</value>
+    <value>Nézet:</value>
   </data>
   <data name="SelectDirectory_Description" xml:space="preserve">
-    <value>Select the directory where the downloaded videos will be saved:</value>
+    <value>Válassza ki a könyvtárat, ahová a letöltött videókat menteni fogja:</value>
   </data>
   <data name="SettingsWindow_AllowDuplicates" xml:space="preserve">
-    <value>Allow duplicate video entries</value>
+    <value>Duplikált videóbejegyzések engedélyezése</value>
   </data>
   <data name="PathSelectionControl_Change" xml:space="preserve">
-    <value>Change</value>
+    <value>módosítás</value>
   </data>
   <data name="SettingsWindow_DefaultFormat" xml:space="preserve">
-    <value>Default download format:</value>
+    <value>Alapértelmezett letöltési formátum:</value>
   </data>
   <data name="SettingsWindow_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Letöltés:</value>
   </data>
   <data name="SettingsWindow_DownloadFolder" xml:space="preserve">
-    <value>Video Download Folder</value>
+    <value>Videó letöltési mappa</value>
   </data>
   <data name="SettingsWindow_DownloadOptions" xml:space="preserve">
-    <value>Download Options</value>
+    <value>Letöltési beállítások</value>
   </data>
   <data name="SettingsWindow_Filename" xml:space="preserve">
-    <value>Filename</value>
+    <value>Fájlnév</value>
   </data>
   <data name="SettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>Általános</value>
   </data>
   <data name="SettingsWindow_MaxProcesses" xml:space="preserve">
-    <value>Maximum concurrent downloads</value>
+    <value>Maximális egyidejű letöltések</value>
   </data>
   <data name="SettingsWindow_OverwriteFiles" xml:space="preserve">
-    <value>Overwrite existing files</value>
+    <value>Meglévő fájlok felülírása</value>
   </data>
   <data name="SettingsWindow_RestrictFilenames" xml:space="preserve">
-    <value>Restrict filename to ASCII characters</value>
+    <value>A fájlnév ASCII karakterekre korlátozása</value>
   </data>
   <data name="SettingsWindow_ShowAllFormats" xml:space="preserve">
-    <value>Show all available formats</value>
+    <value>Az összes elérhető formátum megjelenítése</value>
   </data>
   <data name="SettingsWindow_Title" xml:space="preserve">
-    <value>Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="SettingsWindow_VideoList" xml:space="preserve">
-    <value>Download List</value>
+    <value>Letöltési lista</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="VideoEntry_Converting" xml:space="preserve">
-    <value>Converting...</value>
+    <value>Átalakítás...</value>
   </data>
   <data name="VideoEntry_CopyUrl" xml:space="preserve">
-    <value>Copy Video URL</value>
+    <value>Videó URL másolása</value>
   </data>
   <data name="VideoEntry_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Letöltés</value>
   </data>
   <data name="VideoEntry_Downloading" xml:space="preserve">
-    <value>Downloading...</value>
+    <value>Letöltés...</value>
   </data>
   <data name="VideoEntry_Finished" xml:space="preserve">
-    <value>Finished.</value>
+    <value>Befejezve.</value>
   </data>
   <data name="VideoEntry_Play" xml:space="preserve">
-    <value>Play</value>
+    <value>Lejátszás</value>
   </data>
   <data name="VideoEntry_Playlist" xml:space="preserve">
-    <value>Playlist - {0} Videos</value>
+    <value>Lejátszási lista - {0} Videók</value>
   </data>
   <data name="VideoEntry_PreProcessing" xml:space="preserve">
-    <value>Preparing...</value>
+    <value>Előkészítés...</value>
   </data>
   <data name="VideoEntry_Remove" xml:space="preserve">
-    <value>Remove Video</value>
+    <value>Videó eltávolítása</value>
   </data>
   <data name="VideoEntry_ShowInFolder" xml:space="preserve">
-    <value>Show In Folder</value>
+    <value>Mappában megjelenítés</value>
   </data>
   <data name="VideoEntry_ShowInformation" xml:space="preserve">
-    <value>Show Information</value>
+    <value>Információk megjelenítése</value>
   </data>
   <data name="Video_DownloadCancelled" xml:space="preserve">
-    <value>Cancelled "{0}".</value>
+    <value>Törölt "{0}".</value>
   </data>
   <data name="Video_DownloadFinished" xml:space="preserve">
-    <value>Finished "{0}".</value>
+    <value>Befejezve "{0}".</value>
   </data>
   <data name="MainWindow_MenuAbout" xml:space="preserve">
     <value>_About</value>
   </data>
   <data name="SettingsWindow_Binaries" xml:space="preserve">
-    <value>Application</value>
+    <value>Alkalmazás</value>
   </data>
   <data name="SettingsWindow_CheckForUpdates" xml:space="preserve">
-    <value>Check For Updates</value>
+    <value>Frissítések ellenőrzése</value>
   </data>
   <data name="SettingsWindow_Ffmpeg" xml:space="preserve">
     <value>ffmpeg</value>
   </data>
   <data name="SettingsWindow_Path_ToolTip" xml:space="preserve">
-    <value>Location of the executable on your PC</value>
+    <value>A futtatható fájl helye a számítógépen</value>
   </data>
   <data name="SettingsWindow_Version" xml:space="preserve">
-    <value>Version:</value>
+    <value>Verzió:</value>
   </data>
   <data name="SettingsWindow_YoutubeDL" xml:space="preserve">
     <value>youtube-dl/ yt-dlp</value>
   </data>
   <data name="SettingsWindow_CheckingForUpdates" xml:space="preserve">
-    <value>Checking for updates...</value>
+    <value>Frissítések keresése...</value>
   </data>
   <data name="MainWindow_FetchFailed_General" xml:space="preserve">
-    <value>Please make sure the given URL is valid.</value>
+    <value>Kérjük, ellenőrizze, hogy a megadott URL érvényes-e.</value>
   </data>
   <data name="Video_DownloadStarting" xml:space="preserve">
-    <value>Downloading "{0}"...</value>
+    <value>{0} letöltése...</value>
   </data>
   <data name="VideoEntry_OpenInBrowser" xml:space="preserve">
-    <value>Open In Browser</value>
+    <value>Megnyitás böngészőben</value>
   </data>
   <data name="PlaylistEntry_CopyUrl" xml:space="preserve">
-    <value>Copy Playlist URL</value>
+    <value>Lejátszási lista URL másolása</value>
   </data>
   <data name="MetadataWindow_Details" xml:space="preserve">
-    <value>Details</value>
+    <value>Részletek</value>
   </data>
   <data name="SettingsWindow_Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Megjelenés</value>
   </data>
   <data name="SettingsWindow_Theme" xml:space="preserve">
-    <value>Application Theme:</value>
+    <value>Alkalmazás témája:</value>
   </data>
   <data name="MainWindow_ListEmpty" xml:space="preserve">
-    <value>Add new videos by pasting, importing or dragging &amp; dropping URLs.</value>
+    <value>Új videók hozzáadása URL-ek beillesztésével, importálásával vagy áthúzásával.</value>
   </data>
   <data name="DownloadOption_Webm" xml:space="preserve">
-    <value>Convert to WebM</value>
+    <value>WebM-be konvertálás</value>
   </data>
   <data name="SettingsWindow_PreferRecoding" xml:space="preserve">
-    <value>Download best quality and convert</value>
+    <value>Töltse le a legjobb minőséget és konvertálja</value>
   </data>
   <data name="VideoEntry_Reload" xml:space="preserve">
-    <value>Reload Video</value>
+    <value>Videó újratöltése</value>
   </data>
   <data name="SettingsWindow_ArchiveFile" xml:space="preserve">
-    <value>Use Download Archive</value>
+    <value>Letöltési archívum használata</value>
   </data>
   <data name="MetadataWindow_Source" xml:space="preserve">
-    <value>Source:</value>
+    <value>Forrás: Forrás:</value>
   </data>
   <data name="MainWindow_MenuRemoveFinished" xml:space="preserve">
     <value>Remove _Finished</value>
@@ -395,58 +395,58 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Remove _Unavailable</value>
   </data>
   <data name="Video_DownloadFailed" xml:space="preserve">
-    <value>Failed to download "{0}".</value>
+    <value>A "{0}" letöltése sikertelen volt.</value>
   </data>
   <data name="SettingsWindow_AutoCheckUpdates" xml:space="preserve">
-    <value>Automatically check for updates at startup</value>
+    <value>Automatikusan ellenőrizze a frissítéseket indításkor</value>
   </data>
   <data name="VideoEntry_AlreadyDownloaded" xml:space="preserve">
-    <value>Already existent. Item skipped.</value>
+    <value>Már létezik. Elem kihagyva.</value>
   </data>
   <data name="FetchWindow_Options" xml:space="preserve">
-    <value>Options</value>
+    <value>Opciók</value>
   </data>
   <data name="FetchWindow_DownloadFormat" xml:space="preserve">
-    <value>Download Format:</value>
+    <value>Letöltési formátum:</value>
   </data>
   <data name="FetchWindow_DownloadPlaylist" xml:space="preserve">
-    <value>Download playlist if available</value>
+    <value>Lejátszási lista letöltése, ha rendelkezésre áll</value>
   </data>
   <data name="FetchWindow_ImmediateDownload" xml:space="preserve">
-    <value>Start download immediately</value>
+    <value>Letöltés azonnali megkezdése</value>
   </data>
   <data name="FetchWindow_Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Jelszó</value>
   </data>
   <data name="FetchWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="FetchWindow_TabAuthentication" xml:space="preserve">
-    <value>Authentication</value>
+    <value>Hitelesítés</value>
   </data>
   <data name="FetchWindow_TabGeneral" xml:space="preserve">
-    <value>General</value>
+    <value>Általános</value>
   </data>
   <data name="FetchWindow_Username" xml:space="preserve">
-    <value>Username</value>
+    <value>Felhasználónév</value>
   </data>
   <data name="FetchWindow_VideoPassword" xml:space="preserve">
-    <value>Video Password</value>
+    <value>Videó jelszó</value>
   </data>
   <data name="MainWindow_MenuOutputWindow" xml:space="preserve">
-    <value>Show Output Window</value>
+    <value>Kimeneti ablak megjelenítése</value>
   </data>
   <data name="DownloadOutputWindow_ClearOutput" xml:space="preserve">
-    <value>Clear Output</value>
+    <value>Kimenet törlése</value>
   </data>
   <data name="DownloadOutputWindow_CopyOutput" xml:space="preserve">
-    <value>Copy Output</value>
+    <value>Kimenet másolása</value>
   </data>
   <data name="DownloadOutputWindow_Title" xml:space="preserve">
-    <value>Download Output</value>
+    <value>Kimenet letöltése</value>
   </data>
   <data name="SettingsWindow_AddMetadata" xml:space="preserve">
-    <value>Add metadata to files</value>
+    <value>Metaadatok hozzáadása a fájlokhoz</value>
   </data>
   <data name="SettingsWindow_Proxy" xml:space="preserve">
     <value>Proxy</value>
@@ -455,124 +455,124 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Proxy URL</value>
   </data>
   <data name="VideoEntry_CurrentProgress" xml:space="preserve">
-    <value>Download progress of current file</value>
+    <value>Az aktuális fájl letöltésének előrehaladása</value>
   </data>
   <data name="VideoEntry_DownloadSpeed" xml:space="preserve">
-    <value>Current download rate</value>
+    <value>Aktuális letöltési sebesség</value>
   </data>
   <data name="VideoEntry_RemainingTime" xml:space="preserve">
-    <value>Expected remaining time for current file</value>
+    <value>Az aktuális fájl várható hátralévő ideje</value>
   </data>
   <data name="VideoEntry_TotalDownloadSize" xml:space="preserve">
-    <value>Total download size of current file</value>
+    <value>Az aktuális fájl teljes letöltési mérete</value>
   </data>
   <data name="FormatSelectionWindow_Title" xml:space="preserve">
-    <value>Configure Download</value>
+    <value>Letöltés konfigurálása</value>
   </data>
   <data name="FormatSelectionWindow_CurrentConfiguration" xml:space="preserve">
-    <value>Current Configuration:</value>
+    <value>Jelenlegi konfiguráció:</value>
   </data>
   <data name="FormatSelectionWindow_TabCombinedChannels" xml:space="preserve">
-    <value>Audio + Video</value>
+    <value>Hang + videó</value>
   </data>
   <data name="FormatSelectionWindow_TabSeparateChannels" xml:space="preserve">
-    <value>Video/ Audio only</value>
+    <value>Csak videó/hang</value>
   </data>
   <data name="DownloadOption_Custom" xml:space="preserve">
-    <value>Custom Download</value>
+    <value>Egyéni letöltés</value>
   </data>
   <data name="VideoEntry_CustomizeDownload" xml:space="preserve">
-    <value>Configure Download</value>
+    <value>Letöltés konfigurálása</value>
   </data>
   <data name="Video" xml:space="preserve">
-    <value>Video</value>
+    <value>Videó</value>
   </data>
   <data name="AudioOnly" xml:space="preserve">
-    <value>Audio only</value>
+    <value>Csak hang</value>
   </data>
   <data name="FormatSelectionWindow_ConvertTo" xml:space="preserve">
-    <value>Convert to:</value>
+    <value>Konvertálás:</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Apply</value>
+    <value>Alkalmazza a</value>
   </data>
   <data name="Audio" xml:space="preserve">
     <value>Audio</value>
   </data>
   <data name="FormatSelectionWindow_FileExtension" xml:space="preserve">
-    <value>File Extension</value>
+    <value>Fájl kiterjesztés</value>
   </data>
   <data name="FormatSelectionWindow_WidthAndHeight" xml:space="preserve">
-    <value>Video width and height</value>
+    <value>Videó szélessége és magassága</value>
   </data>
   <data name="FormatSelectionWindow_DownloadSize" xml:space="preserve">
-    <value>Approximate download size</value>
+    <value>Hozzávetőleges letöltési méret</value>
   </data>
   <data name="OverwriteMode_None" xml:space="preserve">
-    <value>Skip existing</value>
+    <value>Meglévő fájlok kihagyása</value>
   </data>
   <data name="OverwriteMode_Overwrite" xml:space="preserve">
-    <value>Overwrite existing</value>
+    <value>A meglévő felülírása</value>
   </data>
   <data name="OverwriteMode_Increment" xml:space="preserve">
-    <value>Re-download (rename)</value>
+    <value>Újratöltés (átnevezés)</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>A new version of youtube-dl is available! The latest version is {0}. You have {1}.</value>
+    <value>A youtube-dl új verziója elérhető! A legújabb verzió a {0}. Megvan az {1}.</value>
   </data>
   <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
-    <value>Must specify either video or audio format.</value>
+    <value>Meg kell adnod a videó vagy az audio formátumot.</value>
   </data>
   <data name="DownloadOption_Exception_RecodeFormat" xml:space="preserve">
-    <value>Must specify a video recode format when merging formats.</value>
+    <value>Meg kell adnia a videó átkódolási formátumot a formátumok egyesítésekor.</value>
   </data>
   <data name="DownloadOption_Exception_NoAudio" xml:space="preserve">
-    <value>Cannot use video-only download when extracting audio.</value>
+    <value>Nem lehet csak videó letöltést használni a hang kivonásakor.</value>
   </data>
   <data name="MainWindow_MenuReloadAll" xml:space="preserve">
-    <value>Re_load All Videos</value>
+    <value>Minden videó újratöltése</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
   <data name="SettingsWindow_HardwareAcceleration" xml:space="preserve">
-    <value>Use GPU acceleration for video recoding</value>
+    <value>GPU-gyorsítás használata a videó újrakódolásához</value>
   </data>
   <data name="MainWindow_HeaderAutomate" xml:space="preserve">
     <value>_Automate</value>
   </data>
   <data name="MainWindow_MenuAutomateEnable" xml:space="preserve">
-    <value>_Auto-import URLs from Clipboard</value>
+    <value>_Automatikus URL-import a vágólapról</value>
   </data>
   <data name="SettingsWindow_AutomateDownload" xml:space="preserve">
-    <value>Directly Download Videos</value>
+    <value>Videók közvetlen letöltése</value>
   </data>
   <data name="SettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Speciális</value>
   </data>
   <data name="SettingsWindow_AutomatePattern" xml:space="preserve">
-    <value>URL Filter Pattern</value>
+    <value>URL-szűrő minta</value>
   </data>
   <data name="SettingsWindow_AutomatePatternHint" xml:space="preserve">
-    <value>Enter expression to filter clipboard text</value>
+    <value>Kifejezés megadása a vágólap szövegének szűréséhez</value>
   </data>
   <data name="MainWindow_MenuAutomateConfiguration" xml:space="preserve">
     <value>_Configuration...</value>
   </data>
   <data name="SettingsWindow_AutomatePatternIsRegex" xml:space="preserve">
-    <value>Use regular expression as URL filter pattern</value>
+    <value>Szabályos kifejezés használata URL-szűrő mintaként</value>
   </data>
   <data name="CustomArgsWindow_Title" xml:space="preserve">
-    <value>Custom Downloader Arguments</value>
+    <value>Egyéni letöltő argumentumok</value>
   </data>
   <data name="CustomArgsWindow_Description" xml:space="preserve">
-    <value>Enter custom downloader arguments in separate lines</value>
+    <value>Adja meg az egyéni letöltő argumentumait külön sorokban</value>
   </data>
   <data name="CustomArgsWindow_Warning" xml:space="preserve">
-    <value>WARNING: Specified arguments are passed directly to the downloader process. They might override options required for the correct functioning of this application. Use at your own risk.</value>
+    <value>FIGYELMEZTETÉS: A megadott argumentumok közvetlenül a letöltési folyamatnak kerülnek átadásra. Ezek felülírhatják az alkalmazás megfelelő működéséhez szükséges opciókat. Használata saját felelősségre történik.</value>
   </data>
   <data name="HwAccelMode_None" xml:space="preserve">
-    <value>None</value>
+    <value>Nincs</value>
   </data>
   <data name="HwAccelMode_NvidiaCuda" xml:space="preserve">
     <value>Nvidia (CUDA)</value>
@@ -587,58 +587,57 @@ To allow duplicates, go to Options -&gt; Settings.</value>
     <value>Reset</value>
   </data>
   <data name="SettingsWindow_ToolTipReset" xml:space="preserve">
-    <value>Reset all settings to their default values.</value>
+    <value>Az összes beállítás alapértelmezett értékre történő visszaállítása.</value>
   </data>
   <data name="SettingsWindow_ConfirmReset" xml:space="preserve">
-    <value>Continuing will reset all customizations configured in the settings.
-Really continue?</value>
+    <value>Folytatás visszaállítja a beállításokban konfigurált összes testreszabást. Tényleg folytassa?"</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Figyelmeztetés</value>
   </data>
   <data name="MainWindow_MenuErrorLog" xml:space="preserve">
-    <value>Open _Error Log</value>
+    <value>Nyissa meg a _Hibanaplót</value>
   </data>
   <data name="VideoEntry_ShowInFolderFailed" xml:space="preserve">
-    <value>Could not show video in folder. It might have been renamed or removed.</value>
+    <value>Nem sikerült megjeleníteni a mappában lévő videót. Lehet, hogy átnevezték vagy eltávolították.</value>
   </data>
   <data name="VideoEntry_PlayFailed" xml:space="preserve">
-    <value>Could not play video. It might have been renamed or removed.</value>
+    <value>Nem tudta lejátszani a videót. Lehet, hogy átnevezték vagy eltávolították.</value>
   </data>
   <data name="NotificationLogWindow_Title" xml:space="preserve">
-    <value>Notifications</value>
+    <value>Értesítések</value>
   </data>
   <data name="MainWindow_MenuNotificationLog" xml:space="preserve">
-    <value>Show _Notifications</value>
+    <value>Értesítések megjelenítése _Notifications</value>
   </data>
   <data name="NotificationLogWindow_ClearAll" xml:space="preserve">
-    <value>Clear All</value>
+    <value>Mindent törölni</value>
   </data>
   <data name="SettingsWindow_CacheDownloadLinks" xml:space="preserve">
-    <value>Cache unfinished entries between app restarts</value>
+    <value>Befejezetlen bejegyzések gyorsítótárba helyezése az alkalmazás újraindítása között</value>
   </data>
   <data name="AppCrashWindow_Title" xml:space="preserve">
-    <value>ERROR: Vividl has unexpectedly crashed</value>
+    <value>HIBA: Vividl váratlanul lezuhant</value>
   </data>
   <data name="AppCrashWindow_Text" xml:space="preserve">
-    <value>Sorry, an unexpected error has caused the app to crash! Please inspect the error log after restarting the app and report this crash.</value>
+    <value>Sajnáljuk, egy váratlan hiba miatt az alkalmazás összeomlott! Kérjük, ellenőrizze a hibanaplót az alkalmazás újraindítása után, és jelentse az összeomlást.</value>
   </data>
   <data name="NameEditWindow_Title" xml:space="preserve">
-    <value>Edit Name</value>
+    <value>Név szerkesztése</value>
   </data>
   <data name="NameEditWindow_Text" xml:space="preserve">
-    <value>Enter new item name below</value>
+    <value>Adja meg az új elem nevét az alábbiakban</value>
   </data>
   <data name="Validation_ValueNonEmpty" xml:space="preserve">
-    <value>Value cannot be empty</value>
+    <value>Az érték nem lehet üres</value>
   </data>
   <data name="MetadataWindow_Title" xml:space="preserve">
-    <value>Title:</value>
+    <value>Cím:</value>
   </data>
   <data name="SettingsWindow_DefaultResolution" xml:space="preserve">
-    <value>Preferred Video Resolution:</value>
+    <value>Preferred Video Resolution: Preferred Video Resolution: Preferred Video Resolution:</value>
   </data>
   <data name="DownloadOption_BestAudio" xml:space="preserve">
-    <value>Best Audio-only Download</value>
+    <value>Legjobb csak hangalapú letöltés</value>
   </data>
 </root>

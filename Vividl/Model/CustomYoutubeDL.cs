@@ -15,10 +15,9 @@ namespace Vividl.Model
 
         public string Proxy { get; set; }
 
-        public OptionSet CustomDownloadOptions { get; set; }
+        public string FormatSort { get; set; }
 
-        // Dumb way to determine if we are likely using yt-dlp
-        public bool UsingYtDlp => YoutubeDLPath.Contains("yt-dlp");
+        public OptionSet CustomDownloadOptions { get; set; }
 
         protected override OptionSet GetDownloadOptions()
         {
@@ -37,6 +36,7 @@ namespace Vividl.Model
             options.EmbedMetadata = this.AddMetadata;
             #endif
             options.Proxy = this.Proxy;
+            options.FormatSort = this.FormatSort;
             if (this.CustomDownloadOptions != null)
             {
                 options = options.OverrideOptions(this.CustomDownloadOptions);
