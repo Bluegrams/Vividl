@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -157,8 +157,9 @@
     <Reference Include="XAMLMarkupExtensions, Version=2.1.3.0, Culture=neutral, PublicKeyToken=c726e0262981a1eb, processorArchitecture=MSIL">
       <HintPath>..\packages\XAMLMarkupExtensions.2.1.3\lib\net48\XAMLMarkupExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="YoutubeDLSharp, Version=1.1.0.246, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeDLSharp.1.1.0\lib\net45\YoutubeDLSharp.dll</HintPath>
+    <Reference Include="YoutubeDLSharp, Version=1.1.2.25113, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\YoutubeDLSharp.1.1.2\lib\net45\YoutubeDLSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
