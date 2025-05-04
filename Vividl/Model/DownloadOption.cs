@@ -84,7 +84,9 @@ namespace Vividl.Model
                 overrideOptions = new OptionSet();
             }
             overrideOptions.Output = downloadPath;
-            return await RunRealDownload(ydl, video.Url, ct, progress, overrideOptions);
+            var result = await RunRealDownload(ydl, video.Url, ct, progress, overrideOptions);
+            // Create a new run result object to ensure we pass the correct final path
+            return new RunResult<string>(result.Success, result.ErrorOutput, downloadPath);
         }
 
         /// <summary>

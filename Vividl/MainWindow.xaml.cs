@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 using AdonisUI.Controls;
 using Bluegrams.Application;
@@ -17,12 +18,16 @@ namespace Vividl
         {
             var manager = new WpfWindowManager(this);
             manager.ManageDefault();
+            manager.ApplyToSettings(Settings.Default);
             manager.Initialize();
             InitializeComponent();
             Messenger.Default.Register<NotificationMessage>(this, handleStatusMessage);
             Messenger.Default.Register<ShowWindowMessage>(this, handleOpenWindow);
             this.Closing += MainWindow_Closing;
-            LocalizeDictionary.Instance.Culture = System.Globalization.CultureInfo.CurrentUICulture;
+            var culture = new CultureInfo(Bluegrams.Application.Properties.Settings.Default.Culture);
+            CultureInfo.CurrentCulture = culture;
+            CultureInfo.CurrentUICulture = culture;
+            LocalizeDictionary.Instance.Culture = CultureInfo.CurrentUICulture;
         }
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)

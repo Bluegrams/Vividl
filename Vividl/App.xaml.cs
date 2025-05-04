@@ -40,20 +40,18 @@ namespace Vividl
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-#if PORTABLE
-            PortableSettingsProvider.ApplyProvider(Settings.Default);
-#endif
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; ;
-            initializeDefaultSettings();
             // register services and view models
             registerServices();
-            InitializeDownloadEngine();
             registerVMs();
+            // setup main window
+            MainWindow mainWindow = new MainWindow();
+            // main window might restore settings from upgrade -> apply settings after
+            initializeDefaultSettings();
+            InitializeDownloadEngine();
             // apply theme
             var themeResolver = SimpleIoc.Default.GetInstance<IThemeResolver>();
             themeResolver.SetColorScheme(Settings.Default.AppTheme);
-            // setup main window
-            MainWindow mainWindow = new MainWindow();
             var mainVm = SimpleIoc.Default.GetInstance<MainViewModel<MediaEntry>>();
             mainWindow.DataContext = mainVm;
             mainWindow.Loaded += async (o, _) => await mainVm.Initialize();
