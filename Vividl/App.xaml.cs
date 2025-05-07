@@ -93,9 +93,9 @@ namespace Vividl
                 // switch from youtube-dl.exe to yt-dlp.exe
                 isOldLibDefaultPath(Settings.Default.YoutubeDLPath, "youtube-dl.exe")
             )
-                Settings.Default.YoutubeDLPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "yt-dlp.exe");
+                Settings.Default.YoutubeDLPath = Path.Combine("Lib", "yt-dlp.exe");
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
-                Settings.Default.FfmpegPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", "ffmpeg.exe");
+                Settings.Default.FfmpegPath = Path.Combine("Lib", "ffmpeg.exe");
 #elif WITH_LIB
             string libPathBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Bluegrams", "Vividl", "Lib");
             if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath) ||

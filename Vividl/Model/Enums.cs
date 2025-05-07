@@ -67,10 +67,14 @@ namespace Vividl.Model
         Res360 = 360,
         [Description("480p")]
         Res480 = 480,
-        [Description("720p")]
+        [Description("720p (HD)")]
         Res720 = 720,
-        [Description("1080p")]
+        [Description("1080p (FHD)")]
         Res1080 = 1080,
+        [Description("1440p (QHD)")]
+        Res1440 = 1440,
+        [Description("2160p (4K)")]
+        Res2160 = 2160,
         [Description("Max")]
         ResMax = int.MaxValue
     }

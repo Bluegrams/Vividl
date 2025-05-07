@@ -201,7 +201,7 @@ namespace Vividl.ViewModel
         }
 
         private bool checkExists(string url)
-            => VideoInfos.Any(v => v.Entry?.Url == url);
+            => VideoInfos.Any(v => v.Entry?.Url == url || v.ToString() == url);
 
         public async Task FetchVideo(string videoUrl)
         {
@@ -247,7 +247,11 @@ namespace Vividl.ViewModel
 
         private async void automationService_InputReceived(object sender, UrlsEventArgs e)
         {
-            var fetchedVideos = await itemProvider.FetchItemList(e.Urls, VideoInfos, this, dialogService);
+            IEnumerable<string> urls;
+            if (Settings.Default.AllowDuplicateEntries)
+                urls = e.Urls;
+            else urls = e.Urls.Where(u => !checkExists(u));
+            var fetchedVideos = await itemProvider.FetchItemList(urls, VideoInfos, this, dialogService);
             if (Settings.Default.SmartAutomationDownload)
             {
                 var tasks = fetchedVideos.Select(vid => vid.DownloadVideo());
