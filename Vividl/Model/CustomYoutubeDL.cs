@@ -22,6 +22,7 @@ namespace Vividl.Model
         protected override OptionSet GetDownloadOptions()
         {
             var options = base.GetDownloadOptions();
+            options.Progress = true;
             #if LegacyYoutubeDLSharp
             // Workaround to suppress the warning in yt-dlp
             if (UsingYtDlp)

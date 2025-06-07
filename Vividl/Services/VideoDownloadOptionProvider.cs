@@ -14,19 +14,17 @@ namespace Vividl.Services
             string s;
             if (App.UsingYtDlp)
             {
-                if (Settings.Default.PreferRecoding)
-                    s = "bv*+ba/b";
-                else s = $"{extension}/bv*+ba/b";
+                s = "bv*+ba/b";
             }
             else
             {
                 if (Settings.Default.PreferRecoding)
                     s = "bestvideo+bestaudio/best";
-                else s = $"{extension}/best/bestvideo+bestaudio";
+                else s = $"best/bestvideo+bestaudio";
             }
             if (!Settings.Default.PreferRecoding && extension != null)
             {
-                s = extension + "/" + s;
+                s = extension + "[acodec!=none]/" + s;
             }
             return s;
         }

@@ -17,6 +17,7 @@ namespace Vividl.Model
             @"(?<bw>best|worst|b|w)(?<type>video|audio|v|a)?(?<mod>\*)?(?:\.(?<n>[1-9]\d*))?$",
             RegexOptions.Compiled
         );
+        private static readonly Regex rgxFormat = new Regex(@"(?<ext>\w+)(?:\[(?<filter>\S*)\])?$");
 
         // Copied from yt-dlp documentation (removing res)
         private const string DEFAULT_SORT_ORDER = "lang,quality,fps,hdr:12,vcodec:vp9.2,channels,acodec,size,br,asr,proto,ext,hasaud,source,id";
@@ -77,9 +78,33 @@ namespace Vividl.Model
             }
             else
             {
-                if (COMMON_VIDEO.Contains(formatSpecifier) || COMMON_AUDIO.Contains(formatSpecifier))
-                    filterF = (f) => f.Extension == formatSpecifier;
-                else filterF = (f) => f.FormatId == formatSpecifier;
+                Match mFormat = rgxFormat.Match(formatSpecifier);
+                if (mFormat.Success)
+                {
+                    string ext = mFormat.Groups["ext"].Value;
+                    Func<FormatData, bool> _filterF;
+                    if (COMMON_VIDEO.Contains(ext) || COMMON_AUDIO.Contains(ext))
+                        _filterF = (f) => f.Extension == ext;
+                    else _filterF = (f) => f.FormatId == formatSpecifier;
+                    // currently only supports a few options we need in for default options
+                    if (mFormat.Groups["filter"].Success)
+                    {
+                        string filter = mFormat.Groups["filter"].Value;
+                        switch (filter)
+                        {
+                            case "acodec!=none":
+                                filterF = (f) => _filterF(f) && f.AudioCodec != "none";
+                                break;
+                            case "vcodec!=none":
+                                filterF = (f) => _filterF(f) && f.VideoCodec != "none";
+                                break;
+                            default:
+                                throw new ArgumentException($"Invalid format filter {filter} in {formatSpecifier}");
+                        }
+                    }
+                    else filterF = _filterF; // no filter, just use the extension or format id
+                }
+                else return null; // invalid format specifier
             }
 
             // eqv. to selector_function()

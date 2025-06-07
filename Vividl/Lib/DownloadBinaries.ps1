@@ -11,6 +11,12 @@ $ffmpeg_archive = Join-Path $PSScriptRoot "ffmpeg.zip"
 Invoke-WebRequest -Uri $ffmpeg_download_url -OutFile $ffmpeg_archive
 Expand-Archive -Path $ffmpeg_archive -DestinationPath $PSScriptRoot -Force
 Remove-Item $ffmpeg_archive
+# Also download ffprobe
+$ffprobe_download_url = $data.bin.'windows-64'.ffprobe
+$ffprobe_archive = Join-Path $PSScriptRoot "ffprobe.zip"
+Invoke-WebRequest -Uri $ffprobe_download_url -OutFile $ffprobe_archive
+Expand-Archive -Path $ffprobe_archive -DestinationPath $PSScriptRoot -Force
+Remove-Item $ffprobe_archive
 
 # Download yt-dlp
 echo "Downloading yt-dlp..."
