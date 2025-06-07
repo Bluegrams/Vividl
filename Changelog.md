@@ -1,5 +1,15 @@
 # Vividl Changelog
 
+### v.0.9.0 (2025-06)
+- **New:** Hungarian, Korean translation.
+- **Updated:** Chinese, Italian and Japanese translation.
+- **Updated:** Extend resolution enum.
+- **Fixed:** Preserving settings & preferences when updating the app.
+- **Fixed:** Don't add duplicates in automation mode.
+- **Fixed:** Use relative binary paths in portable mode.
+- **Fixed:** Ensure direct format download have audio.
+- **Fixed:** Ensure download progress is shown from yt-dlp.
+
 ### v.0.8.0 (2024-01)
 - **New:** Allow specifying preferred video resolution in settings & fetch window.
 - **New:** Support for editing video download names before download.
