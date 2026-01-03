@@ -8,10 +8,17 @@ namespace Vividl.Model
     {
         public static OptionSet ApplyForAudioDownload(DownloadOption download, OptionSet options)
         {
+            options = options ?? new OptionSet();
+            
+            // Apply format selection for all audio downloads
+            if (!string.IsNullOrEmpty(download.FormatSelection))
+            {
+                options.Format = download.FormatSelection;
+            }
+            
             // When converting to mp3, add thumbnail.
             if (Settings.Default.AddMetadata && download.GetExt(defaultValue: "") == "mp3")
             {
-                options = options ?? new OptionSet();
                 options.EmbedThumbnail = true;
                 // This ensures thumbnails are correctly shown on Windows.
                 options.PostprocessorArgs = "-id3v2_version 3";
