@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using Bluegrams.Application;
@@ -8,16 +9,8 @@ using Newtonsoft.Json;
 using Vividl.Model;
 using Vividl.Properties;
 
-namespace Vividl.Services
+namespace Vividl.Services.Update
 {
-    public interface ILibUpdateService
-    {
-        string Version { get; }
-        bool IsUpdating { get; }
-        Task<bool> CheckForUpdates();
-        Task<string> Update();
-    }
-
     public class YtdlUpdateService : ILibUpdateService, INotifyPropertyChanged
     {
         public const string YTDL_LATEST_VERSION_URL = "https://yt-dl.org/update/LATEST_VERSION";
@@ -66,6 +59,7 @@ namespace Vividl.Services
                 try
                 {
                     string latestVersion = await client.DownloadStringTaskAsync(YTDL_LATEST_VERSION_URL);
+                    Debug.WriteLine("[youtube-dl update check] Found version: " + latestVersion);
                     if (new Version(latestVersion) > new Version(this.Version))
                     {
                         return dialogService.ShowConfirmation(
@@ -84,17 +78,21 @@ namespace Vividl.Services
 
         private async Task<bool> checkForUpdatesYtDlp()
         {
+            IsUpdating = true;
             using (WebClient client = new WebClient())
             {
+                client.Headers.Add("User-Agent: Other");
                 try
                 {
                     string jsonString = await client.DownloadStringTaskAsync(YTDLP_LATEST_VERSION_URL);
-                    Dictionary<string, string> versionInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-                    string latestVersion = versionInfo["tag_name"];
+                    var versionInfo = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonString);
+                    string latestVersion = (string)versionInfo["tag_name"];
+                    Debug.WriteLine("[yt-dlp update check] Found version: " + latestVersion);
                     if (new Version(latestVersion) > new Version(this.Version))
                     {
+                        string name = App.UsingYtDlp ? "yt-dlp" : "youtube-dl";
                         return dialogService.ShowConfirmation(
-                            String.Format(Resources.YtdlUpdateService_NewUpdateMessage, latestVersion, this.Version),
+                            String.Format(Resources.YtdlUpdateService_NewUpdateMessage, latestVersion, this.Version, name),
                             "Vividl - " + Resources.Info
                         );
                     }
@@ -103,6 +101,10 @@ namespace Vividl.Services
                 catch (Exception)
                 {
                     return false;
+                }
+                finally
+                {
+                    IsUpdating = false;
                 }
             }
         }

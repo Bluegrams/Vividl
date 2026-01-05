@@ -77,5 +77,8 @@
     <Setting Name="DefaultResolution" Type="Vividl.Model.Resolution" Scope="User">
       <Value Profile="(Default)">Res1080</Value>
     </Setting>
+    <Setting Name="AutoCheckUpdatesFFmpeg" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -536,7 +536,8 @@
     <value>Настройка загрузки</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>Доступна новая версия youtube-dl! Последняя версия - {0}. У вас {1}.</value>
+    <value>Доступна новая версия {2}
+! Последняя версия - {0}. У вас {1}.</value>
   </data>
   <data name="CustomArgsWindow_Title" xml:space="preserve">
     <value>Пользовательские аргументы загрузчика</value>

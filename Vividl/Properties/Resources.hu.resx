@@ -518,7 +518,7 @@ A duplikációk engedélyezéséhez lépjen a Beállítások -&gt; Beállításo
     <value>Újratöltés (átnevezés)</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>A youtube-dl új verziója elérhető! A legújabb verzió a {0}. Megvan az {1}.</value>
+    <value>A {2} új verziója elérhető! A legújabb verzió a {0}. Megvan az {1}.</value>
   </data>
   <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
     <value>Meg kell adnod a videó vagy az audio formátumot.</value>

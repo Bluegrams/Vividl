@@ -603,7 +603,7 @@
     <value>警告</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>新版本的 youtube-dl 现已推出！最新版本是 {0}。您正在使用 {1}。</value>
+    <value>新版本的 {2} 现已推出！最新版本是 {0}。您正在使用 {1}。</value>
   </data>
   <data name="NotificationLogWindow_Title" xml:space="preserve">
     <value>通知</value>

@@ -10,6 +10,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
+using Vividl.Services.Update;
 
 namespace Vividl.ViewModel
 {
@@ -29,20 +30,24 @@ namespace Vividl.ViewModel
         public ICommand EditCustomArgsCommand { get; }
 
         public ILibUpdateService YoutubeDLUpdateService { get; }
+        public ILibUpdateService FFmpegUpdateService { get; }
+
         public ICommand UpdateVividlCommand { get; }
         public ICommand UpdateYoutubeDLCommand { get; }
+        public ICommand UpdateFFmpegCommand { get; }
 
         public ICommand ResetAllSettingsCommand { get; }
 
         public SettingsViewModel(IFileService fileService, IDialogService dialogService,
             IThemeResolver themeResolver, IDownloadOptionProvider optionProvider,
-            IUpdateChecker updateChecker, YtdlUpdateService ytdlUpdateService)
+            IUpdateChecker updateChecker, YtdlUpdateService ytdlUpdateService, FFmpegUpdateService ffmpegUpdateService)
         {
             this.FileService = fileService;
             this.dialogService = dialogService;
             this.themeResolver = themeResolver;
             this.updateChecker = updateChecker;
             this.YoutubeDLUpdateService = ytdlUpdateService;
+            this.FFmpegUpdateService = ffmpegUpdateService;
             DefaultFormats = new ObservableCollection<IDownloadOption>(optionProvider.CreateDownloadOptions());
             SwitchAppThemeCommand = new RelayCommand(() => SwitchAppTheme());
             EditCustomArgsCommand = new RelayCommand(
@@ -51,7 +56,8 @@ namespace Vividl.ViewModel
                 )
             );
             UpdateVividlCommand = new RelayCommand(() => UpdateVividl());
-            UpdateYoutubeDLCommand = new RelayCommand(async () => await UpdateYoutubeDL());
+            UpdateYoutubeDLCommand = new RelayCommand(async () => await CheckForYoutubeDLUpdates());
+            UpdateFFmpegCommand = new RelayCommand(async () => await CheckForFFmpegUpdates());
             ResetAllSettingsCommand = new RelayCommand(() => ResetAllSettings());
         }
 
@@ -80,6 +86,21 @@ namespace Vividl.ViewModel
             if (willUpdate)
             {
                 await UpdateYoutubeDL();
+            }
+        }
+
+        public async Task UpdateFFmpeg()
+        {
+            var msg = await FFmpegUpdateService.Update();
+            dialogService.ShowMessageBox(msg, "Vividl - " + Resources.Info);
+        }
+
+        public async Task CheckForFFmpegUpdates()
+        {
+            bool willUpdate = await FFmpegUpdateService.CheckForUpdates();
+            if (willUpdate)
+            {
+                await UpdateFFmpeg();
             }
         }
 

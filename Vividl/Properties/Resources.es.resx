@@ -518,7 +518,8 @@ Para permitir duplicados, vaya a Opciones -&gt; Configuración.</value>
     <value>Volver a descargar (renombrar)</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>¡Una nueva versión de youtube-dl está disponible! La última versión es {0}. Tienes {1}.</value>
+    <value>¡Una nueva versión de {2}
+ está disponible! La última versión es {0}. Tienes {1}.</value>
   </data>
   <data name="DownloadOption_Exception_NoFormat" xml:space="preserve">
     <value>Debe especificar el formato de video o audio.</value>

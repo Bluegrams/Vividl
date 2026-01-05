@@ -37,11 +37,15 @@ namespace Vividl
                 var updateChecker = SimpleIoc.Default.GetInstance<IUpdateChecker>();
                 updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
             }
-            // Check for Youtube-DL updates
+            // Check for library updates
+           var settingsVm = SimpleIoc.Default.GetInstance<SettingsViewModel>();
             if (Settings.Default.AutoCheckUpdatesYoutubeDL)
             {
-                var settingsVm = SimpleIoc.Default.GetInstance<SettingsViewModel>();
                 await settingsVm.CheckForYoutubeDLUpdates();
+            }
+            if (Settings.Default.AutoCheckUpdatesFFmpeg)
+            {
+                await settingsVm.CheckForFFmpegUpdates();
             }
         }
 

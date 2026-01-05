@@ -275,9 +275,30 @@
                             </StackPanel>
                         </GroupBox>
                         <GroupBox Header="{lex:Loc SettingsWindow_Ffmpeg}">
-                            <v:PathSelectionControl FileService="{Binding FileService}"
-                                                SelectedPath="{Binding Settings.FfmpegPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
-                                                ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
+                            <StackPanel>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Content="{lex:Loc SettingsWindow_CheckForUpdates}"
+                                        Command="{Binding Path=UpdateFFmpegCommand}"
+                                        IsEnabled="{Binding Path=FFmpegUpdateService.IsUpdating, Converter={StaticResource invBool}}"/>
+                                    <Label>
+                                        <WrapPanel>
+                                            <TextBlock>
+                                            <Run Text="{lex:Loc SettingsWindow_Version}"/>
+                                            <Run Text="  "/>
+                                            <Run Text="{Binding FFmpegUpdateService.Version, Mode=OneWay}"/>
+                                            </TextBlock>
+                                            <TextBlock Text="{lex:Loc SettingsWindow_CheckingForUpdates}"
+                                                   Margin="8,0"
+                                                   Visibility="{Binding Path=FFmpegUpdateService.IsUpdating, Converter={StaticResource boolToVis}}"/>
+                                        </WrapPanel>
+                                    </Label>
+                                </DockPanel>
+                                <CheckBox Content="{lex:Loc SettingsWindow_AutoCheckUpdates}"
+                                          IsChecked="{Binding Settings.AutoCheckUpdatesFFmpeg, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                                <v:PathSelectionControl FileService="{Binding FileService}"
+                                                    SelectedPath="{Binding Settings.FfmpegPath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                                    ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
+                            </StackPanel>
                         </GroupBox>
                     </StackPanel>
                 </ScrollViewer>

@@ -518,7 +518,7 @@ Per permettere i duplicati, vai in Opzioni &gt; Impostazioni.</value>
     <value>Nuovo download (rinomina)</value>
   </data>
   <data name="YtdlUpdateService_NewUpdateMessage" xml:space="preserve">
-    <value>È disponibile una nuova versione di youtube-dl!
+    <value>È disponibile una nuova versione di {2}!
 La versione aggiornata è la versione {0}.
 Quella installata è la versione {1}.</value>
   </data>

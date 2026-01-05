@@ -16,6 +16,7 @@ using Vividl.Properties;
 using Vividl.Services;
 using Enterwell.Clients.Wpf.Notifications;
 using System.Collections.Specialized;
+using Vividl.Services.Update;
 
 namespace Vividl.ViewModel
 {

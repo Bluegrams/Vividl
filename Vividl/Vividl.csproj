@@ -130,6 +130,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
@@ -185,7 +186,9 @@
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\IDownloadOptionProvider.cs" />
     <Compile Include="Services\IItemProvider.cs" />
-    <Compile Include="Services\LibUpdateService.cs" />
+    <Compile Include="Services\Update\FFmpegUpdateService.cs" />
+    <Compile Include="Services\Update\ILibUpdateService.cs" />
+    <Compile Include="Services\Update\YtdlUpdateService.cs" />
     <Compile Include="Services\VideoDownloadOptionProvider.cs" />
     <Compile Include="Services\VividlItemProvider.cs" />
     <Compile Include="Services\NotificationDialogService.cs" />

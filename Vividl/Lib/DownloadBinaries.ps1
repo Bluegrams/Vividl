@@ -1,22 +1,18 @@
 ﻿# This script downloads FFmpeg and yt-dlp for Windows.
 
-# Download ffmpeg
+# Download ffmpeg & ffprobe
 echo "Downloading ffmpeg..."
-$ffmpeg_meta_url = "https://ffbinaries.com/api/v1/version/latest"
-$data = Invoke-WebRequest $ffmpeg_meta_url | ConvertFrom-Json
-echo "Found ffmpeg version: $($data.version)"
-echo $data.version > (Join-Path $PSScriptRoot "ffmpeg-version.txt")
-$ffmpeg_download_url = $data.bin.'windows-64'.ffmpeg
+$ffmpeg_meta_url = "https://www.gyan.dev/ffmpeg/builds/release-version"
+$data = Invoke-WebRequest $ffmpeg_meta_url
+echo "Found ffmpeg version: $($data)"
+echo "$data" > (Join-Path $PSScriptRoot "ffmpeg-version.txt")
+$ffmpeg_download_url = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip"
 $ffmpeg_archive = Join-Path $PSScriptRoot "ffmpeg.zip"
 Invoke-WebRequest -Uri $ffmpeg_download_url -OutFile $ffmpeg_archive
 Expand-Archive -Path $ffmpeg_archive -DestinationPath $PSScriptRoot -Force
+Move-Item (Join-Path $PSScriptRoot "ffmpeg-*-essentials_build\bin\*") $PSScriptRoot -Force
+Remove-Item (Join-Path $PSScriptRoot "ffmpeg-*-essentials_build") -Recurse -Force
 Remove-Item $ffmpeg_archive
-# Also download ffprobe
-$ffprobe_download_url = $data.bin.'windows-64'.ffprobe
-$ffprobe_archive = Join-Path $PSScriptRoot "ffprobe.zip"
-Invoke-WebRequest -Uri $ffprobe_download_url -OutFile $ffprobe_archive
-Expand-Archive -Path $ffprobe_archive -DestinationPath $PSScriptRoot -Force
-Remove-Item $ffprobe_archive
 
 # Download yt-dlp
 echo "Downloading yt-dlp..."

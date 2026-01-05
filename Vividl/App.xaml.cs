@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.Ioc;
 using Vividl.Model;
 using Vividl.Properties;
 using Vividl.Services;
+using Vividl.Services.Update;
 using Vividl.ViewModel;
 using YoutubeDLSharp;
 using YoutubeDLSharp.Options;
@@ -171,6 +172,7 @@ namespace Vividl
             SimpleIoc.Default.Register(() => new CustomYoutubeDL(Settings.Default.MaxProcesses));
             SimpleIoc.Default.Register<YoutubeDL>(() => SimpleIoc.Default.GetInstance<CustomYoutubeDL>());
             SimpleIoc.Default.Register<YtdlUpdateService>();
+            SimpleIoc.Default.Register<FFmpegUpdateService>();
             SimpleIoc.Default.Register<SmartAutomationService>();
         }
 
