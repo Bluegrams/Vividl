@@ -623,4 +623,7 @@ Wirklich fortsetzen?</value>
   <data name="DownloadOption_BestAudio" xml:space="preserve">
     <value>Bester nur-Audio Download</value>
   </data>
+  <data name="SettingsWindow_JSRuntime_ToolTip" xml:space="preserve">
+    <value>JaveScript-Laufzeit Konfiguration via yt-dlp '--js-runtimes'</value>
+  </data>
 </root>

@@ -300,6 +300,16 @@
                                                     ToolTip="{lex:Loc SettingsWindow_Path_ToolTip}"/>
                             </StackPanel>
                         </GroupBox>
+                        <GroupBox Header="{lex:Loc SettingsWindow_JSRuntime}">
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Padding="4,6">
+                                    <Hyperlink NavigateUri="https://github.com/yt-dlp/yt-dlp/wiki/EJS" RequestNavigate="Hyperlink_RequestNavigate">[?]</Hyperlink>
+                                </TextBlock>
+                                <TextBox Margin="4"
+                                    Text="{Binding Settings.JSRuntimePath, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                    ToolTip="{lex:Loc SettingsWindow_JSRuntime_ToolTip}"/>
+                            </DockPanel>
+                        </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

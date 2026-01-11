@@ -23,4 +23,15 @@ $version = $(& $ytdl_exe --version)
 echo "yt-dlp version: $version"
 echo $version > (Join-Path $PSScriptRoot "youtube-dl-version.txt")
 
+# Download quickjs
+echo "Downloading QuickJS..."
+$data = Invoke-WebRequest "https://bellard.org/quickjs/binary_releases/LATEST.json" | ConvertFrom-Json
+Write-Output "Latest QuickJS version is: $($data.version)"
+$target = "win-x86_64"
+$downloadUrl = "https://bellard.org/quickjs/binary_releases/quickjs-${target}-$($data.version).zip"
+$downloadZip = Join-Path $PSScriptRoot "quickjs.zip"
+Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadZip
+Expand-Archive -Path $downloadZip -DestinationPath $PSScriptRoot -Force
+Remove-Item $downloadZip
+
 echo "Downloads finished."

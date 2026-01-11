@@ -349,5 +349,17 @@ namespace Vividl.Properties {
                 this["AutoCheckUpdatesFFmpeg"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JSRuntimePath {
+            get {
+                return ((string)(this["JSRuntimePath"]));
+            }
+            set {
+                this["JSRuntimePath"] = value;
+            }
+        }
     }
 }

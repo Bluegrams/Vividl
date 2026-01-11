@@ -114,7 +114,10 @@ namespace Vividl.ViewModel
         public void ResetAllSettings()
         {
             if (dialogService.ShowConfirmation(Resources.SettingsWindow_ConfirmReset, "Vividl - " + Resources.Warning))
+            {
                 Settings.Default.Reset();
+                App.InitializeDefaultSettings();
+            }
         }
     }
 }

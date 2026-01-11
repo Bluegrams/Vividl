@@ -48,7 +48,7 @@ namespace Vividl
             // setup main window
             MainWindow mainWindow = new MainWindow();
             // main window might restore settings from upgrade -> apply settings after
-            initializeDefaultSettings();
+            InitializeDefaultSettings();
             InitializeDownloadEngine();
             // apply theme
             var themeResolver = SimpleIoc.Default.GetInstance<IThemeResolver>();
@@ -84,7 +84,7 @@ namespace Vividl
             Settings.Default.Save();
         }
 
-        private void initializeDefaultSettings()
+        public static void InitializeDefaultSettings()
         {
             // Set a default download folder if none is specified.
             if (String.IsNullOrEmpty(Settings.Default.DownloadFolder))
@@ -97,6 +97,8 @@ namespace Vividl
                 Settings.Default.YoutubeDLPath = Path.Combine("Lib", "yt-dlp.exe");
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
                 Settings.Default.FfmpegPath = Path.Combine("Lib", "ffmpeg.exe");
+            if (String.IsNullOrEmpty(Settings.Default.JSRuntimePath))
+                Settings.Default.JSRuntimePath = "quickjs:" + Path.Combine("Lib", "qjs.exe");
 #elif WITH_LIB
             string libPathBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Bluegrams", "Vividl", "Lib");
             if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath) ||
@@ -115,15 +117,22 @@ namespace Vividl
             {
                 Settings.Default.FfmpegPath = Path.Combine(libPathBase, "ffmpeg.exe");
             }
+            if (String.IsNullOrEmpty(Settings.Default.JSRuntimePath)
+            )
+            {
+                Settings.Default.JSRuntimePath = "quickjs:" + Path.Combine(libPathBase, "qjs.exe");
+            }
 #else
             if (String.IsNullOrEmpty(Settings.Default.YoutubeDLPath))
                 Settings.Default.YoutubeDLPath = "yt-dlp.exe";
             if (String.IsNullOrEmpty(Settings.Default.FfmpegPath))
                 Settings.Default.FfmpegPath = "ffmpeg.exe";
+            if (String.IsNullOrEmpty(Settings.Default.JSRuntimePath))
+                Settings.Default.JSRuntimePath = "deno";
 #endif
         }
 
-        private bool isOldLibDefaultPath(string path, string executable)
+        private static bool isOldLibDefaultPath(string path, string executable)
         {
             string oldDefaultPath = Path.Combine(Path.GetDirectoryName(AppInfo.Location), "Lib", executable);
             return path == oldDefaultPath;
@@ -141,6 +150,7 @@ namespace Vividl
             ytdl.AddMetadata = Settings.Default.AddMetadata;
             ytdl.Proxy = Settings.Default.Proxy;
             ytdl.FormatSort = Settings.Default.DefaultResolution.ToFormatSort();
+            ytdl.JSRuntimePath = Settings.Default.JSRuntimePath;
             if (Settings.Default.UseArchive)
             {
                 ytdl.DownloadArchive = Path.Combine(Settings.Default.DownloadFolder, Settings.Default.ArchiveFilename);

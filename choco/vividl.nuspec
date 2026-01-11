@@ -14,7 +14,7 @@
     <authors>alxnull</authors>
     <projectUrl>https://vividl.sourceforge.io/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/Bluegrams/Vividl/master/img/icon.png</iconUrl>
-    <copyright>© 2020-2025 Bluegrams</copyright>
+    <copyright>© 2020-2026 Bluegrams</copyright>
     <licenseUrl>https://github.com/bluegrams/Vividl/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/bluegrams/Vividl</projectSourceUrl>
@@ -35,6 +35,7 @@
       <dependency id="netfx-4.8"/>
       <dependency id="yt-dlp"/>
       <dependency id="ffmpeg"/>
+	  <dependency id="deno"/>
     </dependencies>
   </metadata>
   <files>

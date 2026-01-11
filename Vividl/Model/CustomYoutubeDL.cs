@@ -17,6 +17,8 @@ namespace Vividl.Model
 
         public string FormatSort { get; set; }
 
+        public string JSRuntimePath { get; set; }
+
         public OptionSet CustomDownloadOptions { get; set; }
 
         protected override OptionSet GetDownloadOptions()
@@ -38,6 +40,7 @@ namespace Vividl.Model
             #endif
             options.Proxy = this.Proxy;
             options.FormatSort = this.FormatSort;
+            options.JsRuntimes = this.JSRuntimePath;
             if (this.CustomDownloadOptions != null)
             {
                 options = options.OverrideOptions(this.CustomDownloadOptions);

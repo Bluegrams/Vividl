@@ -1233,6 +1233,24 @@ namespace Vividl.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JS Runtime.
+        /// </summary>
+        public static string SettingsWindow_JSRuntime {
+            get {
+                return ResourceManager.GetString("SettingsWindow_JSRuntime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JavaScript runtime configuration via yt-dlp&apos;s &apos;--js-runtimes&apos;.
+        /// </summary>
+        public static string SettingsWindow_JSRuntime_ToolTip {
+            get {
+                return ResourceManager.GetString("SettingsWindow_JSRuntime_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maximum concurrent downloads.
         /// </summary>
         public static string SettingsWindow_MaxProcesses {

@@ -262,6 +262,7 @@ __pycache__/
 
 # Executables
 *.exe
+/Vividl/Lib/*.dll
 
 # Custom ignores
 *.py
