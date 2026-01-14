@@ -648,4 +648,10 @@ Dopo il riavvio dell'app consulta il registro degli errori  e segnala questo arr
   <data name="DownloadOption_BestAudio" xml:space="preserve">
     <value>Download solo audio migliore</value>
   </data>
+  <data name="SettingsWindow_JSRuntime" xml:space="preserve">
+    <value>Runtime JS</value>
+  </data>
+  <data name="SettingsWindow_JSRuntime_ToolTip" xml:space="preserve">
+    <value>Configurazione runtime JavaScript via yt-dlp's '--js-runtimes'</value>
+  </data>
 </root>
